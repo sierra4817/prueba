@@ -135,3 +135,62 @@
             font-family: 'Inter', sans-serif;
             font-weight: 300;
             font-size: 0.95rem;
+            margin: 18px 0;
+            color: #bbb;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li::before {
+            content: "•";
+            color: #b8860b;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        footer {
+            margin-top: 80px;
+            font-size: 0.65rem;
+            color: #333;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>CÓDIGO ALFA</h1>
+        <div class="subtitle">Arquitecto de Destino</div>
+
+        <div class="optin-box">
+            <p>Descarga la hoja de ruta del 1%</p>
+            <form action="https://formspree.io/f/tu-id-aqui" method="POST">
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Email Privado" required>
+                <button type="submit" class="btn-gold">Acceder al Manifiesto</button>
+            </form>
+            <p style="font-family: 'Inter'; font-size: 0.7rem; color: #555; margin-top: 15px; text-transform: uppercase;">Sin costo. Solo para hombres de alto valor.</p>
+        </div>
+
+        <div class="sales-card">
+            <h2>Protocolo VIP</h2>
+            <p style="color: #b8860b; font-weight: 700; letter-spacing: 1px; font-size: 0.8rem;">INGENIERÍA DEL COMPORTAMIENTO</p>
+            
+            <ul class="features">
+                <li>Psicología del comportamiento para dominar el entorno.</li>
+                <li>Estrategia de soberanía financiera y poder real[cite: 14].</li>
+                <li>Arquitectura de hábitos para resultados VIP[cite: 112].</li>
+            </ul>
+
+            <button class="btn-gold" onclick="window.location.href='TU_LINK_DE_PAGO'">Adquirir Protocolo</button>
+            <p style="font-size: 0.7rem; color: #444; margin-top: 20px;">Garantía de excelencia absoluta de 7 días.</p>
+        </div>
+
+        <footer>
+            © 2026 CÓDIGO ALFA VIP • NO COMPITAS, LIDERA
+        </footer>
+    </div>
+
+</body>
+</html>
