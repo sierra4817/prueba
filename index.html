@@ -4,103 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Código Alfa VIP | El Manifiesto del 1%</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --liquid-gold: linear-gradient(45deg, #BF953F 0%, #FCF6BA 45%, #B38728 50%, #FBF5B7 55%, #AA771C 100%);
-            --gold-solid: #D4AF37;
+            /* Oro Líquido Profundo */
+            --liquid-gold: linear-gradient(135deg, #a67c00 0%, #ffbf00 50%, #b8860b 100%);
+            --gold-glow: rgba(212, 175, 55, 0.2);
             --dark-bg: #050505;
         }
 
         body {
             background-color: var(--dark-bg);
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif; /* Aplicación de la fuente */
+            color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 450px;
-            padding: 50px 20px;
+            max-width: 480px;
+            padding: 60px 24px;
             text-align: center;
         }
 
+        /* Título con Fuente Premium Serif */
         h1 {
+            font-family: 'Playfair Display', serif;
             font-weight: 900;
-            font-size: 2.8rem;
-            margin-bottom: 5px;
+            font-size: 3.2rem;
+            margin-bottom: 0;
             background: var(--liquid-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
             letter-spacing: -1px;
+            line-height: 1;
         }
 
         .subtitle {
-            font-weight: 400;
-            font-size: 0.8rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.75rem;
             color: #888;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
+            letter-spacing: 5px;
+            margin-top: 15px;
+            margin-bottom: 50px;
         }
 
+        /* Caja de captura optimizada para conversión */
         .optin-box {
-            background: #111;
-            border: 1px solid #222;
-            padding: 30px;
-            border-radius: 8px;
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            padding: 40px 30px;
+            border-radius: 2px; /* Bordes rectos para mayor seriedad */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             margin-bottom: 60px;
+        }
+
+        .optin-box p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
         }
 
         input {
             width: 100%;
-            padding: 18px;
-            margin: 10px 0;
-            background: #1a1a1a;
-            border: 1px solid #333;
+            padding: 20px;
+            margin-bottom: 12px;
+            background: #111;
+            border: 1px solid #222;
             color: white;
-            font-family: 'Montserrat', sans-serif;
-            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
             box-sizing: border-box;
+            transition: border 0.3s;
         }
 
+        input:focus {
+            outline: none;
+            border-color: #b8860b;
+        }
+
+        /* Botón de Oro Líquido con efecto de lujo */
         .btn-gold {
             width: 100%;
-            padding: 20px;
-            margin-top: 15px;
+            padding: 22px;
             background: var(--liquid-gold);
-            background-size: 200% auto;
             border: none;
             color: #000;
+            font-family: 'Inter', sans-serif;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             cursor: pointer;
-            transition: 0.4s;
-            border-radius: 5px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .btn-gold:hover {
-            background-position: right center;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px var(--gold-glow);
+            filter: brightness(1.1);
         }
 
+        /* Card de Venta VIP */
         .sales-card {
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 40px 30px;
-            background: linear-gradient(180deg, #111 0%, #000 100%);
-            border-radius: 8px;
+            border-top: 1px solid #1a1a1a;
+            padding-top: 50px;
+            margin-top: 20px;
         }
 
         .sales-card h2 {
-            font-weight: 700;
-            color: var(--gold-solid);
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
             margin-bottom: 10px;
         }
 
@@ -108,56 +128,10 @@
             text-align: left;
             list-style: none;
             padding: 0;
-            font-size: 0.9rem;
-            color: #ccc;
+            margin: 30px 0;
         }
 
         .features li {
-            margin: 15px 0;
-            padding-left: 15px;
-            border-left: 1px solid var(--gold-solid);
-        }
-
-        footer {
-            margin-top: 50px;
-            font-size: 0.7rem;
-            color: #333;
-            letter-spacing: 1px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>CÓDIGO ALFA</h1>
-        <div class="subtitle">No compitas, lidera</div>
-
-        <div class="optin-box">
-            <p style="font-weight: 700; font-size: 0.9rem; margin-bottom: 20px;">DESCARGA EL MANIFIESTO DEL 1%</p>
-            <form action="https://formspree.io/f/tu-id-aqui" method="POST">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Email" required>
-                <button type="submit" class="btn-gold">Acceder al círculo</button>
-            </form>
-        </div>
-
-        <div class="sales-card">
-            <h2>PROTOCOLO VIP</h2>
-            <p style="font-size: 0.8rem; color: var(--gold-solid); font-weight: 700; margin-bottom: 25px;">INGENIERÍA DEL COMPORTAMIENTO</p>
-            
-            <ul class="features">
-                <li>Psicología para dominar cualquier entorno[cite: 13, 16].</li>
-                <li>Estrategia financiera de soberanía real[cite: 14, 196].</li>
-                <li>Arquitectura de hábitos de acero[cite: 105, 112].</li>
-            </ul>
-
-            <button class="btn-gold" onclick="window.location.href='TU_LINK_DE_PAGO'">Adquirir Protocolo</button>
-        </div>
-
-        <footer>
-            © 2026 CÓDIGO ALFA VIP • ARQUITECTO DE DESTINO
-        </footer>
-    </div>
-
-</body>
-</html>
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 0.95rem;
