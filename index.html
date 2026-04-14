@@ -6,7 +6,9 @@
     <title>Código Alfa VIP | El Manifiesto del 1%</title>
     <style>
         :root {
-            --primary-gold: #D4AF37;
+            /* Paleta Oro Líquido: tonos de alto contraste para efecto metálico */
+            --liquid-gold-base: #DA9304; 
+            --liquid-gold-gradient: linear-gradient(45deg, #BF953F 0%, #FCF6BA 45%, #B38728 50%, #FBF5B7 55%, #AA771C 100%);
             --dark-bg: #0a0a0a;
             --text-white: #ffffff;
             --gray-text: #a0a0a0;
@@ -29,11 +31,15 @@
         }
 
         h1 {
-            color: var(--primary-gold);
+            /* Aplicamos el efecto de oro líquido al texto */
+            background: var(--liquid-gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-size: 2.5rem;
             letter-spacing: 2px;
             margin-bottom: 10px;
             text-transform: uppercase;
+            font-weight: 900;
         }
 
         .subtitle {
@@ -43,7 +49,6 @@
             letter-spacing: 1px;
         }
 
-        /* Formulario de Captura */
         .optin-box {
             border: 1px solid #333;
             padding: 30px;
@@ -60,43 +65,51 @@
             border: 1px solid #444;
             color: white;
             box-sizing: border-box;
+            border-radius: 4px;
         }
 
         .btn-gold {
-            background: linear-gradient(to bottom, #f1d37e, #b58d10);
+            background: var(--liquid-gold-gradient);
+            background-size: 200% auto;
             color: #000;
             border: none;
-            padding: 15px 30px;
+            padding: 18px 30px;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
             width: 100%;
             margin-top: 10px;
-            transition: 0.3s;
+            transition: 0.5s;
+            border-radius: 4px;
+            letter-spacing: 1px;
         }
 
         .btn-gold:hover {
-            opacity: 0.9;
+            background-position: right center;
             transform: scale(1.02);
         }
 
-        /* Sección de Venta */
         .sales-section {
-            border: 1px solid var(--primary-gold);
+            border: 1px solid var(--liquid-gold-base);
             padding: 30px;
             border-radius: 4px;
             margin-top: 20px;
+            background: linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(0,0,0,1) 100%);
         }
 
         .sales-section h2 {
             font-size: 1.8rem;
             margin-bottom: 15px;
+            background: var(--liquid-gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .tagline {
-            color: var(--primary-gold);
+            color: var(--liquid-gold-base);
             font-style: italic;
             margin-bottom: 20px;
+            font-weight: bold;
         }
 
         .features {
@@ -109,7 +122,7 @@
 
         .features li {
             margin-bottom: 10px;
-            border-left: 2px solid var(--primary-gold);
+            border-left: 2px solid var(--liquid-gold-base);
             padding-left: 10px;
         }
 
@@ -128,7 +141,7 @@
         <div class="subtitle">EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</div>
 
         <div class="optin-box">
-            <p>Descarga el Manifiesto GRATIS</p>
+            <p style="font-weight: bold; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</p>
             <form action="https://formspree.io/f/tu-id-aqui" method="POST">
                 <input type="text" name="nombre" placeholder="Tu Nombre" required>
                 <input type="email" name="email" placeholder="Tu Email" required>
@@ -137,8 +150,8 @@
         </div>
 
         <div style="margin-bottom: 40px;">
-            <p style="font-size: 1.1rem;">EL DESPERTAR</p>
-            <p style="color: var(--gray-text);">Deja de ser un participante en la vida de otros y conviértete en el arquitecto de tu propio destino.</p>
+            <p style="font-size: 1.1rem; color: var(--liquid-gold-base); font-weight: bold;">EL DESPERTAR</p>
+            <p style="color: var(--gray-text); line-height: 1.6;">Deja de ser un participante en la vida de otros y conviértete en el arquitecto de tu propio destino.</p>
         </div>
 
         <div class="sales-section">
