@@ -3,14 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto</title>
+    <title>Código Alfa VIP | El Manifiesto del 1%</title>
     <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-        h1 { color: #2ea44f; }
+        :root {
+            --primary-gold: #D4AF37;
+            --dark-bg: #0a0a0a;
+            --text-white: #ffffff;
+            --gray-text: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-white);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: var(--primary-gold);
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* Formulario de Captura */
+        .optin-box {
+            border: 1px solid #333;
+            padding: 30px;
+            background: #111;
+            border-radius: 4px;
+            margin-bottom: 50px;
+        }
+
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: #222;
+            border: 1px solid #444;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        .btn-gold {
+            background: linear-gradient(to bottom, #f1d37e, #b58d10);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* Sección de Venta */
+        .sales-section {
+            border: 1px solid var(--primary-gold);
+            padding: 30px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .sales-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: var(--primary-gold);
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            text-align: left;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            border-left: 2px solid var(--primary-gold);
+            padding-left: 10px;
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.7rem;
+            color: #444;
+            padding-bottom: 30px;
+        }
     </style>
 </head>
 <body>
-    <h1>¡Hola Mundo!</h1>
-    <p>Este es mi sitio web alojado en GitHub Pages.</p>
+
+    <div class="container">
+        <h1>CÓDIGO ALFA VIP</h1>
+        <div class="subtitle">EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</div>
+
+        <div class="optin-box">
+            <p>Descarga el Manifiesto GRATIS</p>
+            <form action="https://formspree.io/f/tu-id-aqui" method="POST">
+                <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                <input type="email" name="email" placeholder="Tu Email" required>
+                <button type="submit" class="btn-gold">Acceder gratis ahora</button>
+            </form>
+        </div>
+
+        <div style="margin-bottom: 40px;">
+            <p style="font-size: 1.1rem;">EL DESPERTAR</p>
+            <p style="color: var(--gray-text);">Deja de ser un participante en la vida de otros y conviértete en el arquitecto de tu propio destino.</p>
+        </div>
+
+        <div class="sales-section">
+            <h2>¿QUIERES MÁS?</h2>
+            <p class="tagline">Domina tu mente con el Protocolo VIP</p>
+            
+            <ul class="features">
+                <li>Ingeniería del Comportamiento táctica.</li>
+                <li>Psicología del 1% a prueba de balas.</li>
+                <li>Estrategia financiera y de poder real.</li>
+            </ul>
+
+            <button class="btn-gold" onclick="window.location.href='TU_LINK_DE_PAGO'">ADQUIRIR PROTOCOLO VIP</button>
+            <p style="font-size: 0.7rem; color: var(--gray-text); margin-top: 15px;">Garantía de 7 días • 100% Calificaciones Positivas</p>
+        </div>
+
+        <footer>
+            © 2026 CÓDIGO ALFA VIP<br>
+            codigoalfavip.com
+        </footer>
+    </div>
+
 </body>
 </html>
