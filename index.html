@@ -4,96 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Código Alfa VIP | El Manifiesto del 1%</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* Oro Líquido Profundo */
-            --liquid-gold: linear-gradient(135deg, #a67c00 0%, #ffbf00 50%, #b8860b 100%);
-            --gold-glow: rgba(212, 175, 55, 0.2);
-            --dark-bg: #050505;
+            /* Oro Líquido Refinado */
+            --gold-liquid: linear-gradient(135deg, #8a642a 0%, #d4af37 25%, #f7ef8a 50%, #d4af37 75%, #8a642a 100%);
+            --dark-onyx: #030303;
+            --gold-border: rgba(212, 175, 55, 0.3);
         }
 
         body {
-            background-color: var(--dark-bg);
-            color: #f4f4f4;
+            background-color: var(--dark-onyx);
+            color: #e0e0e0;
             font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden;
+            letter-spacing: -0.2px;
         }
 
-        .container {
+        .hero-container {
             max-width: 480px;
-            padding: 60px 24px;
+            padding: 80px 24px;
             text-align: center;
         }
 
-        /* Título con Fuente Premium Serif */
+        /* Título Editorial de Alto Nivel */
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            font-size: 3.2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            line-height: 0.9;
             margin-bottom: 0;
-            background: var(--liquid-gold);
+            background: var(--gold-liquid);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
-            line-height: 1;
+            text-transform: uppercase;
         }
 
-        .subtitle {
+        .tagline {
             font-family: 'Inter', sans-serif;
             font-weight: 300;
-            font-size: 0.75rem;
-            color: #888;
+            font-size: 0.7rem;
+            color: #666;
             text-transform: uppercase;
-            letter-spacing: 5px;
+            letter-spacing: 6px;
             margin-top: 15px;
-            margin-bottom: 50px;
-        }
-
-        /* Caja de captura optimizada para conversión */
-        .optin-box {
-            background: #0d0d0d;
-            border: 1px solid #1a1a1a;
-            padding: 40px 30px;
-            border-radius: 2px; /* Bordes rectos para mayor seriedad */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             margin-bottom: 60px;
         }
 
-        .optin-box p {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            margin-bottom: 25px;
+        /* Caja de Captura: Diseño de Membresía Privada */
+        .lead-capture {
+            background: #080808;
+            border: 1px solid #151515;
+            padding: 45px 35px;
+            border-radius: 2px;
+            position: relative;
+            margin-bottom: 80px;
+        }
+
+        .lead-capture::before {
+            content: "";
+            position: absolute;
+            top: -1px; left: 0; right: 0;
+            height: 1px;
+            background: var(--gold-liquid);
+            opacity: 0.6;
+        }
+
+        .lead-capture h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #fff;
         }
 
         input {
             width: 100%;
-            padding: 20px;
-            margin-bottom: 12px;
-            background: #111;
-            border: 1px solid #222;
-            color: white;
+            padding: 22px;
+            margin-bottom: 15px;
+            background: #000;
+            border: 1px solid #1a1a1a;
+            color: #fff;
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
+            font-size: 0.9rem;
             box-sizing: border-box;
-            transition: border 0.3s;
+            transition: all 0.4s;
         }
 
         input:focus {
             outline: none;
-            border-color: #b8860b;
+            border-color: #d4af37;
+            background: #050505;
         }
 
-        /* Botón de Oro Líquido con efecto de lujo */
-        .btn-gold {
+        /* Botón Oro Líquido Dinámico */
+        .cta-button {
             width: 100%;
-            padding: 22px;
-            background: var(--liquid-gold);
+            padding: 24px;
+            background: var(--gold-liquid);
+            background-size: 300% 100%;
             border: none;
             color: #000;
             font-family: 'Inter', sans-serif;
@@ -101,90 +114,89 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.6s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px var(--gold-glow);
-            filter: brightness(1.1);
+        .cta-button:hover {
+            background-position: 100% 0;
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
         }
 
-        /* Card de Venta VIP */
-        .sales-card {
-            border-top: 1px solid #1a1a1a;
-            padding-top: 50px;
-            margin-top: 20px;
+        /* Sección de Venta: Protocolo VIP */
+        .vip-access {
+            padding-top: 60px;
+            border-top: 1px solid #111;
         }
 
-        .sales-card h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+        .vip-access h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
             margin-bottom: 10px;
+            color: #d4af37;
         }
 
-        .features {
+        .value-list {
             text-align: left;
             list-style: none;
             padding: 0;
-            margin: 30px 0;
+            margin: 35px 0;
         }
 
-        .features li {
+        .value-list li {
             font-family: 'Inter', sans-serif;
             font-weight: 300;
-            font-size: 0.95rem;
-            margin: 18px 0;
-            color: #bbb;
+            font-size: 0.9rem;
+            margin: 20px 0;
+            color: #999;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
         }
 
-        .features li::before {
-            content: "•";
-            color: #b8860b;
-            font-weight: bold;
+        .value-list li::before {
+            content: "—";
+            color: #d4af37;
             margin-right: 15px;
         }
 
         footer {
-            margin-top: 80px;
-            font-size: 0.65rem;
-            color: #333;
-            letter-spacing: 2px;
+            margin-top: 100px;
+            font-size: 0.6rem;
+            color: #222;
+            letter-spacing: 3px;
             text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="hero-container">
         <h1>CÓDIGO ALFA</h1>
-        <div class="subtitle">Arquitecto de Destino</div>
+        <div class="tagline">Arquitecto de su propia realidad</div>
 
-        <div class="optin-box">
-            <p>Descarga la hoja de ruta del 1%</p>
+        <div class="lead-capture">
+            <h2>Descarga el Manifiesto del 1%</h2>
             <form action="https://formspree.io/f/tu-id-aqui" method="POST">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Email Privado" required>
-                <button type="submit" class="btn-gold">Acceder al Manifiesto</button>
+                <input type="text" name="name" placeholder="Nombre Completo" required>
+                <input type="email" name="email" placeholder="Email de Negocios" required>
+                <button type="submit" class="cta-button">Acceso Inmediato</button>
             </form>
-            <p style="font-family: 'Inter'; font-size: 0.7rem; color: #555; margin-top: 15px; text-transform: uppercase;">Sin costo. Solo para hombres de alto valor.</p>
+            <p style="font-size: 0.65rem; color: #444; margin-top: 25px; text-transform: uppercase; letter-spacing: 1px;">Privacidad absoluta. Solo contenido táctico.</p>
         </div>
 
-        <div class="sales-card">
-            <h2>Protocolo VIP</h2>
-            <p style="color: #b8860b; font-weight: 700; letter-spacing: 1px; font-size: 0.8rem;">INGENIERÍA DEL COMPORTAMIENTO</p>
+        <div class="vip-access">
+            <h3>Protocolo VIP</h3>
+            <p style="color: #666; font-size: 0.8rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;">Ingeniería del Comportamiento</p>
             
-            <ul class="features">
-                <li>Psicología del comportamiento para dominar el entorno.</li>
-                <li>Estrategia de soberanía financiera y poder real[cite: 14].</li>
-                <li>Arquitectura de hábitos para resultados VIP[cite: 112].</li>
+            <ul class="value-list">
+                <li>Psicología del Comportamiento: Elimina el miedo y la duda instalando un sistema mental a prueba de balas[cite: 13].</li>
+                <li>Estrategia de Poder: Entiende el dinero como una herramienta de libertad que obedece a tu carácter[cite: 14].</li>
+                <li>Presencia Ejecutiva: El arte de dominar cualquier habitación sin necesidad de validación externa[cite: 16, 241].</li>
             </ul>
 
-            <button class="btn-gold" onclick="window.location.href='TU_LINK_DE_PAGO'">Adquirir Protocolo</button>
-            <p style="font-size: 0.7rem; color: #444; margin-top: 20px;">Garantía de excelencia absoluta de 7 días.</p>
+            <button class="cta-button" onclick="window.location.href='TU_LINK_DE_PAGO'">Adquirir Protocolo</button>
+            <p style="font-size: 0.7rem; color: #333; margin-top: 25px;">Garantía de excelencia absoluta. Sin excusas.</p>
         </div>
 
         <footer>
