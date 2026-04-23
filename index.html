@@ -1,85 +1,181 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voyages Tours - Tu Aventura Global</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Iconos de FontAwesome para un look profesional -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Código Alfa VIP</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 280px;
+  background: url('https://i.ibb.co/black-gold-marble.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, #000 90%);
+}
+
+.hero h1 {
+  position: relative;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 2px;
+
+  background: linear-gradient(135deg,#f5e2b8,#c9a96a,#fff2cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CONTENIDO */
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+/* TÍTULO */
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* PRECIO + AUTOR */
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 15px 0;
+  margin-bottom: 25px;
+}
+
+.price {
+  background: linear-gradient(135deg,#c9a96a,#f5e2b8);
+  color: #000;
+  padding: 6px 14px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.author {
+  opacity: 0.7;
+}
+
+/* TEXTO */
+.text {
+  font-size: 17px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.list {
+  margin-top: 20px;
+}
+
+.list li {
+  margin-bottom: 10px;
+}
+
+/* BOTÓN */
+.cta {
+  margin-top: 30px;
+}
+
+.cta button {
+  width: 100%;
+  padding: 18px;
+  border: none;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 8px;
+
+  background: linear-gradient(135deg,#f5e2b8,#c9a96a,#a67c2e,#fff2cc);
+  color: #000;
+
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.5),
+    inset 0 -3px 6px rgba(0,0,0,0.4),
+    0 10px 30px rgba(197,160,89,0.3);
+
+  transition: 0.3s;
+}
+
+.cta button:hover {
+  transform: translateY(-2px);
+}
+
+/* URGENCIA */
+.urgency {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .title { font-size: 28px; }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- HEADER / NAVEGACIÓN -->
-    <header class="navbar">
-        <div class="logo">Voyages Tours</div>
-        <nav>
-            <a href="#">Vuelos</a>
-            <a href="#">Hoteles</a>
-            <a href="#">Paquetes</a>
-            <a href="#">Actividades</a>
-        </nav>
-        <div class="user-actions">
-            <button class="btn-login">Iniciar Sesión</button>
-            <button class="btn-signup">Registrarse</button>
-        </div>
-    </header>
+<!-- HERO -->
+<div class="hero">
+  <h1>CÓDIGO ALFA VIP</h1>
+</div>
 
-    <!-- HERO SECTION (Sección principal de búsqueda) -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Explora el Mundo con Voyages Tours</h1>
-            <p>Encuentra los mejores vuelos, hoteles y experiencias a precios increíbles.</p>
-            
-            <!-- Formulario de Búsqueda (Simulado) -->
-            <div class="search-box">
-                <div class="search-input">
-                    <i class="fas fa-plane"></i>
-                    <input type="text" placeholder="Destino (Ej: París, Madrid)">
-                </div>
-                <div class="search-input">
-                    <i class="fas fa-calendar-alt"></i>
-                    <input type="date" placeholder="Fechas">
-                </div>
-                <button class="btn-search">Buscar Ofertas</button>
-            </div>
-        </div>
-    </section>
+<div class="container">
 
-    <!-- SECCIÓN DE OFERTAS DESTACADAS -->
-    <section class="offers-section">
-        <h2>Destinos Populares</h2>
-        <div class="card-container">
-            <!-- Tarjeta 1 -->
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200?text=París" alt="París">
-                <h3>París, Francia</h3>
-                <p>Desde $499</p>
-                <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434&trip_sub1=&trip_sub3=D15666128" target="_blank" class="btn-affiliate">Ver Oferta</a>
-            </div>
-            <!-- Tarjeta 2 -->
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200?text=Bali" alt="Bali">
-                <h3>Bali, Indonesia</h3>
-                <p>Desde $350</p>
-                <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434&trip_sub1=&trip_sub3=D15666128" target="_blank" class="btn-affiliate">Ver Oferta</a>
-            </div>
-            <!-- Tarjeta 3 -->
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200?text=Nueva+York" alt="Nueva York">
-                <h3>Nueva York, USA</h3>
-                <p>Desde $620</p>
-                <a href="https://www.trip.com/?Allianceid=8047264&SID=304625434&trip_sub1=&trip_sub3=D15666128" target="_blank" class="btn-affiliate">Ver Oferta</a>
-            </div>
-        </div>
-    </section>
+  <div class="title">
+    El Código Alfa VIP: Manifiesto del 1%
+  </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2024 Voyages Tours. Todos los derechos reservados.</p>
-        <p>Tu viaje comienza aquí.</p>
-    </footer>
+  <div class="meta">
+    <div class="price">$0+</div>
+    <div class="author">Código Alfa</div>
+  </div>
+
+  <div class="text">
+    Vivimos en una era de mediocridad estandarizada. Este no es contenido para entretenerte.
+    Es un sistema diseñado para quienes han decidido dejar de competir y empezar a dominar.
+  </div>
+
+  <ul class="list">
+    <li>🧠 Psicología del 1%: elimina miedo y duda</li>
+    <li>📈 Estrategia financiera: piensa como inversor</li>
+    <li>🛡️ Disciplina extrema: control total</li>
+    <li>🤝 Estatus y poder: entra en círculos altos</li>
+  </ul>
+
+  <div class="cta">
+    <button>DESCARGAR ACCESO VIP</button>
+  </div>
+
+  <div class="urgency">
+    ⏳ Acceso limitado hoy · +1,284 descargas
+  </div>
+
+</div>
 
 </body>
 </html>
