@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,9 +6,12 @@
     <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
     <style>
         :root {
-            --gold-light: #f5e39d;
-            --gold-mid: #b8964d;
-            --gold-dark: #91712a;
+            /* PALETA ORO REALISTA (Metal Pulido) */
+            --gold-shine: #fff9e6;  /* Brillo máximo */
+            --gold-light: #f9d976;  /* Oro claro */
+            --gold-mid: #b38728;    /* Oro base */
+            --gold-dark: #846115;   /* Sombra metálica */
+            --gold-shadow: #453105; /* Profundidad */
             --bg-black: #050505;
             --card-bg: #0f0f0f;
         }
@@ -24,12 +25,23 @@
             text-align: center;
         }
 
+        /* TEXTO ORO LÍQUIDO */
         .gold-text {
-            background: linear-gradient(to bottom, var(--gold-light) 0%, var(--gold-mid) 45%, var(--gold-dark) 100%);
+            background: linear-gradient(
+                to bottom,
+                var(--gold-shadow) 0%,
+                var(--gold-mid) 22%,
+                var(--gold-shine) 45%,
+                var(--gold-mid) 50%,
+                var(--gold-dark) 75%,
+                var(--gold-shadow) 100%
+            );
+            background-size: 100% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
             text-transform: uppercase;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
 
         .container {
@@ -38,30 +50,33 @@
             padding: 20px;
         }
 
-        header { padding: 30px 0; border-bottom: 1px solid rgba(184, 150, 77, 0.1); }
-        header p { letter-spacing: 2px; font-size: 0.8rem; color: #888; }
+        header { padding: 30px 0; border-bottom: 1px solid rgba(179, 135, 40, 0.2); }
+        header p { letter-spacing: 3px; font-size: 0.8rem; color: #888; font-weight: 300; }
 
-        /* MOCKUP */
-        .hero-mockup { margin: 40px 0; }
+        /* MOCKUP CON BRILLO DORADO */
+        .hero-mockup { margin: 40px 0; position: relative; }
         .hero-mockup img { 
             width: 100%; 
             max-width: 450px; 
-            filter: drop-shadow(0 20px 40px rgba(184, 150, 77, 0.2));
+            filter: drop-shadow(0 0 30px rgba(179, 135, 40, 0.3));
             border-radius: 8px;
         }
 
         /* FORMULARIO */
         .capture-box {
-            border: 1px solid rgba(184, 150, 77, 0.3);
+            border: 1px solid rgba(179, 135, 40, 0.3);
             padding: 30px;
             margin: 40px 0;
-            background: #000;
+            background: linear-gradient(145deg, #0a0a0a, #000);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
         input {
-            width: 100%; padding: 15px; margin-bottom: 15px;
-            background: #151515; border: 1px solid #333;
+            width: 100%; padding: 18px; margin-bottom: 15px;
+            background: #111; border: 1px solid #333;
             color: white; box-sizing: border-box;
+            border-radius: 4px;
         }
+        input:focus { border-color: var(--gold-mid); outline: none; }
 
         /* PRODUCTOS */
         .product-card {
@@ -69,38 +84,69 @@
             border: 1px solid #222;
             padding: 20px; margin-bottom: 15px;
             display: flex; align-items: center; gap: 20px;
-            border-left: 3px solid var(--gold-mid);
+            border-left: 4px solid var(--gold-mid);
             text-align: left;
         }
-        .product-meta h4 { margin: 0; color: var(--gold-light); text-transform: uppercase; font-size: 0.9rem; }
-        .product-meta p { margin: 0; font-size: 0.8rem; color: #777; }
+        .product-meta h4 { margin: 0; color: var(--gold-light); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+
+        /* BOTÓN ORO METALIZADO 3D */
+        .btn-alfa {
+            width: 100%; 
+            padding: 22px;
+            background: linear-gradient(
+                180deg, 
+                var(--gold-shine) 0%, 
+                var(--gold-light) 20%, 
+                var(--gold-mid) 50%, 
+                var(--gold-dark) 100%
+            );
+            border: none; 
+            color: #221a05; /* Marrón oscuro para mejor contraste */
+            font-weight: 900;
+            text-transform: uppercase; 
+            cursor: pointer; 
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            box-shadow: 
+                0 4px 15px rgba(0,0,0,0.5),
+                inset 0 1px 0 rgba(255,255,255,0.5); /* Reflejo superior */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-alfa:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(179, 135, 40, 0.4);
+        }
 
         /* OFERTA FINAL Y CONTADOR */
         .offer-final {
-            border: 1px solid var(--gold-mid);
+            border: 2px solid var(--gold-dark);
             padding: 40px 20px; margin: 60px 0;
-            background: #000;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
         .countdown-wrap { display: flex; justify-content: center; gap: 10px; margin: 25px 0; }
-        .time-unit { background: #111; border: 1px solid #222; width: 70px; padding: 15px 0; }
-        .time-unit span { display: block; font-size: 1.8rem; font-weight: bold; color: var(--gold-mid); }
-        .time-unit label { font-size: 0.6rem; color: #555; text-transform: uppercase; }
-
-        .btn-alfa {
-            width: 100%; padding: 22px;
-            background: linear-gradient(180deg, var(--gold-light), var(--gold-mid), var(--gold-dark));
-            border: none; color: #000; font-weight: 900;
-            text-transform: uppercase; cursor: pointer; font-size: 1.1rem;
+        .time-unit { 
+            background: linear-gradient(180deg, #151515, #0a0a0a); 
+            border: 1px solid var(--gold-shadow); 
+            width: 70px; 
+            padding: 15px 0; 
+            border-radius: 4px;
         }
+        .time-unit span { display: block; font-size: 1.8rem; font-weight: bold; color: var(--gold-light); }
+        .time-unit label { font-size: 0.6rem; color: #555; text-transform: uppercase; letter-spacing: 1px; }
 
-        footer { padding: 60px 0; font-size: 0.8rem; color: #444; border-top: 1px solid #111; }
+        footer { padding: 60px 0; font-size: 0.8rem; color: #444; border-top: 1px solid #111; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1 class="gold-text">CÓDIGO ALFA VIP</h1>
+        <h1 class="gold-text" style="font-size: 3.5rem; margin: 0;">CÓDIGO ALFA VIP</h1>
         <p>EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
     </header>
 
@@ -109,23 +155,23 @@
     </div>
 
     <div class="capture-box">
-        <h2 style="font-weight: 400; color: #ccc; font-size: 1.2rem;">DESCARGA EL MANIFIESTO GRATIS</h2>
+        <h2 style="font-weight: 400; color: #eee; font-size: 1.2rem; margin-bottom: 25px; letter-spacing: 1px;">DESCARGA EL MANIFIESTO GRATIS</h2>
         <input type="text" placeholder="Tu Nombre">
         <input type="email" placeholder="Tu Email">
         <button class="btn-alfa">ACCEDER GRATIS AHORA</button>
     </div>
 
     <div style="margin: 60px 0;">
-        <h3 class="gold-text">Contenido del Protocolo</h3>
+        <h3 class="gold-text" style="font-size: 1.5rem; margin-bottom: 30px;">Contenido del Protocolo</h3>
         <div class="product-card">
-            <div style="font-size: 1.5rem;">🦅</div>
+            <div style="font-size: 2rem;">🦅</div>
             <div class="product-meta">
                 <h4>Leyes del Dinero Antiguas</h4>
                 <p>50 reglas que las familias de élite mantienen en secreto.</p>
             </div>
         </div>
         <div class="product-card">
-            <div style="font-size: 1.5rem;">🎯</div>
+            <div style="font-size: 2rem;">🎯</div>
             <div class="product-meta">
                 <h4>Rastreador de Flujo de Caja</h4>
                 <p>Herramienta táctica para detener el sangrado de capital.</p>
@@ -134,8 +180,8 @@
     </div>
 
     <div class="offer-final">
-        <span style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem;">Oferta de Lanzamiento</span>
-        <h2 class="gold-text" style="font-size: 2.8rem; margin: 15px 0;">TODO POR $27</h2>
+        <span style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; color: #666;">Oferta de Lanzamiento</span>
+        <h2 class="gold-text" style="font-size: 3.2rem; margin: 15px 0;">TODO POR $27</h2>
 
         <div class="countdown-wrap">
             <div class="time-unit"><span id="days">00</span><label>Días</label></div>
@@ -145,17 +191,16 @@
         </div>
 
         <button class="btn-alfa">ADQUIRIR PROTOCOLO VIP</button>
-        <p style="font-size: 0.7rem; color: #444; margin-top: 15px;">Garantía de 7 días • Acceso Inmediato</p>
+        <p style="font-size: 0.7rem; color: #444; margin-top: 15px; letter-spacing: 1px;">Garantía de 7 días • Acceso Inmediato • Pago Único</p>
     </div>
 
     <footer>
         CÓDIGO ALFA VIP © 2026<br>
-        Modo de aislamiento activado
+        <span style="opacity: 0.5;">MODO DE AISLAMIENTO ACTIVADO</span>
     </footer>
 </div>
 
 <script>
-    // Configuración del contador (2 días desde ahora)
     const countDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); 
 
     function updateCountdown() {
