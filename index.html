@@ -1,236 +1,237 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
-    <style>
-        :root {
-            --gold-light: #f5e39d;
-            --gold-mid: #b8964d;
-            --gold-dark: #91712a;
-            --bg-black: #050505;
-            --card-bg: #0f0f0f;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
 
-        body {
-            margin: 0;
-            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg-black);
-            color: #ffffff;
-            line-height: 1.5;
-        }
+<style>
+:root {
+    --gold-light: #f5e39d;
+    --gold-mid: #b8964d;
+    --gold-dark: #91712a;
+    --bg-black: #0a0a0a;
+    --card-bg: #111111;
+}
 
-        .gold-text {
-            background: linear-gradient(to bottom, var(--gold-light) 0%, var(--gold-mid) 45%, var(--gold-dark) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 900;
-            text-transform: uppercase;
-        }
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg-black);
+    color: #FFFFFF;
+}
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+/* TEXTO ORO */
+.gold-text {
+    background: linear-gradient(120deg,#fff8dc,#f0c040,#d4a017,#f8e27a,#c9a84c,#8b6914);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    text-transform: uppercase;
+}
 
-        header {
-            text-align: center;
-            padding: 30px 0;
-            border-bottom: 1px solid rgba(184, 150, 77, 0.1);
-        }
+/* CONTENEDOR */
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
 
-        .hero { text-align: center; padding: 50px 0 20px 0; }
-        .hero h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
-        
-        /* BOX DE CAPTACIÓN INICIAL */
-        .capture-box {
-            border: 1px solid rgba(184, 150, 77, 0.4);
-            padding: 30px;
-            margin: 40px 0;
-            background: linear-gradient(180deg, rgba(15, 15, 15, 1) 0%, rgba(5, 5, 5, 1) 100%);
-            text-align: center;
-        }
+/* HEADER */
+header {
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(184,150,77,0.1);
+}
 
-        input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            background: #151515;
-            border: 1px solid #333;
-            color: white;
-            box-sizing: border-box;
-            border-radius: 2px;
-        }
+/* MOCKUP */
+.hero-mockup {
+    position: relative;
+    text-align: center;
+    margin: 40px 0;
+}
 
-        /* PRODUCTOS / ARSENAL */
-        .product-card {
-            background: var(--card-bg);
-            border: 1px solid #222;
-            padding: 20px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-left: 3px solid var(--gold-mid);
-        }
+.hero-mockup img {
+    width: 420px;
+    max-width: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.8));
+}
 
-        .product-meta { flex-grow: 1; }
-        .product-meta h4 { margin: 0; color: var(--gold-light); text-transform: uppercase; font-size: 0.9rem; }
-        .product-meta p { margin: 0; font-size: 0.8rem; color: #777; }
+.hero-mockup::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(212,160,23,0.25), transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(70px);
+    z-index: -1;
+}
 
-        /* SECCIÓN OFERTA FINAL (CON EL CONTADOR) */
-        .offer-final {
-            border: 1px solid var(--gold-mid);
-            padding: 40px 20px;
-            margin: 60px 0;
-            background: #000;
-            text-align: center;
-            position: relative;
-        }
+/* CAPTURE */
+.capture-box {
+    border: 1px solid rgba(184,150,77,0.4);
+    padding: 30px;
+    margin: 40px 0;
+    background: linear-gradient(180deg,#111,#050505);
+}
 
-        .price-main { font-size: 3rem; margin: 15px 0; font-weight: 400; }
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #151515;
+    border: 1px solid #333;
+    color: white;
+}
 
-        .countdown-wrap {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 25px 0;
-        }
+/* PRODUCTOS */
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid #222;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-left: 3px solid var(--gold-mid);
+}
 
-        .time-unit {
-            background: #111;
-            border: 1px solid #222;
-            width: 70px;
-            padding: 15px 0;
-        }
+/* OFERTA */
+.offer-final {
+    border: 1px solid var(--gold-mid);
+    padding: 40px 20px;
+    margin: 60px 0;
+    background: #000;
+    text-align: center;
+}
 
-        .time-unit span { display: block; font-size: 1.8rem; font-weight: bold; color: var(--gold-mid); }
-        .time-unit label { font-size: 0.6rem; text-transform: uppercase; color: #555; }
+/* BOTÓN */
+.btn-alfa {
+    width: 100%;
+    padding: 22px;
+    background: linear-gradient(180deg,#F0C040,#8B6914);
+    border: none;
+    color: #000;
+    font-weight: 900;
+    cursor: pointer;
+}
 
-        /* BOTÓN ALFA VIP */
-        .btn-alfa {
-            width: 100%;
-            padding: 22px;
-            background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-mid) 40%, var(--gold-dark) 100%);
-            border: none;
-            color: #000;
-            font-weight: 900;
-            text-transform: uppercase;
-            cursor: pointer;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
+/* COUNTDOWN */
+.countdown-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 0;
+}
 
-        /* TESTIMONIOS */
-        .testimonial { border-bottom: 1px solid #222; padding: 40px 0; }
-        .stars { color: var(--gold-mid); margin-bottom: 10px; }
+.time-unit {
+    background: #111;
+    border: 1px solid #222;
+    width: 70px;
+    padding: 15px 0;
+}
 
-        footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: #444; }
-    </style>
+.time-unit span {
+    display: block;
+    font-size: 1.8rem;
+    color: var(--gold-mid);
+}
+
+/* TESTIMONIO */
+.testimonial {
+    border-bottom: 1px solid #222;
+    padding: 40px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #444;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="container">
-    
-    <header>
-        <h1 class="gold-text">CÓDIGO ALFA VIP</h1>
-        <p style="letter-spacing: 2px; font-size: 0.8rem;">EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
-    </header>
 
-    <div class="capture-box">
-        <h2 style="font-weight: 400; color: #ccc;">DESCARGA EL MANIFIESTO GRATIS</h2>
-        <input type="text" placeholder="Tu Nombre">
-        <input type="email" placeholder="Tu Email">
-        <button class="btn-alfa">ACCEDER GRATIS AHORA</button>
+<header>
+    <h1 class="gold-text">CÓDIGO ALFA VIP</h1>
+    <p>EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
+</header>
+
+<!-- MOCKUP -->
+<div class="hero-mockup">
+    <img src="mockup-libro.png" alt="Código Alfa VIP">
+</div>
+
+<!-- CAPTURA -->
+<div class="capture-box">
+    <h2>DESCARGA EL MANIFIESTO GRATIS</h2>
+    <input type="text" placeholder="Tu Nombre">
+    <input type="email" placeholder="Tu Email">
+    <button class="btn-alfa">ACCEDER GRATIS</button>
+</div>
+
+<!-- PRODUCTOS -->
+<div class="product-card">
+    <div>🦅</div>
+    <div>
+        <h4 class="gold-text">Leyes del Dinero</h4>
+        <p>Reglas del 1%</p>
+    </div>
+</div>
+
+<!-- OFERTA -->
+<div class="offer-final">
+    <h2 class="gold-text">TODO POR $27</h2>
+
+    <div class="countdown-wrap">
+        <div class="time-unit"><span id="days">00</span></div>
+        <div class="time-unit"><span id="hours">00</span></div>
+        <div class="time-unit"><span id="minutes">00</span></div>
+        <div class="time-unit"><span id="seconds">00</span></div>
     </div>
 
-    <div class="arsenal-section" style="margin-top: 60px;">
-        <h3 class="gold-text" style="text-align: center; font-size: 1rem;">Contenido del Protocolo</h3>
-        
-        <div class="product-card">
-            <div style="font-size: 1.5rem;">🦅</div>
-            <div class="product-meta">
-                <h4>Leyes del Dinero Antiguas</h4>
-                <p>50 reglas que las familias de élite mantienen en secreto.</p>
-            </div>
-            <div style="color: #444; text-decoration: line-through;">$47</div>
-        </div>
+    <button class="btn-alfa">COMPRAR AHORA</button>
+</div>
 
-        <div class="product-card">
-            <div style="font-size: 1.5rem;">🎯</div>
-            <div class="product-meta">
-                <h4>Rastreador de Flujo de Caja</h4>
-                <p>Herramienta táctica para detener el sangrado de capital.</p>
-            </div>
-            <div style="color: #444; text-decoration: line-through;">$27</div>
-        </div>
-    </div>
+<!-- TESTIMONIO -->
+<div class="testimonial">
+    ⭐⭐⭐⭐⭐
+    <p>"Esto cambió todo."</p>
+</div>
 
-    <div class="offer-final">
-        <span style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem;">Oferta de Lanzamiento</span>
-        <h2 class="price-main gold-text">TODO POR $27</h2>
-
-        <div class="countdown-wrap">
-            <div class="time-unit"><span id="days">00</span><label>Día</label></div>
-            <div class="time-unit"><span id="hours">00</span><label>Hrs</label></div>
-            <div class="time-unit"><span id="minutes">00</span><label>Min</label></div>
-            <div class="time-unit"><span id="seconds">00</span><label>Seg</label></div>
-        </div>
-
-        <button class="btn-alfa">ADQUIRIR PROTOCOLO VIP</button>
-        <p style="font-size: 0.7rem; color: #444; margin-top: 15px;">Garantía de 7 días • 100% Calificaciones Positivas</p>
-    </div>
-
-    <section>
-        <h3 style="text-align: center; color: var(--gold-mid); font-size: 0.8rem; letter-spacing: 2px;">RESULTADOS DE LA COMUNIDAD</h3>
-        <div class="testimonial">
-            <div class="stars">★★★★★</div>
-            <p style="font-style: italic; color: #ccc;">"Dejé de ser un participante en la vida de otros y me convertí en el arquitecto de mi propio destino."</p>
-            <p style="font-size: 0.8rem;"><strong>Javier F.</strong> — Madrid</p>
-        </div>
-    </section>
-
-    <footer>
-        CÓDIGO ALFA VIP © 2026<br>
-        Modo de aislamiento activado
-    </footer>
+<footer>
+    CÓDIGO ALFA VIP © 2026
+</footer>
 
 </div>
 
 <script>
-    // Configura la fecha final (ejemplo: 48 horas desde ahora para que siempre se vea activo al probar)
-    const countDate = new Date();
-    countDate.setDate(countDate.getDate() + 2); 
+const countDate = new Date();
+countDate.setDate(countDate.getDate() + 2);
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const gap = countDate - now;
+function updateCountdown() {
+    const now = new Date().getTime();
+    const gap = countDate - now;
 
-        const second = 1000;
-        const minute = second * 60;
-        const hour = minute * 60;
-        const day = hour * 24;
+    const d = Math.floor(gap / (1000*60*60*24));
+    const h = Math.floor((gap % (1000*60*60*24)) / (1000*60*60));
+    const m = Math.floor((gap % (1000*60*60)) / (1000*60));
+    const s = Math.floor((gap % (1000*60)) / 1000);
 
-        const d = Math.floor(gap / day);
-        const h = Math.floor((gap % day) / hour);
-        const m = Math.floor((gap % hour) / minute);
-        const s = Math.floor((gap % minute) / second);
+    document.getElementById('days').innerText = d;
+    document.getElementById('hours').innerText = h;
+    document.getElementById('minutes').innerText = m;
+    document.getElementById('seconds').innerText = s;
+}
 
-        document.getElementById('days').innerText = d < 10 ? '0' + d : d;
-        document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
-        document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
-        document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
-
-        if (gap < 0) {
-            clearInterval(timerInterval);
-            document.querySelector('.countdown-wrap').innerHTML = "OFERTA TERMINADA";
-        }
-    }
-
-    const timerInterval = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Ejecución inicial
+setInterval(updateCountdown, 1000);
 </script>
 
 </body>
