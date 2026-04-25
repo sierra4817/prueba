@@ -6,12 +6,13 @@
     <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
     <style>
         :root {
-            /* EL DORADO REAL DE TU IMAGEN */
-            --gold-bright: #fceabb; /* El brillo máximo */
-            --gold-main: #f8b500;   /* El tono medio vibrante */
-            --gold-deep: #bb8613;   /* La sombra metálica */
-            --gold-shadow: #5d4106; /* El tono más oscuro del relieve */
+            /* PALETA ORO LÍQUIDO (Metal pulido) */
+            --gold-bright: #fcf7ba;
+            --gold-mid: #bf953f;
+            --gold-deep: #aa771c;
+            --gold-dark: #825d02;
             --bg-black: #050505;
+            --card-bg: #0f0f0f;
         }
 
         body {
@@ -19,25 +20,25 @@
             font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-black);
             color: #ffffff;
+            line-height: 1.6;
             text-align: center;
         }
 
-        /* EFECTO METALIZADO DE ALTO CONTRASTE */
+        /* EFECTO ORO LÍQUIDO */
         .gold-text {
             background: linear-gradient(
-                to bottom, 
-                #fceabb 0%, 
-                #f8b500 25%, 
-                #bb8613 50%, 
-                #fceabb 75%, 
-                #5d4106 100%
+                to bottom,
+                var(--gold-bright) 0%,
+                var(--gold-mid) 22%,
+                var(--gold-bright) 45%,
+                var(--gold-deep) 70%,
+                var(--gold-bright) 100%
             );
-            background-size: 100% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 900;
             text-transform: uppercase;
-            filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.4));
         }
 
         .container {
@@ -46,96 +47,114 @@
             padding: 20px;
         }
 
-        /* MOCKUP CON SOMBRA INTEGRADA */
+        header { padding: 40px 0; border-bottom: 1px solid rgba(191, 149, 63, 0.2); }
+        header p { letter-spacing: 3px; font-size: 0.75rem; color: #888; font-weight: 300; }
+
+        /* MOCKUP PRINCIPAL */
         .hero-mockup { margin: 40px 0; }
         .hero-mockup img { 
             width: 100%; 
-            max-width: 450px; 
-            filter: drop-shadow(0 10px 30px rgba(187, 134, 19, 0.3));
-            border-radius: 4px;
+            max-width: 480px; 
+            filter: drop-shadow(0 20px 50px rgba(170, 119, 28, 0.3));
+            border-radius: 8px;
         }
 
-        /* BOTÓN CON EFECTO ORO PULIDO */
-        .btn-alfa {
-            width: 100%;
-            padding: 22px;
-            background: linear-gradient(
-                180deg, 
-                #fceabb 0%, 
-                #f8b500 40%, 
-                #bb8613 60%, 
-                #5d4106 100%
-            );
-            border: none;
-            color: #000;
-            font-weight: 900;
-            text-transform: uppercase;
-            cursor: pointer;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-            transition: 0.3s;
+        /* CAJA DE CAPTACIÓN */
+        .capture-box {
+            border: 1px solid rgba(191, 149, 63, 0.4);
+            padding: 35px 25px;
+            margin: 40px 0;
+            background: linear-gradient(180deg, #111 0%, #000 100%);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        input {
+            width: 100%; padding: 18px; margin-bottom: 15px;
+            background: #151515; border: 1px solid #333;
+            color: white; box-sizing: border-box; font-size: 1rem;
         }
 
-        .btn-alfa:hover {
-            filter: brightness(1.2);
-            box-shadow: 0 0 20px rgba(248, 181, 0, 0.4);
-        }
-
-        /* CONTADOR ESTILO VIP */
-        .countdown-wrap { display: flex; justify-content: center; gap: 10px; margin: 25px 0; }
-        .time-unit { 
-            background: #111; 
-            border: 1px solid #2a2a2a; 
-            width: 70px; 
-            padding: 15px 0; 
-            box-shadow: inset 0 0 10px rgba(187, 134, 19, 0.1);
-        }
-        .time-unit span { 
-            display: block; 
-            font-size: 1.8rem; 
-            font-weight: bold; 
-            color: var(--gold-main); 
-        }
-        .time-unit label { font-size: 0.6rem; color: #555; text-transform: uppercase; }
-
+        /* PRODUCTOS / ARSENAL */
         .product-card {
-            background: #0f0f0f;
-            border: 1px solid #1a1a1a;
-            padding: 20px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-left: 4px solid var(--gold-main);
+            background: var(--card-bg);
+            border: 1px solid #222;
+            padding: 20px; margin-bottom: 15px;
+            display: flex; align-items: center; gap: 20px;
+            border-left: 3px solid var(--gold-mid);
             text-align: left;
         }
+        .product-meta h4 { margin: 0; color: var(--gold-bright); text-transform: uppercase; font-size: 0.9rem; }
+        .product-meta p { margin: 0; font-size: 0.8rem; color: #777; }
+        .old-price { text-decoration: line-through; color: #444; font-size: 0.8rem; }
 
-        footer { padding: 40px 0; font-size: 0.8rem; color: #333; }
+        /* BOTÓN ORO METALIZADO */
+        .btn-alfa {
+            width: 100%; padding: 22px;
+            background: linear-gradient(180deg, #fef082 0%, #e1b333 45%, #825d02 100%);
+            border: none; color: #000; font-weight: 900;
+            text-transform: uppercase; cursor: pointer; font-size: 1.1rem;
+            letter-spacing: 1px; border-radius: 4px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6), inset 0 1px 1px rgba(255,255,255,0.8);
+            transition: 0.3s;
+        }
+        .btn-alfa:hover { filter: brightness(1.15); transform: translateY(-2px); }
+
+        /* CONTADOR */
+        .countdown-wrap { display: flex; justify-content: center; gap: 10px; margin: 30px 0; }
+        .time-unit { background: #111; border: 1px solid #222; width: 70px; padding: 15px 0; }
+        .time-unit span { display: block; font-size: 1.8rem; font-weight: bold; color: var(--gold-mid); }
+        .time-unit label { font-size: 0.6rem; color: #555; text-transform: uppercase; }
+
+        /* TESTIMONIOS */
+        .testimonial { border-bottom: 1px solid #222; padding: 40px 0; text-align: left; }
+        .stars { color: var(--gold-mid); margin-bottom: 10px; }
+
+        footer { padding: 80px 0 40px; font-size: 0.8rem; color: #444; border-top: 1px solid #111; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <header style="padding: 20px 0;">
-        <h1 class="gold-text" style="font-size: 3rem; margin: 0;">CÓDIGO ALFA VIP</h1>
-        <p style="color: #666; letter-spacing: 3px; font-size: 0.7rem;">NO COMPITAS, LIDERA</p>
+    <header>
+        <h1 class="gold-text" style="font-size: 3rem; margin:0;">CÓDIGO ALFA VIP</h1>
+        <p>EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
     </header>
 
     <div class="hero-mockup">
         <img src="92A77E8D-8FCC-443D-B6FA-72F166413416.png" alt="Código Alfa VIP">
     </div>
 
-    <div style="border: 1px solid #1a1a1a; padding: 30px; background: #000; margin-bottom: 40px;">
-        <h2 style="font-weight: 300; font-size: 1.2rem; margin-bottom: 25px;">DESCARGA EL MANIFIESTO GRATIS</h2>
-        <input type="text" placeholder="Tu Nombre" style="width:100%; padding:15px; margin-bottom:10px; background:#111; border:1px solid #333; color:#fff;">
-        <input type="email" placeholder="Tu Email" style="width:100%; padding:15px; margin-bottom:20px; background:#111; border:1px solid #333; color:#fff;">
-        <button class="btn-alfa">ACCEDER AHORA</button>
+    <div class="capture-box">
+        <h2 style="font-weight: 300; color: #ccc; margin-bottom: 25px;">DESCARGA EL MANIFIESTO GRATIS</h2>
+        <input type="text" placeholder="Tu Nombre">
+        <input type="email" placeholder="Tu Email">
+        <button class="btn-alfa">ACCEDER GRATIS AHORA</button>
     </div>
 
-    <div class="offer-final" style="border: 1px solid var(--gold-deep); padding: 40px 20px;">
-        <span style="font-size: 0.7rem; letter-spacing: 2px;">OFERTA DE LANZAMIENTO</span>
-        <h2 class="gold-text" style="font-size: 3rem; margin: 10px 0;">TODO POR $27</h2>
+    <div style="margin: 80px 0;">
+        <h3 class="gold-text" style="font-size: 1.2rem; margin-bottom: 30px;">Protocolos de Sabiduría Estratégica</h3>
+        
+        <div class="product-card">
+            <div style="font-size: 1.5rem;">🦅</div>
+            <div class="product-meta">
+                <h4>Leyes del Dinero Antiguas</h4>
+                <p>50 reglas que las familias de élite mantienen en secreto.</p>
+            </div>
+            <div class="old-price">$47</div>
+        </div>
+
+        <div class="product-card">
+            <div style="font-size: 1.5rem;">🎯</div>
+            <div class="product-meta">
+                <h4>Rastreador de Flujo de Caja</h4>
+                <p>Herramienta táctica para detener el sangrado de capital.</p>
+            </div>
+            <div class="old-price">$27</div>
+        </div>
+    </div>
+
+    <div style="border: 1px solid var(--gold-mid); padding: 50px 20px; background: #000; position: relative;">
+        <span style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.7rem; color: var(--gold-bright);">Oferta de Lanzamiento</span>
+        <h2 class="gold-text" style="font-size: 3.5rem; margin: 15px 0;">TODO POR $27</h2>
 
         <div class="countdown-wrap">
             <div class="time-unit"><span id="days">01</span><label>Días</label></div>
@@ -144,28 +163,47 @@
             <div class="time-unit"><span id="seconds">12</span><label>Seg</label></div>
         </div>
 
-        <button class="btn-alfa">COMPRAR PAQUETE VIP</button>
+        <button class="btn-alfa">ADQUIRIR PAQUETE VIP</button>
+        <p style="font-size: 0.7rem; color: #555; margin-top: 20px;">Garantía de 7 días • Acceso Inmediato • Pago Único</p>
     </div>
 
-    <footer>CÓDIGO ALFA VIP © 2026</footer>
+    <section style="margin-top: 80px;">
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--gold-mid);">Resultados de la Comunidad</p>
+        
+        <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p style="font-style: italic; color: #ccc; font-size: 1.1rem;">"Dejé de ser un participante en la vida de otros y me convertí en el arquitecto de mi propio destino."</p>
+            <p style="font-size: 0.8rem; color: var(--gold-mid);"><strong>Javier F.</strong> — Madrid</p>
+        </div>
+    </section>
+
+    <footer>
+        CÓDIGO ALFA VIP © 2026<br>
+        <span style="color: #222; letter-spacing: 1px;">MODO DE AISLAMIENTO ACTIVADO</span>
+    </footer>
 </div>
 
 <script>
-    const countDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); 
-    function update() {
+    // MOTOR DEL CONTADOR REAL
+    const targetDate = new Date().getTime() + (1 * 24 * 60 * 60 * 1000 + 8 * 60 * 60 * 1000); 
+
+    function updateTimer() {
         const now = new Date().getTime();
-        const gap = countDate - now;
-        const d = Math.floor(gap / (1000 * 60 * 60 * 24));
-        const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((gap % (1000 * 60)) / 1000);
+        const diff = targetDate - now;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
         document.getElementById('days').innerText = d < 10 ? '0'+d : d;
         document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
         document.getElementById('minutes').innerText = m < 10 ? '0'+m : m;
         document.getElementById('seconds').innerText = s < 10 ? '0'+s : s;
     }
-    setInterval(update, 1000);
-    update();
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
 </script>
 
 </body>
