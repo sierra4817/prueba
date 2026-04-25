@@ -6,13 +6,16 @@
 <title>Método de Riqueza Generacional</title>
 
 <style>
+
+/* BASE */
 body {
     margin: 0;
     font-family: 'Georgia', serif;
-    background: #050505;
-    color: #fff;
+    background: #0a0a0a;
+    color: #FFFFFF;
 }
 
+/* CONTENEDOR */
 .container {
     max-width: 900px;
     margin: auto;
@@ -20,15 +23,16 @@ body {
     text-align: center;
 }
 
-/* HERO */
+/* TITULO */
 h1 {
     font-size: 38px;
-    color: #d4af37;
+    color: #C9A84C;
     line-height: 1.3;
 }
 
+/* SUB */
 .sub {
-    color: #aaa;
+    color: #AAAAAA;
     font-size: 18px;
     margin-top: 20px;
 }
@@ -42,11 +46,12 @@ h1 {
     width: 100%;
     height: 400px;
     border-radius: 10px;
+    border: 1px solid #8B6914;
 }
 
 /* CTA */
 .cta button {
-    background: linear-gradient(90deg, gold, #b8962e);
+    background: linear-gradient(180deg, #F0C040, #8B6914);
     border: none;
     padding: 18px;
     width: 100%;
@@ -55,12 +60,18 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     border-radius: 6px;
+    color: #0a0a0a;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    opacity: 0.9;
 }
 
 /* COUNTDOWN */
 .countdown {
     margin-top: 10px;
-    color: #ff4d4d;
+    color: #C9A84C;
 }
 
 /* STATS */
@@ -68,27 +79,28 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    border-top: 1px solid #8B6914;
+    border-bottom: 1px solid #8B6914;
     padding: 20px 0;
 }
 
 .stat h2 {
-    color: gold;
+    color: #D4A017;
+    margin: 0;
 }
 
-/* BENEFITS */
+/* BENEFICIOS */
 .benefits {
     margin-top: 50px;
     text-align: left;
 }
 
 .benefits h3 {
-    color: gold;
+    color: #C9A84C;
 }
 
 .benefits p {
-    color: #ccc;
+    color: #AAAAAA;
 }
 
 /* TESTIMONIOS */
@@ -97,32 +109,39 @@ h1 {
 }
 
 .testimonial {
-    background: #111;
+    background: rgba(255,255,255,0.03);
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
+    border: 1px solid #8B6914;
+    color: #FFFFFF;
 }
 
-/* PRICE */
+/* PRECIO */
 .price {
     margin-top: 60px;
 }
 
 .old {
     text-decoration: line-through;
-    color: #888;
+    color: #AAAAAA;
 }
 
 .new {
-    font-size: 32px;
-    color: gold;
+    font-size: 36px;
+    color: #F0C040;
+}
+
+/* CTA FINAL */
+.cta-final {
+    margin-top: 30px;
 }
 
 /* FOOTER */
 .footer {
     margin-top: 40px;
     font-size: 12px;
-    color: #777;
+    color: #AAAAAA;
 }
 
 /* RESPONSIVE */
@@ -130,6 +149,7 @@ h1 {
     h1 { font-size: 26px; }
     .stats { flex-direction: column; gap: 20px; }
 }
+
 </style>
 </head>
 
@@ -142,8 +162,7 @@ El Método de la Riqueza Generacional que el 1% usa en silencio
 </h1>
 
 <p class="sub">
-Lo que estás a punto de ver no es motivación.  
-Es estructura real para crear poder, dinero y control.
+No es motivación. Es estructura real para crear dinero, poder y control.
 </p>
 
 <!-- VIDEO -->
@@ -154,7 +173,7 @@ Es estructura real para crear poder, dinero y control.
 <!-- CTA -->
 <div class="cta">
 <button>ACCESO INMEDIATO — $27</button>
-<div class="countdown">⏳ Oferta expira en 14:59</div>
+<div class="countdown">⏳ Oferta expira pronto</div>
 </div>
 
 <!-- STATS -->
@@ -179,27 +198,28 @@ Es estructura real para crear poder, dinero y control.
 <div class="benefits">
 <h3>Lo que aprenderás:</h3>
 
-<p>✔ Cómo construir riqueza que no depende de tu tiempo</p>
-<p>✔ El sistema mental del 1% (no motivación, estructura)</p>
-<p>✔ Cómo usar el dinero como herramienta, no como objetivo</p>
-<p>✔ Errores invisibles que mantienen a la mayoría estancada</p>
+<p>✔ Cómo construir riqueza sin depender de tu tiempo</p>
+<p>✔ El sistema mental del 1% (estructura, no motivación)</p>
+<p>✔ Cómo usar el dinero como herramienta estratégica</p>
+<p>✔ Los errores invisibles que te mantienen estancado</p>
 </div>
 
 <!-- TESTIMONIOS -->
 <div class="testimonials">
-<h3 style="color:gold;">Resultados reales:</h3>
+<h3 style="color:#C9A84C;">Resultados reales:</h3>
 
 <div class="testimonial">
-“Dejé de trabajar por dinero y empecé a construir activos.” — Carlos M.
+“Cambió completamente mi forma de ver el dinero.” — Carlos M.
 </div>
 
 <div class="testimonial">
-“Esto no es motivación, es estrategia real.” — Andrés R.
+“Esto no es humo. Es estrategia pura.” — Andrés R.
 </div>
 
 <div class="testimonial">
-“Entendí por qué nunca avanzaba.” — Luis G.
+“Ahora entiendo por qué no avanzaba.” — Luis G.
 </div>
+
 </div>
 
 <!-- PRECIO -->
@@ -209,7 +229,7 @@ Es estructura real para crear poder, dinero y control.
 </div>
 
 <!-- CTA FINAL -->
-<div class="cta">
+<div class="cta cta-final">
 <button>QUIERO ACCESO AHORA</button>
 </div>
 
