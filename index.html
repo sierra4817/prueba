@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evelyn Rothstein — Método de Riqueza</title>
+    <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
     <style>
         :root {
             --gold-light: #f5e39d;
             --gold-mid: #b8964d;
             --gold-dark: #91712a;
-            --bg-black: #0a0a0a;
-            --card-bg: #111111;
+            --bg-black: #050505;
+            --card-bg: #0f0f0f;
         }
 
         body {
             margin: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-black);
             color: #ffffff;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* TIPOGRAFÍA DORADA */
+        /* EFECTO DORADO METÁLICO */
         .gold-text {
-            background: linear-gradient(to bottom, var(--gold-light) 0%, var(--gold-mid) 50%, var(--gold-dark) 100%);
+            background: linear-gradient(to bottom, var(--gold-light) 0%, var(--gold-mid) 45%, var(--gold-dark) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            font-weight: bold;
+            font-weight: 900;
+            text-transform: uppercase;
         }
 
         .container {
@@ -36,213 +37,216 @@
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(184, 150, 77, 0.2);
-        }
-
-        .author-name { color: var(--gold-mid); font-size: 1.2rem; font-weight: bold; }
-
-        /* HERO SECTION */
-        .hero { text-align: center; padding: 40px 0; }
-        .hero h1 { font-size: 2.5rem; text-transform: uppercase; margin-bottom: 10px; }
-        
-        /* BOX PRINCIPAL (OFERTA) */
-        .offer-box {
-            border: 2px solid var(--gold-mid);
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 30px 0;
-            background: linear-gradient(180deg, rgba(184, 150, 77, 0.1) 0%, transparent 100%);
-        }
-
-        .offer-header {
-            background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
-            color: #000;
-            padding: 10px;
             text-align: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-transform: uppercase;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(184, 150, 77, 0.1);
         }
 
-        .offer-content { padding: 25px; }
-        .offer-title { font-size: 1.5rem; margin-bottom: 5px; }
-
-        .product-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #222;
+        /* SECCIÓN HERO */
+        .hero { text-align: center; padding: 50px 0 20px 0; }
+        .hero h1 { font-size: 3rem; margin: 0; letter-spacing: -1px; }
+        .hero p { 
+            font-size: 0.9rem; 
+            letter-spacing: 2px; 
+            color: #fff; 
+            margin-top: 10px;
+            font-weight: 300;
         }
-        .product-info { display: flex; align-items: center; gap: 15px; }
-        .old-price { text-decoration: line-through; color: #555; font-size: 0.9rem; }
 
-        /* CONTADOR */
-        .timer-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
+        /* FORMULARIO / BOX DE CAPTACIÓN */
+        .capture-box {
+            border: 1px solid rgba(184, 150, 77, 0.4);
+            padding: 30px;
+            margin: 40px 0;
+            background: linear-gradient(180deg, rgba(15, 15, 15, 1) 0%, rgba(5, 5, 5, 1) 100%);
+            text-align: center;
         }
-        .timer-box {
-            background: #1a1a1a;
+
+        .capture-box h2 { font-size: 1.2rem; margin-bottom: 25px; font-weight: 400; color: #ccc; }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #151515;
             border: 1px solid #333;
-            padding: 10px;
-            border-radius: 4px;
-            min-width: 50px;
-            text-align: center;
+            color: white;
+            box-sizing: border-box;
+            border-radius: 2px;
         }
-        .timer-box span { display: block; font-size: 1.2rem; font-weight: bold; color: var(--gold-mid); }
-        .timer-label { font-size: 0.6rem; text-transform: uppercase; color: #777; }
 
-        /* BOTÓN METÁLICO */
-        .btn-gold {
-            display: block;
+        /* BOTÓN ALFA VIP */
+        .btn-alfa {
             width: 100%;
             padding: 20px;
-            background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-mid) 45%, var(--gold-dark) 100%);
+            background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold-mid) 40%, var(--gold-dark) 100%);
             border: none;
-            border-radius: 4px;
             color: #000;
-            font-size: 1.1rem;
-            font-weight: 800;
+            font-weight: 900;
             text-transform: uppercase;
             cursor: pointer;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
-        .btn-gold:hover { transform: scale(1.02); }
 
-        /* TESTIMONIOS */
-        .testimonial-card {
+        .btn-alfa:hover { filter: brightness(1.2); transform: translateY(-2px); }
+
+        /* PRODUCTOS / ARSENAL */
+        .arsenal-section { margin-top: 80px; }
+        .product-card {
             background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
             border: 1px solid #222;
-        }
-        .stars { color: var(--gold-mid); margin-bottom: 10px; }
-        .testimonial-text { font-style: italic; color: #ccc; margin-bottom: 15px; }
-        .testimonial-user { display: flex; align-items: center; gap: 10px; }
-        .user-avatar { 
-            width: 40px; height: 40px; background: var(--gold-mid); 
-            border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; color: #000; font-weight: bold;
-        }
-
-        /* AUTORA */
-        .author-section { text-align: center; padding: 60px 0; }
-        .author-img {
-            width: 120px; height: 120px;
-            border-radius: 50%;
-            border: 3px solid var(--gold-mid);
+            padding: 20px;
             margin-bottom: 15px;
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-left: 3px solid var(--gold-mid);
         }
 
-        footer { text-align: center; font-size: 0.8rem; color: #555; padding: 40px 0; }
+        .product-icon { font-size: 1.5rem; }
+        .product-meta { flex-grow: 1; }
+        .product-meta h4 { margin: 0; color: var(--gold-light); text-transform: uppercase; font-size: 0.9rem; }
+        .product-meta p { margin: 0; font-size: 0.8rem; color: #777; }
+
+        /* CONTADOR */
+        .countdown-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .time-unit {
+            text-align: center;
+            background: #111;
+            padding: 10px;
+            border: 1px solid #222;
+            min-width: 60px;
+        }
+        .time-unit span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--gold-mid); }
+        .time-unit label { font-size: 0.6rem; text-transform: uppercase; color: #555; }
+
+        /* TESTIMONIOS ESTILO VIP */
+        .testimonial {
+            border-bottom: 1px solid #222;
+            padding: 40px 0;
+        }
+        .stars { color: var(--gold-mid); font-size: 0.8rem; margin-bottom: 10px; }
+        .quote { font-size: 1.1rem; font-style: italic; color: #eee; margin-bottom: 20px; }
+        .user-info { display: flex; align-items: center; gap: 15px; }
+        .avatar { 
+            width: 45px; height: 45px; background: var(--gold-dark); 
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: #000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 0 40px;
+            border-top: 1px solid #222;
+            font-size: 0.8rem;
+            color: #444;
+        }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 1.8rem; }
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    
     <header>
-        <div class="author-name">Evelyn Rothstein</div>
-        <div style="font-size: 0.8rem; border: 1px solid var(--gold-mid); padding: 5px 10px; border-radius: 4px; color: var(--gold-mid);">ACCEDER — $27</div>
+        <h1 class="gold-text">CÓDIGO ALFA VIP</h1>
+        <p>EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
     </header>
 
-    <section class="hero">
-        <h1 class="gold-text">Todo Lo Que Recibes por $27</h1>
-        <p style="color: #888;">4 productos · Un pago · Acceso inmediato</p>
+    <div class="capture-box">
+        <h2>DESCARGA EL MANIFIESTO GRATIS</h2>
+        <input type="text" placeholder="Tu Nombre">
+        <input type="email" placeholder="Tu Email">
+        <button class="btn-alfa">ACCEDER GRATIS AHORA</button>
+    </div>
+
+    <section style="text-align: center; margin: 60px 0;">
+        <h2 class="gold-text">¿QUIERES MÁS?</h2>
+        <p style="color: #ccc;">Domina tu mente con los Protocolos de Sabiduría Estoica. El complemento táctico para el 1%.</p>
     </section>
 
-    <div class="offer-box">
-        <div class="offer-header">⭐ MEJOR OFERTA — PAQUETE COMPLETO ⭐</div>
-        <div class="offer-content">
-            <h2 class="offer-title">El Arsenal Completo de Riqueza</h2>
-            <p style="font-size: 0.8rem; color: #666; margin-bottom: 20px;">Acceso instantáneo en Español e Inglés</p>
+    <div class="arsenal-section">
+        <div class="product-card">
+            <div class="product-icon">🛡️</div>
+            <div class="product-meta">
+                <h4>Protocolo de Riqueza Alfa</h4>
+                <p>El sistema de blindaje financiero — 23+ capítulos.</p>
+            </div>
+            <div style="text-decoration: line-through; color: #444;">$47</div>
+        </div>
 
-            <div class="product-item">
-                <div class="product-info"><span>📘</span> El Método De La Riqueza</div>
-                <div class="old-price">$47</div>
+        <div class="product-card">
+            <div class="product-icon">🦅</div>
+            <div class="product-meta">
+                <h4>Leyes del Dinero Antiguas</h4>
+                <p>50 reglas que las familias de élite mantienen en secreto.</p>
             </div>
-            <div class="product-item">
-                <div class="product-info"><span>⚔️</span> Los Consejos De Oro</div>
-                <div class="old-price">$47</div>
-            </div>
-            <div class="product-item">
-                <div class="product-info"><span>📋</span> Rastreador Financiero</div>
-                <div class="old-price">$27</div>
-            </div>
-            <div class="product-item" style="border:none;">
-                <div class="product-info"><span>📊</span> Calculadora de Patrimonio</div>
-                <div class="old-price">$27</div>
-            </div>
+            <div style="text-decoration: line-through; color: #444;">$47</div>
+        </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 30px;">
-                <span style="text-transform: uppercase; font-size: 0.8rem; color: #888;">Total del paquete</span>
-                <span class="gold-text" style="font-size: 2rem;">$27</span>
+        <div class="product-card">
+            <div class="product-icon">🎯</div>
+            <div class="product-meta">
+                <h4>Rastreador de Flujo de Caja</h4>
+                <p>Herramienta táctica para detener el sangrado de capital.</p>
             </div>
-
-            <div style="background: rgba(255,255,255,0.05); padding: 10px; text-align: center; border-radius: 4px; margin: 20px 0; font-size: 0.8rem; color: var(--gold-light);">
-                Oferta de lanzamiento — el precio sube pronto
-            </div>
-
-            <div class="timer-container">
-                <div class="timer-box"><span>01</span><div class="timer-label">Día</div></div>
-                <div class="timer-box"><span>14</span><div class="timer-label">Hr</div></div>
-                <div class="timer-box"><span>31</span><div class="timer-label">Min</div></div>
-                <div class="timer-box"><span>55</span><div class="timer-label">Seg</div></div>
-            </div>
-
-            <button class="btn-gold">OBTENER EL PAQUETE — $27</button>
-            <p style="text-align: center; font-size: 0.7rem; color: #555; margin-top: 15px;">🔒 Pago único · Garantía de 7 días</p>
+            <div style="text-decoration: line-through; color: #444;">$27</div>
         </div>
     </div>
 
-    <section style="margin-top: 60px;">
-        <h2 style="text-align: center; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: #666;">Reseñas de Lectores</h2>
-        <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 30px;">Qué Están Diciendo</h3>
+    <div class="capture-box" style="border-style: double; border-width: 3px;">
+        <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px;">Oferta de Lanzamiento</p>
+        <h2 class="gold-text" style="font-size: 2.5rem; margin: 10px 0;">TODO POR $27</h2>
+        
+        <div class="countdown-wrap">
+            <div class="time-unit"><span>01</span><label>Día</label></div>
+            <div class="time-unit"><span>08</span><label>Hrs</label></div>
+            <div class="time-unit"><span>45</span><label>Min</label></div>
+            <div class="time-unit"><span>12</span><label>Seg</label></div>
+        </div>
 
-        <div class="testimonial-card">
+        <button class="btn-alfa">ADQUIRIR PROTOCOLO VIP</button>
+        <p style="font-size: 0.7rem; color: #666; margin-top: 15px;">Garantía de 7 días • 100% Calificaciones Positivas</p>
+    </div>
+
+    <section>
+        <h3 style="text-align: center; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; color: var(--gold-mid);">Resultados de la Comunidad</h3>
+        
+        <div class="testimonial">
             <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"He estado siguiendo a Evelyn en Instagram... el libro es denso, práctico, sin relleno. Mi tasa de ahorro se triplicó dentro del primer mes de aplicarlo."</p>
-            <div class="testimonial-user">
-                <div class="user-avatar">S</div>
-                <div><strong>Sofía G.</strong> <br> <span style="font-size: 0.7rem; color: #555;">Madrid · Compra Verificada</span></div>
+            <p class="quote">"Dejé de ser un participante en la vida de otros y me convertí en el arquitecto de mi propio destino. Este código cambió mi visión del dinero."</p>
+            <div class="user-info">
+                <div class="avatar">J</div>
+                <div><strong>Javier F.</strong><br><span style="font-size: 0.7rem; color: #555;">Barcelona · Miembro VIP</span></div>
             </div>
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial">
             <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"El capítulo sobre gratificación diferida fue incómodo de leer porque me reconocí a mí mismo en cada ejemplo. Vale 10 veces el precio."</p>
-            <div class="testimonial-user">
-                <div class="user-avatar">R</div>
-                <div><strong>Ricardo B.</strong> <br> <span style="font-size: 0.7rem; color: #555;">Buenos Aires · Compra Verificada</span></div>
+            <p class="quote">"Es estructura real, no motivación vacía. El capítulo sobre ingeniería de flujo de caja vale 10 veces el precio."</p>
+            <div class="user-info">
+                <div class="avatar">M</div>
+                <div><strong>María L.</strong><br><span style="font-size: 0.7rem; color: #555;">Bogotá · Miembro VIP</span></div>
             </div>
         </div>
-    </section>
-
-    <section class="author-section">
-        <p style="text-transform: uppercase; font-size: 0.7rem; letter-spacing: 3px; color: var(--gold-mid);">La Autora</p>
-        <img src="https://via.placeholder.com/150" alt="Evelyn Rothstein" class="author-img">
-        <h3 style="font-size: 1.5rem; margin: 0;">Evelyn Rothstein</h3>
-        <p style="color: #666; font-size: 0.9rem; max-width: 400px; margin: 10px auto;">Ayudando a la primera generación a construir y proteger riqueza real mediante leyes financieras inmutables.</p>
     </section>
 
     <footer>
-        $148 <span class="gold-text">$27</span><br>
-        2,900+ lectores · Acceso instantáneo<br>
-        © 2026 Evelyn Rothstein Poder
+        <p>CÓDIGO ALFA VIP © 2026</p>
+        <p>Solo para aquellos que buscan el control absoluto.</p>
     </footer>
+
 </div>
 
 </body>
