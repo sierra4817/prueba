@@ -2,240 +2,145 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Código Alfa VIP | El Manifiesto del 1%</title>
-
     <style>
-        /* RESET & BASE */
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
+        :root {
+            --gold: #D4AF37;
+            --black: #0a0a0a;
+            --dark-grey: #1a1a1a;
+            --white: #ffffff;
         }
-        
+
         body {
+            background-color: var(--black);
+            color: var(--white);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #000;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        /* HERO - Mejorado con fallback de color */
-        .hero {
-            position: relative;
-            height: 300px;
-            background: #111 url('https://i.ibb.co/black-gold-marble.jpg') center/cover no-repeat;
+            padding: 0;
             display: flex;
-            align-items: center;
             justify-content: center;
-            text-align: center;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 0%, #000 95%);
-        }
-
-        .brand-name {
-            position: relative;
-            z-index: 1;
-            font-size: 48px;
-            font-weight: 900;
-            letter-spacing: 4px;
-            margin: 0;
-            background: linear-gradient(135deg, #f5e2b8 0%, #c9a96a 50%, #fff2cc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(201, 169, 106, 0.4));
-            text-transform: uppercase;
-        }
-
-        /* CONTENIDO */
-        .container {
-            max-width: 650px;
-            margin: auto;
-            padding: 20px 25px 50px;
-        }
-
-        /* TÍTULO - Optimizado para SEO (H1) */
-        .main-title {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-        }
-
-        /* META SECTION */
-        .meta {
-            display: flex;
             align-items: center;
-            justify-content: space-between;
-            border-top: 1px solid #222;
-            border-bottom: 1px solid #222;
-            padding: 20px 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background: linear-gradient(145deg, #121212, #050505);
+            border: 1px solid #333;
+            border-radius: 4px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; text-align: center; }
+        }
+
+        .book-preview img {
+            width: 300px;
+            height: auto;
+            border-radius: 2px;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.8);
+            border-left: 3px solid var(--gold);
+        }
+
+        .content { flex: 1; }
+
+        .tagline {
+            color: var(--gold);
+            letter-spacing: 3px;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 16px;
+            color: #ccc;
+            line-height: 1.6;
             margin-bottom: 30px;
         }
 
-        .price-tag {
-            background: linear-gradient(135deg, #c9a96a, #f5e2b8);
-            color: #000;
-            padding: 8px 16px;
-            font-weight: 800;
-            border-radius: 6px;
-            font-size: 18px;
-            box-shadow: 0 4px 15px rgba(201, 169, 106, 0.2);
-        }
-
-        .author-info {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-        }
-
-        /* TEXTO Y LISTA */
-        .description {
-            font-size: 18px;
-            color: #ccc;
-            margin-bottom: 25px;
-        }
-
-        .feature-list {
+        .benefits {
             list-style: none;
             padding: 0;
-            margin: 0 0 40px 0;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #eee;
         }
 
-        .feature-list li {
-            background: #0a0a0a;
-            border: 1px solid #1a1a1a;
-            margin-bottom: 12px;
-            padding: 15px 20px;
-            border-radius: 12px;
+        .benefits li {
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            transition: 0.3s;
         }
 
-        .feature-list li:hover {
-            border-color: #c9a96a;
-            transform: translateX(5px);
+        .benefits li::before {
+            content: '✓';
+            color: var(--gold);
+            margin-right: 10px;
+            font-weight: bold;
         }
 
-        .feature-list li span {
-            margin-right: 15px;
-            font-size: 20px;
-        }
-
-        /* BOTÓN VIP - Con estados de interacción */
-        .cta-container {
-            margin-top: 40px;
-        }
-
-        .btn-vip {
-            width: 100%;
-            padding: 22px;
-            border: none;
-            font-size: 16px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-
-            background: linear-gradient(135deg, #f5e2b8, #c9a96a, #a67c2e);
-            color: #000;
-
-            box-shadow: 
-                0 15px 35px rgba(201, 169, 106, 0.25),
-                inset 0 2px 4px rgba(255, 255, 255, 0.4);
-            
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .btn-vip:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(201, 169, 106, 0.4);
-        }
-
-        .btn-vip:active {
-            transform: translateY(1px);
-            box-shadow: 0 5px 15px rgba(201, 169, 106, 0.2);
-        }
-
-        /* URGENCIA */
-        .urgency-badge {
-            margin-top: 20px;
-            font-size: 13px;
-            color: #666;
-            text-align: center;
-            display: block;
-        }
-
-        .live-dot {
-            height: 8px;
-            width: 8px;
-            background-color: #c9a96a;
-            border-radius: 50%;
+        /* Nota: Para que el formulario funcione en Systeme.io, 
+        debes usar sus elementos nativos de entrada de texto arriba de este bloque 
+        o configurar el action del form según la API de tu CRM. */
+        .cta-button {
             display: inline-block;
-            margin-right: 5px;
-            animation: pulse 1.5s infinite;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 18px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .brand-name { font-size: 32px; }
-            .main-title { font-size: 28px; }
-            .hero { height: 240px; }
+        .cta-button:hover {
+            background-color: #b8962e;
+            transform: translateY(-2px);
         }
     </style>
 </head>
-
 <body>
 
-    <header class="hero">
-        <div class="brand-name">Código Alfa</div>
-    </header>
+<div class="container">
+    <div class="book-preview">
+        <img src="https://via.placeholder.com/300x450/1a1a1a/D4AF37?text=CODIGO+ALFA+VIP" alt="Libro Código Alfa VIP">
+    </div>
 
-    <main class="container">
-        <h1 class="main-title">El Código Alfa VIP: <br>Manifiesto del 1%</h1>
-
-        <div class="meta">
-            <div class="author-info">Por Código Alfa</div>
-            <div class="price-tag">$0+</div>
-        </div>
-
-        <div class="description">
-            Vivimos en una era de mediocridad estandarizada. Este no es contenido para entretenerte. 
-            Es un sistema diseñado para quienes han decidido dejar de competir y empezar a <strong>dominar</strong>.
-        </div>
-
-        <ul class="feature-list">
-            <li><span>🧠</span> Psicología del 1%: Elimina miedo y duda</li>
-            <li><span>📈</span> Estrategia financiera: Piensa como inversor</li>
-            <li><span>🛡️</span> Disciplina extrema: Control total</li>
-            <li><span>🤝</span> Estatus y poder: Círculos de alto nivel</li>
+    <div class="content">
+        <div class="tagline">La Psicología del 1%</div>
+        <h1>Deja de competir por las sobras. Lidera.</h1>
+        [span_0](start_span)[span_1](start_span)<p>Descarga gratis el manifiesto de poder para hombres que han decidido quemar sus naves y cruzar la línea hacia la excelencia absoluta[span_0](end_span)[span_1](end_span).</p>
+        
+        <ul class="benefits">
+            [span_2](start_span)<li>Reprogramación Mental: Elimina el miedo y la duda[span_2](end_span).</li>
+            [span_3](start_span)<li>Estrategia de Poder: El dinero como herramienta de libertad[span_3](end_span).</li>
+            [span_4](start_span)[span_5](start_span)<li>Presencia Ejecutiva: Domina cualquier habitación en silencio[span_4](end_span)[span_5](end_span).</li>
         </ul>
 
-        <div class="cta-container">
-            <button class="btn-vip">Descargar Acceso VIP</button>
-            <span class="urgency-badge">
-                <span class="live-dot"></span> 
-                Acceso limitado hoy · <strong>1,284</strong> ya dentro
-            </span>
-        </div>
-    </main>
+        <button class="cta-button">Acceder al Círculo del 1%</button>
+    </div>
+</div>
 
 </body>
 </html>
