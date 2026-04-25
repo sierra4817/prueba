@@ -16,13 +16,12 @@
 
 body {
     margin: 0;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg-black);
     color: #FFFFFF;
     line-height: 1.6;
 }
 
-/* TEXTO ORO PREMIUM */
 .gold-text {
     background: linear-gradient(to bottom, #f5e39d 0%, #b8964d 45%, #91712a 100%);
     -webkit-background-clip: text;
@@ -31,247 +30,147 @@ body {
     text-transform: uppercase;
 }
 
-/* CONTENEDOR */
 .container {
     max-width: 600px;
     margin: auto;
     padding: 20px;
 }
 
-/* HEADER */
 header {
     text-align: center;
     padding: 40px 0;
-    border-bottom: 1px solid rgba(184,150,77,0.1);
 }
 
-header p {
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 10px;
-}
-
-/* MOCKUP INTEGRADO */
+/* MOCKUP CONTAINER */
 .hero-mockup {
-    position: relative;
     text-align: center;
-    margin: 20px 0 50px 0;
+    margin: 20px 0 40px 0;
+    perspective: 1000px;
 }
 
 .hero-mockup img {
     width: 100%;
-    max-width: 500px;
-    filter: drop-shadow(0 30px 50px rgba(0,0,0,1));
-    border-radius: 8px;
+    max-width: 450px;
+    filter: drop-shadow(0 20px 50px rgba(184, 150, 77, 0.2));
+    border-radius: 4px;
+    animation: floating 3s ease-in-out infinite;
 }
 
-/* EFECTO DE LUZ DETRÁS DEL LIBRO */
-.hero-mockup::before {
-    content: "";
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(184, 150, 77, 0.15), transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
-/* CAPTURE BOX */
 .capture-box {
     border: 1px solid rgba(184,150,77,0.3);
-    padding: 35px 25px;
-    margin: 40px 0;
-    background: linear-gradient(180deg, #111 0%, #050505 100%);
-    text-align: center;
-}
-
-.capture-box h2 {
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-bottom: 25px;
-    color: #ccc;
-}
-
-input {
-    width: 100%;
-    padding: 18px;
-    margin-bottom: 15px;
-    background: #1a1a1a;
-    border: 1px solid #333;
-    color: white;
-    box-sizing: border-box;
-    font-size: 1rem;
-}
-
-/* BOTÓN METÁLICO */
-.btn-alfa {
-    width: 100%;
-    padding: 22px;
-    background: linear-gradient(180deg, #f5e39d 0%, #b8964d 45%, #91712a 100%);
-    border: none;
-    color: #000;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: 0.3s ease;
-}
-
-.btn-alfa:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-}
-
-/* PRODUCTOS */
-.product-card {
-    background: var(--card-bg);
-    border: 1px solid #222;
-    padding: 20px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border-left: 3px solid var(--gold-mid);
-}
-
-.product-card h4 { margin: 0; font-size: 0.9rem; }
-.product-card p { margin: 5px 0 0; font-size: 0.8rem; color: #777; }
-
-/* OFERTA FINAL */
-.offer-final {
-    border: 1px solid var(--gold-mid);
-    padding: 50px 20px;
-    margin: 60px 0;
+    padding: 30px;
     background: #000;
     text-align: center;
 }
 
-/* COUNTDOWN */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #111;
+    border: 1px solid #333;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.btn-alfa {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(180deg, #f5e39d 0%, #b8964d 50%, #91712a 100%);
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.offer-final {
+    border: 1px solid var(--gold-mid);
+    padding: 40px 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
 .countdown-wrap {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin: 30px 0;
+    gap: 10px;
+    margin: 20px 0;
 }
 
 .time-unit {
     background: #111;
+    width: 65px;
+    padding: 10px 0;
     border: 1px solid #222;
-    width: 75px;
-    padding: 15px 0;
 }
 
-.time-unit span {
-    display: block;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--gold-mid);
-}
+.time-unit span { display: block; font-size: 1.5rem; color: var(--gold-mid); font-weight: bold;}
+.time-unit label { font-size: 0.6rem; color: #555; text-transform: uppercase;}
 
-.time-unit label {
-    font-size: 0.6rem;
-    text-transform: uppercase;
-    color: #555;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 60px 0;
-    color: #444;
-    font-size: 0.8rem;
-    border-top: 1px solid #111;
-}
-
+footer { text-align: center; padding: 40px; color: #444; font-size: 0.8rem; }
 </style>
 </head>
-
 <body>
 
 <div class="container">
+    <header>
+        <h1 class="gold-text">CÓDIGO ALFA VIP</h1>
+        <p style="letter-spacing: 2px; font-size: 0.7rem; color: #888;">EL MANIFIESTO DEL 1%</p>
+    </header>
 
-<header>
-    <h1 class="gold-text">CÓDIGO ALFA VIP</h1>
-    <p>EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
-</header>
-
-<div class="hero-mockup">
-    <img src="image.png" alt="El Manifiesto del 1% Mockup">
-</div>
-
-<div class="capture-box">
-    <h2>DESCARGA EL MANIFIESTO GRATIS</h2>
-    <input type="text" placeholder="Tu Nombre">
-    <input type="email" placeholder="Tu Email">
-    <button class="btn-alfa">ACCEDER AL PROTOCOLO</button>
-</div>
-
-<div class="product-card">
-    <div style="font-size: 1.5rem;">🦅</div>
-    <div>
-        <h4 class="gold-text">Leyes del Dinero Antiguas</h4>
-        <p>50 reglas de oro que las familias de élite mantienen en secreto.</p>
-    </div>
-</div>
-
-<div class="product-card">
-    <div style="font-size: 1.5rem;">🎯</div>
-    <div>
-        <h4 class="gold-text">Rastreador Financiero</h4>
-        <p>Herramienta táctica para dominar tu flujo de caja.</p>
-    </div>
-</div>
-
-<div class="offer-final">
-    <span style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem;">Oferta de Lanzamiento</span>
-    <h2 class="gold-text" style="font-size: 2.8rem; margin: 15px 0;">TODO POR $27</h2>
-
-    <div class="countdown-wrap">
-        <div class="time-unit"><span id="days">00</span><label>Días</label></div>
-        <div class="time-unit"><span id="hours">00</span><label>Hrs</label></div>
-        <div class="time-unit"><span id="minutes">00</span><label>Min</label></div>
-        <div class="time-unit"><span id="seconds">00</span><label>Seg</label></div>
+    <div class="hero-mockup">
+        <img src="https://i.ibb.co/v4m6p6p/mockup-alfa.png" onerror="this.src='https://via.placeholder.com/450x550/000000/b8964d?text=CODIGO+ALFA+VIP'" alt="Libro Código Alfa">
     </div>
 
-    <button class="btn-alfa">OBTENER PAQUETE COMPLETO</button>
-    <p style="font-size: 0.7rem; color: #444; margin-top: 15px;">Garantía de 7 días • Acceso Inmediato</p>
-</div>
+    <div class="capture-box">
+        <h2 style="font-weight: 300; font-size: 1.1rem; margin-bottom: 20px;">DESCARGA EL MANIFIESTO GRATIS</h2>
+        <input type="text" placeholder="Tu Nombre">
+        <input type="email" placeholder="Tu Email">
+        <button class="btn-alfa">ACCEDER AHORA</button>
+    </div>
 
-<footer>
-    CÓDIGO ALFA VIP © 2026<br>
-    Modo de aislamiento activado
-</footer>
+    <div class="offer-final">
+        <span style="font-size: 0.7rem; letter-spacing: 2px;">OFERTA DE LANZAMIENTO</span>
+        <h2 class="gold-text" style="font-size: 2.5rem; margin: 10px 0;">TODO POR $27</h2>
+        
+        <div class="countdown-wrap">
+            <div class="time-unit"><span id="days">00</span><label>Días</label></div>
+            <div class="time-unit"><span id="hours">00</span><label>Hrs</label></div>
+            <div class="time-unit"><span id="minutes">00</span><label>Min</label></div>
+            <div class="time-unit"><span id="seconds">00</span><label>Seg</label></div>
+        </div>
 
+        <button class="btn-alfa">OBTENER PAQUETE</button>
+    </div>
+
+    <footer>CÓDIGO ALFA VIP © 2026</footer>
 </div>
 
 <script>
-// Fecha de finalización: 2 días desde ahora
-const countDate = new Date();
-countDate.setDate(countDate.getDate() + 2);
+    const countDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); 
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const gap = countDate - now;
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const gap = countDate - now;
 
-    const d = Math.floor(gap / (1000 * 60 * 60 * 24));
-    const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((gap % (1000 * 60)) / 1000);
+        const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+        const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((gap % (1000 * 60)) / 1000);
 
-    document.getElementById('days').innerText = d < 10 ? '0' + d : d;
-    document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
-    document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
-    document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
+        document.getElementById('days').innerText = d < 10 ? '0'+d : d;
+        document.getElementById('hours').innerText = h < 10 ? '0'+h : h;
+        document.getElementById('minutes').innerText = m < 10 ? '0'+m : m;
+        document.getElementById('seconds').innerText = s < 10 ? '0'+s : s;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
 </script>
-
 </body>
 </html>
