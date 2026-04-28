@@ -19,7 +19,6 @@
         .hero { padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop'); background-size: cover; border-bottom: 3px solid var(--oro-real); }
         .titulo-alfa { font-size: clamp(2.5rem, 8vw, 5rem); background: var(--oro-gradiente); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
         
-        /* MOCKUP STYLE */
         .hero-mockup { margin: 40px auto; max-width: 450px; }
         .hero-mockup img { width: 100%; filter: drop-shadow(0 20px 40px rgba(191, 149, 63, 0.3)); border-radius: 8px; }
 
@@ -29,7 +28,7 @@
         .cta-btn { 
             display: inline-block; 
             width: 100%; 
-            max-width: 280px; 
+            max-width: 320px; 
             background: var(--oro-gradiente); 
             color: #000 !important; 
             padding: 18px; 
@@ -41,32 +40,32 @@
             text-transform: uppercase;
             transition: transform 0.3s ease;
             box-sizing: border-box;
+            border-radius: 4px;
         }
-        .cta-btn:hover { transform: scale(1.05); }
+        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(191, 149, 63, 0.5); }
 
         .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         .card { background: #050505; padding: 30px; border: 1px solid #1a1a1a; margin-bottom: 20px; }
 
-        /* PRODUCT CARDS */
-        .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
-        .product-item { background: #0a0a0a; border-left: 3px solid var(--oro-real); padding: 20px; text-align: left; }
-        .product-item h4 { margin: 0; color: var(--oro-real); font-family: 'Oswald', sans-serif; }
+        .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
+        .product-item { background: #0a0a0a; border-left: 3px solid var(--oro-real); padding: 25px; text-align: left; }
+        .product-item h4 { margin: 0 0 10px 0; color: var(--oro-real); font-family: 'Oswald', sans-serif; font-size: 1.2rem; }
 
-        /* RESEÑAS */
         .review { border-bottom: 1px solid #1a1a1a; padding: 30px 0; font-style: italic; }
         .stars { color: var(--oro-real); margin-bottom: 10px; font-size: 1.2rem; }
         
         #comprar { 
             margin-top: 40px; 
-            padding: 40px 20px; 
+            padding: 50px 20px; 
             border: 2px solid var(--oro-real); 
+            background: rgba(191, 149, 63, 0.02);
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             text-align: center;
         }
 
-        .btn-wrapper { width: 100%; display: flex; justify-content: center; }
+        .btn-wrapper { width: 100%; display: flex; justify-content: center; margin: 20px 0; }
         footer { padding: 40px; color: #555; font-size: 0.8rem; }
     </style>
 </head>
@@ -74,70 +73,75 @@
 
     <header class="hero">
         <h1 class="titulo-alfa">CÓDIGO ALFA VIP</h1>
-        <p>EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
+        <p style="letter-spacing: 2px; font-weight: 300;">EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
         
         <div class="hero-mockup">
-            <img src="mockup.png.PNG" alt="Código Alfa VIP Mockup">
+            <img src="mockup.png.PNG" alt="Código Alfa VIP Protocolo">
         </div>
 
         <div class="optin-container">
-            <p style="font-weight:700;">DESCARGA EL MANIFIESTO GRATIS</p>
+            <p style="font-weight:700; color: var(--oro-real);">DESCARGA EL MANIFIESTO GRATIS</p>
             <form id="form-alfa">
                 <input type="text" name="name" placeholder="Tu Nombre" required>
                 <input type="email" name="email" placeholder="Tu Email" required>
                 <div class="btn-wrapper">
-                    <button type="submit" id="btn-submit" class="cta-btn">Acceder Gratis Ahora</button>
+                    <button type="submit" id="btn-submit" class="cta-btn">Obtener Acceso Instantáneo</button>
                 </div>
             </form>
+            <p style="font-size: 0.7rem; opacity: 0.6;">Tu información está 100% segura.</p>
         </div>
     </header>
 
     <main class="section">
         <div class="card">
-            <h3 style="color:var(--oro-real)">El Despertar</h3>
-            <p>Deja de ser un participante en la vida de otros y conviértete en el arquitecto de tu propio destino.</p>
+            <h3 style="color:var(--oro-real)">El Despertar del Guerrero</h3>
+            <p>Deja de ser un espectador en la vida de otros. Vive con propósito, domina tu energía masculina y convierte cada debilidad en una fortaleza inquebrantable.</p>
         </div>
 
-        <h2 style="margin-top: 60px;">Contenido del Protocolo</h2>
+        <h2 style="margin-top: 60px;">Contenido del Protocolo VIP</h2>
         <div class="product-list">
             <div class="product-item">
-                <h4>🛡️ Leyes del Dinero Antiguas</h4>
-                <p>50 reglas inmutables que las familias de élite usan para preservar riqueza generacional.</p>
+                <h4>🔥 Liderazgo de Energía Alfa</h4>
+                <p>Domina el juego de la energía masculina vs femenina. Aprende a liderar relaciones sin esfuerzo y con autoridad natural.</p>
             </div>
             <div class="product-item">
-                <h4>🎯 Rastreador de Flujo de Caja</h4>
-                <p>La herramienta táctica definitiva para identificar y detener el sangrado de capital.</p>
+                <h4>🛡️ Blindaje Mental y Estoico</h4>
+                <p>Elimina las 15 distorsiones del pensamiento y protégete contra vampiros emocionales y mujeres tóxicas.</p>
             </div>
             <div class="product-item">
-                <h4>🦅 Mentalidad de Soberanía</h4>
-                <p>Protocolos de psicología de alto rendimiento para operar bajo presión extrema.</p>
+                <h4>🎯 Ingeniería de Citas y Valor</h4>
+                <p>El proceso exacto para atraer mujeres de calidad, mantener tu "marco" y proyectar un aura de alto valor social.</p>
+            </div>
+            <div class="product-item">
+                <h4>🦅 Dominancia y Sexualidad</h4>
+                <p>Aprende a dar placer real y convertirte en un hombre dominante en la intimidad, viviendo bajo tus propias reglas.</p>
             </div>
         </div>
 
         <h2 style="margin-top: 60px;">Resultados de la Comunidad</h2>
         <div class="review">
             <div class="stars">★★★★★</div>
-            <p>"Este manifiesto cambió mi visión sobre los activos. Es la estructura que nadie te enseña en la universidad."</p>
-            <span style="color:var(--oro-real); font-weight: bold;">- Javier F.</span>
+            <p>"Este protocolo me permitió estructurar mis pensamientos y dejar de ser 'el chico bueno'. La claridad mental que obtienes es absoluta."</p>
+            <span style="color:var(--oro-real); font-weight: bold;">- Josué M.</span>
         </div>
         <div class="review">
             <div class="stars">★★★★★</div>
-            <p>"El rastreador de flujo por sí solo vale 10 veces el precio. La claridad mental que obtienes es absoluta."</p>
-            <span style="color:var(--oro-real); font-weight: bold;">- Sofía G.</span>
+            <p>"El módulo de energía masculina cambió mi relación en semanas. Es la estructura que nadie te enseña ahí fuera."</p>
+            <span style="color:var(--oro-real); font-weight: bold;">- Javier F.</span>
         </div>
 
         <div id="comprar">
-            <h2 style="margin-top:0;">¿QUIERES MÁS?</h2>
-            <p>Domina tu mente con los <b>Protocolos de Sabiduría Estoica</b>. El complemento táctico para el 1%.</p>
-            <br>
+            <h2 style="margin-top:0;">¿QUIERES EL SISTEMA COMPLETO?</h2>
+            <p>Obtén el <b>Protocolo de Sabiduría Estoica</b> y accede a la metodología que está transformando a miles de hombres.</p>
+            <p style="font-size: 0.9rem; color: var(--oro-real);">¡Incluye 30 días GRATIS de la Comunidad Inquebrantable!</p>
             <div class="btn-wrapper">
-                <a href="https://go.hotmart.com/C105594630J" class="cta-btn">Adquirir Protocolo VIP</a>
+                <a href="https://go.hotmart.com/C105594630J" class="cta-btn">Adquirir Protocolo VIP Ahora</a>
             </div>
-            <p style="font-size:0.7rem; margin-top:15px; opacity: 0.7;">Garantía de 7 días • 100% Calificaciones Positivas</p>
+            <p style="font-size:0.7rem; margin-top:15px; opacity: 0.7;">🔒 Pago Seguro y Encriptado • Acceso Inmediato • Garantía de 7 días</p>
         </div>
     </main>
 
-    <footer>&copy; 2026 CÓDIGO ALFA VIP</footer>
+    <footer>&copy; 2026 CÓDIGO ALFA VIP | Desarrollado para el 1%</footer>
 
     <script>
         const form = document.getElementById("form-alfa");
@@ -145,9 +149,10 @@
 
         form.addEventListener("submit", function(e) {
             e.preventDefault();
-            btn.innerHTML = "PROCESANDO...";
+            btn.innerHTML = "PREPARANDO DESCARGA...";
             btn.disabled = true;
 
+            // Link del PDF que entregas gratis
             const ebookLink = "https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=sharing";
 
             fetch("https://formspree.io/f/mbdpqqpv", {
@@ -155,9 +160,11 @@
                 body: new FormData(form),
                 headers: { 'Accept': 'application/json' }
             }).finally(() => {
+                // Redirige al PDF después de capturar el lead
                 window.location.href = ebookLink;
             });
 
+            // Backup en caso de que fetch tarde demasiado
             setTimeout(() => { window.location.href = ebookLink; }, 4000);
         });
     </script>
