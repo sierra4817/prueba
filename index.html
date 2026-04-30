@@ -1,172 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CÓDIGO ALFA VIP | El Manifiesto del 1%</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --oro-real: #bf953f; 
-            --negro-absoluto: #000000;
-            --gris-premium: #0a0a0a;
-            --blanco-nitido: #ffffff;
-            --oro-gradiente: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 25%, #fcf6ba 50%, #bf953f 75%, #aa771c 100%);
-        }
-        body { font-family: 'Roboto', sans-serif; background-color: var(--negro-absoluto); color: #f0f0f0; margin: 0; text-align: center; line-height: 1.7; overflow-x: hidden; }
-        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; color: var(--blanco-nitido); }
-        
-        .hero { padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?q=80&w=1974&auto=format&fit=crop'); background-size: cover; border-bottom: 3px solid var(--oro-real); }
-        .titulo-alfa { font-size: clamp(2.5rem, 8vw, 5rem); background: var(--oro-gradiente); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0; }
-        
-        .hero-mockup { margin: 40px auto; max-width: 450px; }
-        .hero-mockup img { width: 100%; filter: drop-shadow(0 20px 40px rgba(191, 149, 63, 0.3)); border-radius: 8px; }
+<div class="chapter-title">
+        <span class="chapter-number">Capítulo Uno</span>
+        <h2>La Trampa del Hámster: Diferencia letal entre ingresos y riqueza</h2>
+    </div>
 
-        .optin-container { max-width: 450px; margin: 30px auto; background: rgba(255,255,255,0.05); padding: 30px; border: 1px solid var(--oro-real); backdrop-filter: blur(10px); }
-        input { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; box-sizing: border-box; }
-        
-        .cta-btn { 
-            display: inline-block; 
-            width: 100%; 
-            max-width: 320px; 
-            background: var(--oro-gradiente); 
-            color: #000 !important; 
-            padding: 18px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            font-family: 'Oswald', sans-serif; 
-            border: none; 
-            cursor: pointer; 
-            text-transform: uppercase;
-            transition: transform 0.3s ease;
-            box-sizing: border-box;
-            border-radius: 4px;
-        }
-        .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(191, 149, 63, 0.5); }
+    <p><span class="dropcap">E</span>xiste una alucinación colectiva que destruye más futuros financieros que cualquier crisis económica: la creencia de que Ingresos es igual a Riqueza[cite: 35, 36, 212]. Es el error fundacional, la grieta en los cimientos que hará que todo el edificio se derrumbe tarde o temprano[cite: 36, 37, 212, 213].</p>
+    
+    <p>La mayoría de la gente mide su éxito financiero por cuánto entra en su cuenta a fin de mes[cite: 38, 214]. "Gano 5.000 dólares al mes, así que estoy bien", dicen[cite: 39, 214]. Falso. Eres un hámster corriendo más rápido en una rueda que no va a ninguna parte[cite: 40, 215].</p>
 
-        .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
-        .card { background: #050505; padding: 30px; border: 1px solid #1a1a1a; margin-bottom: 20px; }
+    <div class="quote-box">
+        "Los gastos siempre se expanden hasta cubrir la totalidad de los ingresos disponibles." — Ley de Parkinson [cite: 64, 228]
+    </div>
 
-        .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 40px 0; }
-        .product-item { background: #0a0a0a; border-left: 3px solid var(--oro-real); padding: 25px; text-align: left; }
-        .product-item h4 { margin: 0 0 10px 0; color: var(--oro-real); font-family: 'Oswald', sans-serif; font-size: 1.2rem; }
+    <p>Analicemos dos perfiles reales: Carlos y Luis. Carlos es un ejecutivo que gana 8.000 dólares netos al mes[cite: 43, 44, 218, 219]. Viste trajes a medida, conduce un coche de gama alta y cena fuera tres veces por semana[cite: 45, 46, 48, 218, 219]. Sin embargo, su patrimonio neto es negativo y vive a tres semanas de la catástrofe financiera[cite: 50, 51, 221].</p>
 
-        .review { border-bottom: 1px solid #1a1a1a; padding: 30px 0; font-style: italic; }
-        .stars { color: var(--oro-real); margin-bottom: 10px; font-size: 1.2rem; }
-        
-        #comprar { 
-            margin-top: 40px; 
-            padding: 50px 20px; 
-            border: 2px solid var(--oro-real); 
-            background: rgba(191, 149, 63, 0.02);
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            text-align: center;
-        }
+    <p>Por otro lado, Luis gana 2.500 dólares al mes[cite: 53, 54, 222]. Conduce un coche pagado de hace seis años, vive en un barrio normal e invierte automáticamente el 20% de su sueldo[cite: 55, 56, 58, 223]. Carlos parece rico, pero es un esclavo de alto mantenimiento; Luis es un hombre libre en construcción[cite: 62, 63, 225, 226].</p>
 
-        .btn-wrapper { width: 100%; display: flex; justify-content: center; margin: 20px 0; }
-        footer { padding: 40px; color: #555; font-size: 0.8rem; }
-    </style>
-</head>
-<body>
+    <div class="action-box">
+        <span class="action-title">Protocolo de Acción #1</span>
+        <strong>Calcula tu Realidad:</strong>
+        <ul>
+            <li><strong>Patrimonio Neto Real:</strong> Suma el valor de reventa realista de todo lo que posees y resta hasta el último céntimo de deuda[cite: 98, 101, 104, 247, 248].</li>
+            <li><strong>Tasa de Ahorro:</strong> Divide tu ahorro mensual entre tus ingresos totales[cite: 108, 112, 250, 253]. Si el resultado es menor al 10%, estás en peligro crítico; si es 0%, eres un esclavo financiero[cite: 115, 116, 254].</li>
+        </ul>
+    </div>
 
-    <header class="hero">
-        <h1 class="titulo-alfa">CÓDIGO ALFA VIP</h1>
-        <p style="letter-spacing: 2px; font-weight: 300;">EL MANIFIESTO DEL 1%: NO COMPITAS, LIDERA</p>
-        
-        <div class="hero-mockup">
-            <img src="mockup.png.PNG" alt="Código Alfa VIP Protocolo">
-        </div>
-
-        <div class="optin-container">
-             <p style="font-weight:700;">DESCARGA EL MANIFIESTO GRATIS</p>
-            <form id="form-alfa">
-                <input type="text" name="name" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Email" required>
-                <div class="btn-wrapper">
-                    <button type="submit" id="btn-submit" class="cta-btn">Acceder Gratis Ahora</button>
-                </div>
-            </form>
-            <p style="font-size: 0.7rem; opacity: 0.6;">Tu información está 100% segura.</p>
-        </div>
-    </header>
-
-    <main class="section">
-        <div class="card">
-            <h3 style="color:var(--oro-real)">El Despertar del Guerrero</h3>
-            <p>Deja de ser un espectador en la vida de otros. Vive con propósito, domina tu energía masculina y convierte cada debilidad en una fortaleza inquebrantable.</p>
-        </div>
-
-        <h2 style="margin-top: 60px;">Contenido del Protocolo VIP</h2>
-        <div class="product-list">
-            <div class="product-item">
-                <h4>🔥 Liderazgo de Energía Alfa</h4>
-                <p>Domina el juego de la energía masculina vs femenina. Aprende a liderar relaciones sin esfuerzo y con autoridad natural.</p>
-            </div>
-            <div class="product-item">
-                <h4>🛡️ Blindaje Mental y Estoico</h4>
-                <p>Elimina las 15 distorsiones del pensamiento y protégete contra vampiros emocionales y mujeres tóxicas.</p>
-            </div>
-            <div class="product-item">
-                <h4>🎯 Ingeniería de Citas y Valor</h4>
-                <p>El proceso exacto para atraer mujeres de calidad, mantener tu "marco" y proyectar un aura de alto valor social.</p>
-            </div>
-            <div class="product-item">
-                <h4>🦅 Dominancia y Sexualidad</h4>
-                <p>Aprende a dar placer real y convertirte en un hombre dominante en la intimidad, viviendo bajo tus propias reglas.</p>
-            </div>
-        </div>
-
-        <h2 style="margin-top: 60px;">Resultados de la Comunidad</h2>
-        <div class="review">
-            <div class="stars">★★★★★</div>
-            <p>"Este protocolo me permitió estructurar mis pensamientos y dejar de ser 'el chico bueno'. La claridad mental que obtienes es absoluta."</p>
-            <span style="color:var(--oro-real); font-weight: bold;">- Josué M.</span>
-        </div>
-        <div class="review">
-            <div class="stars">★★★★★</div>
-            <p>"El módulo de energía masculina cambió mi relación en semanas. Es la estructura que nadie te enseña ahí fuera."</p>
-            <span style="color:var(--oro-real); font-weight: bold;">- Javier F.</span>
-        </div>
-
-        <div id="comprar">
-            <h2 style="margin-top:0;">¿QUIERES EL SISTEMA COMPLETO?</h2>
-            <p>Obtén el <b>Protocolo de Sabiduría Estoica</b> y accede a la metodología que está transformando a miles de hombres.</p>
-            <p style="font-size: 0.9rem; color: var(--oro-real);">¡Incluye 30 días GRATIS de la Comunidad Inquebrantable!</p>
-            <div class="btn-wrapper">
-                <a href="https://go.hotmart.com/C105594630J" class="cta-btn">Adquirir Protocolo VIP Ahora</a>
-            </div>
-            <p style="font-size:0.7rem; margin-top:15px; opacity: 0.7;">🔒 Pago Seguro y Encriptado • Acceso Inmediato • Garantía de 7 días</p>
-        </div>
-    </main>
-
-    <footer>&copy; 2026 CÓDIGO ALFA VIP | Desarrollado para el 1%</footer>
-
-    <script>
-        const form = document.getElementById("form-alfa");
-        const btn = document.getElementById("btn-submit");
-
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
-            btn.innerHTML = "PREPARANDO DESCARGA...";
-            btn.disabled = true;
-
-            // Link del PDF que entregas gratis
-            const ebookLink = "https://drive.google.com/file/d/1nUlSOzEGNRx9r4S36GyrZRUjasrnn8vK/view?usp=sharing";
-
-            fetch("https://formspree.io/f/mbdpqqpv", {
-                method: "POST",
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            }).finally(() => {
-                // Redirige al PDF después de capturar el lead
-                window.location.href = ebookLink;
-            });
-
-            // Backup en caso de que fetch tarde demasiado
-            setTimeout(() => { window.location.href = ebookLink; }, 4000);
-        });
-    </script>
-</body>
-</html>
+    <p>La riqueza real es lo que no se ve[cite: 91, 241]. Es el dinero que no se gastó en el reloj de lujo o el coche nuevo[cite: 91, 92, 241, 242]. La riqueza es, por encima de todo, la capacidad de tener opciones y ser dueño de tu tiempo[cite: 92, 93, 242, 243].</p>
