@@ -1,27 +1,319 @@
-<div class="chapter-title">
-        <span class="chapter-number">Capítulo Uno</span>
-        <h2>La Trampa del Hámster: Diferencia letal entre ingresos y riqueza</h2>
-    </div>
 
-    <p><span class="dropcap">E</span>xiste una alucinación colectiva que destruye más futuros financieros que cualquier crisis económica: la creencia de que Ingresos es igual a Riqueza[cite: 35, 36, 212]. Es el error fundacional, la grieta en los cimientos que hará que todo el edificio se derrumbe tarde o temprano[cite: 36, 37, 212, 213].</p>
-    
-    <p>La mayoría de la gente mide su éxito financiero por cuánto entra en su cuenta a fin de mes[cite: 38, 214]. "Gano 5.000 dólares al mes, así que estoy bien", dicen[cite: 39, 214]. Falso. Eres un hámster corriendo más rápido en una rueda que no va a ninguna parte[cite: 40, 215].</p>
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✈️ Viaja Sueños - Tu Agencia de Viajes</title>
 
-    <div class="quote-box">
-        "Los gastos siempre se expanden hasta cubrir la totalidad de los ingresos disponibles." — Ley de Parkinson [cite: 64, 228]
-    </div>
+    <!-- 
+        IMPORTANTE: Aquí va el CSS (Estilo). 
+        Idealmente, esto iría en un archivo externo llamado 'styles.css'.
+    -->
+    <style>
+        /* --- Estilos Globales --- */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
 
-    <p>Analicemos dos perfiles reales: Carlos y Luis. Carlos es un ejecutivo que gana 8.000 dólares netos al mes[cite: 43, 44, 218, 219]. Viste trajes a medida, conduce un coche de gama alta y cena fuera tres veces por semana[cite: 45, 46, 48, 218, 219]. Sin embargo, su patrimonio neto es negativo y vive a tres semanas de la catástrofe financiera[cite: 50, 51, 221].</p>
+        /* --- HEADER y Navegación --- */
+        header {
+            background-color: #1a4a75; /* Azul oscuro profesional */
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .nav-links a {
+            margin-left: 25px;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+        .nav-links a:hover {
+            background-color: #2d6aa2;
+            border-radius: 4px;
+        }
 
-    <p>Por otro lado, Luis gana 2.500 dólares al mes[cite: 53, 54, 222]. Conduce un coche pagado de hace seis años, vive en un barrio normal e invierte automáticamente el 20% de su sueldo[cite: 55, 56, 58, 223]. Carlos parece rico, pero es un esclavo de alto mantenimiento; Luis es un hombre libre en construcción[cite: 62, 63, 225, 226].</p>
+        /* --- SECCIÓN HERO (Banner Principal) --- */
+        #hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                              url('https://picsum.photos/1600/600?random=1'); /* CAMBIA ESTE ENLACE POR TU IMAGEN */
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content {
+            padding: 20px;
+            max-width: 600px;
+        }
+        .hero-content h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+        .hero-content p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        .search-form input[type="text"],
+        .search-form select,
+        .search-form button {
+            padding: 15px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; /* Asegura que el padding no agrande el elemento */
+        }
+        .search-form button {
+            background-color: #ff6b3b; /* Naranja de acción */
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-form button:hover {
+            background-color: #e85c2f;
+        }
 
-    <div class="action-box">
-        <span class="action-title">Protocolo de Acción #1</span>
-        <strong>Calcula tu Realidad:</strong>
-        <ul>
-            <li><strong>Patrimonio Neto Real:</strong> Suma el valor de reventa realista de todo lo que posees y resta hasta el último céntimo de deuda[cite: 98, 101, 104, 247, 248].</li>
-            <li><strong>Tasa de Ahorro:</strong> Divide tu ahorro mensual entre tus ingresos totales[cite: 108, 112, 250, 253]. Si el resultado es menor al 10%, estás en peligro crítico; si es 0%, eres un esclavo financiero[cite: 115, 116, 254].</li>
-        </ul>
-    </div>
+        /* --- DESTINOS POPULARES (Galería) --- */
+        #destinos {
+            text-align: center;
+            padding: 60px 0;
+            background-color: white;
+        }
+        #destinos h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #1a4a75;
+        }
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea 3 columnas en escritorio */
+            gap: 30px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: left;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Efecto de levitación al pasar el mouse */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            color: #ff6b3b;
+            margin-top: 0;
+        }
+        .btn-ver {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #1a4a75;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .btn-ver:hover {
+            background-color: #2d6aa2;
+        }
 
-    <p>La riqueza real es lo que no se ve[cite: 91, 241]. Es el dinero que no se gastó en el reloj de lujo o el coche nuevo[cite: 91, 92, 241, 242]. La riqueza es, por encima de todo, la capacidad de tener opciones y ser dueño de tu tiempo[cite: 92, 93, 242, 243].</p>
+        /* --- FOOTER --- */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #555;
+        }
+        .footer-links div {
+            width: 200px;
+        }
+        .footer-links h4 {
+            color: #ff6b3b;
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .copyright {
+            padding-top: 20px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        /* --- RESPONSIVE DESIGN (Para que se vea bien en móviles) --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Ocultamos la nav grande en móviles, se puede reemplazar con un menú hamburguesa JS */
+            }
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            .search-form input,
+            .search-form select,
+            .search-form button {
+                display: block;
+                width: 90%;
+                margin: 10px auto;
+            }
+            .galeria-grid {
+                grid-template-columns: 1fr; /* Una sola columna en móviles */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN -->
+    <header>
+        <nav class="container">
+            <div class="logo">✈️ Viaja Sueños</div>
+            <div class="nav-links">
+                <a href="#destinos">Destinos</a>
+                <a href="#">Ofertas</a>
+                <a href="#">Bierefotografías</a>
+                <a href="#">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. SECCIÓN HERO (BANNER PRINCIPAL CON FORMULARIO) -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>¡Explora el Mundo que Te Espera!</h1>
+            <p>Encuentra tu aventura perfecta, desde playas tropicales hasta ciudades históricas.</p>
+            
+            <!-- Formulario de Búsqueda -->
+            <form class="search-form">
+                <input type="text" placeholder="Destino (ej. París, Bali)..." required>
+                <select>
+                    <option value="">Tipo de viaje</option>
+                    <option value="playa">Playa</option>
+                    <option value="ciudad">Ciudad</option>
+                    <option value="montaña">Montaña</option>
+                </select>
+                <button type="submit">Buscar Viajes</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 3. SECCIÓN DESTINOS POPULARES (GALERÍA) -->
+    <section id="destinos">
+        <div class="container">
+            <h2>🌍 Destinos de Ensueño</h2>
+
+            <div class="galeria-grid">
+                
+                <!-- CARD 1: TROPICALES -->
+                <div class="card">
+                    <!-- RECUERDA CAMBIAR ESTA URL POR UNA IMAGEN REAL -->
+                    <img src="https://picsum.photos/600/250?random=2" alt="Playa Tropical">
+                    <div class="card-content">
+                        <h3>🏝️ Islas Tropicales</h3>
+                        <p>Relájate en playas de arena blanca y aguas cristalinas. Perfectas para desconectar.</p>
+                        <span style="color: #28a745;">Desde $800</span>
+                        <a href="#" class="btn-ver">Ver Paquetes</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2: CULTURA -->
+                <div class="card">
+                    <img src="https://picsum.photos/600/250?random=3" alt="Ciudad Antigua">
+                    <div class="card-content">
+                        <h3>🏛️ Ciudades Históricas</h3>
+                        <p>Camina entre la historia en París o Roma. Un viaje de cultura sin límites.</p>
+                        <span style="color: #28a745;">Desde $1200</span>
+                        <a href="#" class="btn-ver">Ver Paquetes</a>
+                    </div>
+                </div>
+                
+                <!-- CARD 3: NATURALEZA -->
+                <div class="card">
+                    <img src="https://picsum.photos/600/250?random=4" alt="Montaña">
+                    <div class="card-content">
+                        <h3>🏔️ Montañas y Aventura</h3>
+                        <p>Siente la emoción de la naturaleza virgen. Senderismo y paisajes imponentes.</p>
+                        <span style="color: #28a745;">Desde $950</span>
+                        <a href="#" class="btn-ver">Ver Paquetes</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FOOTER (PIE DE PÁGINA) -->
+    <footer>
+        <div class="container footer-links">
+            <div class="footer-col">
+                <h4>Viaja Sueños</h4>
+                <p>Experiencias inolvidables para ti.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Suscripción Newsletter</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <p>Email: info@viajasueños.com</p>
+                <p>Tel: +34 123 456 789</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Viaja Sueños. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
+```
