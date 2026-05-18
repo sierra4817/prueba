@@ -1,319 +1,198 @@
-
-```html
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✈️ Viaja Sueños - Tu Agencia de Viajes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre viajes de lujo accesibles y spots secretos alrededor del mundo.">
+  <title>SpotsSecretos | Viajes de Lujo Accesibles</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fuentes Google para tipografía premium -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- 
-        IMPORTANTE: Aquí va el CSS (Estilo). 
-        Idealmente, esto iría en un archivo externo llamado 'styles.css'.
-    -->
-    <style>
-        /* --- Estilos Globales --- */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        /* --- HEADER y Navegación --- */
-        header {
-            background-color: #1a4a75; /* Azul oscuro profesional */
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .logo {
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        .nav-links a {
-            margin-left: 25px;
-            padding: 5px 10px;
-            transition: background-color 0.3s;
-        }
-        .nav-links a:hover {
-            background-color: #2d6aa2;
-            border-radius: 4px;
-        }
-
-        /* --- SECCIÓN HERO (Banner Principal) --- */
-        #hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                              url('https://picsum.photos/1600/600?random=1'); /* CAMBIA ESTE ENLACE POR TU IMAGEN */
-            background-size: cover;
-            background-position: center;
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
-        .hero-content {
-            padding: 20px;
-            max-width: 600px;
-        }
-        .hero-content h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-        }
-        .hero-content p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-        }
-        .search-form input[type="text"],
-        .search-form select,
-        .search-form button {
-            padding: 15px;
-            margin: 10px 5px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            box-sizing: border-box; /* Asegura que el padding no agrande el elemento */
-        }
-        .search-form button {
-            background-color: #ff6b3b; /* Naranja de acción */
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .search-form button:hover {
-            background-color: #e85c2f;
-        }
-
-        /* --- DESTINOS POPULARES (Galería) --- */
-        #destinos {
-            text-align: center;
-            padding: 60px 0;
-            background-color: white;
-        }
-        #destinos h2 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #1a4a75;
-        }
-        .galeria-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea 3 columnas en escritorio */
-            gap: 30px;
-        }
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-            text-align: left;
-        }
-        .card:hover {
-            transform: translateY(-5px); /* Efecto de levitación al pasar el mouse */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-        .card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
-        }
-        .card-content {
-            padding: 20px;
-        }
-        .card-content h3 {
-            color: #ff6b3b;
-            margin-top: 0;
-        }
-        .btn-ver {
-            display: inline-block;
-            margin-top: 15px;
-            background-color: #1a4a75;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-        .btn-ver:hover {
-            background-color: #2d6aa2;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .footer-links {
-            display: flex;
-            justify-content: space-around;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #555;
-        }
-        .footer-links div {
-            width: 200px;
-        }
-        .footer-links h4 {
-            color: #ff6b3b;
-            margin-bottom: 15px;
-        }
-        .footer-links a {
-            display: block;
-            margin-bottom: 8px;
-        }
-        .copyright {
-            padding-top: 20px;
-            font-size: 0.9em;
-            color: #aaa;
-        }
-
-        /* --- RESPONSIVE DESIGN (Para que se vea bien en móviles) --- */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Ocultamos la nav grande en móviles, se puede reemplazar con un menú hamburguesa JS */
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            luxury: {
+              500: '#D4AF37',
+              600: '#B59026',
             }
-            .hero-content h1 {
-                font-size: 2.5em;
-            }
-            .search-form input,
-            .search-form select,
-            .search-form button {
-                display: block;
-                width: 90%;
-                margin: 10px auto;
-            }
-            .galeria-grid {
-                grid-template-columns: 1fr; /* Una sola columna en móviles */
-            }
+          }
         }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    /* Suavizado adicional para imágenes y transiciones */
+    img { image-rendering: -webkit-optimize-contrast; }
+    .glass-nav { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  </style>
 </head>
+<body class="font-sans antialiased text-gray-800 bg-white">
 
-<body>
-
-    <!-- 1. ENCABEZADO Y NAVEGACIÓN -->
-    <header>
-        <nav class="container">
-            <div class="logo">✈️ Viaja Sueños</div>
-            <div class="nav-links">
-                <a href="#destinos">Destinos</a>
-                <a href="#">Ofertas</a>
-                <a href="#">Bierefotografías</a>
-                <a href="#">Contacto</a>
-            </div>
-        </nav>
-    </header>
-
-    <!-- 2. SECCIÓN HERO (BANNER PRINCIPAL CON FORMULARIO) -->
-    <section id="hero">
-        <div class="hero-content">
-            <h1>¡Explora el Mundo que Te Espera!</h1>
-            <p>Encuentra tu aventura perfecta, desde playas tropicales hasta ciudades históricas.</p>
-            
-            <!-- Formulario de Búsqueda -->
-            <form class="search-form">
-                <input type="text" placeholder="Destino (ej. París, Bali)..." required>
-                <select>
-                    <option value="">Tipo de viaje</option>
-                    <option value="playa">Playa</option>
-                    <option value="ciudad">Ciudad</option>
-                    <option value="montaña">Montaña</option>
-                </select>
-                <button type="submit">Buscar Viajes</button>
-            </form>
+  <!-- 1. Menú de Navegación -->
+  <nav class="glass-nav fixed top-0 left-0 w-full z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo de Texto -->
+        <a href="#" class="text-2xl font-serif font-bold tracking-tight text-gray-900">
+          Spots<span class="text-luxury-500">Secretos</span>
+        </a>
+        
+        <!-- Links de Navegación (Desktop) -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#hero" class="text-sm font-medium text-gray-600 hover:text-luxury-500 transition">Inicio</a>
+          <a href="#destinos" class="text-sm font-medium text-gray-600 hover:text-luxury-500 transition">Destinos</a>
+          <a href="#" class="text-sm font-medium text-gray-600 hover:text-luxury-500 transition">Experiencias</a>
+          <a href="#" class="px-5 py-2 text-sm font-semibold text-white bg-gray-900 rounded-full hover:bg-luxury-500 transition duration-300">Contacto</a>
         </div>
+
+        <!-- Botón Menú Móvil (Icono SVG) -->
+        <button class="md:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 2. Sección Hero -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center bg-gray-900 pt-16 overflow-hidden">
+      <!-- Imagen de fondo con overlay oscuro -->
+      <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1920&q=80" alt="Paisaje de lujo minimalista" class="w-full h-full object-cover opacity-50">
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900/70 via-gray-900/40 to-gray-900"></div>
+      </div>
+
+      <!-- Contenido Hero -->
+      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <span class="inline-block py-1 px-3 mb-6 text-xs font-semibold tracking-widest text-luxury-500 uppercase bg-white/10 rounded-full border border-white/20">
+          Viajes Curados
+        </span>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight mb-6">
+          Descubre el lujo que<br class="hidden sm:block"> nadie conoce
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light">
+          Experiencias auténticas, rincones ocultos y alojamientos exclusivos diseñados para quienes valoran la belleza sin el exceso de precio.
+        </p>
+        <a href="#destinos" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-luxury-500 rounded-full hover:bg-luxury-600 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-luxury-500/30">
+          Ver Spots Secretos
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m0-4H3"></path></svg>
+        </a>
+      </div>
     </section>
 
-    <!-- 3. SECCIÓN DESTINOS POPULARES (GALERÍA) -->
-    <section id="destinos">
-        <div class="container">
-            <h2>🌍 Destinos de Ensueño</h2>
-
-            <div class="galeria-grid">
-                
-                <!-- CARD 1: TROPICALES -->
-                <div class="card">
-                    <!-- RECUERDA CAMBIAR ESTA URL POR UNA IMAGEN REAL -->
-                    <img src="https://picsum.photos/600/250?random=2" alt="Playa Tropical">
-                    <div class="card-content">
-                        <h3>🏝️ Islas Tropicales</h3>
-                        <p>Relájate en playas de arena blanca y aguas cristalinas. Perfectas para desconectar.</p>
-                        <span style="color: #28a745;">Desde $800</span>
-                        <a href="#" class="btn-ver">Ver Paquetes</a>
-                    </div>
-                </div>
-
-                <!-- CARD 2: CULTURA -->
-                <div class="card">
-                    <img src="https://picsum.photos/600/250?random=3" alt="Ciudad Antigua">
-                    <div class="card-content">
-                        <h3>🏛️ Ciudades Históricas</h3>
-                        <p>Camina entre la historia en París o Roma. Un viaje de cultura sin límites.</p>
-                        <span style="color: #28a745;">Desde $1200</span>
-                        <a href="#" class="btn-ver">Ver Paquetes</a>
-                    </div>
-                </div>
-                
-                <!-- CARD 3: NATURALEZA -->
-                <div class="card">
-                    <img src="https://picsum.photos/600/250?random=4" alt="Montaña">
-                    <div class="card-content">
-                        <h3>🏔️ Montañas y Aventura</h3>
-                        <p>Siente la emoción de la naturaleza virgen. Senderismo y paisajes imponentes.</p>
-                        <span style="color: #28a745;">Desde $950</span>
-                        <a href="#" class="btn-ver">Ver Paquetes</a>
-                    </div>
-                </div>
-
-            </div>
+    <!-- 3. Sección Promocional (10% OFF) -->
+    <section class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 py-6 border-y border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-white">
+        <div class="text-center sm:text-left">
+          <p class="text-xs font-semibold tracking-widest text-luxury-500 uppercase mb-1">Código Exclusivo de Bienvenida</p>
+          <h3 class="text-xl md:text-2xl font-serif font-bold">10% OFF en tu primera reserva</h3>
         </div>
+        <div class="flex items-center gap-3 bg-white/10 p-2 rounded-xl border border-white/20 backdrop-blur-sm">
+          <code class="px-4 py-2 bg-white text-gray-900 font-mono font-bold text-lg tracking-wider rounded-lg">LUXURY10</code>
+          <button class="px-5 py-3 bg-luxury-500 hover:bg-luxury-600 text-white font-semibold rounded-lg transition duration-300 shadow-md">
+            Copiar Código
+          </button>
+        </div>
+      </div>
     </section>
 
-    <!-- 4. FOOTER (PIE DE PÁGINA) -->
-    <footer>
-        <div class="container footer-links">
-            <div class="footer-col">
-                <h4>Viaja Sueños</h4>
-                <p>Experiencias inolvidables para ti.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Enlaces Rápidos</h4>
-                <a href="#">Términos de Servicio</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Suscripción Newsletter</a>
-            </div>
-            <div class="footer-col">
-                <h4>Contacto</h4>
-                <p>Email: info@viajasueños.com</p>
-                <p>Tel: +34 123 456 789</p>
-            </div>
+    <!-- 4. Grid de Destinos -->
+    <section id="destinos" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">Destinos de Lujo Accesible</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">Hemos seleccionado cuidadosamente tres escapes donde la elegancia se encuentra con la autenticidad, lejos de las rutas turísticas convencionales.</p>
         </div>
-        <div class="copyright">
-            &copy; 2024 Viaja Sueños. Todos los derechos reservados.
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Tarjeta 1: Suiza -->
+          <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80" alt="Alpes Suizos" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-800 shadow-sm">Europa</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-serif font-bold text-gray-900 mb-2 group-hover:text-luxury-600 transition">Alpes Suizos: Refugio Silencioso</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">Chalets de madera con chimenea privada, vistas al Matterhorn sin multitudes y rutas de senderismo exclusivas.</p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div>
+                  <span class="text-xs text-gray-500 block">Desde</span>
+                  <span class="text-xl font-bold text-luxury-600">€850</span><span class="text-xs text-gray-500"> / noche</span>
+                </div>
+                <button class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-luxury-500 transition duration-300 shadow-sm">
+                  Reservar con descuento
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2: España -->
+          <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80" alt="Costa Secreta de España" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-800 shadow-sm">Mediterráneo</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-serif font-bold text-gray-900 mb-2 group-hover:text-luxury-600 transition">Costa Secreta de España</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">Pueblos pesqueros intactos, calas de aguas cristalinas y villas históricas convertidas en boutique hotels.</p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div>
+                  <span class="text-xs text-gray-500 block">Desde</span>
+                  <span class="text-xl font-bold text-luxury-600">€420</span><span class="text-xs text-gray-500"> / noche</span>
+                </div>
+                <button class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-luxury-500 transition duration-300 shadow-sm">
+                  Reservar con descuento
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3: Italia -->
+          <article class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            <div class="relative h-56 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=80" alt="Italia Fuera del Mapa" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+              <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-semibold text-gray-800 shadow-sm">Dolomitas</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-serif font-bold text-gray-900 mb-2 group-hover:text-luxury-600 transition">Italia Fuera del Mapa</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">Enoturismo privado en viñedos milenarios, posadas medievales restauradas y paisajes cinematográficos.</p>
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <div>
+                  <span class="text-xs text-gray-500 block">Desde</span>
+                  <span class="text-xl font-bold text-luxury-600">€510</span><span class="text-xs text-gray-500"> / noche</span>
+                </div>
+                <button class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-luxury-500 transition duration-300 shadow-sm">
+                  Reservar con descuento
+                </button>
+              </div>
+            </div>
+          </article>
+
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Minimalista -->
+  <footer class="bg-gray-900 text-gray-400 py-10 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-serif text-white text-xl tracking-wide">Spots<span class="text-luxury-500">Secretos</span></p>
+      <p class="text-sm">&copy; 2024 Viajes de Lujo Accesibles. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
-```
