@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Voyages.Tours - Viajes con alma y paisajes que inspiran. Descubre ofertas exclusivas y spots secretos.">
-  <title>Voyages.Tours | Tu Agencia de Viajes de Confianza</title>
+  <meta name="description" content="Descubre [NOMBRE_DEL_PAÍS] con Voyages.Tours - Ofertas exclusivas y experiencias auténticas.">
+  <title>Descubre [NOMBRE_DEL_PAÍS] | Voyages.Tours</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,16 +30,14 @@
     }
   </script>
 
-  <!-- Google Fonts: Inter para máxima legibilidad corporativa -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     body { font-family: 'Inter', sans-serif; }
-    /* Suavizado de scroll y selección de texto */
     ::selection { background-color: #0066FF; color: white; }
-    .tab-active { border-bottom: 2px solid #0066FF; color: #0066FF; font-weight: 600; }
     .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
   </style>
@@ -47,221 +45,115 @@
 
 <body class="bg-white text-gray-900 antialiased">
 
-  <!-- HEADER / NAVBAR -->
+  <!-- NAVBAR (Igual que index.html) -->
   <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        
-        <!-- Logo: Voyages.Tours -->
-        <a href="#" class="flex items-center gap-1">
+        <a href="index.html" class="flex items-center gap-1">
           <span class="text-xl font-bold text-brand-blue tracking-tight">Voyages<span class="text-gray-900">.Tours</span></span>
         </a>
-
-        <!-- Menú Central (Desktop) -->
         <nav class="hidden md:flex items-center gap-8">
-          <a href="#" class="text-gray-900 font-medium hover:text-brand-blue transition">Inicio</a>
-          <a href="#destinos" class="text-gray-600 font-medium hover:text-brand-blue transition">Destinos</a>
-          <a href="#ofertas" class="text-gray-600 font-medium hover:text-brand-blue transition">Ofertas</a>
+          <a href="index.html" class="text-gray-900 font-medium hover:text-brand-blue transition">Inicio</a>
+          <a href="index.html#destinos" class="text-gray-600 font-medium hover:text-brand-blue transition">Destinos</a>
+          <a href="index.html#ofertas" class="text-gray-600 font-medium hover:text-brand-blue transition">Ofertas</a>
         </nav>
-
-        <!-- Botón Iniciar Sesión + Menú Móvil -->
         <div class="flex items-center gap-3">
           <button class="hidden sm:flex items-center px-4 py-2 bg-brand-blue hover:bg-brand-blueHover text-white font-medium rounded-lg transition duration-200">
             Iniciar Sesión
           </button>
-          <!-- Mobile Menu Button -->
-          <button class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" aria-label="Menú">
+          <button class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" id="mobileMenuBtn" aria-label="Menú">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
       </div>
     </div>
+    <div class="md:hidden hidden bg-white border-t border-gray-100 px-4 py-3" id="mobileMenu">
+      <a href="index.html" class="block py-2 text-gray-900 font-medium">Inicio</a>
+      <a href="index.html#destinos" class="block py-2 text-gray-600">Destinos</a>
+      <a href="index.html#ofertas" class="block py-2 text-gray-600">Ofertas</a>
+    </div>
   </header>
 
   <main>
-    <!-- HERO SECTION: Buscador Flotante estilo Trip.com -->
-    <section class="relative bg-gradient-to-b from-slate-50 to-white pt-8 pb-16 px-4">
+    <!-- HERO DEL DESTINO -->
+    <section class="relative bg-gradient-to-br from-slate-50 to-white py-12 px-4">
       <div class="max-w-4xl mx-auto text-center">
-        
-        <!-- Texto inspirador de marca -->
-        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-          Viajes con alma y paisajes que inspiran ✨
+        <!-- Imagen destacada del destino -->
+        <div class="relative rounded-2xl overflow-hidden shadow-xl mb-8 max-w-3xl mx-auto">
+          <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80" 
+            alt="[NOMBRE_DEL_PAÍS] - Paisaje destacado" 
+            class="w-full h-64 sm:h-80 object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+          <span class="absolute bottom-4 left-4 bg-brand-orange text-white text-sm font-semibold px-3 py-1.5 rounded-lg shadow-sm">
+            [BANDERA] [NOMBRE_DEL_PAÍS]
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Descubre [NOMBRE_DEL_PAÍS]
         </h1>
-        <p class="text-gray-600 mb-8 text-sm sm:text-base">Follow for secret spots 🇨🇭</p>
+        <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+          [DESCRIPCIÓN: Ej: "Explora paisajes alpinos, ciudades elegantes y experiencias de lujo accesible en el corazón de Europa."]
+        </p>
 
-        <!-- Contenedor flotante del buscador -->
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden max-w-3xl mx-auto">
-          
-          <!-- Pestañas superiores simuladas -->
-          <div class="flex border-b border-gray-100 overflow-x-auto">
-            <button class="tab-active px-5 py-3 text-sm font-medium whitespace-nowrap flex-1">Hoteles</button>
-            <button class="px-5 py-3 text-sm text-gray-600 font-medium whitespace-nowrap flex-1 hover:text-brand-blue transition">Vuelos</button>
-            <button class="px-5 py-3 text-sm text-gray-600 font-medium whitespace-nowrap flex-1 hover:text-brand-blue transition">Secret Spots</button>
-            <button class="px-5 py-3 text-sm text-gray-600 font-medium whitespace-nowrap flex-1 hover:text-brand-blue transition">Paquetes</button>
-          </div>
+        <!-- BOTÓN DE AFILIADO PRINCIPAL -->
+        <a href="https://paa.ge/voyages.tours/en" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center justify-center px-8 py-4 bg-brand-blue hover:bg-brand-blueHover text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/40 transform hover:-translate-y-0.5 mb-4">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          Reservar con código TT666 (10% OFF)
+        </a>
+        <p class="text-xs text-gray-500">* Válido para reservas seleccionadas. Términos aplican.</p>
 
-          <!-- Barra de búsqueda -->
-          <div class="p-4 sm:p-6">
-            <div class="flex flex-col sm:flex-row gap-3">
-              <div class="flex-1 relative">
-                <label class="block text-xs font-medium text-gray-500 mb-1 ml-1">Destino o propiedad</label>
-                <input type="text" placeholder="¿A dónde quieres viajar?" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition text-sm">
-              </div>
-              <div class="flex-1 relative">
-                <label class="block text-xs font-medium text-gray-500 mb-1 ml-1">Fechas</label>
-                <input type="text" placeholder="Entrada - Salida" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue transition text-sm">
-              </div>
-            </div>
-            
-            <!-- Botón Buscar -->
-            <button class="mt-4 w-full sm:w-auto sm:px-8 py-3.5 bg-brand-blue hover:bg-brand-blueHover text-white font-semibold rounded-xl transition duration-200 shadow-sm flex items-center justify-center gap-2">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-              Buscar
-            </button>
-          </div>
+        <!-- Botón secundario: Volver al inicio -->
+        <div class="mt-6">
+          <a href="index.html" class="inline-flex items-center text-gray-600 hover:text-brand-blue font-medium transition">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Volver al inicio
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- BANNER DE OFERTA ESPECIAL (Estilo Trip.com Promotions) -->
-    <section id="ofertas" class="bg-slate-50 border-y border-gray-100">
-      <div class="max-w-7xl mx-auto px-4 py-4">
-        <div class="bg-gradient-to-r from-brand-orange/10 via-white to-brand-red/10 border border-orange-200 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-          <div class="flex items-center gap-4">
-            <div class="bg-brand-orange text-white px-3 py-2 rounded-lg text-center min-w-[70px]">
-              <span class="block text-xs font-medium opacity-90">DESCUENTO</span>
-              <span class="block text-xl font-bold leading-none">10% OFF</span>
-            </div>
-            <div>
-              <h3 class="font-semibold text-gray-900">Oferta Exclusiva de Bienvenida</h3>
-              <p class="text-sm text-gray-600">Usa el código de descuento: <span class="font-mono font-bold text-brand-blue bg-blue-50 px-2 py-0.5 rounded">TT666</span></p>
-            </div>
-          </div>
-          <button class="px-5 py-2.5 bg-brand-blue hover:bg-brand-blueHover text-white font-medium rounded-lg transition text-sm whitespace-nowrap">
-            Aplicar ahora
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- GRID DE RECOMENDACIONES (Tarjetas estilo Trip.com) -->
-    <section id="destinos" class="py-12 bg-white">
+    <!-- SECCIÓN DE DESTACADOS (Opcional - personalizable) -->
+    <section class="py-12 bg-slate-50 border-y border-gray-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center">Experiencias Destacadas en [NOMBRE_DEL_PAÍS]</h2>
         
-        <!-- Header de sección -->
-        <div class="flex items-center justify-between mb-6">
-          <div>
-            <h2 class="text-xl sm:text-2xl font-bold text-gray-900">Destinos Recomendados</h2>
-            <p class="text-gray-500 text-sm mt-1">Seleccionados por nuestra comunidad de viajeros</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm card-hover">
+            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            </div>
+            <h3 class="font-semibold text-gray-900 mb-2">Alojamientos Exclusivos</h3>
+            <p class="text-sm text-gray-600">Hoteles boutique y chalets de lujo con vistas panorámicas.</p>
           </div>
-          <a href="#" class="hidden sm:flex items-center text-brand-blue font-medium text-sm hover:underline">
-            Ver todos
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-          </a>
-        </div>
-
-        <!-- Grid de 3 tarjetas -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          <!-- 🇨🇭 Tarjeta: Suiza -->
-          <article class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm card-hover">
-            <div class="relative">
-              <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80" alt="Alpes Suizos" class="w-full h-48 object-cover rounded-t-2xl">
-              <span class="absolute top-3 left-3 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">Top Oferta</span>
-              <button class="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur rounded-full text-gray-400 hover:text-red-500 transition" aria-label="Guardar">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-              </button>
+          <!-- Card 2 -->
+          <div class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm card-hover">
+            <div class="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
-            <div class="p-4">
-              <div class="flex items-start justify-between mb-2">
-                <h3 class="font-semibold text-gray-900 text-lg">Alpes Suizos 🇨🇭</h3>
-                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Desde €850</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-3 line-clamp-2">Refugios de montaña con vistas panorámicas, spas termales y rutas de senderismo exclusivas.</p>
-              
-              <!-- Sistema de puntuación estilo Trip.com -->
-              <div class="flex items-center gap-2 mb-4">
-                <span class="bg-brand-blue text-white text-xs font-bold px-2 py-0.5 rounded">4.8</span>
-                <span class="text-sm text-gray-700 font-medium">Excelente</span>
-                <span class="text-xs text-gray-400">• 2.4k reseñas</span>
-              </div>
-              
-              <button class="w-full py-2.5 bg-brand-blue hover:bg-brand-blueHover text-white font-medium rounded-lg transition text-sm">
-                Ver Disponibilidad
-              </button>
+            <h3 class="font-semibold text-gray-900 mb-2">Experiencias Únicas</h3>
+            <p class="text-sm text-gray-600">Tours privados, gastronomía local y actividades fuera de lo común.</p>
+          </div>
+          
+          <!-- Card 3 -->
+          <div class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm card-hover">
+            <div class="w-12 h-12 bg-brand-red/10 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
-          </article>
-
-          <!-- 🇪🇸 Tarjeta: España -->
-          <article class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm card-hover">
-            <div class="relative">
-              <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=800&q=80" alt="Costa de España" class="w-full h-48 object-cover rounded-t-2xl">
-              <span class="absolute top-3 left-3 bg-brand-red text-white text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">Recomendado</span>
-              <button class="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur rounded-full text-gray-400 hover:text-red-500 transition" aria-label="Guardar">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-              </button>
-            </div>
-            <div class="p-4">
-              <div class="flex items-start justify-between mb-2">
-                <h3 class="font-semibold text-gray-900 text-lg">Costa Mediterránea 🇪🇸</h3>
-                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Desde €420</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-3 line-clamp-2">Calas cristalinas, pueblos blancos y villas boutique con encanto andaluz auténtico.</p>
-              
-              <div class="flex items-center gap-2 mb-4">
-                <span class="bg-brand-blue text-white text-xs font-bold px-2 py-0.5 rounded">4.7</span>
-                <span class="text-sm text-gray-700 font-medium">Muy bueno</span>
-                <span class="text-xs text-gray-400">• 1.8k reseñas</span>
-              </div>
-              
-              <button class="w-full py-2.5 bg-brand-blue hover:bg-brand-blueHover text-white font-medium rounded-lg transition text-sm">
-                Ver Disponibilidad
-              </button>
-            </div>
-          </article>
-
-          <!-- 🇮🇹 Tarjeta: Italia -->
-          <article class="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm card-hover">
-            <div class="relative">
-              <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=80" alt="Toscana, Italia" class="w-full h-48 object-cover rounded-t-2xl">
-              <span class="absolute top-3 left-3 bg-brand-orange text-white text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">Top Oferta</span>
-              <button class="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur rounded-full text-gray-400 hover:text-red-500 transition" aria-label="Guardar">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-              </button>
-            </div>
-            <div class="p-4">
-              <div class="flex items-start justify-between mb-2">
-                <h3 class="font-semibold text-gray-900 text-lg">Toscana Secreta 🇮🇹</h3>
-                <span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Desde €510</span>
-              </div>
-              <p class="text-gray-600 text-sm mb-3 line-clamp-2">Viñedos privados, posadas medievales y atardeceres dorados sobre colinas vírgenes.</p>
-              
-              <div class="flex items-center gap-2 mb-4">
-                <span class="bg-brand-blue text-white text-xs font-bold px-2 py-0.5 rounded">4.9</span>
-                <span class="text-sm text-gray-700 font-medium">Excepcional</span>
-                <span class="text-xs text-gray-400">• 3.1k reseñas</span>
-              </div>
-              
-              <button class="w-full py-2.5 bg-brand-blue hover:bg-brand-blueHover text-white font-medium rounded-lg transition text-sm">
-                Ver Disponibilidad
-              </button>
-            </div>
-          </article>
-
-        </div>
-        
-        <!-- Botón "Ver más" para móvil -->
-        <div class="mt-8 text-center sm:hidden">
-          <a href="#" class="inline-flex items-center text-brand-blue font-medium text-sm hover:underline">
-            Ver todos los destinos
-            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-          </a>
+            <h3 class="font-semibold text-gray-900 mb-2">Reserva Segura</h3>
+            <p class="text-sm text-gray-600">Protección de pago, cancelación flexible y soporte 24/7.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER Limpio estilo corporativo -->
+  <!-- FOOTER (Igual que index.html) -->
   <footer class="bg-slate-50 border-t border-gray-100 pt-12 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -274,68 +166,43 @@
           <ul class="space-y-2 text-sm text-gray-600">
             <li><a href="#" class="hover:text-brand-blue transition">Sobre nosotros</a></li>
             <li><a href="#" class="hover:text-brand-blue transition">Carreras</a></li>
-            <li><a href="#" class="hover:text-brand-blue transition">Prensa</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold text-gray-900 text-sm mb-3">Soporte</h4>
           <ul class="space-y-2 text-sm text-gray-600">
             <li><a href="#" class="hover:text-brand-blue transition">Centro de ayuda</a></li>
-            <li><a href="#" class="hover:text-brand-blue transition">Política de privacidad</a></li>
             <li><a href="#" class="hover:text-brand-blue transition">Términos de servicio</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold text-gray-900 text-sm mb-3">Síguenos</h4>
           <div class="flex items-center gap-3">
-            <a href="#" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-brand-blue hover:border-brand-blue transition" aria-label="Instagram">
+            <a href="#" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-brand-blue transition" aria-label="Instagram">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-            <a href="#" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-brand-blue hover:border-brand-blue transition" aria-label="Twitter">
+            <a href="#" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-brand-blue transition" aria-label="Twitter">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-brand-blue hover:border-brand-blue transition" aria-label="TikTok">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.83-.29-4.03-1.03-1.48-.89-2.47-2.38-2.71-4.05-.12-.77-.15-1.55-.11-2.33.45.13.9.33 1.32.58.57.34 1.22.51 1.87.45 1.49-.08 2.85-.98 3.56-2.32.52-.98.68-2.12.44-3.2-.24-1.08-.95-2.01-1.92-2.56-1.06-.6-2.27-.87-3.51-.81-.84.04-1.68.22-2.47.52-.89.34-1.68.85-2.3 1.5-1.18 1.23-1.8 2.93-1.69 4.61.02.45.06.9.13 1.35-.34.15-.68.33-.99.55-1.68 1.2-2.73 3.2-2.78 5.36-.05 2.3.8 4.54 2.35 6.21 1.56 1.69 3.77 2.65 6.09 2.67 1.27.01 2.53-.27 3.69-.8 1.45-.66 2.7-1.73 3.59-3.05 1.18-1.76 1.86-3.83 1.93-5.97.03-.88.01-1.76-.04-2.64-.22-2.12-1.15-4.12-2.61-5.66-1.12-1.18-2.6-2.01-4.23-2.36-.34-.07-.68-.12-1.03-.15z"/></svg>
             </a>
           </div>
         </div>
       </div>
-      
-      <div class="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-gray-400 text-xs">&copy; 2024 Voyages.Tours. Todos los derechos reservados.</p>
-        <div class="flex items-center gap-4 text-xs text-gray-500">
-          <span>🇪🇸 Español</span>
-          <span>•</span>
-          <span>€ EUR</span>
-        </div>
+      <div class="border-t border-gray-100 pt-6 text-center text-gray-400 text-xs">
+        &copy; 2024 Voyages.Tours. Todos los derechos reservados.
       </div>
     </div>
   </footer>
 
-  <!-- Script mínimo para interactividad básica -->
+  <!-- JAVASCRIPT: Menú móvil -->
   <script>
-    // Toggle de pestañas del buscador (demo visual)
-    document.querySelectorAll('.flex.border-b button').forEach(btn => {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.flex.border-b button').forEach(b => b.classList.remove('tab-active'));
-        this.classList.add('tab-active');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-    });
-
-    // Efecto hover en botones de guardar (demo visual)
-    document.querySelectorAll('button[aria-label="Guardar"]').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const svg = this.querySelector('svg');
-        if (svg.classList.contains('text-red-500')) {
-          svg.classList.remove('text-red-500', 'fill-current');
-          svg.classList.add('text-gray-400');
-        } else {
-          svg.classList.remove('text-gray-400');
-          svg.classList.add('text-red-500', 'fill-current');
-        }
-      });
-    });
+    }
   </script>
 </body>
 </html>
