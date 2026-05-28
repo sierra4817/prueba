@@ -1062,6 +1062,14 @@ const getApiKey = () => {
   return stored.trim();
 };
 
+const getVoiceId = () => {
+  const stored = localStorage.getItem("vision_elevenlabs_voice_id");
+  if (!stored || stored === "null" || stored === "undefined" || stored.trim() === "") {
+    return "c6rAmJGsdzNWAIVkws45"; // Default voice ID (Albert Sierra)
+  }
+  return stored.trim();
+};
+
 // Audio Narration functions with ElevenLabs & Browser Web Speech
 let activeAudio = null;
 let activeNarratorButton = null;
@@ -1106,7 +1114,7 @@ const handleNarrateClick = async (dayId, button) => {
 
   const textToRead = container.innerText || container.textContent;
   const apiKey = getApiKey();
-  const voiceId = "c6rAmJGsdzNWAIVkws45";
+  const voiceId = getVoiceId();
 
   if (apiKey) {
     try {
@@ -1192,7 +1200,23 @@ const speakBrowser = (text, button) => {
   utterance.lang = "es-ES";
   
   const voices = window.speechSynthesis.getVoices();
-  const esVoice = voices.find(v => v.lang.startsWith("es-ES") || v.lang.startsWith("es"));
+  // Intentar buscar una voz en español masculina por nombre/palabras clave
+  let esVoice = voices.find(v => {
+    const nameLower = v.name.toLowerCase();
+    const isSpanish = v.lang.startsWith("es-ES") || v.lang.startsWith("es");
+    const isMale = nameLower.includes("male") || 
+                   nameLower.includes("hombre") || 
+                   nameLower.includes("jorge") || 
+                   nameLower.includes("alvaro") || 
+                   nameLower.includes("david") || 
+                   nameLower.includes("julio");
+    return isSpanish && isMale;
+  });
+
+  if (!esVoice) {
+    esVoice = voices.find(v => v.lang.startsWith("es-ES") || v.lang.startsWith("es"));
+  }
+
   if (esVoice) {
     utterance.voice = esVoice;
   }
@@ -1500,9 +1524,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCloseAudioModal = document.getElementById("btn-close-audio-modal");
   const btnSaveAudioSettings = document.getElementById("btn-save-audio-settings");
   const elApiKeyInput = document.getElementById("el-api-key");
+  const elVoiceSelect = document.getElementById("el-voice-select");
+  const elCustomVoiceGroup = document.getElementById("el-custom-voice-group");
+  const elVoiceIdInput = document.getElementById("el-voice-id");
 
   if (btnAudioSettings) {
     elApiKeyInput.value = getApiKey();
+
+    // Initialize voice select from localStorage
+    const savedVoiceId = localStorage.getItem("vision_elevenlabs_voice_id") || "c6rAmJGsdzNWAIVkws45";
+    if (elVoiceSelect) {
+      if (["c6rAmJGsdzNWAIVkws45", "ErXwobaYiN019PkySvjV"].includes(savedVoiceId)) {
+        elVoiceSelect.value = savedVoiceId;
+        if (elCustomVoiceGroup) elCustomVoiceGroup.style.display = "none";
+      } else {
+        elVoiceSelect.value = "custom";
+        if (elCustomVoiceGroup) elCustomVoiceGroup.style.display = "block";
+      }
+      if (elVoiceIdInput) elVoiceIdInput.value = savedVoiceId;
+    }
+
+    if (elVoiceSelect) {
+      elVoiceSelect.addEventListener("change", () => {
+        if (elVoiceSelect.value === "custom") {
+          if (elCustomVoiceGroup) elCustomVoiceGroup.style.display = "block";
+        } else {
+          if (elCustomVoiceGroup) elCustomVoiceGroup.style.display = "none";
+          if (elVoiceIdInput) elVoiceIdInput.value = elVoiceSelect.value;
+        }
+      });
+    }
 
     btnAudioSettings.addEventListener("click", () => {
       audioSettingsModal.style.display = "flex";
@@ -1514,13 +1565,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnSaveAudioSettings.addEventListener("click", () => {
       const apiKey = elApiKeyInput.value.trim();
+      const voiceId = elVoiceIdInput ? elVoiceIdInput.value.trim() : "";
+      
       if (apiKey) {
         localStorage.setItem("vision_elevenlabs_api_key", apiKey);
-        alert("Configuración guardada. Se utilizará tu clave API de ElevenLabs para las narraciones.");
       } else {
         localStorage.removeItem("vision_elevenlabs_api_key");
-        alert("Configuración guardada. Se utilizará la clave de ElevenLabs por defecto.");
       }
+
+      if (voiceId) {
+        localStorage.setItem("vision_elevenlabs_voice_id", voiceId);
+      } else {
+        localStorage.removeItem("vision_elevenlabs_voice_id");
+      }
+
+      alert("Configuración de audio guardada correctamente.");
       audioSettingsModal.style.display = "none";
     });
 
