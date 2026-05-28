@@ -1,208 +1,590 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descubre [NOMBRE_DEL_PAÍS] con Voyages.Tours - Ofertas exclusivas y experiencias auténticas.">
-  <title>Descubre [NOMBRE_DEL_PAÍS] | Voyages.Tours</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Configuración de tema personalizado -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              blue: '#0066FF',
-              blueHover: '#0052CC',
-              orange: '#FF6B35',
-              red: '#FF4444',
-            }
-          },
-          fontFamily: {
-            sans: ['"Segoe UI"', 'system-ui', '-apple-system', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    ::selection { background-color: #0066FF; color: white; }
-    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
-  </style>
+  <title>Visión Trading Pro - Masterclass de Futuros</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+<body>
 
-<body class="bg-white text-gray-900 antialiased">
-
-  <!-- NAVBAR (Igual que index.html) -->
-  <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="flex items-center gap-1">
-          <span class="text-xl font-bold text-brand-blue tracking-tight">Voyages<span class="text-gray-900">.Tours</span></span>
-        </a>
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="index.html" class="text-gray-900 font-medium hover:text-brand-blue transition">Inicio</a>
-          <a href="index.html#destinos" class="text-gray-600 font-medium hover:text-brand-blue transition">Destinos</a>
-          <a href="index.html#ofertas" class="text-gray-600 font-medium hover:text-brand-blue transition">Ofertas</a>
-        </nav>
-        <div class="flex items-center gap-3">
-          <button class="hidden sm:flex items-center px-4 py-2 bg-brand-blue hover:bg-brand-blueHover text-white font-medium rounded-lg transition duration-200">
-            Iniciar Sesión
-          </button>
-          <button class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100" id="mobileMenuBtn" aria-label="Menú">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </button>
-        </div>
+  <!-- Header Section -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-icon">
+        <!-- SVG matching the brand logo from the screenshot: 3 candlesticks (Green, Blue, Red) -->
+        <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Green Candle (Left) -->
+          <rect x="8" y="10" width="6" height="15" rx="1" fill="#10b981"/>
+          <line x1="11" y1="4" x2="11" y2="30" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+          
+          <!-- Blue Candle (Center) -->
+          <rect x="17" y="6" width="6" height="20" rx="1" fill="#3b82f6"/>
+          <line x1="20" y1="2" x2="20" y2="32" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          
+          <!-- Red Candle (Right) -->
+          <rect x="26" y="14" width="6" height="12" rx="1" fill="#ef4444"/>
+          <line x1="29" y1="8" x2="29" y2="28" stroke="#ef4444" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span>VISIÓN</span>
+        <span class="logo-sub">TRADING PRO</span>
       </div>
     </div>
-    <div class="md:hidden hidden bg-white border-t border-gray-100 px-4 py-3" id="mobileMenu">
-      <a href="index.html" class="block py-2 text-gray-900 font-medium">Inicio</a>
-      <a href="index.html#destinos" class="block py-2 text-gray-600">Destinos</a>
-      <a href="index.html#ofertas" class="block py-2 text-gray-600">Ofertas</a>
+
+    <!-- Audio & Voice Narrator Settings Button -->
+    <div style="display: flex; align-items: center; gap: 12px; margin-left: auto; margin-right: 12px;">
+      <button id="btn-audio-settings" class="indicator-toggle" style="background: rgba(36, 47, 61, 0.4); border: 1px solid var(--border-color); color: var(--text-primary); cursor: pointer; padding: 8px 14px; border-radius: 50px; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-family: var(--font-sans);">
+        <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i> Narrador de Voz
+      </button>
+    </div>
+
+    <!-- User Profile Card in header (Albert) -->
+    <div class="user-profile">
+      <div class="user-info">
+        <span class="user-name">Albert</span>
+        <span class="user-handle">@vision.trader7</span>
+      </div>
+      <img src="logo-transp.png" onerror="this.src='LOGO.jpg'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=100&auto=format&fit=crop&q=60';}" alt="Albert Profile" class="user-avatar">
     </div>
   </header>
 
-  <main>
-    <!-- HERO DEL DESTINO -->
-    <section class="relative bg-gradient-to-br from-slate-50 to-white py-12 px-4">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Imagen destacada del destino -->
-        <div class="relative rounded-2xl overflow-hidden shadow-xl mb-8 max-w-3xl mx-auto">
-          <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80" 
-            alt="[NOMBRE_DEL_PAÍS] - Paisaje destacado" 
-            class="w-full h-64 sm:h-80 object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-          <span class="absolute bottom-4 left-4 bg-brand-orange text-white text-sm font-semibold px-3 py-1.5 rounded-lg shadow-sm">
-            [BANDERA] [NOMBRE_DEL_PAÍS]
-          </span>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside>
+      <div class="progress-widget">
+        <div class="progress-header">
+          <span class="progress-title">Progreso del Curso</span>
+          <span id="progress-text" class="progress-percentage">0%</span>
         </div>
-
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Descubre [NOMBRE_DEL_PAÍS]
-        </h1>
-        <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-          [DESCRIPCIÓN: Ej: "Explora paisajes alpinos, ciudades elegantes y experiencias de lujo accesible en el corazón de Europa."]
-        </p>
-
-        <!-- BOTÓN DE AFILIADO PRINCIPAL -->
-        <a href="https://paa.ge/voyages.tours/en" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           class="inline-flex items-center justify-center px-8 py-4 bg-brand-blue hover:bg-brand-blueHover text-white font-semibold rounded-xl transition-all duration-200 shadow-lg shadow-brand-blue/30 hover:shadow-xl hover:shadow-brand-blue/40 transform hover:-translate-y-0.5 mb-4">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          Reservar con código TT666 (10% OFF)
-        </a>
-        <p class="text-xs text-gray-500">* Válido para reservas seleccionadas. Términos aplican.</p>
-
-        <!-- Botón secundario: Volver al inicio -->
-        <div class="mt-6">
-          <a href="index.html" class="inline-flex items-center text-gray-600 hover:text-brand-blue font-medium transition">
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-            Volver al inicio
-          </a>
+        <div class="progress-bar-bg">
+          <div id="progress-bar" class="progress-bar-fill"></div>
         </div>
       </div>
-    </section>
 
-    <!-- SECCIÓN DE DESTACADOS (Opcional - personalizable) -->
-    <section class="py-12 bg-slate-50 border-y border-gray-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-6 text-center">Experiencias Destacadas en [NOMBRE_DEL_PAÍS]</h2>
+      <ul class="menu-list">
+        <li class="menu-item active" data-target="welcome">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="home"></i>
+            <span>Inicio</span>
+          </div>
+          <span class="menu-status"><i data-lucide="chevron-right"></i></span>
+        </li>
+
+        <li class="menu-section-title">Contenido Académico</li>
+
+        <li class="menu-item" data-target="module1">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="book-open"></i>
+            <span>1. Introducción a Futuros</span>
+          </div>
+          <span class="menu-status" id="status-module1"><i data-lucide="circle" class="status-locked"></i></span>
+        </li>
+
+        <li class="menu-item" data-target="module2">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="trending-up"></i>
+            <span>2. Acción del Precio</span>
+          </div>
+          <span class="menu-status" id="status-module2"><i data-lucide="lock" class="status-locked"></i></span>
+        </li>
+
+        <li class="menu-item" data-target="module3">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="bar-chart-2"></i>
+            <span>3. Sistema Visión Pro</span>
+          </div>
+          <span class="menu-status" id="status-module3"><i data-lucide="lock" class="status-locked"></i></span>
+        </li>
+
+        <li class="menu-item" data-target="module4">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="shield-check"></i>
+            <span>4. Gestión y Psicología</span>
+          </div>
+          <span class="menu-status" id="status-module4"><i data-lucide="lock" class="status-locked"></i></span>
+        </li>
+
+        <li class="menu-section-title">Herramientas Prácticas</li>
+
+        <li class="menu-item" data-target="calculator">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="calculator"></i>
+            <span>Calculadora de Riesgo</span>
+          </div>
+          <span class="menu-status"><i data-lucide="chevron-right"></i></span>
+        </li>
+
+        <li class="menu-item" data-target="simulator">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="play"></i>
+            <span>Simulador de Trading</span>
+          </div>
+          <span class="menu-status"><i data-lucide="chevron-right"></i></span>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Container -->
+    <main>
+      
+      <!-- WELCOME / HOME SECTION -->
+      <section id="welcome" class="content-section active">
+        <div class="welcome-grid">
+          <div class="card">
+            <h2 class="card-title"><i data-lucide="graduation-cap"></i> Bienvenido a la Academia de Futuros</h2>
+            <div class="lesson-body">
+              <p>Hola futuro trader profesional. Te damos la bienvenida a la <strong>Masterclass Integral de Futuros de Visión Trading Pro</strong>. Este no es un curso teórico aburrido; aquí aprenderás la estructura real del mercado de futuros de forma práctica, directa y sin filtros ni atajos engañosos.</p>
+              <p>A través de este viaje, aprenderás:</p>
+              <ul>
+                <li>El funcionamiento interno de los contratos de futuros y cómo se liquidan.</li>
+                <li>Análisis técnico aplicado a mercados altamente líquidos (S&P 500, Nasdaq).</li>
+                <li>La estrategia cuantitativa de <strong>Visión Trading Pro</strong> utilizando Medias Móviles y RSI.</li>
+                <li>Las reglas matemáticas e inquebrantables de la gestión del riesgo y la psicología operativa.</li>
+              </ul>
+              <div class="highlight-box">
+                <strong>💡 Recomendación:</strong> Completa las lecciones de forma ordenada. Cada lección cuenta con un cuestionario interactivo que debes aprobar para desbloquear el siguiente módulo.
+              </div>
+              <button class="btn btn-success" onclick="document.querySelector('[data-target=\'module1\']').click()">
+                Comenzar Curso <i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Profile widget for Albert -->
+          <div class="profile-card">
+            <img src="logo-transp.png" onerror="this.src='LOGO.jpg'; this.onerror=function(){this.src='https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=100&auto=format&fit=crop&q=60';}" alt="Albert Vision" class="profile-pic-large">
+            <span class="profile-name-title">Albert</span>
+            <span class="user-handle" style="margin-bottom: 8px;">@vision.trader7</span>
+            <span class="profile-bio">🎯 Trading sin humo ni atajos<br>Psicología | Estrategia | Disciplina</span>
+            <div class="profile-stats">
+              <div class="stat-item">
+                <span class="stat-val">10</span>
+                <span class="stat-lbl">Siguiendo</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">664</span>
+                <span class="stat-lbl">Seguidores</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-val">3,059</span>
+                <span class="stat-lbl">Me gusta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title"><i data-lucide="book-open"></i> Módulos del Curso</h3>
+          <div class="module-card-list">
+            <div class="module-card" onclick="document.querySelector('[data-target=\'module1\']').click()">
+              <div class="module-card-info">
+                <span class="module-card-num">Módulo 1</span>
+                <span class="module-card-title">Introducción a los Contratos de Futuros</span>
+              </div>
+              <i data-lucide="chevron-right" class="text-secondary"></i>
+            </div>
+            <div class="module-card" onclick="document.querySelector('[data-target=\'module2\']').click()">
+              <div class="module-card-info">
+                <span class="module-card-num">Módulo 2</span>
+                <span class="module-card-title">Acción del Precio y Estructura del Gráfico</span>
+              </div>
+              <i data-lucide="chevron-right" class="text-secondary"></i>
+            </div>
+            <div class="module-card" onclick="document.querySelector('[data-target=\'module3\']').click()">
+              <div class="module-card-info">
+                <span class="module-card-num">Módulo 3</span>
+                <span class="module-card-title">Estrategia Operativa "Visión Trading Pro"</span>
+              </div>
+              <i data-lucide="chevron-right" class="text-secondary"></i>
+            </div>
+            <div class="module-card" onclick="document.querySelector('[data-target=\'module4\']').click()">
+              <div class="module-card-info">
+                <span class="module-card-num">Módulo 4</span>
+                <span class="module-card-title">Gestión de Riesgo Matemática y Psicotrading</span>
+              </div>
+              <i data-lucide="chevron-right" class="text-secondary"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 1 SECTION -->
+      <section id="module1" class="content-section">
+        <div class="card">
+          <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="book-open"></i> Módulo 1: Introducción a los Futuros</span>
+            <button class="indicator-toggle btn-narrate" data-module="module1" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
+              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
+            </button>
+          </h2>
+          <div id="lesson-content-m1" class="lesson-body">
+            <!-- Dynamic lesson content will be loaded here -->
+          </div>
+        </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Card 1 -->
-          <div class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm card-hover">
-            <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Alojamientos Exclusivos</h3>
-            <p class="text-sm text-gray-600">Hoteles boutique y chalets de lujo con vistas panorámicas.</p>
-          </div>
-          
-          <!-- Card 2 -->
-          <div class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm card-hover">
-            <div class="w-12 h-12 bg-brand-orange/10 rounded-lg flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Experiencias Únicas</h3>
-            <p class="text-sm text-gray-600">Tours privados, gastronomía local y actividades fuera de lo común.</p>
-          </div>
-          
-          <!-- Card 3 -->
-          <div class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm card-hover">
-            <div class="w-12 h-12 bg-brand-red/10 rounded-lg flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-            </div>
-            <h3 class="font-semibold text-gray-900 mb-2">Reserva Segura</h3>
-            <p class="text-sm text-gray-600">Protección de pago, cancelación flexible y soporte 24/7.</p>
+        <!-- Quiz Section -->
+        <div class="card quiz-card">
+          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 1</h3>
+          <div id="quiz-m1" class="quiz-container">
+            <!-- Dynamic Quiz will be loaded here -->
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- FOOTER (Igual que index.html) -->
-  <footer class="bg-slate-50 border-t border-gray-100 pt-12 pb-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-        <div class="col-span-2 md:col-span-1">
-          <span class="text-lg font-bold text-brand-blue tracking-tight">Voyages<span class="text-gray-900">.Tours</span></span>
-          <p class="text-gray-500 text-sm mt-3">Viajes con alma y paisajes que inspiran. Tu confianza es nuestra prioridad.</p>
-        </div>
-        <div>
-          <h4 class="font-semibold text-gray-900 text-sm mb-3">Empresa</h4>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li><a href="#" class="hover:text-brand-blue transition">Sobre nosotros</a></li>
-            <li><a href="#" class="hover:text-brand-blue transition">Carreras</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold text-gray-900 text-sm mb-3">Soporte</h4>
-          <ul class="space-y-2 text-sm text-gray-600">
-            <li><a href="#" class="hover:text-brand-blue transition">Centro de ayuda</a></li>
-            <li><a href="#" class="hover:text-brand-blue transition">Términos de servicio</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold text-gray-900 text-sm mb-3">Síguenos</h4>
-          <div class="flex items-center gap-3">
-            <a href="#" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-brand-blue transition" aria-label="Instagram">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.358-.2 6.78-2.618 6.98-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="#" class="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-brand-blue transition" aria-label="Twitter">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
+      <!-- MODULE 2 SECTION -->
+      <section id="module2" class="content-section">
+        <div class="card">
+          <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="trending-up"></i> Módulo 2: Acción del Precio</span>
+            <button class="indicator-toggle btn-narrate" data-module="module2" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
+              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
+            </button>
+          </h2>
+          <div id="lesson-content-m2" class="lesson-body">
+            <!-- Dynamic lesson content -->
           </div>
         </div>
-      </div>
-      <div class="border-t border-gray-100 pt-6 text-center text-gray-400 text-xs">
-        &copy; 2024 Voyages.Tours. Todos los derechos reservados.
+        
+        <div class="card quiz-card">
+          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 2</h3>
+          <div id="quiz-m2" class="quiz-container">
+            <!-- Dynamic Quiz -->
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 3 SECTION -->
+      <section id="module3" class="content-section">
+        <div class="card">
+          <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="bar-chart-2"></i> Módulo 3: El Sistema Operativo "Visión Trading Pro"</span>
+            <button class="indicator-toggle btn-narrate" data-module="module3" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
+              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
+            </button>
+          </h2>
+          <div id="lesson-content-m3" class="lesson-body">
+            <!-- Dynamic lesson content -->
+          </div>
+        </div>
+        
+        <div class="card quiz-card">
+          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 3</h3>
+          <div id="quiz-m3" class="quiz-container">
+            <!-- Dynamic Quiz -->
+          </div>
+        </div>
+      </section>
+
+      <!-- MODULE 4 SECTION -->
+      <section id="module4" class="content-section">
+        <div class="card">
+          <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
+            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="shield-check"></i> Módulo 4: Gestión de Riesgo y Psicotrading</span>
+            <button class="indicator-toggle btn-narrate" data-module="module4" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
+              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
+            </button>
+          </h2>
+          <div id="lesson-content-m4" class="lesson-body">
+            <!-- Dynamic lesson content -->
+          </div>
+        </div>
+        
+        <div class="card quiz-card">
+          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 4</h3>
+          <div id="quiz-m4" class="quiz-container">
+            <!-- Dynamic Quiz -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CALCULATOR SECTION -->
+      <section id="calculator" class="content-section">
+        <div class="card">
+          <h2 class="card-title"><i data-lucide="calculator"></i> Calculadora de Riesgo y Posición de Futuros</h2>
+          <div class="lesson-body">
+            <p>El primer error del trader principiante es abrir operaciones basándose en corazonadas o apostando tamaños aleatorios de contratos. Un trader institucional calcula su <strong>riesgo exacto en dólares</strong> y calcula su tamaño basándose en el stop loss técnico en puntos del mercado.</p>
+          </div>
+          
+          <div class="calculator-grid">
+            <div>
+              <div class="input-group">
+                <label class="input-label" for="calc-capital">Capital de la Cuenta ($)</label>
+                <div class="input-wrapper">
+                  <span class="input-symbol">$</span>
+                  <input type="number" id="calc-capital" class="form-control form-control-symbol" value="10000" min="100">
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="calc-risk-pct">Riesgo por Operación (%)</label>
+                <div class="input-wrapper">
+                  <input type="number" id="calc-risk-pct" class="form-control" value="1" min="0.1" max="10" step="0.1">
+                  <span class="input-symbol" style="left: auto; right: 14px;">%</span>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="calc-asset">Activo / Contrato de Futuros</label>
+                <div class="input-wrapper">
+                  <select id="calc-asset" class="form-control select-control">
+                    <option value="ES" selected>E-mini S&P 500 (ES) - $50 por punto</option>
+                    <option value="MES">Micro E-mini S&P 500 (MES) - $5 por punto</option>
+                    <option value="NQ">E-mini Nasdaq 100 (NQ) - $20 por punto</option>
+                    <option value="MNQ">Micro E-mini Nasdaq 100 (MNQ) - $2 por punto</option>
+                    <option value="CL">WTI Crude Oil (CL) - $1000 por punto (1c = $10)</option>
+                    <option value="MCL">Micro Crude Oil (MCL) - $100 por punto (1c = $1)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="calc-sl-ticks">Distancia Stop Loss (en Puntos)</label>
+                <div class="input-wrapper">
+                  <input type="number" id="calc-sl-ticks" class="form-control" value="10" min="0.25" step="0.25">
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-results">
+              <div class="result-row">
+                <span class="result-label">Riesgo Máximo en Dinero:</span>
+                <span id="res-risk-money" class="result-value risk">$100.00</span>
+              </div>
+              <div class="result-row">
+                <span class="result-label">Valor del Punto del Contrato:</span>
+                <span id="res-point-value" class="result-value">$50.00</span>
+              </div>
+              <div class="result-row">
+                <span class="result-label">Costo por Contrato por Punto:</span>
+                <span id="res-sl-value-1contract" class="result-value">$500.00</span>
+              </div>
+              <div class="result-row">
+                <span class="result-label">Tamaño de Posición Óptimo:</span>
+                <span id="res-contracts" class="result-value highlight">0.20 Contratos</span>
+              </div>
+              <div class="highlight-box" style="margin-top: 15px; margin-bottom: 0;">
+                <strong id="res-warning-msg">⚠️ Nota:</strong> Para contratos Mini/Micro estándar, los decimales indican que debes redondear hacia abajo (operar 0 contratos si es menor a 1, o usar el equivalente Micro para mayor precisión).
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SIMULATOR SECTION -->
+      <section id="simulator" class="content-section">
+        <div class="simulator-layout">
+          
+          <div class="chart-section">
+            <div class="card" style="padding: 16px; margin-bottom: 0;">
+              <div class="chart-header">
+                <div class="active-asset-info">
+                  <select id="sim-asset-select" class="asset-badge" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); outline: none; cursor: pointer;">
+                    <option value="ES" selected>E-mini S&P 500 (ES)</option>
+                    <option value="NQ">E-mini Nasdaq 100 (NQ)</option>
+                  </select>
+                  <span id="sim-current-price" class="asset-price bullish">4850.50</span>
+                </div>
+
+                <!-- Toggle between Simulated Trading and Real TradingView Live Charts -->
+                <div class="chart-view-toggle" style="display: flex; gap: 4px; background: rgba(36, 47, 61, 0.4); padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                  <button id="btn-chart-sim" class="indicator-toggle active" style="padding: 6px 12px; font-size: 0.8rem; border: none; cursor: pointer; background: transparent;">
+                    Simulador Pro
+                  </button>
+                  <button id="btn-chart-tv" class="indicator-toggle" style="padding: 6px 12px; font-size: 0.8rem; border: none; cursor: pointer; background: transparent;">
+                    TradingView Real
+                  </button>
+                </div>
+
+                <div class="chart-controls" id="sim-chart-controls">
+                  <button id="toggle-ema" class="indicator-toggle active">
+                    <i data-lucide="line-chart"></i> EMA 200
+                  </button>
+                  <button id="toggle-rsi" class="indicator-toggle active">
+                    <i data-lucide="percent"></i> RSI 14
+                  </button>
+                  
+                  <div class="sim-speed-control" style="margin-top: 0; padding: 4px 10px;">
+                    <span style="font-size: 0.75rem; color: var(--text-secondary); margin-right: 8px;">Velocidad:</span>
+                    <select id="sim-speed" style="background: transparent; color: var(--text-primary); border: none; font-family: var(--font-mono); font-size: 0.8rem; cursor: pointer; outline: none;">
+                      <option value="1">1x</option>
+                      <option value="2">2x</option>
+                      <option value="5">5x</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Simulator Pro Canvas container -->
+            <div class="canvas-container" id="sim-canvas-container">
+              <canvas id="chartCanvas" class="main-chart-canvas"></canvas>
+              <canvas id="rsiCanvas" class="rsi-chart-canvas"></canvas>
+            </div>
+
+            <!-- TradingView Live widget container -->
+            <div class="tradingview-container" id="sim-tv-container" style="display: none; height: 500px; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; background: #131722; width: 100%;">
+              <div id="tradingview_chart" style="height: 100%; width: 100%;"></div>
+            </div>
+          </div>
+
+          <!-- Trade Operations Panel -->
+          <div class="control-panel">
+            <div class="balance-widget">
+              <h3 class="card-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0; font-size: 1.05rem;">
+                <i data-lucide="wallet"></i> Mi Cuenta Sim
+              </h3>
+              <div class="balance-row">
+                <span class="balance-label">Balance:</span>
+                <span id="sim-balance" class="balance-val">$10,000.00</span>
+              </div>
+              <div class="balance-row">
+                <span class="balance-label">P&L Operación:</span>
+                <span id="sim-pnl" class="balance-val">$0.00</span>
+              </div>
+              <div class="balance-row">
+                <span class="balance-label">Margen Utilizado:</span>
+                <span id="sim-margin" class="balance-val">$0.00</span>
+              </div>
+            </div>
+
+            <div class="card" style="padding: 16px; margin-bottom: 0;">
+              <h3 class="card-title" style="font-size: 1.05rem; margin-bottom: 12px; padding-bottom: 8px;">
+                <i data-lucide="settings"></i> Configuración Orden
+              </h3>
+              
+              <div class="input-group" style="margin-bottom: 12px;">
+                <label class="input-label" style="font-size: 0.75rem;">Apalancamiento</label>
+                <select id="sim-leverage" class="form-control" style="padding: 8px 10px; font-size: 0.85rem;">
+                  <option value="10">10x (Bajo riesgo)</option>
+                  <option value="20" selected>20x (Estándar)</option>
+                  <option value="50">50x (Alto apalancamiento)</option>
+                  <option value="100">100x (Extremo - Margen bajo)</option>
+                </select>
+              </div>
+
+              <div class="input-group" style="margin-bottom: 12px;">
+                <label class="input-label" style="font-size: 0.75rem;">Contratos</label>
+                <input type="number" id="sim-contracts" class="form-control" value="1" min="1" max="100" style="padding: 8px 10px; font-size: 0.85rem;">
+              </div>
+
+              <div class="input-group" style="margin-bottom: 12px;">
+                <label class="input-label" style="font-size: 0.75rem;">Distancia SL (Puntos)</label>
+                <input type="number" id="sim-sl-dist" class="form-control" value="15" min="2" style="padding: 8px 10px; font-size: 0.85rem;">
+              </div>
+
+              <div class="input-group" style="margin-bottom: 12px;">
+                <label class="input-label" style="font-size: 0.75rem;">Distancia TP (Puntos)</label>
+                <input type="number" id="sim-tp-dist" class="form-control" value="30" min="2" style="padding: 8px 10px; font-size: 0.85rem;">
+              </div>
+
+              <div class="order-actions">
+                <button id="btn-buy" class="order-btn order-btn-buy">
+                  <span>COMPRAR (Largo)</span>
+                  <span class="order-btn-sub">Al Mercado</span>
+                </button>
+                <button id="btn-sell" class="order-btn order-btn-sell">
+                  <span>VENDER (Corto)</span>
+                  <span class="order-btn-sub">Al Mercado</span>
+                </button>
+              </div>
+
+              <!-- Live Position Display -->
+              <div id="sim-active-position" style="display: none;">
+                <div class="position-card">
+                  <div class="position-header">
+                    <span id="pos-type-badge" class="position-badge long">Largo 1 MES</span>
+                    <button id="btn-close-position" class="position-close-btn">Cerrar</button>
+                  </div>
+                  <div style="font-size: 0.8rem; display: flex; flex-direction: column; gap: 4px; color: var(--text-secondary);">
+                    <div style="display: flex; justify-content: space-between;">
+                      <span>Precio Entrada:</span>
+                      <span id="pos-entry-price" style="font-family: var(--font-mono); color: var(--text-primary);">4850.25</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span>Stop Loss:</span>
+                      <span id="pos-sl-price" style="font-family: var(--font-mono); color: var(--color-bear);">4835.25</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span>Take Profit:</span>
+                      <span id="pos-tp-price" style="font-family: var(--font-mono); color: var(--color-bull);">4880.25</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Strategy Help Card in Simulator -->
+            <div class="card" style="padding: 16px; margin-bottom: 0; background: rgba(16, 185, 129, 0.03); border-color: rgba(16, 185, 129, 0.1);">
+              <h4 style="font-size: 0.85rem; color: var(--color-bull); text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 8px;">
+                💡 Guía Estrategia Visión
+              </h4>
+              <p style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;">
+                1. <strong>Identifica Tendencia:</strong> Vela sobre la línea azul (EMA 200) = Tendencia Alcista. Vela bajo la línea azul = Tendencia Bajista.<br><br>
+                2. <strong>Confirma Impulso (RSI):</strong> RSI cruza sobre 50 en tendencia alcista = Compra. RSI cruza bajo 50 en tendencia bajista = Venta.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  </div>
+
+  <!-- Audio settings Modal overlay -->
+  <div id="audio-settings-modal" class="modal-overlay" style="display: none;">
+    <div class="card" style="width: 100%; max-width: 480px; margin: 20px; padding: 24px; position: relative;">
+      <h3 class="card-title" style="margin-top: 0; display: flex; justify-content: space-between; align-items: center;">
+        <span><i data-lucide="settings"></i> Configuración de Voz</span>
+        <button id="btn-close-audio-modal" style="background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 4px;"><i data-lucide="x"></i></button>
+      </h3>
+      
+      <div class="lesson-body">
+        <p style="font-size: 0.9rem; margin-bottom: 16px;">Configura la síntesis de voz premium de <strong>ElevenLabs</strong> para escuchar las narraciones de las lecciones del curso.</p>
+        
+        <div class="input-group" style="margin-bottom: 14px;">
+          <label class="input-label" style="font-size: 0.75rem;">ElevenLabs Voice ID</label>
+          <input type="text" id="el-voice-id" class="form-control" value="c6rAmJGsdzNWAIVkws45" readonly style="background: var(--bg-primary); cursor: not-allowed; opacity: 0.75;">
+        </div>
+
+        <div class="input-group" style="margin-bottom: 14px;">
+          <label class="input-label" style="font-size: 0.75rem;">ElevenLabs API Key</label>
+          <input type="password" id="el-api-key" class="form-control" placeholder="Introduce tu xi-api-key...">
+        </div>
+
+        <div class="highlight-box" style="margin: 12px 0 20px 0; padding: 12px; font-size: 0.8rem;">
+          <strong>💡 Información:</strong> Si no tienes una API Key de ElevenLabs, déjala en blanco. El sistema utilizará la <strong>voz nativa en español de tu navegador</strong> de forma totalmente gratuita y automática.
+        </div>
+
+        <div class="highlight-box" style="margin: 12px 0 20px 0; padding: 12px; font-size: 0.8rem; border-left-color: var(--color-warning); background: rgba(245, 158, 11, 0.03);">
+          <strong>⚠️ Nota de Permisos:</strong> Tu clave API en ElevenLabs debe tener activada la casilla de permisos de <strong>"Text-to-Speech"</strong> (Texto a Voz). De lo contrario, los servidores de ElevenLabs denegarán la llamada para reproducir la voz de Albert.
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button id="btn-save-audio-settings" class="btn btn-success">Guardar Configuración</button>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <!-- JAVASCRIPT: Menú móvil -->
+  <!-- Main App Script -->
+  <script src="app.js"></script>
+  <!-- Position Calculator Script -->
+  <script src="calculator.js"></script>
+  <!-- Chart & Order Simulator Script -->
+  <script src="simulator.js"></script>
   <script>
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+    // Initialize Lucide Icons on DOM load
+    document.addEventListener("DOMContentLoaded", function() {
+      lucide.createIcons();
+    });
   </script>
 </body>
 </html>
