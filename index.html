@@ -76,38 +76,9 @@
         </li>
 
         <li class="menu-section-title">Contenido Académico</li>
-
-        <li class="menu-item" data-target="module1">
-          <div class="menu-item-left">
-            <i class="menu-icon" data-lucide="book-open"></i>
-            <span>1. Introducción a Futuros</span>
-          </div>
-          <span class="menu-status" id="status-module1"><i data-lucide="circle" class="status-locked"></i></span>
-        </li>
-
-        <li class="menu-item" data-target="module2">
-          <div class="menu-item-left">
-            <i class="menu-icon" data-lucide="trending-up"></i>
-            <span>2. Acción del Precio</span>
-          </div>
-          <span class="menu-status" id="status-module2"><i data-lucide="lock" class="status-locked"></i></span>
-        </li>
-
-        <li class="menu-item" data-target="module3">
-          <div class="menu-item-left">
-            <i class="menu-icon" data-lucide="bar-chart-2"></i>
-            <span>3. Sistema Visión Pro</span>
-          </div>
-          <span class="menu-status" id="status-module3"><i data-lucide="lock" class="status-locked"></i></span>
-        </li>
-
-        <li class="menu-item" data-target="module4">
-          <div class="menu-item-left">
-            <i class="menu-icon" data-lucide="shield-check"></i>
-            <span>4. Gestión y Psicología</span>
-          </div>
-          <span class="menu-status" id="status-module4"><i data-lucide="lock" class="status-locked"></i></span>
-        </li>
+        
+        <!-- Accordion container for 30-day syllabus built in JS -->
+        <div id="academic-menu-container" style="display: flex; flex-direction: column; gap: 4px; padding: 0 8px;"></div>
 
         <li class="menu-section-title">Herramientas Prácticas</li>
 
@@ -123,6 +94,22 @@
           <div class="menu-item-left">
             <i class="menu-icon" data-lucide="play"></i>
             <span>Simulador de Trading</span>
+          </div>
+          <span class="menu-status"><i data-lucide="chevron-right"></i></span>
+        </li>
+
+        <li class="menu-item" data-target="glossary">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="book"></i>
+            <span>Glosario Técnico</span>
+          </div>
+          <span class="menu-status"><i data-lucide="chevron-right"></i></span>
+        </li>
+
+        <li class="menu-item" data-target="certificate" id="menu-item-certificate" style="display: none;">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="award" style="color: #f59e0b;"></i>
+            <span>Mi Certificado</span>
           </div>
           <span class="menu-status"><i data-lucide="chevron-right"></i></span>
         </li>
@@ -181,31 +168,31 @@
         <div class="card">
           <h3 class="card-title"><i data-lucide="book-open"></i> Módulos del Curso</h3>
           <div class="module-card-list">
-            <div class="module-card" onclick="document.querySelector('[data-target=\'module1\']').click()">
+            <div class="module-card" onclick="window.openPillar(1)">
               <div class="module-card-info">
-                <span class="module-card-num">Módulo 1</span>
-                <span class="module-card-title">Introducción a los Contratos de Futuros</span>
+                <span class="module-card-num">Pilar 1 (Semana 1)</span>
+                <span class="module-card-title">Gestión de Riesgo Innegociable</span>
               </div>
               <i data-lucide="chevron-right" class="text-secondary"></i>
             </div>
-            <div class="module-card" onclick="document.querySelector('[data-target=\'module2\']').click()">
+            <div class="module-card" onclick="window.openPillar(2)">
               <div class="module-card-info">
-                <span class="module-card-num">Módulo 2</span>
-                <span class="module-card-title">Acción del Precio y Estructura del Gráfico</span>
+                <span class="module-card-num">Pilar 2 (Semana 2)</span>
+                <span class="module-card-title">Lectura Técnica sin Indicadores</span>
               </div>
               <i data-lucide="chevron-right" class="text-secondary"></i>
             </div>
-            <div class="module-card" onclick="document.querySelector('[data-target=\'module3\']').click()">
+            <div class="module-card" onclick="window.openPillar(3)">
               <div class="module-card-info">
-                <span class="module-card-num">Módulo 3</span>
-                <span class="module-card-title">Estrategia Operativa "Visión Trading Pro"</span>
+                <span class="module-card-num">Pilar 3 (Semana 3)</span>
+                <span class="module-card-title">Control Emocional bajo Presión</span>
               </div>
               <i data-lucide="chevron-right" class="text-secondary"></i>
             </div>
-            <div class="module-card" onclick="document.querySelector('[data-target=\'module4\']').click()">
+            <div class="module-card" onclick="window.openPillar(4)">
               <div class="module-card-info">
-                <span class="module-card-num">Módulo 4</span>
-                <span class="module-card-title">Gestión de Riesgo Matemática y Psicotrading</span>
+                <span class="module-card-num">Pilar 4 (Semana 4)</span>
+                <span class="module-card-title">Construcción de un Sistema Repetible</span>
               </div>
               <i data-lucide="chevron-right" class="text-secondary"></i>
             </div>
@@ -213,91 +200,124 @@
         </div>
       </section>
 
-      <!-- MODULE 1 SECTION -->
-      <section id="module1" class="content-section">
-        <div class="card">
+      <!-- ACADEMY DAY SECTION -->
+      <section id="academy-day" class="content-section">
+        <div class="card" style="position: relative;">
           <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
-            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="book-open"></i> Módulo 1: Introducción a los Futuros</span>
-            <button class="indicator-toggle btn-narrate" data-module="module1" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
-              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
-            </button>
+            <span id="academy-day-title" style="display: flex; align-items: center; gap: 10px;"><i data-lucide="book-open"></i> Día 1: El Capital como Inventario</span>
+            <div style="display: flex; gap: 8px;">
+              <button id="btn-toggle-focus" class="indicator-toggle" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px; background: var(--bg-tertiary);">
+                <i data-lucide="maximize-2" style="width: 14px; height: 14px;"></i> <span>Modo Enfoque</span>
+              </button>
+              <button class="indicator-toggle btn-narrate" id="btn-narrate-day" data-day="1" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
+                <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
+              </button>
+            </div>
           </h2>
-          <div id="lesson-content-m1" class="lesson-body">
-            <!-- Dynamic lesson content will be loaded here -->
+          <div id="academy-day-content" class="lesson-body">
+            <!-- Dynamic lesson content loaded from app.js -->
           </div>
         </div>
-        
-        <!-- Quiz Section -->
-        <div class="card quiz-card">
-          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 1</h3>
-          <div id="quiz-m1" class="quiz-container">
-            <!-- Dynamic Quiz will be loaded here -->
-          </div>
-        </div>
-      </section>
 
-      <!-- MODULE 2 SECTION -->
-      <section id="module2" class="content-section">
-        <div class="card">
-          <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
-            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="trending-up"></i> Módulo 2: Acción del Precio</span>
-            <button class="indicator-toggle btn-narrate" data-module="module2" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
-              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
-            </button>
-          </h2>
-          <div id="lesson-content-m2" class="lesson-body">
-            <!-- Dynamic lesson content -->
+        <!-- Daily Challenge Card -->
+        <div class="card challenge-card" id="academy-challenge-card" style="border-color: rgba(245, 158, 11, 0.2); background: rgba(245, 158, 11, 0.02);">
+          <h3 class="card-title" style="color: var(--color-warning); border-bottom-color: rgba(245, 158, 11, 0.15); font-size: 1.1rem; margin-bottom: 12px; padding-bottom: 8px;">
+            <i data-lucide="compass"></i> Desafío Práctico Diario
+          </h3>
+          <div class="lesson-body">
+            <p id="academy-challenge-text" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; font-weight: 500; color: var(--text-primary);">
+              Cargando desafío diario...
+            </p>
+            <div class="input-group" style="margin-bottom: 12px;">
+              <label class="input-label" style="font-size: 0.75rem;">Tu respuesta y documentación:</label>
+              <textarea id="challenge-response" class="form-control" rows="4" placeholder="Escribe aquí tu análisis de errores, decisiones tomadas y respuestas al desafío técnico..." style="font-family: var(--font-sans); line-height: 1.5; font-size: 0.9rem; resize: vertical; background: var(--bg-primary);"></textarea>
+            </div>
+            <div style="display: flex; justify-content: flex-end;">
+              <button id="btn-save-challenge" class="btn" style="background-color: var(--color-warning); color: var(--bg-primary); padding: 10px 20px; font-size: 0.85rem;">
+                <i data-lucide="save" style="width: 16px; height: 16px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Guardar Desafío en Bitácora
+              </button>
+            </div>
           </div>
         </div>
         
-        <div class="card quiz-card">
-          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 2</h3>
-          <div id="quiz-m2" class="quiz-container">
+        <!-- Weekly Quiz Section -->
+        <div class="card quiz-card" id="academy-quiz-card" style="display: none; border-color: rgba(59, 130, 246, 0.3);">
+          <h3 class="card-title" style="color: var(--color-accent); border-bottom-color: rgba(59, 130, 246, 0.15);"><i data-lucide="help-circle"></i> Evaluación del Pilar Semanal</h3>
+          <div id="academy-quiz-container" class="quiz-container">
             <!-- Dynamic Quiz -->
           </div>
         </div>
       </section>
 
-      <!-- MODULE 3 SECTION -->
-      <section id="module3" class="content-section">
+      <!-- GLOSSARY SECTION -->
+      <section id="glossary" class="content-section">
         <div class="card">
-          <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
-            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="bar-chart-2"></i> Módulo 3: El Sistema Operativo "Visión Trading Pro"</span>
-            <button class="indicator-toggle btn-narrate" data-module="module3" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
-              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
-            </button>
-          </h2>
-          <div id="lesson-content-m3" class="lesson-body">
-            <!-- Dynamic lesson content -->
-          </div>
-        </div>
-        
-        <div class="card quiz-card">
-          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 3</h3>
-          <div id="quiz-m3" class="quiz-container">
-            <!-- Dynamic Quiz -->
+          <h2 class="card-title"><i data-lucide="book"></i> Glosario de Trading Profesional</h2>
+          <div class="lesson-body">
+            <p style="margin-bottom: 20px;">Términos esenciales utilizados por operadores de futuros institucionales y mesas de dinero. Haz clic en cualquier término para ver su definición completa.</p>
+            
+            <div id="glossary-container" class="concept-grid">
+              <!-- Dynamically loaded from app.js -->
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- MODULE 4 SECTION -->
-      <section id="module4" class="content-section">
-        <div class="card">
-          <h2 class="card-title" style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 10px;">
-            <span style="display: flex; align-items: center; gap: 10px;"><i data-lucide="shield-check"></i> Módulo 4: Gestión de Riesgo y Psicotrading</span>
-            <button class="indicator-toggle btn-narrate" data-module="module4" style="cursor: pointer; font-size: 0.85rem; padding: 6px 12px;">
-              <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i> <span>Narrar Lección</span>
-            </button>
+      <!-- CERTIFICATE SECTION -->
+      <section id="certificate" class="content-section">
+        <div class="card" style="text-align: center; padding: 40px 20px; border-color: rgba(245, 158, 11, 0.3); background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(19, 26, 34, 0.6) 100%);">
+          <h2 class="card-title" style="justify-content: center; border-bottom: none; padding-bottom: 0;">
+            <i data-lucide="award" style="color: #f59e0b; width: 32px; height: 32px;"></i> Diploma de Completitud
           </h2>
-          <div id="lesson-content-m4" class="lesson-body">
-            <!-- Dynamic lesson content -->
+          <p style="color: var(--text-secondary); margin-bottom: 30px; font-size: 0.95rem;">¡Felicidades, Trader! Has culminado con éxito los 4 pilares prácticos de maestría estoica.</p>
+          
+          <div id="certificate-print-area" class="certificate-wrapper" style="margin: 0 auto; max-width: 780px;">
+            <!-- Rendered in CSS with premium borders -->
+            <div class="certificate-card">
+              <div class="cert-gold-border">
+                <div class="cert-content">
+                  <div class="cert-brand">
+                    <svg width="40" height="35" viewBox="0 0 40 35" fill="none" style="margin: 0 auto;">
+                      <rect x="8" y="10" width="6" height="15" rx="1" fill="#10b981"/>
+                      <line x1="11" y1="4" x2="11" y2="30" stroke="#10b981" stroke-width="2"/>
+                      <rect x="17" y="6" width="6" height="20" rx="1" fill="#3b82f6"/>
+                      <line x1="20" y1="2" x2="20" y2="32" stroke="#3b82f6" stroke-width="2"/>
+                      <rect x="26" y="14" width="6" height="12" rx="1" fill="#ef4444"/>
+                      <line x1="29" y1="8" x2="29" y2="28" stroke="#ef4444" stroke-width="2"/>
+                    </svg>
+                    <div style="font-family: var(--font-mono); font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; margin-top: 5px;">VISIÓN TRADING PRO</div>
+                  </div>
+                  
+                  <div class="cert-title-diploma">CERTIFICADO DE MAESTRÍA EN FUTUROS</div>
+                  
+                  <div class="cert-recipient-label">Otorgado con honor a:</div>
+                  <div class="cert-recipient-name" id="cert-student-name">Albert</div>
+                  
+                  <p class="cert-text-body">
+                    Por haber completado satisfactoriamente el riguroso programa de 30 días, demostrando disciplina inquebrantable en la gestión de riesgo, lectura de precio pura sin indicadores rezagados y control estoico bajo presión.
+                  </p>
+                  
+                  <div class="cert-signatures">
+                    <div class="cert-sig-block">
+                      <div class="cert-signature-draw">Albert Sierra</div>
+                      <div class="cert-sig-line"></div>
+                      <div class="cert-sig-role">Albert Sierra</div>
+                      <div class="cert-sig-desc">Fundador, Visión Trading Pro</div>
+                    </div>
+                    <div class="cert-sig-block">
+                      <div class="cert-signature-draw" id="cert-date-str">2026-05-29</div>
+                      <div class="cert-sig-line"></div>
+                      <div class="cert-sig-role">Fecha de Aprobación</div>
+                      <div class="cert-sig-desc">Masterclass de Futuros</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <div class="card quiz-card">
-          <h3 class="card-title"><i data-lucide="help-circle"></i> Evaluación: Módulo 4</h3>
-          <div id="quiz-m4" class="quiz-container">
-            <!-- Dynamic Quiz -->
+          
+          <div style="display: flex; justify-content: center; gap: 15px; margin-top: 30px;">
+            <button id="btn-print-cert" class="btn btn-success"><i data-lucide="printer"></i> Imprimir Diploma</button>
           </div>
         </div>
       </section>
@@ -370,6 +390,9 @@
               <div class="highlight-box" style="margin-top: 15px; margin-bottom: 0;">
                 <strong id="res-warning-msg">⚠️ Nota:</strong> Para contratos Mini/Micro estándar, los decimales indican que debes redondear hacia abajo (operar 0 contratos si es menor a 1, o usar el equivalente Micro para mayor precisión).
               </div>
+              <button id="btn-export-plan" class="btn btn-secondary" style="margin-top: 15px; width: 100%; border-color: var(--color-warning); color: var(--color-warning); background: transparent; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600;">
+                <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> Generar Plan de Trading Personalizado
+              </button>
             </div>
           </div>
         </div>

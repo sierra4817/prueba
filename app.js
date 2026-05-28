@@ -1,448 +1,782 @@
-// Dynamic Course Manager - Visión Trading Pro
-const courseData = {
-  module1: {
-    id: "module1",
-    title: "1. Introducción a Futuros",
-    completed: false,
-    unlocked: true,
-    score: 0,
-    content: `
-      <p>Bienvenido al <strong>Módulo 1</strong>. En esta lección aprenderemos los fundamentos técnicos y estructurales del mercado de futuros, esenciales antes de arriesgar un solo dólar.</p>
-      
-      <h3>¿Qué es un Contrato de Futuros?</h3>
-      <p>Un contrato de futuros es un acuerdo financiero estandarizado para comprar o vender un activo (como índices de acciones, materias primas o monedas) a un precio predeterminado en una fecha futura. A diferencia del mercado spot o de acciones, no eres dueño de una porción de una empresa; estás operando contratos de compromiso de valor.</p>
-      
-      <div class="concept-grid">
-        <div class="concept-card">
-          <div class="concept-card-title">🏢 Mercado Regulado y Centralizado</div>
-          <p style="font-size: 0.85rem;">Todos los contratos se negocian en bolsas centralizadas como el <strong>CME Group</strong> (Chicago Mercantile Exchange). Esto elimina la manipulación de los brokers de CFD y proporciona un libro de órdenes transparente y regulado.</p>
-        </div>
-        <div class="concept-card">
-          <div class="concept-card-title">⚙️ Contratos Estandarizados</div>
-          <p style="font-size: 0.85rem;">Cada contrato tiene un tamaño predefinido, fecha de vencimiento (trimestral en índices) y especificaciones precisas que no varían.</p>
-        </div>
-      </div>
+// Dynamic Course Manager - Visión Trading Pro (30-Day Intensive)
 
-      <h3>Apalancamiento y Margen</h3>
-      <p>Los futuros se operan usando "margen". En lugar de pagar el valor total del contrato (que puede ser de más de $200,000 para el S&P 500), solo necesitas depositar una pequeña fracción como garantía colateral para abrir y mantener la posición.</p>
+// 30 Days Syllabus Data
+const courseData = {
+  day1: {
+    id: "day1",
+    pilar: 1,
+    title: "El Capital como Inventario",
+    unlocked: true,
+    completed: false,
+    challenge: "Calcula la ruina matemática de una cuenta de $10,000 arriesgando el 1% frente al 10% en una racha de 10 operaciones perdedoras consecutivas. Escribe la diferencia en el balance final.",
+    content: `
+      <p>Bienvenido al <strong>Día 1</strong>. Como trader profesional, debes erradicar la mentalidad de casino. El dinero en tu cuenta de corretaje no son fichas para apostar; es el <strong>inventario de tu negocio</strong>.</p>
+      
+      <h3>La mentalidad del inventario</h3>
+      <p>Un comerciante compra mercancía sabiendo que algunas unidades pueden salir defectuosas o no venderse (pérdidas controladas). Nunca arriesga todo su negocio en un solo lote. En el trading de futuros, cada operación es una transacción comercial donde arriesgas una parte de tu inventario para obtener un retorno mayor.</p>
       
       <ul>
-        <li><strong>Margen Inicial:</strong> La cantidad de capital requerida en tu cuenta de corretaje para abrir una posición de 1 contrato.</li>
-        <li><strong>Margen de Mantenimiento:</strong> El capital mínimo que debe permanecer en tu cuenta mientras la operación esté abierta. Si tu balance cae por debajo de este nivel, sufrirás una <em>llamada de margen (Margin Call)</em> y el broker cerrará tu posición con pérdidas inmediatamente.</li>
+        <li><strong>Capital Operativo:</strong> Es tu herramienta de trabajo. Si se agota, estás fuera del negocio.</li>
+        <li><strong>Preservación de Capital:</strong> Tu prioridad número uno no es ganar dinero; es mantenerte en el juego el tiempo suficiente para que tu ventaja estadística funcione.</li>
       </ul>
 
       <div class="alert-box">
-        <strong>⚠️ Alerta de Riesgo:</strong> El apalancamiento es un arma de doble filo. Permite multiplicar tus ganancias pero también tus pérdidas de forma acelerada si no utilizas un stop loss estricto.
+        <strong>📈 Regla Estoica:</strong> El mercado es un entorno de incertidumbre. Acepta que cualquier operación individual puede ser perdedora. La única variable que controlas al 100% es cuánto permites perder antes de entrar.
       </div>
-
-      <h3>Entendiendo los Ticks y el Tamaño del Punto</h3>
-      <p>En el mercado de futuros, los precios no se mueven en centavos individuales, sino en <strong>ticks</strong> (la fluctuación mínima de precio). Cada tick tiene un valor monetario predeterminado según el tipo de contrato:</p>
-
+    `
+  },
+  day2: {
+    id: "day2",
+    pilar: 1,
+    title: "Asimetría Matemática y R:B",
+    unlocked: false,
+    completed: false,
+    challenge: "Si realizas 20 operaciones con una tasa de acierto del 40% (8 ganadas, 12 perdidas) y un ratio R:B de 1:2 arriesgando $100 por trade, calcula tu P&L neto final.",
+    content: `
+      <p>Hoy estudiaremos la <strong>asimetría matemática</strong>. La rentabilidad en el trading no depende de tener la razón todo el tiempo, sino de cuánto ganas cuando aciertas frente a cuánto pierdes cuando fallas.</p>
+      
+      <h3>El Ratio Riesgo/Beneficio (R:B)</h3>
+      <p>El ratio R:B es la proporción entre tu pérdida potencial (distancia al Stop Loss) y tu ganancia proyectada (distancia al Take Profit). Para ser rentable con consistencia, buscamos un ratio mínimo de <strong>1:2</strong>.</p>
+      
       <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-family: var(--font-mono); font-size: 0.9rem; border: 1px solid var(--border-color);">
         <thead>
           <tr style="background: var(--bg-tertiary); text-align: left;">
-            <th style="padding: 10px; border-bottom: 2px stroke var(--border-color);">Contrato</th>
-            <th style="padding: 10px; border-bottom: 2px stroke var(--border-color);">Activo</th>
-            <th style="padding: 10px; border-bottom: 2px stroke var(--border-color);">Tamaño Tick</th>
-            <th style="padding: 10px; border-bottom: 2px stroke var(--border-color);">Valor por Tick</th>
-            <th style="padding: 10px; border-bottom: 2px stroke var(--border-color);">Valor por Punto (4 Ticks)</th>
+            <th style="padding: 10px; border-bottom: 2px solid var(--border-color);">Ratio R:B</th>
+            <th style="padding: 10px; border-bottom: 2px solid var(--border-color);">Tasa Acierto Mínima</th>
+            <th style="padding: 10px; border-bottom: 2px solid var(--border-color);">Resultado a Largo Plazo</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom: 1px solid var(--border-color);">
-            <td style="padding: 10px;"><strong>ES</strong></td>
-            <td style="padding: 10px;">E-mini S&P 500</td>
-            <td style="padding: 10px;">0.25</td>
-            <td style="padding: 10px; color: var(--color-bull);">$12.50</td>
-            <td style="padding: 10px; font-weight: 700;">$50.00</td>
+            <td style="padding: 10px;">1:1</td>
+            <td style="padding: 10px;">51%</td>
+            <td style="padding: 10px; color: var(--text-secondary);">Difícil debido a comisiones</td>
           </tr>
           <tr style="border-bottom: 1px solid var(--border-color);">
-            <td style="padding: 10px;"><strong>MES</strong></td>
-            <td style="padding: 10px;">Micro E-mini S&P 500</td>
-            <td style="padding: 10px;">0.25</td>
-            <td style="padding: 10px; color: var(--color-bull);">$1.25</td>
-            <td style="padding: 10px; font-weight: 700;">$5.00</td>
+            <td style="padding: 10px;"><strong>1:2</strong></td>
+            <td style="padding: 10px; color: var(--color-bull);"><strong>34%</strong></td>
+            <td style="padding: 10px; font-weight: bold; color: var(--color-bull);">Rentable con baja presión mental</td>
           </tr>
           <tr style="border-bottom: 1px solid var(--border-color);">
-            <td style="padding: 10px;"><strong>NQ</strong></td>
-            <td style="padding: 10px;">E-mini Nasdaq 100</td>
-            <td style="padding: 10px;">0.25</td>
-            <td style="padding: 10px; color: var(--color-bull);">$5.00</td>
-            <td style="padding: 10px; font-weight: 700;">$20.00</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border-color);">
-            <td style="padding: 10px;"><strong>MNQ</strong></td>
-            <td style="padding: 10px;">Micro E-mini Nasdaq 100</td>
-            <td style="padding: 10px;">0.25</td>
-            <td style="padding: 10px; color: var(--color-bull);">$0.50</td>
-            <td style="padding: 10px; font-weight: 700;">$2.00</td>
+            <td style="padding: 10px;">1:3</td>
+            <td style="padding: 10px; color: var(--color-bull);">26%</td>
+            <td style="padding: 10px;">Excelente, requiere alta paciencia</td>
           </tr>
         </tbody>
       </table>
-
-      <p>Por ejemplo, si compras 1 contrato de <strong>E-mini S&P 500 (ES)</strong> en 4800.00 y lo vendes en 4802.00, el precio se ha movido 2 puntos completos (8 ticks). Tu ganancia será: 2 puntos x $50 = $100.</p>
-    `,
-    quiz: [
-      {
-        q: "¿Qué es el margen de mantenimiento en futuros?",
-        options: [
-          "El capital mínimo requerido en tu cuenta para mantener abierta una posición.",
-          "El capital inicial que cobra la bolsa como comisión no reembolsable.",
-          "La ganancia garantizada del broker por día de operativa."
-        ],
-        answer: 0,
-        explanation: "El margen de mantenimiento es la cantidad mínima de fondos propios que debe haber en la cuenta de corretaje para mantener la posición abierta."
-      },
-      {
-        q: "Si operas 1 contrato de E-mini S&P 500 (ES) y el precio sube 2 puntos completos, ¿cuál es tu ganancia?",
-        options: [
-          "$20.00 dólares.",
-          "$100.00 dólares.",
-          "$250.00 dólares."
-        ],
-        answer: 1,
-        explanation: "Cada punto completo en ES equivale a $50 dólares (4 ticks de $12.50). Por lo tanto, 2 puntos = $100 dólares de ganancia."
-      },
-      {
-        q: "¿Dónde se negocian de forma oficial y regulada los futuros de índices americanos como el ES y NQ?",
-        options: [
-          "En plataformas OTC descentralizadas sin regulación.",
-          "En la bolsa centralizada CME Group (Chicago Mercantile Exchange).",
-          "En cualquier broker de Forex a través de contratos por diferencia CFD."
-        ],
-        answer: 1,
-        explanation: "Los futuros de índices americanos están centralizados y regulados en el CME Group, garantizando transparencia de precios y volumen real."
-      }
-    ]
+    `
   },
-  module2: {
-    id: "module2",
-    title: "2. Acción del Precio",
-    completed: false,
+  day3: {
+    id: "day3",
+    pilar: 1,
+    title: "Cálculo de Lotes y Contratos",
     unlocked: false,
-    score: 0,
+    completed: false,
+    challenge: "Tienes una cuenta de $5,000, quieres arriesgar el 1% ($50) en un trade de Micro E-mini S&P 500 (MES). Tu Stop Loss técnico está a 10 puntos de distancia ($5 por punto por contrato). ¿Cuántos contratos debes abrir?",
     content: `
-      <p>La base de un gráfico de trading es el precio. En este módulo estudiaremos la <strong>Acción del Precio (Price Action)</strong>, que consiste en interpretar la psicología del mercado leyendo velas y estructuras, sin depender de indicadores rezagados.</p>
-
-      <h3>Lectura de Velas Japonesas</h3>
-      <p>Una vela japonesa nos muestra la batalla ganada o perdida entre compradores y vendedores durante un marco de tiempo específico (por ejemplo, 5 minutos o 1 hora).</p>
+      <p>El tamaño de la posición nunca se decide al azar. Se calcula matemáticamente antes de abrir cada orden utilizando tres variables del mercado de futuros.</p>
       
-      <ul>
-        <li><strong>Cuerpo de la vela:</strong> Muestra la distancia entre el precio de apertura y de cierre. Un cuerpo verde indica que ganaron los compradores; uno rojo indica control vendedor.</li>
-        <li><strong>Mechas (Sombras):</strong> Indican rechazo de precios. Una mecha larga superior significa que los compradores intentaron empujar el precio al alza pero los vendedores los obligaron a retroceder antes del cierre de la vela.</li>
-      </ul>
-
-      <div class="concept-grid">
-        <div class="concept-card">
-          <div class="concept-card-title">🟢 Vela de Intención Alcista</div>
-          <p style="font-size: 0.85rem;">Cuerpo grande, verde, con poca mecha. Muestra un fuerte impulso de compra sostenido.</p>
-        </div>
-        <div class="concept-card">
-          <div class="concept-card-title">🔴 Vela de Rechazo Bajista (Pin Bar)</div>
-          <p style="font-size: 0.85rem;">Mecha superior muy larga y cuerpo pequeño en la parte inferior. Indica que las compras fallaron y el precio fue rechazado con fuerza.</p>
-        </div>
-      </div>
-
-      <h3>Soportes y Resistencias Técnicos</h3>
-      <p>Son niveles horizontales clave donde anteriormente el mercado ha detenido su marcha y ha rebotado debido a desequilibrios entre oferta y demanda institucional.</p>
-      
-      <ul>
-        <li><strong>Soporte:</strong> Zona de precios "barata" donde el interés de compra supera al de venta. El precio tiende a rebotar al alza al tocar este nivel.</li>
-        <li><strong>Resistencia:</strong> Zona de precios "cara" donde la presión de venta supera a la de compra, deteniendo las subidas del precio y provocando giros a la baja.</li>
-      </ul>
-
+      <h3>Fórmula del tamaño de posición</h3>
       <div class="highlight-box">
-        <strong>📈 Ley de Alternancia (Polaridad):</strong> Cuando un nivel de resistencia fuerte es roto al alza, se convierte automáticamente en un nivel de soporte futuro si el precio regresa a testearlo.
+        <strong>Contratos = Riesgo Máximo ($) / (Distancia de Stop Loss en Puntos x Valor del Punto del Contrato)</strong>
       </div>
-
-      <h3>Estructura de Mercado</h3>
-      <p>El mercado no se mueve en línea recta, sino en zigzag formando oscilaciones (impulsos y retrocesos):</p>
-      <ul>
-        <li><strong>Tendencia Alcista:</strong> Caracterizada por una serie de máximos más altos (HH - Higher Highs) y mínimos más altos (HL - Higher Lows).</li>
-        <li><strong>Tendencia Bajista:</strong> Caracterizada por máximos más bajos (LH - Lower Highs) y mínimos más bajos (LL - Lower Lows).</li>
-      </ul>
-    `,
-    quiz: [
-      {
-        q: "¿Qué indica una vela japonesa con un cuerpo extremadamente pequeño y mechas muy largas en ambos extremos (Doji)?",
-        options: [
-          "Fuerte tendencia alcista inminente.",
-          "Indecisión en el mercado y equilibrio de fuerzas entre compradores y vendedores.",
-          "Que las instituciones financieras han retirado todas sus órdenes del mercado."
-        ],
-        answer: 1,
-        explanation: "Un Doji representa equilibrio temporal e indecisión, ya que la sesión cerró prácticamente en el mismo precio en el que abrió a pesar de las oscilaciones."
-      },
-      {
-        q: "¿Cuál es la forma correcta de trazar una línea de tendencia alcista válida?",
-        options: [
-          "Uniendo los máximos decrecientes de las velas.",
-          "Uniendo al menos dos mínimos ascendentes sucesivos.",
-          "Trazando una línea horizontal sobre el soporte más fuerte."
-        ],
-        answer: 1,
-        explanation: "Una línea de tendencia alcista se traza conectando los mínimos más altos (Higher Lows) que sostienen la estructura alcista."
-      },
-      {
-        q: "Si el precio rompe una Resistencia fuerte al alza y luego retrocede hacia ella, ¿qué comportamiento se espera según la ley de polaridad?",
-        options: [
-          "Que actúe como un nuevo Soporte y el precio rebote al alza.",
-          "Que el precio continúe cayendo libremente sin frenar.",
-          "La resistencia rota no tiene ninguna relevancia futura."
-        ],
-        answer: 0,
-        explanation: "La ley de polaridad indica que las resistencias rotas tienden a convertirse en soportes, ya que los vendedores perdedores buscan cerrar a break-even y entran nuevos compradores."
-      }
-    ]
-  },
-  module3: {
-    id: "module3",
-    title: "3. Sistema Visión Pro",
-    completed: false,
-    unlocked: false,
-    score: 0,
-    content: `
-      <p>En este módulo aprenderemos la estrategia central de <strong>Visión Trading Pro</strong>, inspirada en las reglas de cálculo de nuestro script automatizado para TradingView.</p>
-
-      <div class="strategy-box">
-        <h4 style="color: var(--color-bull); margin-bottom: 8px;">📊 Filosofía del Sistema Integral</h4>
-        <p>No buscamos adivinar techos ni suelos. Nuestra meta es alinearnos con el dinero institucional a favor de la tendencia usando un <strong>filtro de tendencia</strong> estricto y un <strong>gatillo de momento</strong> objetivo.</p>
-      </div>
-
-      <h3>Componente 1: Filtro de Tendencia (EMA 200)</h3>
-      <p>La Media Móvil Exponencial de 200 períodos (EMA 200) es el árbitro del sistema. Nos dice en qué dirección del mercado tenemos las probabilidades a nuestro favor:</p>
-      <ul>
-        <li><strong>Filtro Alcista:</strong> Si el precio está por encima de la EMA 200, <strong>solo se permiten operaciones de compra (Long)</strong>.</li>
-        <li><strong>Filtro Bajista:</strong> Si el precio está por debajo de la EMA 200, <strong>solo se permiten operaciones de venta (Short)</strong>.</li>
-      </ul>
-
-      <h3>Componente 2: Gatillo de Momento (RSI 14)</h3>
-      <p>Para entrar al mercado, requerimos que el Índice de Fuerza Relativa (RSI de 14 períodos) confirme la aceleración del precio cruzando su línea de control media (50):</p>
-      <ul>
-        <li><strong>Gatillo de Compra (Long):</strong> El precio cotiza por encima de la EMA 200 AND el RSI de 14 cruza por encima de 50.</li>
-        <li><strong>Gatillo de Venta (Short):</strong> El precio cotiza por debajo de la EMA 200 AND el RSI de 14 cruza por debajo de 50.</li>
-      </ul>
-
-      <h3>Componente 3: Ubicación Técnica del Stop Loss</h3>
-      <p>Un Stop Loss nunca debe colocarse en un nivel aleatorio. En el sistema Visión Trading Pro:</p>
-      <ul>
-        <li>En un <strong>Long</strong>, el Stop Loss se coloca justo por debajo del mínimo de oscilación reciente (Swing Low - un lookback de 3 a 5 velas atrás).</li>
-        <li>En un <strong>Short</strong>, el Stop Loss se coloca justo por encima del máximo de oscilación reciente (Swing High).</li>
-      </ul>
-
-      <div class="highlight-box">
-        <strong>🚀 Regla de Entrada:</strong> Espera siempre a que cierre la vela de confirmación. Nunca entres antes del cierre de la vela, ya que el RSI podría retroceder y cancelar la señal antes de consolidarse.
-      </div>
-    `,
-    quiz: [
-      {
-        q: "Según el sistema 'Visión Trading Pro', ¿cuándo se valida una señal de compra (Long)?",
-        options: [
-          "Cuando el precio está por encima de la EMA 200 y el RSI 14 cruza o se mantiene por encima de 50.",
-          "Cuando el precio está por debajo de la EMA 200 y el RSI está en sobrecompra de 70.",
-          "Cuando el RSI cruza 30 hacia arriba sin importar la EMA 200."
-        ],
-        answer: 0,
-        explanation: "La condición de compra requiere tendencia alcista (precio > EMA 200) combinada con momento alcista (RSI 14 > 50)."
-      },
-      {
-        q: "¿Cuál es la función de la EMA 200 en este sistema operativo?",
-        options: [
-          "Determinar el tamaño de la posición a comprar.",
-          "Actuar como filtro direccional de tendencia principal para evitar operar en contra de las instituciones.",
-          "Es el gatillo exacto para cerrar la operación con ganancias."
-        ],
-        answer: 1,
-        explanation: "La EMA 200 sirve de filtro principal: si el precio está arriba solo buscamos compras, si está abajo solo buscamos ventas."
-      },
-      {
-        q: "¿Dónde debe ubicarse técnicamente el Stop Loss en una posición de Venta (Short)?",
-        options: [
-          "A una distancia aleatoria de 5 puntos para ahorrar margen.",
-          "Justo por encima del último máximo de oscilación relevante (Swing High).",
-          "Exactamente sobre el precio de la EMA 200 en todo momento."
-        ],
-        answer: 1,
-        explanation: "El Stop Loss se sitúa sobre el último máximo relativo (Swing High) porque invalidaría la estructura de máximos más bajos de la tendencia bajista."
-      }
-    ]
-  },
-  module4: {
-    id: "module4",
-    title: "4. Gestión y Psicología",
-    completed: false,
-    unlocked: false,
-    score: 0,
-    content: `
-      <p>Puedes tener la mejor estrategia del mundo, pero sin una gestión del riesgo matemática y una disciplina psicológica inquebrantable, tu cuenta terminará en cero. Este es el módulo más importante del curso.</p>
-
-      <h3>La Regla Matemática del 1%</h3>
-      <p>Un trader profesional ve el dinero como su inventario de negocio, no como fichas de casino. La regla de oro dicta:</p>
       
-      <div class="highlight-box" style="border-color: var(--color-bear);">
-        <strong>📈 Máximo Riesgo por Operación = 1% del capital de la cuenta.</strong><br>
-        Si tienes una cuenta de $10,000, lo máximo que tienes permitido perder en una sola operación fallida es $100.
-      </div>
-
-      <p>Si arriesgas el 1% por operación, necesitarías una racha improbable de 100 operaciones perdedoras seguidas para quebrar tu cuenta. Si arriesgas el 10%, con solo 10 malas operaciones seguidas habrás destruido todo tu capital.</p>
-
-      <h3>El Ratio Riesgo/Beneficio (R:B)</h3>
-      <p>Nunca entres a una operación si tu beneficio proyectado (Take Profit) es menor que tu pérdida potencial (Stop Loss). Buscamos ratios mínimos de <strong>1:2</strong>.</p>
+      <p>Por ejemplo, en el **E-mini S&P 500 (ES)**, cada punto vale $50 USD. Si tu Stop Loss es de 10 puntos, el riesgo de 1 contrato es $500. Si tu límite de riesgo por operación es de $100, no puedes operar contratos Mini; debes cambiar a contratos Micro (**MES**, donde 1 punto vale $5) y operar exactamente 2 contratos.</p>
+    `
+  },
+  day4: {
+    id: "day4",
+    pilar: 1,
+    title: "Límite de Pérdida Diaria",
+    unlocked: false,
+    completed: false,
+    challenge: "Establece tu regla inquebrantable de límite de pérdida diaria en dólares basándote en un capital simulado de $15,000 arriesgando máximo 2% al día. ¿Qué harás físicamente al tocar este límite?",
+    content: `
+      <p>El <strong>Daily Drawdown</strong> o Límite de Pérdida Diaria es el freno de mano de tu negocio de trading. Evita que un mal día de operativa destruya semanas de ganancias consistentes.</p>
+      
+      <h3>La regla de los dos fallos</h3>
+      <p>Una de las formas más efectivas de gestionar el drawdown es limitar tu operativa a un máximo de <strong>2 operaciones perdedoras consecutivas por día</strong>. Si fallas dos veces seguidas:</p>
       <ul>
-        <li>Si arriesgas $100 en el Stop Loss, tu objetivo de Take Profit debe ser de al menos $200 de ganancia.</li>
-        <li>Con un ratio de 1:2, solo necesitas acertar el 34% de tus operaciones para ser rentable en el largo plazo.</li>
+        <li>Tu lectura del mercado está desalineada con el día actual.</li>
+        <li>Tu estado mental entra en frustración (sesgo emocional).</li>
       </ul>
-
-      <h3>Psicología del Trading (Psicotrading)</h3>
-      <p>El mercado de futuros es un entorno de alta volatilidad y apalancamiento que explota las debilidades psicológicas humanas. Albert insiste en estas tres reglas:</p>
-
-      <div class="concept-grid">
-        <div class="concept-card">
-          <div class="concept-card-title">🚫 Evita el FOMO</div>
-          <p style="font-size: 0.85rem;"><em>Fear Of Missing Out</em> (miedo a perderse el movimiento). Si el precio ya se disparó sin darte entrada, no lo persigas. El mercado siempre da nuevas oportunidades; persigue tu plan, no el precio.</p>
-        </div>
-        <div class="concept-card">
-          <div class="concept-card-title">📉 Controla el Drawdown Diario</div>
-          <p style="font-size: 0.85rem;">Define tu límite de pérdida diaria (por ejemplo, 3%). Si pierdes esa cantidad en un día, apaga las pantallas. Operar bajo frustración te llevará a la "operativa de venganza" y a pérdidas masivas.</p>
-        </div>
+      <p>Al tocar este límite, la regla estoica dicta: <strong>apaga las pantallas inmediatamente</strong>. El mercado estará ahí mañana.</p>
+    `
+  },
+  day5: {
+    id: "day5",
+    pilar: 1,
+    title: "Costos Operativos y Apalancamiento",
+    unlocked: false,
+    completed: false,
+    challenge: "Investiga las comisiones de ida y vuelta (round-trip) de tu broker para 1 contrato MES. Si realizas 5 trades al día en lugar de 1, calcula el costo total en comisiones en un mes (20 días hábiles).",
+    content: `
+      <p>El sobreoperar (overtrading) es el enemigo silencioso de las cuentas pequeñas. Cada vez que abres y cierras una posición, pagas comisiones de clearing y corretaje que merman tu balance.</p>
+      
+      <h3>El costo de hacer negocios</h3>
+      <p>El apalancamiento excesivo magnifica este problema. Operar con márgenes intradía bajos te permite abrir más posiciones de las que tu cuenta puede soportar matemáticamente, elevando drásticamente el costo de comisiones relativo a tu capital.</p>
+    `
+  },
+  day6: {
+    id: "day6",
+    pilar: 1,
+    title: "Margen de Garantía y Margin Call",
+    unlocked: false,
+    completed: false,
+    challenge: "Explica en tus palabras qué diferencia hay entre el margen inicial y el margen de mantenimiento, y qué ocurre si el balance neto de tu cuenta cae por debajo de este último.",
+    content: `
+      <p>Los contratos de futuros se operan mediante depósitos de garantía (márgenes). No pagas el valor total del activo, sino una fianza para respaldar la fluctuación del precio.</p>
+      
+      <ul>
+        <li><strong>Margen Inicial:</strong> Capital mínimo requerido en la cuenta para abrir una posición.</li>
+        <li><strong>Margen de Mantenimiento:</strong> Fianza mínima que debes conservar en balance mientras la posición siga abierta. Si tus pérdidas flotantes hacen que el balance caiga por debajo de este límite, el broker ejecutará una <em>llamada de margen (Margin Call)</em> y liquidará tu posición a precio de mercado con pérdidas inmediatas.</li>
+      </ul>
+    `
+  },
+  day7: {
+    id: "day7",
+    pilar: 1,
+    title: "Evaluación y Manifiesto de Riesgo",
+    unlocked: false,
+    completed: false,
+    challenge: "Redacta tu Manifiesto de Riesgo Innegociable. Debe incluir tu capital, tu riesgo por operación en %, tu ratio R:B y tus límites de pérdida diaria. Guárdalo como compromiso.",
+    content: `
+      <p>Felicidades por completar la primera semana. Hoy consolidaremos las matemáticas de tu operativa antes de pasar a los gráficos. Recuerda: un trader sin un plan de riesgo estricto es solo un apostador con una pantalla bonita.</p>
+      
+      <div class="alert-box" style="border-left-color: var(--color-bull); background: rgba(16, 185, 129, 0.03);">
+        <strong>📝 Examen del Pilar 1:</strong> Para avanzar a la lectura técnica del pilar 2, debes responder correctamente el examen semanal disponible abajo.
       </div>
-    `,
-    quiz: [
-      {
-        q: "Si aplicas estrictamente la regla de gestión de riesgo del 1% en una cuenta de $50,000, ¿cuál es tu pérdida máxima permitida en un trade?",
-        options: [
-          "$50.00 dólares.",
-          "$500.00 dólares.",
-          "$5,000.00 dólares."
-        ],
-        answer: 1,
-        explanation: "El 1% de $50,000 es $500. Ese es el límite absoluto de dólares arriesgados en la distancia de tu Stop Loss."
-      },
-      {
-        q: "Si tu ratio Riesgo/Beneficio es 1:2 y arriesgas $100 en un trade, ¿dónde debes fijar tu objetivo de ganancia en dólares?",
-        options: [
-          "En $50 dólares.",
-          "En $100 dólares.",
-          "En $200 dólares."
-        ],
-        answer: 2,
-        explanation: "En un ratio de 1:2, la ganancia potencial (Take Profit) debe ser el doble de la pérdida arriesgada (Stop Loss), es decir, $200."
-      },
-      {
-        q: "¿Qué acción define a un trader disciplinado al alcanzar el límite máximo de pérdida diaria (Drawdown diario)?",
-        options: [
-          "Aumentar el apalancamiento al 100x para recuperar rápido lo perdido.",
-          "Apagar las pantallas de inmediato, aceptar las pérdidas como costo del negocio y no volver a operar hasta el día siguiente.",
-          "Cambiar de activo a uno que no conozca para probar suerte."
-        ],
-        answer: 1,
-        explanation: "Aceptar la pérdida y retirarse para evitar operar con sesgo emocional o frustración es el pilar de la longevidad en el trading."
-      }
-    ]
+    `
+  },
+  day8: {
+    id: "day8",
+    pilar: 2,
+    title: "El Gráfico Limpio y la Subasta",
+    unlocked: false,
+    completed: false,
+    challenge: "Abre el simulador en la vista TradingView Real y localiza los precios máximos y mínimos de las últimas 24 horas en el gráfico de 5 minutos. Anota sus valores.",
+    content: `
+      <p>Comenzamos el <strong>Pilar 2</strong>. El gráfico no es una pintura abstracta; es el registro de una <strong>subasta continua</strong> en tiempo real donde interactúan compradores y vendedores institucionales.</p>
+      
+      <h3>La falacia de los indicadores rezagados</h3>
+      <p>Llenar tu pantalla de indicadores como el MACD, Estocásticos y Bandas de Bollinger solo añade ruido y retrasa tu toma de decisiones. El precio es el único indicador líder. Todo lo demás son cálculos matemáticos de precios pasados.</p>
+    `
+  },
+  day9: {
+    id: "day9",
+    pilar: 2,
+    title: "Anatomía de Velas y Rechazo",
+    unlocked: false,
+    completed: false,
+    challenge: "Busca en el gráfico una vela con una mecha superior que sea al menos tres veces más larga que su cuerpo. Explica qué ocurrió entre compradores y vendedores durante esa vela.",
+    content: `
+      <p>Una vela japonesa cuenta una historia de absorción y rechazo. La longitud de sus mechas (sombras) revela dónde se está agotando la iniciativa de un bando y dónde están ingresando órdenes limitadas del bando contrario.</p>
+      
+      <ul>
+        <li><strong>Vela de Intención:</strong> Cuerpo grande con mechas pequeñas. Muestra control y continuidad.</li>
+        <li><strong>Vela de Rechazo (Pin Bar):</strong> Cuerpo pequeño en un extremo y una mecha muy larga en el otro. Muestra absorción de liquidez y un probable giro de precio.</li>
+      </ul>
+    `
+  },
+  day10: {
+    id: "day10",
+    pilar: 2,
+    title: "Estructura de Mercado y BOS",
+    unlocked: false,
+    completed: false,
+    challenge: "Analiza el diagrama SVG de abajo. Define qué es un BOS (Break of Structure) y dibuja o describe en tu bitácora el cambio de una estructura alcista a una bajista.",
+    content: `
+      <p>El mercado se mueve en una serie de oscilaciones estructuradas. Identificar la estructura actual evita que metas compras en un mercado bajista o ventas en una tendencia fuerte alcista.</p>
+      
+      <h3>Quiebre de Estructura (BOS)</h3>
+      <p>Una tendencia alcista hace máximos más altos (HH) y mínimos más altos (HL). Cuando el precio rompe a la baja el último mínimo de oscilación (HL), se produce un <strong>BOS (Break of Structure)</strong>, marcando el inicio de una tendencia bajista.</p>
+      
+      <svg width="100%" height="160" viewBox="0 0 500 160" style="background:#0b0e14; border:1px solid #242f3d; border-radius:8px; margin: 15px 0;">
+        <line x1="0" y1="40" x2="500" y2="40" stroke="#17202b" stroke-width="1"/>
+        <line x1="0" y1="80" x2="500" y2="80" stroke="#17202b" stroke-width="1"/>
+        <line x1="0" y1="120" x2="500" y2="120" stroke="#17202b" stroke-width="1"/>
+        <polyline points="40,130 90,60 140,110 190,40 240,90 290,20 330,60 380,140 430,110 480,150" fill="none" stroke="#6b7280" stroke-width="2"/>
+        <circle cx="40" cy="130" r="4" fill="#10b981"/><text x="40" y="145" fill="#10b981" font-size="9" font-family="Space Grotesk">HL</text>
+        <circle cx="140" cy="110" r="4" fill="#10b981"/><text x="140" y="125" fill="#10b981" font-size="9" font-family="Space Grotesk">HL</text>
+        <circle cx="240" cy="90" r="4" fill="#ef4444"/><text x="240" y="105" fill="#ef4444" font-size="9" font-family="Space Grotesk">HL (Roto)</text>
+        <circle cx="90" cy="60" r="4" fill="#3b82f6"/><text x="90" y="50" fill="#3b82f6" font-size="9" font-family="Space Grotesk">HH</text>
+        <circle cx="190" cy="40" r="4" fill="#3b82f6"/><text x="190" y="30" fill="#3b82f6" font-size="9" font-family="Space Grotesk">HH</text>
+        <circle cx="290" cy="20" r="4" fill="#3b82f6"/><text x="290" y="10" fill="#3b82f6" font-size="9" font-family="Space Grotesk">HH (Máximo)</text>
+        <line x1="240" y1="90" x2="350" y2="90" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text x="260" y="83" fill="#ef4444" font-size="10" font-family="Space Grotesk" font-weight="bold">BOS (Quiebre)</text>
+        <circle cx="380" cy="140" r="4" fill="#ef4444"/><text x="380" y="153" fill="#ef4444" font-size="9" font-family="Space Grotesk">LL</text>
+      </svg>
+    `
+  },
+  day11: {
+    id: "day11",
+    pilar: 2,
+    title: "Ley de Polaridad S/R",
+    unlocked: false,
+    completed: false,
+    challenge: "Encuentra en el gráfico en vivo un ejemplo de resistencia que, tras ser rota al alza, haya actuado como soporte. Anota los precios de ruptura y del testeo.",
+    content: `
+      <p>Las zonas de soporte y resistencia no son líneas delgadas, son <strong>áreas de acumulación de órdenes</strong>. La ley de polaridad demuestra la memoria del mercado.</p>
+      
+      <p>Cuando el precio rompe una zona de resistencia fuerte, los vendedores que estaban perdiendo esperan a que el mercado regrese a su punto de entrada para cerrar sin pérdidas (break-even). Ese flujo de órdenes vendedoras cerrándose se combina con nuevos compradores, transformando la antigua resistencia en soporte técnico.</p>
+    `
+  },
+  day12: {
+    id: "day12",
+    pilar: 2,
+    title: "La EMA 200 como Filtro",
+    unlocked: false,
+    completed: false,
+    challenge: "Observa el gráfico SVG de abajo. ¿Por qué está prohibido comprar cuando el precio cotiza por debajo de la línea azul de la EMA 200, incluso si el RSI da señal de sobreventa?",
+    content: `
+      <p>La Media Móvil Exponencial de 200 períodos es nuestra brújula direccional institucional. Evita que operes en contra de la tendencia mayoritaria del mercado.</p>
+      
+      <ul>
+        <li><strong>Filtro de Compra:</strong> Precio sobre la EMA 200. Solo se permiten largos.</li>
+        <li><strong>Filtro de Venta:</strong> Precio bajo la EMA 200. Solo se permiten cortos.</li>
+      </ul>
+      
+      <svg width="100%" height="160" viewBox="0 0 500 160" style="background:#0b0e14; border:1px solid #242f3d; border-radius:8px; margin: 15px 0;">
+        <path d="M 20 140 Q 60 120 100 100 T 180 60 T 260 120 T 340 130 T 420 140 T 480 150" fill="none" stroke="#ef4444" stroke-width="2"/>
+        <path d="M 20 40 Q 60 50 100 20 T 180 30 T 260 50" fill="none" stroke="#10b981" stroke-width="2"/>
+        <path d="M 20 80 Q 120 60 220 80 T 420 110 T 480 130" fill="none" stroke="#3b82f6" stroke-width="3"/>
+        <text x="30" y="70" fill="#3b82f6" font-size="10" font-family="Space Grotesk" font-weight="bold">EMA 200 (Filtro Direccional)</text>
+        <rect x="60" y="10" width="160" height="20" rx="3" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.2)"/>
+        <text x="70" y="23" fill="#10b981" font-size="9" font-family="Space Grotesk">Precio sobre EMA = COMPRAS</text>
+        <rect x="280" y="125" width="160" height="20" rx="3" fill="rgba(239,68,68,0.1)" stroke="rgba(239,68,68,0.2)"/>
+        <text x="290" y="138" fill="#ef4444" font-size="9" font-family="Space Grotesk">Precio bajo EMA = VENTAS</text>
+      </svg>
+    `
+  },
+  day13: {
+    id: "day13",
+    pilar: 2,
+    title: "Impulso y Momentum con RSI",
+    unlocked: false,
+    completed: false,
+    challenge: "En el simulador, identifica un escenario donde el precio cotice por encima de la EMA 200 y el RSI de 14 cruce la línea central de 50 hacia arriba. Describe la fuerza del movimiento subsiguiente.",
+    content: `
+      <p>El RSI de 14 períodos no lo utilizamos para buscar sobrecompra (70) o sobreventa (30) extremas, ya que en tendencias fuertes estas zonas fallan. Lo usamos como un **medidor de aceleración (momentum)**.</p>
+      
+      <p>La línea de 50 en el RSI actúa como el ecuador de la fuerza del mercado. Cuando el RSI cruza sobre 50, confirma que el impulso alcista está acelerando en el marco temporal analizado, dándonos el gatillo de momentum.</p>
+    `
+  },
+  day14: {
+    id: "day14",
+    pilar: 2,
+    title: "Vacíos de Liquidez (FVG)",
+    unlocked: false,
+    completed: false,
+    challenge: "Dibuja o describe en tu bitácora un Fair Value Gap (FVG) de 3 velas en un movimiento bajista. ¿Entre qué velas se localiza la ineficiencia de precio?",
+    content: `
+      <p>El <strong>Fair Value Gap (FVG)</strong> es una ineficiencia o desequilibrio en el precio originada por una inyección masiva de volumen institucional que no permite una subasta equilibrada.</p>
+      
+      <p>Se identifica en un grupo de 3 velas consecutivas. En un movimiento alcista, el FVG es el espacio vacío que queda entre el máximo de la Vela 1 y el mínimo de la Vela 3, dejando a la Vela 2 como una vela de fuerte expansión sin testear.</p>
+    `
+  },
+  day15: {
+    id: "day15",
+    pilar: 2,
+    title: "Evaluación de Lectura Técnica",
+    unlocked: false,
+    completed: false,
+    challenge: "Explica detalladamente en tu bitácora por qué un trader profesional prefiere un gráfico limpio a uno lleno de indicadores cruzados.",
+    content: `
+      <p>Has completado la segunda semana. Ya conoces las estructuras de subasta limpia, rechazo de liquidez e ineficiencias de mercado. Estás listo para evaluar tus conocimientos antes de entrar al pilar de la psicología estoica.</p>
+      
+      <div class="alert-box" style="border-left-color: var(--color-bull); background: rgba(16, 185, 129, 0.03);">
+        <strong>📝 Examen del Pilar 2:</strong> Completa y aprueba la evaluación técnica disponible en la parte inferior para desbloquear el Pilar de Autogestión Mental.
+      </div>
+    `
+  },
+  day16: {
+    id: "day16",
+    pilar: 3,
+    title: "El Trading y el Estoicismo",
+    unlocked: false,
+    completed: false,
+    challenge: "Escribe una reflexión sobre tu última operación fallida basándote en la dicotomía del control estoica: ¿Qué estuvo bajo tu control y qué no?",
+    content: `
+      <p>Comenzamos el <strong>Pilar 3</strong>. La maestría técnica no sirve si saboteas tu cuenta por falta de autocontrol. El estoicismo nos enseña la <strong>dicotomía del control</strong>.</p>
+      
+      <p>En el mercado, tienes control total sobre tus acciones (ejecutar el plan, colocar el Stop Loss, respetar el riesgo). No tienes ningún control sobre el comportamiento de la cotización. Aceptar esta falta de control elimina la frustración y la ira operativas.</p>
+    `
+  },
+  day17: {
+    id: "day17",
+    pilar: 3,
+    title: "FOMO: Miedo a Quedar Fuera",
+    unlocked: false,
+    completed: false,
+    challenge: "Durante tu sesión de hoy, si ves que el precio hace un movimiento fuerte sin darte señal de tu setup, déjalo ir. Documenta la sensación de no entrar al mercado y cómo protegió tu balance.",
+    content: `
+      <p>El <strong>FOMO (Fear Of Missing Out)</strong> es el impulso irracional de entrar al mercado a precios desfavorables por miedo a perderse un movimiento fuerte ya iniciado.</p>
+      
+      <p>Un trader estoico entiende que el mercado es infinito y siempre da nuevas oportunidades. Perseguir el precio es entrar con una alta probabilidad de tocar el Stop Loss en el retroceso natural del precio.</p>
+    `
+  },
+  day18: {
+    id: "day18",
+    pilar: 3,
+    title: "Operativa de Venganza",
+    unlocked: false,
+    completed: false,
+    challenge: "Describe una situación pasada donde hayas sobreoperado para recuperar una pérdida. ¿Cuál fue el resultado financiero final y qué aprendiste de ello?",
+    content: `
+      <p>La operativa de venganza ocurre cuando intentas \"recuperar\" inmediatamente el dinero perdido en un trade anterior. Este comportamiento nubla el juicio matemático y te lleva a aumentar el apalancamiento y cometer errores graves.</p>
+      
+      <p>Para combatirla, después de un trade perdedor, tómate un descanso físico de 10 minutos lejos de las pantallas para permitir que tu cerebro desactive el estado de alerta emocional.</p>
+    `
+  },
+  day19: {
+    id: "day19",
+    pilar: 3,
+    title: "Sesgo de Confirmación",
+    unlocked: false,
+    completed: false,
+    challenge: "Antes de tu próxima simulación, haz una lista de 3 razones técnicas válidas por las cuales tu hipótesis de trade podría fallar. Escríbelas en tu bitácora.",
+    content: `
+      <p>El cerebro humano tiende de forma natural a buscar información que valide sus creencias previas e ignora las señales que las contradicen. Esto se conoce como <strong>sesgo de confirmación</strong>.</p>
+      
+      <p>Si crees que el precio va a subir, buscarás solo patrones alcistas e ignorarás que el precio cotiza bajo la EMA 200. Oblígate siempre a buscar la hipótesis contraria antes de ejecutar.</p>
+    `
+  },
+  day20: {
+    id: "day20",
+    pilar: 3,
+    title: "La Zona de No Operar",
+    unlocked: false,
+    completed: false,
+    challenge: "Permanece 30 minutos frente al gráfico en vivo observando el precio en rango lateral sin abrir ninguna posición. Documenta la disciplina de la inacción.",
+    content: `
+      <p>El trading no consiste en hacer click constantemente. Gran parte del tiempo del trader profesional se pasa en la **Zona de No Operar**: periodos donde el mercado carece de tendencia o se encuentra comprimido en rangos estrechos sin confluencias claras.</p>
+    `
+  },
+  day21: {
+    id: "day21",
+    pilar: 3,
+    title: "El Diario Operativo",
+    unlocked: false,
+    completed: false,
+    challenge: "Diseña tu plantilla de bitácora diaria que incluya: hora, activo, dirección, riesgo exacto, resultado en R y tu nivel de frustración del 1 al 10 antes del trade.",
+    content: `
+      <p>La bitácora de trading es la única herramienta objetiva para medir tu desempeño. Si no registras tus operaciones, estás jugando al azar. Tu diario operativo debe documentar no solo los precios, sino tu estado psicológico durante la ejecución.</p>
+    `
+  },
+  day22: {
+    id: "day22",
+    pilar: 3,
+    title: "Evaluación de Autogestión Mental",
+    unlocked: false,
+    completed: false,
+    challenge: "Escribe una carta de 3 párrafos dirigida a ti mismo donde definas qué harás cuando entres en una racha perdedora de 5 operaciones seguidas.",
+    content: `
+      <p>Hemos finalizado la semana de psicología estoica. Has aprendido a desapegarte del resultado y a valorar las reglas matemáticas sobre las emociones. Evalúa tu mentalidad antes de estructurar tu sistema de confluencias final.</p>
+      
+      <div class="alert-box" style="border-left-color: var(--color-bull); background: rgba(16, 185, 129, 0.03);">
+        <strong>📝 Examen del Pilar 3:</strong> Completa el test psicológico-técnico de abajo para habilitar la última semana de construcción de sistemas.
+      </div>
+    `
+  },
+  day23: {
+    id: "day23",
+    pilar: 4,
+    title: "Definiendo tu Ventaja Estadística",
+    unlocked: false,
+    completed: false,
+    challenge: "Define en una frase corta y clara cuál es la ventaja estadística (Edge) que buscarás explotar en tu sistema de trading.",
+    content: `
+      <p>Comenzamos el <strong>Pilar 4</strong>. Un sistema de trading es una serie de reglas mecánicas diseñadas para explotar una anomalía de comportamiento repetible en el precio que otorga una **ventaja de probabilidades**.</p>
+      
+      <p>Un Edge no necesita predecir el futuro; solo necesita que a lo largo de 100 operaciones, el balance neto de ganancias supere al de pérdidas gracias al ratio R:B y la consistencia del setup.</p>
+    `
+  },
+  day24: {
+    id: "day24",
+    pilar: 4,
+    title: "Setup Visión Pro v2",
+    unlocked: false,
+    completed: false,
+    challenge: "Dibuja o describe en tu bitácora las condiciones exactas que deben ocurrir simultáneamente para validar una entrada en Compra (Long) según el Setup Visión Pro v2.",
+    content: `
+      <p>El setup de confluencia cuantitativa de Visión Trading Pro v2 combina dos filtros complementarios:</p>
+      
+      <ul>
+        <li><strong>Dirección (EMA 200):</strong> El precio debe estar cotizando por encima de la EMA 200 (para largos) o por debajo (para cortos).</li>
+        <li><strong>Fuerza e Impulso (RSI 14):</strong> El RSI de 14 períodos debe cruzar sobre la línea de 50 en vela cerrada (para largos) o bajo 50 (para cortos).</li>
+      </ul>
+      <p>La entrada se ejecuta inmediatamente en la apertura de la siguiente vela al cierre de confirmación de la señal.</p>
+    `
+  },
+  day25: {
+    id: "day25",
+    pilar: 4,
+    title: "Fijación del Stop Loss Técnico",
+    unlocked: false,
+    completed: false,
+    challenge: "En el simulador, abre un trade simulado en Largo. Identifica el mínimo de las últimas 4 velas (Swing Low) y coloca tu Stop Loss exactamente 1 punto por debajo de ese nivel. Anota el precio.",
+    content: `
+      <p>El Stop Loss nunca se coloca en base a un número redondo de dinero. Debe colocarse en un nivel donde la estructura del mercado **invalide técnicamente** tu hipótesis de trade.</p>
+      
+      <p>Para una posición de Compra (Long), el Stop Loss se coloca justo por debajo del mínimo de oscilación reciente (Swing Low), sumándole un pequeño margen (filtro de ruido) para evitar barridas de liquidez institucionales.</p>
+    `
+  },
+  day26: {
+    id: "day26",
+    pilar: 4,
+    title: "Cálculo del Take Profit 1:2",
+    unlocked: false,
+    completed: false,
+    challenge: "Si tu precio de entrada es 4800.00 y tu Stop Loss está en 4790.00 (riesgo de 10 puntos), calcula a qué precio debes situar tu orden de Take Profit para cumplir con el ratio 1:2.",
+    content: `
+      <p>Una vez definido el stop loss técnico en puntos, la salida en ganancias (Take Profit) se automatiza matemáticamente a una distancia equivalente a **dos veces el riesgo asumido (R:B 1:2)**.</p>
+      
+      <p>Esto asegura que tu rentabilidad dependa de la asimetría matemática del sistema y no de tu juicio emocional al ver fluctuar las ganancias en vivo.</p>
+    `
+  },
+  day27: {
+    id: "day27",
+    pilar: 4,
+    title: "Backtesting Manual",
+    unlocked: false,
+    completed: false,
+    challenge: "Realiza 20 operaciones en el simulador aplicando estrictamente el Setup Visión Pro v2. Registra en tu bitácora cuántas ganaste y el balance final de tu capital simulado.",
+    content: `
+      <p>El backtesting manual consiste en probar tu sistema en datos históricos simulados para adquirir **confianza estadística** en la estrategia y familiarizarte con las rachas perdedoras normales.</p>
+    `
+  },
+  day28: {
+    id: "day28",
+    pilar: 4,
+    title: "La Checklist Operativa",
+    unlocked: false,
+    completed: false,
+    challenge: "Escribe una lista de 4 confluencias obligatorias que debes verificar positivamente en el gráfico antes de atreverte a pulsar el botón de comprar o vender.",
+    content: `
+      <p>Una lista de verificación (checklist) elimina el error humano y la impulsividad en el trading. Actúa como el protocolo de despegue de un piloto de avión.</p>
+      
+      <p>Antes de abrir cualquier trade en el mercado real, debes validar visualmente cada punto de tu checklist física para garantizar que la operación cumple con las reglas del sistema.</p>
+    `
+  },
+  day29: {
+    id: "day29",
+    pilar: 4,
+    title: "Consolidación del Plan de Trading",
+    unlocked: false,
+    completed: false,
+    challenge: "Genera tu Plan de Trading Personalizado utilizando el botón de la calculadora. Imprímelo, fírmalo físicamente y pégalo cerca de tu monitor de trading.",
+    content: `
+      <p>Tu Plan de Trading es el documento legal y moral que rige tu conducta financiera. Describe con precisión quirúrgica qué vas a operar, cómo vas a gestionar el riesgo, bajo qué condiciones exactas entrarás y cuándo te retirarás.</p>
+    `
+  },
+  day30: {
+    id: "day30",
+    pilar: 4,
+    title: "Examen de Certificación Final",
+    unlocked: false,
+    completed: false,
+    challenge: "Completa y aprueba el examen final del Pilar 4 con 100%. Genera y descarga tu Diploma de Maestría en Futuros de Visión Trading Pro.",
+    content: `
+      <p>Has alcanzado el último día de este entrenamiento intensivo de 30 días. Has progresado desde entender el capital como inventario hasta codificar y probar un sistema mecánico innegociable con control mental estoico.</p>
+      
+      <div class="alert-box" style="border-left-color: gold; background: rgba(245, 158, 11, 0.03);">
+        <strong>🏆 Examen de Certificación Final:</strong> Aprueba el examen técnico-práctico de 5 preguntas abajo para desbloquear la generación de tu Diploma de Maestría firmado por Albert Sierra.
+      </div>
+    `
   }
+};
+
+// Weekly Pillar Quizzes
+const pilarQuizzes = {
+  1: [
+    {
+      q: "Si tu cuenta de trading tiene un capital de $10,000, ¿cuál es el riesgo máximo permitido en dinero por operación según la regla del 1%?",
+      options: ["$10.00 USD", "$100.00 USD", "$1,000.00 USD"],
+      answer: 1,
+      explanation: "El 1% de $10,000 es $100. Este es el límite absoluto de dólares arriesgados en la distancia de tu Stop Loss."
+    },
+    {
+      q: "¿Qué ocurre si el balance de tu cuenta cae por debajo del margen de mantenimiento mientras tienes operaciones abiertas?",
+      options: [
+        "El broker te cobrará una comisión fija al final del mes.",
+        "Se ejecutará un Margin Call y el broker cerrará tus posiciones automáticamente.",
+        "La posición permanecerá abierta indefinidamente sin costo adicional."
+      ],
+      answer: 1,
+      explanation: "El broker liquida forzosamente tus posiciones al mercado para protegerse de saldos negativos si caes por debajo del margen de mantenimiento."
+    },
+    {
+      q: "Si tienes un ratio R:B de 1:2, ¿qué tasa de acierto necesitas para mantenerte en punto de equilibrio (sin pérdidas ni ganancias)?",
+      options: ["50%", "34%", "25%"],
+      answer: 1,
+      explanation: "Con un ratio R:B 1:2, ganar el 34% de tus operaciones cubre todas tus pérdidas y comisiones, manteniéndote rentable."
+    },
+    {
+      q: "¿Cuál es la forma correcta de calcular el tamaño de la posición (contratos)?",
+      options: [
+        "Dividiendo el riesgo máximo permitido en dólares por el costo individual del Stop Loss por contrato.",
+        "Multiplicando el capital de la cuenta por el apalancamiento elegido.",
+        "Operando siempre la misma cantidad fija de contratos sin importar la distancia del Stop Loss."
+      ],
+      answer: 0,
+      explanation: "Contratos = Riesgo ($) / (SL en puntos x Valor Punto). Esto ajusta dinámicamente tu tamaño de posición para no violar el riesgo máximo."
+    },
+    {
+      q: "¿Qué define a un trader profesional al alcanzar el límite diario de pérdida (Daily Drawdown)?",
+      options: [
+        "Aumentar el apalancamiento al doble para recuperar rápido en el siguiente trade.",
+        "Apagar inmediatamente las pantallas, aceptar las pérdidas y retirarse hasta el día siguiente.",
+        "Cambiar de activo para probar suerte en un mercado diferente."
+      ],
+      answer: 1,
+      explanation: "Aceptar las pérdidas y desconectarse evita operar bajo frustración y sufrir pérdidas masivas descontroladas."
+    }
+  ],
+  2: [
+    {
+      q: "¿Qué es un BOS (Break of Structure) en estructura de mercado?",
+      options: [
+        "El cruce de la EMA 200 con el RSI.",
+        "El quiebre del último mínimo de oscilación relevante (HL) en una tendencia alcista, o el máximo (LH) en una tendencia bajista.",
+        "El momento en que el broker cobra las comisiones intradía."
+      ],
+      answer: 1,
+      explanation: "El BOS marca el quiebre de la estructura actual y señala un probable cambio de tendencia de alcista a bajista (o viceversa)."
+    },
+    {
+      q: "Según la ley de polaridad de soportes y resistencias, ¿qué comportamiento se espera cuando se rompe una resistencia fuerte?",
+      options: [
+        "Que la resistencia rota actúe como un nuevo soporte al regresar el precio.",
+        "Que el precio continúe subiendo indefinidamente en línea recta.",
+        "La zona rota pierde toda su relevancia y debe borrarse del gráfico."
+      ],
+      answer: 0,
+      explanation: "Las resistencias rotas tienden a convertirse en soportes debido al cierre de órdenes vendedoras a break-even y la entrada de nuevos compradores."
+    },
+    {
+      q: "¿Por qué un trader institucional evita saturar sus pantallas con múltiples indicadores rezagados?",
+      options: [
+        "Porque encarecen las comisiones de la plataforma.",
+        "Porque causan parálisis por análisis, retrasan las entradas y añaden ruido al precio puro.",
+        "Los indicadores rezagados solo funcionan en cuentas demo."
+      ],
+      answer: 1,
+      explanation: "El precio es el único indicador líder. Los indicadores técnicos secundarios son meros cálculos de precios pasados y añaden retraso."
+    },
+    {
+      q: "¿Qué indica una mecha (sombra) muy larga en la parte superior de una vela en zona de resistencia?",
+      options: [
+        "Fuerte impulso comprador que continuará al alza.",
+        "Absorción de compras por parte de vendedores institucionales y un fuerte rechazo del precio al alza.",
+        "Indecisión temporal que requiere esperar al cierre del mercado diario."
+      ],
+      answer: 1,
+      explanation: "Las mechas largas indican rechazo: los compradores empujaron el precio, pero los vendedores limitados absorbieron el volumen y obligaron al cierre abajo."
+    },
+    {
+      q: "¿Qué representa un Fair Value Gap (FVG)?",
+      options: [
+        "Un área donde el precio se detiene por falta de volumen.",
+        "Una ineficiencia o desequilibrio de precio originada por una inyección masiva de órdenes institucionales en una sola dirección.",
+        "El valor medio ponderado del contrato de futuros durante el día."
+      ],
+      answer: 1,
+      explanation: "Un FVG es un desequilibrio de mercado visible en 3 velas, donde la vela central no tiene testeo de mechas de sus laterales, dejando ineficiencias."
+    }
+  ],
+  3: [
+    {
+      q: "¿Cómo se aplica la Dicotomía del Control estoica al trading?",
+      options: [
+        "Aceptando que controlas tu plan de trading y tu Stop Loss, pero no controlas el resultado de una operación individual.",
+        "Intentando controlar los precios de mercado mediante órdenes de gran volumen.",
+        "Evitando usar stop loss para no ceder el control de la posición al mercado."
+      ],
+      answer: 0,
+      explanation: "Aceptar que el resultado de un trade individual es incierto y fuera de tu control reduce el apego y la frustración emocional."
+    },
+    {
+      q: "¿Qué es el FOMO (Fear Of Missing Out) en la operativa?",
+      options: [
+        "El miedo a perder capital que impide abrir operaciones con setup válido.",
+        "El impulso irracional de entrar tarde al mercado por miedo a perderse un movimiento fuerte iniciado.",
+        "El cálculo exacto de la distancia de stop loss."
+      ],
+      answer: 1,
+      explanation: "El FOMO te hace entrar tarde, a precios desfavorables y sin setup técnico, lo que generalmente termina en pérdidas inmediatas."
+    },
+    {
+      q: "¿Cuál es la respuesta correcta de un trader disciplinado ante la operativa de venganza?",
+      options: [
+        "Aumentar el tamaño de lote para recuperar la pérdida rápidamente.",
+        "Alejarse físicamente de las pantallas durante al menos 10 minutos para enfriar las emociones.",
+        "Seguir operando con mayor velocidad para aprovechar la volatilidad."
+      ],
+      answer: 1,
+      explanation: "Alejarte desactiva el estado de alerta cerebral (lucha o huida) provocado por la pérdida y protege tu balance del autosabotaje."
+    },
+    {
+      q: "¿Qué es el sesgo de confirmación?",
+      options: [
+        "La tendencia a buscar y valorar solo la información técnica que confirma tu hipótesis del trade, ignorando las señales contrarias.",
+        "El proceso de confirmación de tu orden por parte del libro de CME.",
+        "La verificación matemática de las ganancias semanales."
+      ],
+      answer: 0,
+      explanation: "El sesgo de confirmación te ciega ante las alertas de riesgo obvias (ej: buscar compras ignorando que cotizas bajo la EMA 200)."
+    },
+    {
+      q: "¿Por qué es vital registrar las emociones en tu bitácora de trading?",
+      options: [
+        "Para mostrárselas al broker al final de la semana.",
+        "Para identificar patrones de comportamiento repetibles que te llevan a cometer errores operativos y corregirlos.",
+        "Las emociones no tienen impacto real en la rentabilidad si la matemática es buena."
+      ],
+      answer: 1,
+      explanation: "Registrar tus emociones te ayuda a detectar qué estados mentales (ansiedad, codicia, cansancio) preceden a la violación de tus reglas operativas."
+    }
+  ],
+  4: [
+    {
+      q: "¿Cuál es la regla de dirección del Setup Visión Pro v2?",
+      options: [
+        "Solo buscar compras si el precio está arriba de la EMA 200, y solo ventas si está abajo.",
+        "Operar en contra de la EMA 200 cuando el RSI esté sobrecomprado.",
+        "Utilizar la EMA 200 como el objetivo fijo de salida en ganancias (Take Profit)."
+      ],
+      answer: 0,
+      explanation: "La EMA 200 es nuestro filtro de tendencia principal. Seguirla reduce las probabilidades de operar contra la liquidez institucional."
+    },
+    {
+      q: "¿Cómo se confirma la señal de gatillo en el Setup Visión Pro v2?",
+      options: [
+        "Cuando el RSI de 14 períodos cruza la línea de 50 en dirección de la tendencia (en vela cerrada).",
+        "En cuanto el precio toque la línea de la EMA 200.",
+        "Cuando el RSI toque los niveles extremos de 70 o 30."
+      ],
+      answer: 0,
+      explanation: "El cruce del RSI sobre la línea central de 50 (en vela cerrada) confirma la aceleración del momento a favor de la tendencia."
+    },
+    {
+      q: "¿Cómo se calcula la distancia técnica del Stop Loss en una compra (Long)?",
+      options: [
+        "Colocándolo a una distancia aleatoria de 10 puntos en todos los activos.",
+        "Colocándolo justo por debajo del mínimo de oscilación reciente (Swing Low) de las últimas 3 a 5 velas.",
+        "Situándolo exactamente sobre la línea de la EMA 200."
+      ],
+      answer: 1,
+      explanation: "El Stop Loss debe colocarse debajo del último mínimo relativo porque si el precio rompe ese nivel, la estructura alcista queda invalidada."
+    },
+    {
+      q: "Si ejecutas un trade con un Stop Loss de 12 puntos en ES, ¿dónde debes situar tu Take Profit según el ratio matemático del sistema?",
+      options: ["A 6 puntos de distancia.", "A 12 puntos de distancia.", "A 24 puntos de distancia."],
+      answer: 2,
+      explanation: "Para cumplir el ratio R:B 1:2, la distancia de tu ganancia (Take Profit) debe ser el doble de tu riesgo inicial (12 x 2 = 24 puntos)."
+    },
+    {
+      q: "¿Cuál es el propósito fundamental de realizar un backtesting manual de 20 operaciones en el simulador?",
+      options: [
+        "Adquirir confianza estadística en la ventaja del sistema y familiarizarse con las fluctuaciones normales de ganancia/pérdida.",
+        "Duplicar el balance de la cuenta simulada antes de abrir una cuenta real.",
+        "Adivinar qué dirección tomará el precio en la siguiente sesión real."
+      ],
+      answer: 0,
+      explanation: "El backtesting te demuestra empíricamente que tu sistema funciona a lo largo de una serie de trades, ayudándote a ser disciplinado."
+    }
+  ]
 };
 
 // Global App State
 let activeSection = "welcome";
+let activeDayId = "day1";
+let activePilarAccordion = 1;
 let activeQuizAnswers = {}; // { questionIndex: selectedOptionIndex }
+let pilarPassedStates = { 1: false, 2: false, 3: false, 4: false };
 
-// Load progress from localStorage
+// Load state from localStorage
 const loadProgress = () => {
-  const savedProgress = localStorage.getItem("vision_trading_progress");
+  const savedProgress = localStorage.getItem("vision_30day_progress");
   if (savedProgress) {
     try {
       const parsed = JSON.parse(savedProgress);
-      Object.keys(parsed).forEach(key => {
+      Object.keys(parsed.days).forEach(key => {
         if (courseData[key]) {
-          courseData[key].completed = parsed[key].completed;
-          courseData[key].unlocked = parsed[key].unlocked;
-          courseData[key].score = parsed[key].score;
+          courseData[key].completed = parsed.days[key].completed;
+          courseData[key].unlocked = parsed.days[key].unlocked;
         }
       });
+      pilarPassedStates = parsed.quizzes;
     } catch (e) {
-      console.error("Error parsing saved progress", e);
+      console.error("Error parsing progress", e);
     }
   }
   updateUIProgress();
 };
 
-// Save progress to localStorage
+// Save state to localStorage
 const saveProgress = () => {
-  const stateToSave = {};
+  const daysState = {};
   Object.keys(courseData).forEach(key => {
-    stateToSave[key] = {
+    daysState[key] = {
       completed: courseData[key].completed,
-      unlocked: courseData[key].unlocked,
-      score: courseData[key].score
+      unlocked: courseData[key].unlocked
     };
   });
-  localStorage.setItem("vision_trading_progress", JSON.stringify(stateToSave));
+  const stateToSave = {
+    days: daysState,
+    quizzes: pilarPassedStates
+  };
+  localStorage.setItem("vision_30day_progress", JSON.stringify(stateToSave));
 };
 
-// Update Progress bars and sidebar locking badges
+// Update progress bar and unlock states
 const updateUIProgress = () => {
   let completedCount = 0;
-  const totalModules = 4;
+  const totalDays = 30;
 
-  // Render sidebar status items
-  for (let i = 1; i <= totalModules; i++) {
-    const modId = `module${i}`;
-    const mod = courseData[modId];
-    const statusEl = document.getElementById(`status-${modId}`);
-    const menuItemEl = document.querySelector(`[data-target="${modId}"]`);
+  Object.values(courseData).forEach(day => {
+    if (day.completed) completedCount++;
+  });
 
-    if (!statusEl) continue;
+  const percentage = Math.round((completedCount / totalDays) * 100);
+  const progressText = document.getElementById("progress-text");
+  const progressBar = document.getElementById("progress-bar");
+  
+  if (progressText) progressText.textContent = `${percentage}%`;
+  if (progressBar) progressBar.style.width = `${percentage}%`;
 
-    if (mod.completed) {
-      completedCount++;
-      statusEl.innerHTML = '<i data-lucide="check-circle" class="status-completed"></i>';
-    } else if (mod.unlocked) {
-      statusEl.innerHTML = '<i data-lucide="circle" class="status-unlocked" style="color: var(--color-accent)"></i>';
-    } else {
-      statusEl.innerHTML = '<i data-lucide="lock" class="status-locked"></i>';
-    }
-
-    // Toggle styling on sidebar menu items based on lock state
-    if (menuItemEl) {
-      if (mod.unlocked) {
-        menuItemEl.style.opacity = "1";
-        menuItemEl.style.pointerEvents = "auto";
-      } else {
-        menuItemEl.style.opacity = "0.4";
-        menuItemEl.style.pointerEvents = "none";
-      }
-    }
+  // Toggle Certificate tab in sidebar if course is completed
+  const certMenuItem = document.getElementById("menu-item-certificate");
+  if (certMenuItem) {
+    const allPassed = pilarPassedStates[1] && pilarPassedStates[2] && pilarPassedStates[3] && pilarPassedStates[4];
+    certMenuItem.style.display = allPassed ? "block" : "none";
   }
 
-  // Update progress percentage UI
-  const percentage = Math.round((completedCount / totalModules) * 100);
-  document.getElementById("progress-text").textContent = `${percentage}%`;
-  document.getElementById("progress-bar").style.width = `${percentage}%`;
-
-  // Re-trigger Lucide icon renders
   lucide.createIcons();
 };
 
-// Reset progress button helper (for testing, if needed)
+// Reset academy progress
 window.resetAcademyProgress = () => {
-  localStorage.removeItem("vision_trading_progress");
-  Object.keys(courseData).forEach((key, index) => {
-    courseData[key].completed = false;
-    courseData[key].unlocked = index === 0;
-    courseData[key].score = 0;
-  });
-  saveProgress();
-  updateUIProgress();
-  showSection("welcome");
+  if (confirm("¿Estás seguro de que deseas reiniciar todo tu progreso del curso de 30 días y tu bitácora?")) {
+    localStorage.removeItem("vision_30day_progress");
+    Object.keys(courseData).forEach((key, index) => {
+      courseData[key].completed = false;
+      courseData[key].unlocked = index === 0;
+      localStorage.removeItem(`vision_challenge_${key}`);
+    });
+    pilarPassedStates = { 1: false, 2: false, 3: false, 4: false };
+    saveProgress();
+    updateUIProgress();
+    renderAcademicMenu();
+    showSection("welcome");
+  }
 };
 
-// Section Router
+// Sidebar navigation click routing
 const showSection = (sectionId) => {
-  // Deactivate active section
   document.querySelectorAll(".content-section").forEach(sec => sec.classList.remove("active"));
   document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
 
-  // Activate target section
   const targetSec = document.getElementById(sectionId);
   if (targetSec) {
     targetSec.classList.add("active");
@@ -454,66 +788,178 @@ const showSection = (sectionId) => {
   }
 
   activeSection = sectionId;
+  stopAllSpeech();
 
-  // Load section specific setups
-  if (sectionId.startsWith("module")) {
-    loadModuleContent(sectionId);
+  if (sectionId === "glossary") {
+    renderGlossary();
+  } else if (sectionId === "certificate") {
+    renderCertificate();
   }
 };
 
-// Render lesson and quiz dynamically
-const loadModuleContent = (moduleId) => {
-  const mod = courseData[moduleId];
-  if (!mod) return;
-
-  // Render Lesson Content
-  const lessonContainer = document.getElementById(`lesson-content-${mod.id === "module1" ? "m1" : mod.id === "module2" ? "m2" : mod.id === "module3" ? "m3" : "m4"}`);
-  if (lessonContainer) {
-    lessonContainer.innerHTML = mod.content;
-  }
-
-  // Render Quiz
-  const quizContainer = document.getElementById(`quiz-${mod.id === "module1" ? "m1" : mod.id === "module2" ? "m2" : mod.id === "module3" ? "m3" : "m4"}`);
-  if (quizContainer) {
-    renderQuiz(mod, quizContainer);
+// Open Specific Pilar from Welcome Screen
+window.openPillar = (pilarId) => {
+  // Find first unlocked day of this pilar
+  const pilarDays = Object.values(courseData).filter(d => d.pilar === pilarId);
+  const unlockedDays = pilarDays.filter(d => d.unlocked);
+  
+  if (unlockedDays.length > 0) {
+    // Open the latest unlocked day of this pilar
+    const targetDay = unlockedDays[unlockedDays.length - 1];
+    window.loadDay(targetDay.id);
+  } else {
+    alert("Este pilar se encuentra bloqueado. Debes completar las lecciones y evaluaciones de la semana anterior.");
   }
 };
 
-// Render Quiz structure inside target container
-const renderQuiz = (module, container) => {
-  activeQuizAnswers = {}; // Reset active selection answers
+// Render Collapsible sidebar week list
+const renderAcademicMenu = () => {
+  const container = document.getElementById("academic-menu-container");
+  if (!container) return;
+
+  let html = "";
   
-  let html = `<div class="quiz-questions-wrapper">`;
-  
-  module.quiz.forEach((qObj, qIndex) => {
+  const pilares = [
+    { id: 1, name: "Pilar 1: Riesgo Innegociable", icon: "shield-check" },
+    { id: 2, name: "Pilar 2: Lectura Técnica", icon: "trending-up" },
+    { id: 3, name: "Pilar 3: Control Estoico", icon: "brain" },
+    { id: 4, name: "Pilar 4: Sistema Repetible", icon: "activity" }
+  ];
+
+  pilares.forEach(pilar => {
+    const pilarDays = Object.values(courseData).filter(d => d.pilar === pilar.id);
+    const isOpen = activePilarAccordion === pilar.id;
+    
     html += `
-      <div class="quiz-question-block" style="margin-bottom: 24px;" data-q-index="${qIndex}">
-        <p class="quiz-question">${qIndex + 1}. ${qObj.q}</p>
-        <div class="quiz-options">
+      <div class="pilar-group ${isOpen ? 'open' : ''}" id="pilar-group-${pilar.id}">
+        <div class="pilar-header" onclick="window.togglePilarAccordion(${pilar.id})">
+          <span style="display:flex; align-items:center; gap:8px;">
+            <i data-lucide="${pilar.id === 1 ? 'shield-check' : pilar.id === 2 ? 'trending-up' : pilar.id === 3 ? 'heart' : 'activity'}" style="width:14px; height:14px; color: ${isOpen ? 'var(--color-accent)' : 'var(--text-secondary)'}"></i>
+            ${pilar.name}
+          </span>
+          <i data-lucide="${isOpen ? 'chevron-down' : 'chevron-right'}" style="width: 14px; height: 14px; color: var(--text-muted);"></i>
+        </div>
+        <div class="pilar-sub-list">
     `;
     
+    pilarDays.forEach(day => {
+      const isActive = activeSection === "academy-day" && activeDayId === day.id;
+      const isLocked = !day.unlocked;
+      
+      let statusIcon = '<i data-lucide="lock" class="status-locked" style="width:12px; height:12px;"></i>';
+      if (day.completed) {
+        statusIcon = '<i data-lucide="check-circle" class="status-completed" style="width:12px; height:12px; color:var(--color-bull);"></i>';
+      } else if (day.unlocked) {
+        statusIcon = '<i data-lucide="circle" class="status-unlocked" style="width:12px; height:12px; color:var(--color-accent);"></i>';
+      }
+
+      html += `
+        <div class="day-item ${isActive ? 'active' : ''} ${isLocked ? 'locked' : ''}" onclick="window.loadDay('${day.id}')">
+          <span>Día ${day.id.replace("day", "")}: ${day.title}</span>
+          <span class="menu-status">${statusIcon}</span>
+        </div>
+      `;
+    });
+
+    html += `
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+  lucide.createIcons();
+};
+
+window.togglePilarAccordion = (pilarId) => {
+  activePilarAccordion = activePilarAccordion === pilarId ? null : pilarId;
+  renderAcademicMenu();
+};
+
+// Load Day details dynamically
+window.loadDay = (dayId) => {
+  const day = courseData[dayId];
+  if (!day || !day.unlocked) return;
+
+  activeDayId = dayId;
+  activeSection = "academy-day";
+
+  document.querySelectorAll(".content-section").forEach(sec => sec.classList.remove("active"));
+  document.querySelectorAll(".menu-item").forEach(item => item.classList.remove("active"));
+
+  const academyDaySection = document.getElementById("academy-day");
+  if (academyDaySection) {
+    academyDaySection.classList.add("active");
+  }
+
+  // Set visual texts
+  document.getElementById("academy-day-title").innerHTML = `<i data-lucide="book-open"></i> Día ${dayId.replace("day", "")}: ${day.title}`;
+  document.getElementById("academy-day-content").innerHTML = day.content;
+  document.getElementById("academy-challenge-text").innerText = day.challenge;
+  
+  document.getElementById("btn-narrate-day").setAttribute("data-day", dayId);
+
+  // Load saved challenge text
+  const savedResponse = localStorage.getItem(`vision_challenge_${dayId}`) || "";
+  document.getElementById("challenge-response").value = savedResponse;
+
+  // Toggle Quiz displaying if review day
+  const dayNum = parseInt(dayId.replace("day", ""));
+  const quizCard = document.getElementById("academy-quiz-card");
+  
+  if ([7, 15, 22, 30].includes(dayNum)) {
+    quizCard.style.display = "block";
+    renderPilarQuiz(day.pilar);
+  } else {
+    quizCard.style.display = "none";
+  }
+
+  activePilarAccordion = day.pilar;
+  renderAcademicMenu();
+  stopAllSpeech();
+  lucide.createIcons();
+};
+
+// Render Pilar Quiz questions
+const renderPilarQuiz = (pilarId) => {
+  activeQuizAnswers = {};
+  const container = document.getElementById("academy-quiz-container");
+  if (!container) return;
+
+  const questions = pilarQuizzes[pilarId];
+  if (!questions) return;
+
+  let html = `<div class="quiz-questions-wrapper">`;
+
+  questions.forEach((qObj, qIndex) => {
+    html += `
+      <div class="quiz-question-block" style="margin-bottom: 24px; border-bottom: 1px dashed var(--border-color); padding-bottom: 20px;" data-q-index="${qIndex}">
+        <p class="quiz-question" style="font-size: 1rem; font-weight: 600; color: var(--text-primary); margin-bottom: 12px;">${qIndex + 1}. ${qObj.q}</p>
+        <div class="quiz-options" style="display:flex; flex-direction:column; gap:8px;">
+    `;
+
     qObj.options.forEach((opt, optIndex) => {
       html += `
-        <button class="quiz-option" onclick="handleSelectOption('${module.id}', ${qIndex}, ${optIndex}, this)">
+        <button class="quiz-option" onclick="handleSelectOption(${pilarId}, ${qIndex}, ${optIndex}, this)">
           ${opt}
         </button>
       `;
     });
-    
+
     html += `
         </div>
-        <div class="quiz-feedback" id="feedback-${module.id}-${qIndex}"></div>
+        <div class="quiz-feedback" id="feedback-pilar-${pilarId}-${qIndex}"></div>
       </div>
     `;
   });
 
   html += `</div>`;
-  
-  // Quiz Action bar
+
+  // Submit button
   html += `
     <div class="quiz-action-bar">
-      <button class="btn btn-success" id="btn-submit-quiz-${module.id}" onclick="submitQuiz('${module.id}')" disabled>
-        <i data-lucide="check"></i> Evaluar Respuestas
+      <button class="btn btn-success" id="btn-submit-quiz-pilar" onclick="submitPilarQuiz(${pilarId})" disabled>
+        <i data-lucide="check"></i> Evaluar Cuestionario Semanal
       </button>
     </div>
   `;
@@ -522,127 +968,151 @@ const renderQuiz = (module, container) => {
   lucide.createIcons();
 };
 
-// Handles option selection styling & storage
-window.handleSelectOption = (moduleId, qIndex, optIndex, buttonElement) => {
-  const mod = courseData[moduleId];
-  if (mod.completed) return; // Ignore if already passed
+// Handle quiz option selecting
+window.handleSelectOption = (pilarId, qIndex, optIndex, buttonElement) => {
+  if (pilarPassedStates[pilarId]) return; // Stop if already passed
 
   const questionBlock = buttonElement.closest(".quiz-question-block");
-  
-  // Remove selection from siblings
   questionBlock.querySelectorAll(".quiz-option").forEach(btn => {
     btn.classList.remove("correct", "incorrect");
     btn.style.borderColor = "var(--border-color)";
     btn.style.background = "var(--bg-tertiary)";
   });
 
-  // Style selected button
   buttonElement.style.borderColor = "var(--color-accent)";
   buttonElement.style.background = "rgba(59, 130, 246, 0.08)";
 
-  // Store selection
   activeQuizAnswers[qIndex] = optIndex;
 
-  // Check if all questions have been answered to enable submission button
-  const totalQuestions = mod.quiz.length;
-  const answeredCount = Object.keys(activeQuizAnswers).length;
+  const total = pilarQuizzes[pilarId].length;
+  const answered = Object.keys(activeQuizAnswers).length;
   
-  const submitBtn = document.getElementById(`btn-submit-quiz-${moduleId}`);
+  const submitBtn = document.getElementById("btn-submit-quiz-pilar");
   if (submitBtn) {
-    submitBtn.disabled = answeredCount !== totalQuestions;
+    submitBtn.disabled = answered !== total;
   }
 };
 
-// Evaluate Quiz Answers
-window.submitQuiz = (moduleId) => {
-  const mod = courseData[moduleId];
-  if (!mod) return;
-
-  const quizContainer = document.getElementById(`quiz-${mod.id === "module1" ? "m1" : mod.id === "module2" ? "m2" : mod.id === "module3" ? "m3" : "m4"}`);
+// Evaluate Pilar Quiz answers
+window.submitPilarQuiz = (pilarId) => {
+  const container = document.getElementById("academy-quiz-container");
+  const questions = pilarQuizzes[pilarId];
   let correctCount = 0;
-  const totalQuestions = mod.quiz.length;
 
-  mod.quiz.forEach((qObj, qIndex) => {
-    const selectedOpt = activeQuizAnswers[qIndex];
-    const questionBlock = quizContainer.querySelector(`[data-q-index="${qIndex}"]`);
+  questions.forEach((qObj, qIndex) => {
+    const selected = activeQuizAnswers[qIndex];
+    const questionBlock = container.querySelector(`[data-q-index="${qIndex}"]`);
     const options = questionBlock.querySelectorAll(".quiz-option");
-    const feedbackEl = document.getElementById(`feedback-${moduleId}-${qIndex}`);
+    const feedbackEl = document.getElementById(`feedback-pilar-${pilarId}-${qIndex}`);
 
-    // Disable options
     options.forEach(btn => btn.classList.add("disabled"));
 
-    if (selectedOpt === qObj.answer) {
+    if (selected === qObj.answer) {
       correctCount++;
-      options[selectedOpt].classList.add("correct");
-      
+      options[selected].classList.add("correct");
       feedbackEl.className = "quiz-feedback correct";
       feedbackEl.innerHTML = `<strong>🟢 ¡Correcto!</strong> ${qObj.explanation}`;
     } else {
-      options[selectedOpt].classList.add("incorrect");
+      options[selected].classList.add("incorrect");
       options[qObj.answer].classList.add("correct");
-      
       feedbackEl.className = "quiz-feedback incorrect";
-      feedbackEl.innerHTML = `<strong>🔴 Incorrecto.</strong> La respuesta correcta es: "${qObj.options[qObj.answer]}". <br>${qObj.explanation}`;
+      feedbackEl.innerHTML = `<strong>🔴 Incorrecto.</strong> ${qObj.explanation}`;
     }
   });
 
-  // Calculate grade score
-  const score = Math.round((correctCount / totalQuestions) * 100);
-  mod.score = score;
+  const passed = correctCount === questions.length;
+  const actionBar = container.querySelector(".quiz-action-bar");
 
-  // Hide submit button, replace with completion state
-  const actionBar = quizContainer.querySelector(".quiz-action-bar");
-  
-  if (score === 100) {
-    mod.completed = true;
+  if (passed) {
+    pilarPassedStates[pilarId] = true;
     
-    // Unlock next module
-    const nextModIndex = parseInt(moduleId.replace("module", "")) + 1;
-    const nextModId = `module${nextModIndex}`;
-    if (courseData[nextModId]) {
-      courseData[nextModId].unlocked = true;
+    // Mark the review day as completed
+    courseData[activeDayId].completed = true;
+    
+    // Unlock next day
+    const dayNum = parseInt(activeDayId.replace("day", ""));
+    const nextDayId = `day${dayNum + 1}`;
+    if (courseData[nextDayId]) {
+      courseData[nextDayId].unlocked = true;
     }
 
     saveProgress();
     updateUIProgress();
+    renderAcademicMenu();
 
     actionBar.innerHTML = `
       <div class="quiz-completed-overlay" style="width: 100%;">
-        <div class="quiz-score-circle">10/10</div>
-        <h4 style="color: var(--color-bull); margin-bottom: 8px;">🎉 ¡Excelente! Aprobado con éxito</h4>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Has comprendido todos los conceptos clave de este módulo.</p>
-        ${courseData[`module${parseInt(moduleId.replace("module", "")) + 1}`] 
-          ? `<button class="btn btn-success" onclick="showSection('module${parseInt(moduleId.replace("module", "")) + 1}')">Siguiente Módulo <i data-lucide='arrow-right'></i></button>`
-          : `<button class="btn btn-success" onclick="showSection('simulator')">Ir al Simulador de Gráficos <i data-lucide='play'></i></button>`
+        <div class="quiz-score-circle">5/5</div>
+        <h4 style="color: var(--color-bull); margin-bottom: 8px;">🎉 Pilar Aprobado con Éxito</h4>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Has asimilado perfectamente las reglas innegociables de este pilar.</p>
+        ${courseData[nextDayId]
+          ? `<button class="btn btn-success" onclick="window.loadDay('${nextDayId}')">Siguiente Semana <i data-lucide='arrow-right'></i></button>`
+          : `<button class="btn btn-success" onclick="showSection('certificate')">Obtener Mi Diploma <i data-lucide='award'></i></button>`
         }
       </div>
     `;
   } else {
-    // Failed (needs 100% correct, typical in premium short academies)
     actionBar.innerHTML = `
       <div class="quiz-completed-overlay" style="width: 100%;">
-        <div class="quiz-score-circle fail">${correctCount}/${totalQuestions}</div>
-        <h4 style="color: var(--color-bear); margin-bottom: 8px;">⚠️ Cuestionario no superado</h4>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Para avanzar al siguiente nivel debes contestar correctamente el 100% de las preguntas.</p>
-        <button class="btn btn-secondary" onclick="loadModuleContent('${moduleId}')">Reintentar Evaluación</button>
+        <div class="quiz-score-circle fail">${correctCount}/5</div>
+        <h4 style="color: var(--color-bear); margin-bottom: 8px;">⚠️ Cuestionario No Superado</h4>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 16px;">Para avanzar de pilar debes responder correctamente el 100% de las preguntas operativas.</p>
+        <button class="btn btn-secondary" onclick="renderPilarQuiz(${pilarId})">Reintentar Cuestionario</button>
       </div>
     `;
   }
-  
   lucide.createIcons();
 };
 
-// Audio Narration State
+// Technical Glossary terms database
+const glossaryTerms = [
+  { term: "CME (Chicago Mercantile Exchange)", desc: "El mercado y bolsa regulada centralizada más grande del mundo para la negociación de contratos de futuros de índices, divisas y materias primas." },
+  { term: "Margin Call (Llamada de Margen)", desc: "Aviso de advertencia del broker cuando el capital de tu cuenta cae por debajo del margen de mantenimiento debido a pérdidas flotantes. Conlleva la liquidación inmediata de posiciones." },
+  { term: "Daily Drawdown", desc: "El límite máximo de pérdidas permitido en un solo día operativo. Sirve de freno financiero para proteger al trader de rachas perdedoras desastrosas." },
+  { term: "BOS (Break of Structure)", desc: "Quiebre de Estructura. Ocurre cuando el precio quiebra con fuerza el último mínimo ascendente (HL) en tendencia alcista o el máximo descendente (LH) en tendencia bajista, indicando giros." },
+  { term: "Tick y Punto", desc: "Fluctuaciones de precio. Un Tick es el movimiento mínimo de cotización (0.25 en ES/NQ). Un Punto equivale a 4 ticks enteros ($50 en ES, $20 en NQ por contrato)." },
+  { term: "FVG (Fair Value Gap)", desc: "Iniciativa e ineficiencia en el precio provocada por compras o ventas agresivas que dejan un desequilibrio de liquidez en un patrón de 3 velas consecutivas." },
+  { term: "Order Block (Bloque de Órdenes)", desc: "Zonas de precios donde las instituciones financieras acumularon un volumen masivo de órdenes de compra o venta en el pasado y donde se espera una reacción fuerte." },
+  { term: "Slippage (Deslizamiento)", desc: "La diferencia de precio entre el valor solicitado de tu orden de compra/venta y el precio real al que se ejecuta en el mercado debido a la volatilidad." },
+  { term: "Asimetría Matemática", desc: "La relación donde la ganancia promedio de tus aciertos es considerablemente mayor a la pérdida promedio de tus trades perdedores (R:B 1:2 o superior)." },
+  { term: "FOMO", desc: "Miedo a quedar fuera (Fear of Missing Out). Impulso psicológico destructivo que empuja al trader a comprar precios inflados o vender precios bajos sin esperar a su setup." }
+];
+
+const renderGlossary = () => {
+  const container = document.getElementById("glossary-container");
+  if (!container) return;
+
+  let html = "";
+  glossaryTerms.forEach(item => {
+    html += `
+      <div class="concept-card">
+        <div class="concept-card-title"><i data-lucide="book-open" style="width:14px; height:14px; color:var(--color-accent);"></i> ${item.term}</div>
+        <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-secondary); margin-top: 5px;">${item.desc}</p>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+  lucide.createIcons();
+};
+
+// Render Certificate Completion info
+const renderCertificate = () => {
+  const nameInput = document.getElementById("cert-student-name");
+  const dateText = document.getElementById("cert-date-str");
+  
+  if (nameInput) {
+    const storedName = localStorage.getItem("vision_student_name") || "Albert Sierra";
+    nameInput.textContent = storedName;
+  }
+  if (dateText) {
+    dateText.textContent = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
+};
+
+// Audio Narration functions with ElevenLabs & Browser Web Speech
 let activeAudio = null;
 let activeNarratorButton = null;
-
-const getApiKey = () => {
-  const stored = localStorage.getItem("vision_elevenlabs_api_key");
-  if (!stored || stored === "null" || stored === "undefined" || stored.trim() === "") {
-    return "sk_cf0eff44faa9a9838a53af3850a02dc60c96e883b95570ce";
-  }
-  return stored.trim();
-};
 
 const stopAllSpeech = () => {
   if (activeAudio) {
@@ -653,8 +1123,8 @@ const stopAllSpeech = () => {
     window.speechSynthesis.cancel();
   }
   
-  // Reset all narration buttons in UI
-  document.querySelectorAll(".btn-narrate").forEach(btn => {
+  const btn = document.getElementById("btn-narrate-day");
+  if (btn) {
     btn.classList.remove("active");
     btn.style.background = "";
     btn.style.color = "";
@@ -663,38 +1133,30 @@ const stopAllSpeech = () => {
     if (span) span.textContent = "Narrar Lección";
     const icon = btn.querySelector("i");
     if (icon) icon.setAttribute("data-lucide", "volume-2");
-  });
+  }
   lucide.createIcons();
   activeNarratorButton = null;
 };
 
-const handleNarrateClick = async (moduleId, button) => {
-  // If this button is already active, we stop all narration and return
+const handleNarrateClick = async (dayId, button) => {
   if (button === activeNarratorButton) {
     stopAllSpeech();
     return;
   }
 
-  // Stop any other active speech
   stopAllSpeech();
 
-  const mod = courseData[moduleId];
-  if (!mod) return;
+  const day = courseData[dayId];
+  if (!day) return;
 
-  // Extract clean text from lesson content container
-  const containerId = `lesson-content-${moduleId === "module1" ? "m1" : moduleId === "module2" ? "m2" : moduleId === "module3" ? "m3" : "m4"}`;
-  const container = document.getElementById(containerId);
+  const container = document.getElementById("academy-day-content");
   if (!container) return;
 
-  // Get clean innerText (without HTML tags)
   const textToRead = container.innerText || container.textContent;
-
-  // Check ElevenLabs settings
   const apiKey = getApiKey();
   const voiceId = "c6rAmJGsdzNWAIVkws45";
 
   if (apiKey) {
-    // Narrate via ElevenLabs API
     try {
       button.disabled = true;
       button.classList.add("loading");
@@ -709,7 +1171,7 @@ const handleNarrateClick = async (moduleId, button) => {
           "xi-api-key": apiKey
         },
         body: JSON.stringify({
-          text: textToRead,
+          text: textToRead.substring(0, 4800), // Safety cap limit
           model_id: "eleven_multilingual_v2",
           voice_settings: {
             stability: 0.5,
@@ -760,7 +1222,6 @@ const handleNarrateClick = async (moduleId, button) => {
       speakBrowser(textToRead, button);
     }
   } else {
-    // Fallback to Web Speech API
     console.log(`[Narrador] No hay API Key configurada. Usando Web Speech API del navegador.`);
     speakBrowser(textToRead, button);
   }
@@ -773,14 +1234,11 @@ const speakBrowser = (text, button) => {
   }
 
   window.speechSynthesis.cancel();
-  
-  // Clean up double spaces/lines
   const cleanText = text.replace(/\s+/g, " ").trim();
 
   const utterance = new SpeechSynthesisUtterance(cleanText);
   utterance.lang = "es-ES";
   
-  // Find a spanish voice
   const voices = window.speechSynthesis.getVoices();
   const esVoice = voices.find(v => v.lang.startsWith("es-ES") || v.lang.startsWith("es"));
   if (esVoice) {
@@ -809,7 +1267,164 @@ const speakBrowser = (text, button) => {
   window.speechSynthesis.speak(utterance);
 };
 
-// Initialize
+// Export Trading Plan custom generator
+const exportTradingPlan = () => {
+  const capital = document.getElementById("calc-capital").value || "10000";
+  const riskPct = document.getElementById("calc-risk-pct").value || "1";
+  const assetSelect = document.getElementById("calc-asset");
+  const assetName = assetSelect ? assetSelect.options[assetSelect.selectedIndex].text : "E-mini S&P 500 (ES)";
+  const slPuntos = document.getElementById("calc-sl-ticks").value || "10";
+  
+  const riskMoney = document.getElementById("res-risk-money") ? document.getElementById("res-risk-money").textContent : `$${(capital * riskPct / 100).toFixed(2)}`;
+  const contracts = document.getElementById("res-contracts") ? document.getElementById("res-contracts").textContent : "0 Contratos";
+  
+  const planWindow = window.open("", "_blank");
+  planWindow.document.write(`
+    <html>
+    <head>
+      <title>Plan de Trading Personalizado - Visión Trading Pro</title>
+      <style>
+        body {
+          font-family: 'Helvetica Neue', Arial, sans-serif;
+          background-color: #ffffff;
+          color: #0b0e14;
+          padding: 45px;
+          line-height: 1.6;
+        }
+        .header {
+          text-align: center;
+          border-bottom: 2px solid #10b981;
+          padding-bottom: 20px;
+          margin-bottom: 30px;
+        }
+        .title {
+          font-size: 24px;
+          font-weight: bold;
+          color: #0b0e14;
+          margin: 0;
+          letter-spacing: 1.5px;
+        }
+        .subtitle {
+          font-size: 11px;
+          color: #6b7280;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          margin-top: 5px;
+        }
+        .section {
+          margin-bottom: 30px;
+        }
+        .section-title {
+          font-size: 15px;
+          font-weight: bold;
+          color: #10b981;
+          border-bottom: 1.5px solid #e5e7eb;
+          padding-bottom: 5px;
+          margin-bottom: 15px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        .grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+        }
+        .item {
+          background: #f9fafb;
+          padding: 12px 16px;
+          border-radius: 6px;
+          border: 1px solid #e5e7eb;
+        }
+        .label {
+          font-size: 10px;
+          color: #6b7280;
+          text-transform: uppercase;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+        }
+        .value {
+          font-size: 16px;
+          font-weight: bold;
+          color: #0b0e14;
+          margin-top: 4px;
+        }
+        .rules-list {
+          padding-left: 20px;
+          margin: 0;
+        }
+        .rules-list li {
+          margin-bottom: 12px;
+        }
+        .footer {
+          margin-top: 60px;
+          text-align: center;
+          font-size: 11px;
+          color: #9ca3af;
+          border-top: 1px solid #e5e7eb;
+          padding-top: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <div class="title">PLAN DE TRADING PERSONALIZADO</div>
+        <div class="subtitle">Estrategia Cuantitativa - Visión Trading Pro</div>
+      </div>
+      
+      <div class="section">
+        <div class="section-title">Parámetros de Capital y Gestión de Riesgo</div>
+        <div class="grid">
+          <div class="item">
+            <div class="label">Capital Operativo</div>
+            <div class="value">$${parseFloat(capital).toLocaleString('en-US', {minimumFractionDigits: 2})} USD</div>
+          </div>
+          <div class="item">
+            <div class="label">Riesgo Permitido por Operación</div>
+            <div class="value">${riskPct}% por Operación</div>
+          </div>
+          <div class="item">
+            <div class="label">Riesgo Máximo en Dinero</div>
+            <div class="value" style="color: #ef4444;">${riskMoney}</div>
+          </div>
+          <div class="item">
+            <div class="label">Tamaño de Posición Óptimo</div>
+            <div class="value" style="color: #3b82f6;">${contracts}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Reglas Operativas de Ejecución</div>
+        <ul class="rules-list">
+          <li><strong>Dirección de Tendencia (Filtro EMA 200)</strong>: Solo buscar compras si el precio está arriba de la EMA 200. Solo buscar ventas si está abajo. Está terminantemente prohibido operar en contra de la pendiente de la EMA 200.</li>
+          <li><strong>Gatillo de Impulso (RSI 14)</strong>: Esperar el cruce de RSI sobre la línea central de 50 (en vela cerrada) para largos o bajo 50 para cortos. La entrada se realiza estrictamente en la apertura de la vela siguiente.</li>
+          <li><strong>Fijación del Stop Loss Técnico</strong>: Ubicar el Stop Loss 1 punto por debajo del mínimo de oscilación reciente (Swing Low) para largos o por encima del máximo reciente (Swing High) para cortos. No usar tamaños aleatorios.</li>
+          <li><strong>Salida Asimétrica Take Profit</strong>: Colocar el Take Profit exactamente a un ratio 1:2. Por cada dólar arriesgado en el stop loss, ir a buscar dos dólares de ganancia en el take profit.</li>
+          <li><strong>Drawdown Máximo Diario</strong>: Pérdida diaria máxima fijada en 2 operaciones fallidas consecutivas (2%). Al alcanzar este límite, se apagarán las pantallas de inmediato sin excepciones emocionales.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Compromiso de Disciplina</div>
+        <p><em>"Entiendo que el mercado es un entorno de probabilidades y no de certezas. Mi trabajo no es tener la razón en cada operación individual, sino ejecutar mi ventaja estadística con disciplina inquebrantable y dejar que las matemáticas jueguen a mi favor en el largo plazo."</em></p>
+      </div>
+
+      <div class="footer">
+        Plan de Trading Personalizado &copy; 2026. Generado bajo la guía de Visión Trading Pro.
+      </div>
+
+      <script>
+        window.onload = function() {
+          window.print();
+        };
+      </script>
+    </body>
+    </html>
+  `);
+  planWindow.document.close();
+};
+
+// Initialize app components on DOM Load
 document.addEventListener("DOMContentLoaded", () => {
   // Force initialize or upgrade the API Key if empty, corrupt, or matching the old key
   const currentKey = localStorage.getItem("vision_elevenlabs_api_key");
@@ -825,18 +1440,107 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener("click", () => {
       const target = item.getAttribute("data-target");
       showSection(target);
-      stopAllSpeech(); // stop narrating on tab change
     });
   });
 
-  // Delegated Event Listener for Narrate buttons
-  document.addEventListener("click", (e) => {
-    const button = e.target.closest(".btn-narrate");
-    if (button) {
-      const moduleId = button.getAttribute("data-module");
-      handleNarrateClick(moduleId, button);
-    }
-  });
+  // Narrate click listener
+  const btnNarrate = document.getElementById("btn-narrate-day");
+  if (btnNarrate) {
+    btnNarrate.addEventListener("click", () => {
+      const dayId = btnNarrate.getAttribute("data-day");
+      handleNarrateClick(dayId, btnNarrate);
+    });
+  }
+
+  // Save Challenge Response listener
+  const btnSaveChallenge = document.getElementById("btn-save-challenge");
+  if (btnSaveChallenge) {
+    btnSaveChallenge.addEventListener("click", () => {
+      const response = document.getElementById("challenge-response").value.trim();
+      if (!response) {
+        alert("Escribe una respuesta para el desafío de hoy antes de guardarlo en tu bitácora.");
+        return;
+      }
+
+      localStorage.setItem(`vision_challenge_${activeDayId}`, response);
+      alert("¡Entrada de Bitácora Guardada con Éxito!");
+
+      const dayNum = parseInt(activeDayId.replace("day", ""));
+      const isExamDay = [7, 15, 22, 30].includes(dayNum);
+
+      if (!isExamDay) {
+        courseData[activeDayId].completed = true;
+        
+        const nextDayId = `day${dayNum + 1}`;
+        if (courseData[nextDayId]) {
+          courseData[nextDayId].unlocked = true;
+        }
+        
+        saveProgress();
+        updateUIProgress();
+        renderAcademicMenu();
+      } else {
+        const pilarId = courseData[activeDayId].pilar;
+        if (pilarPassedStates[pilarId]) {
+          courseData[activeDayId].completed = true;
+          const nextDayId = `day${dayNum + 1}`;
+          if (courseData[nextDayId]) {
+            courseData[nextDayId].unlocked = true;
+          }
+          saveProgress();
+          updateUIProgress();
+          renderAcademicMenu();
+        } else {
+          alert("Desafío guardado. Recuerda que para avanzar debes aprobar el examen semanal de abajo con 100% de aciertos.");
+        }
+      }
+    });
+  }
+
+  // Toggle Focus Mode listener
+  const btnToggleFocus = document.getElementById("btn-toggle-focus");
+  if (btnToggleFocus) {
+    btnToggleFocus.addEventListener("click", () => {
+      const body = document.body;
+      body.classList.toggle("focus-mode-active");
+      
+      const span = btnToggleFocus.querySelector("span");
+      const icon = btnToggleFocus.querySelector("i");
+      
+      if (body.classList.contains("focus-mode-active")) {
+        span.textContent = "Salir Enfoque";
+        if (icon) icon.setAttribute("data-lucide", "minimize-2");
+      } else {
+        span.textContent = "Modo Enfoque";
+        if (icon) icon.setAttribute("data-lucide", "maximize-2");
+      }
+      lucide.createIcons();
+    });
+  }
+
+  // Export Plan listener
+  const btnExportPlan = document.getElementById("btn-export-plan");
+  if (btnExportPlan) {
+    btnExportPlan.addEventListener("click", exportTradingPlan);
+  }
+
+  // Print Certificate listener
+  const btnPrintCert = document.getElementById("btn-print-cert");
+  if (btnPrintCert) {
+    btnPrintCert.addEventListener("click", () => {
+      // Prompt for name customization
+      const currentName = localStorage.getItem("vision_student_name") || "Albert Sierra";
+      const customizedName = prompt("Escribe tu nombre y apellido tal como deseas que aparezca en tu diploma:", currentName);
+      
+      if (customizedName !== null && customizedName.trim() !== "") {
+        localStorage.setItem("vision_student_name", customizedName.trim());
+        renderCertificate();
+        window.print();
+      } else if (customizedName !== null) {
+        alert("Por favor introduce un nombre válido.");
+      }
+    });
+  }
 
   // Audio settings modal setup
   const btnAudioSettings = document.getElementById("btn-audio-settings");
@@ -846,7 +1550,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const elApiKeyInput = document.getElementById("el-api-key");
 
   if (btnAudioSettings) {
-    // Load saved API Key
     elApiKeyInput.value = getApiKey();
 
     btnAudioSettings.addEventListener("click", () => {
@@ -861,15 +1564,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const apiKey = elApiKeyInput.value.trim();
       if (apiKey) {
         localStorage.setItem("vision_elevenlabs_api_key", apiKey);
-        alert("Configuración guardada. Se utilizará la voz de ElevenLabs (c6rAmJGsdzNWAIVkws45) al narrar.");
+        alert("Configuración guardada. Se utilizará tu clave API de ElevenLabs para las narraciones.");
       } else {
         localStorage.removeItem("vision_elevenlabs_api_key");
-        alert("Configuración guardada. Se utilizará la voz del sistema por defecto.");
+        alert("Configuración guardada. Se utilizará la clave de ElevenLabs por defecto.");
       }
       audioSettingsModal.style.display = "none";
     });
 
-    // Close on overlay click
     audioSettingsModal.addEventListener("click", (e) => {
       if (e.target === audioSettingsModal) {
         audioSettingsModal.style.display = "none";
@@ -877,6 +1579,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Load progress
+  // Load progress, render accordions, render glossary
   loadProgress();
+  renderAcademicMenu();
+  renderGlossary();
 });

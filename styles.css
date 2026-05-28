@@ -1145,3 +1145,235 @@ main {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+/* ==========================================================================
+   30-Day Course, Focus Mode & Certificate Styles
+   ========================================================================== */
+
+/* Focus Mode Layout Transitions */
+aside {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease-in-out, border-color 0.3s !important;
+}
+main {
+  transition: padding 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.focus-mode-active aside {
+  width: 0 !important;
+  min-width: 0 !important;
+  opacity: 0 !important;
+  border-right: none !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+.focus-mode-active main {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+/* Accordion Sidebar menu */
+.pilar-group {
+  margin-bottom: 6px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(19, 26, 34, 0.3);
+  transition: all 0.25s;
+}
+.pilar-group.open {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.pilar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+.pilar-header:hover {
+  background: rgba(36, 47, 61, 0.4);
+}
+.pilar-group.open .pilar-header {
+  border-bottom-color: var(--border-color);
+  background: var(--bg-tertiary);
+}
+.pilar-sub-list {
+  display: none;
+  padding: 6px;
+  flex-direction: column;
+  gap: 3px;
+  background: rgba(11, 14, 20, 0.25);
+}
+.pilar-group.open .pilar-sub-list {
+  display: flex;
+}
+.day-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.day-item:hover {
+  background: rgba(36, 47, 61, 0.3);
+  color: var(--text-primary);
+}
+.day-item.active {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--text-primary);
+  font-weight: 600;
+  border-left: 2px solid var(--color-accent);
+}
+.day-item.locked {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Certificate Digital Premium Styles */
+.certificate-card {
+  background: #0d121a;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  box-sizing: border-box;
+}
+.cert-gold-border {
+  border: 4px double #d4af37;
+  padding: 35px 28px;
+  border-radius: var(--radius-md);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.03) 0%, transparent 80%);
+}
+.cert-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.cert-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.cert-title-diploma {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #d4af37;
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.1);
+  margin-top: 10px;
+}
+.cert-recipient-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.cert-recipient-name {
+  font-family: 'Space Grotesk', var(--font-mono);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 6px;
+  min-width: 250px;
+  letter-spacing: 1px;
+}
+.cert-text-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 10px 0;
+}
+.cert-signatures {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 30px;
+  gap: 40px;
+}
+.cert-sig-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.cert-signature-draw {
+  font-family: 'Brush Script MT', 'Great Vibes', 'Apple Chancery', cursive;
+  font-size: 1.6rem;
+  color: #3b82f6;
+  margin-bottom: 6px;
+  user-select: none;
+  transform: rotate(-3deg);
+}
+.cert-sig-line {
+  width: 100%;
+  max-width: 160px;
+  height: 1px;
+  background: var(--border-color);
+  margin-bottom: 8px;
+}
+.cert-sig-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.cert-sig-desc {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Printing styling rules */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #certificate-print-area, #certificate-print-area * {
+    visibility: visible;
+  }
+  #certificate-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .cert-gold-border {
+    border-color: #000000 !important;
+    background: none !important;
+  }
+  .cert-title-diploma {
+    color: #000000 !important;
+  }
+  .cert-recipient-name {
+    color: #000000 !important;
+    border-bottom-color: #000000 !important;
+  }
+  .certificate-card {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .cert-sig-role, .cert-recipient-label, .cert-text-body, .cert-sig-desc {
+    color: #000000 !important;
+  }
+}
+
