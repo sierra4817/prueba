@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visión Trading Pro - Masterclass de Futuros</title>
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=5">
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -112,6 +112,24 @@
             <span>Mi Certificado</span>
           </div>
           <span class="menu-status"><i data-lucide="chevron-right"></i></span>
+        </li>
+
+        <li class="menu-section-title">Administración</li>
+
+        <li class="menu-item" onclick="window.unlockAllLessons()" style="color: var(--color-accent); border: 1px dashed rgba(59, 130, 246, 0.25); margin-bottom: 8px; margin-top: 4px;">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="unlock" style="color: var(--color-accent);"></i>
+            <span>Desbloquear Curso</span>
+          </div>
+          <span class="menu-status"><i data-lucide="unlock" style="opacity: 0.5; width: 14px; height: 14px;"></i></span>
+        </li>
+
+        <li class="menu-item" onclick="window.resetAcademyProgress()" style="color: var(--color-bear); border: 1px dashed rgba(239, 68, 68, 0.25); margin-bottom: 8px;">
+          <div class="menu-item-left">
+            <i class="menu-icon" data-lucide="refresh-cw" style="color: var(--color-bear);"></i>
+            <span>Reiniciar Progreso</span>
+          </div>
+          <span class="menu-status"><i data-lucide="refresh-cw" style="opacity: 0.5; width: 14px; height: 14px;"></i></span>
         </li>
       </ul>
     </aside>
@@ -607,11 +625,11 @@
   </div>
 
   <!-- Main App Script -->
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=5"></script>
   <!-- Position Calculator Script -->
-  <script src="calculator.js?v=4"></script>
+  <script src="calculator.js?v=5"></script>
   <!-- Chart & Order Simulator Script -->
-  <script src="simulator.js?v=4"></script>
+  <script src="simulator.js?v=5"></script>
   <script>
     // Initialize Lucide Icons on DOM load
     document.addEventListener("DOMContentLoaded", function() {

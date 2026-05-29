@@ -716,6 +716,20 @@ window.resetAcademyProgress = () => {
   }
 };
 
+// Unlock all lessons and quizzes
+window.unlockAllLessons = () => {
+  if (confirm("¿Deseas desbloquear todas las lecciones del curso de 30 días y evaluaciones para navegar libremente?")) {
+    Object.keys(courseData).forEach(key => {
+      courseData[key].unlocked = true;
+    });
+    pilarPassedStates = { 1: true, 2: true, 3: true, 4: true };
+    saveProgress();
+    updateUIProgress();
+    renderAcademicMenu();
+    alert("¡Todas las lecciones y evaluaciones han sido desbloqueadas con éxito!");
+  }
+};
+
 // Sidebar navigation click routing
 const showSection = (sectionId) => {
   document.querySelectorAll(".content-section").forEach(sec => sec.classList.remove("active"));
