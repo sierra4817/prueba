@@ -1825,7 +1825,7 @@ const handleNarrateClick = async (dayId, button) => {
       button.classList.remove("loading");
       button.querySelector("span").textContent = "Narrar Lección";
       console.warn(`[Narrador] Error con ElevenLabs: ${err.message}. Usando fallback.`);
-      alert(`Error con ElevenLabs: ${err.message}. Usando el narrador gratuito por defecto...`);
+      console.warn(`Error con ElevenLabs: ${err.message}. Usando el narrador gratuito por defecto...`);
       speakBrowser(textToRead, button);
     }
   } else {

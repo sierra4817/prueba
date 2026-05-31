@@ -872,6 +872,17 @@ window.loadDay = (dayId) => {
     quizCard.style.display = "none";
   }
 
+  // Toggle Next Lesson button
+  const nextBtn = document.getElementById("btn-next-lesson-audio");
+  if (nextBtn) {
+    const nextDayId = `day${dayNum + 1}`;
+    if (courseData[nextDayId]) {
+      nextBtn.style.display = "inline-flex";
+    } else {
+      nextBtn.style.display = "none";
+    }
+  }
+
   activePilarAccordion = day.pilar;
   renderAcademicMenu();
   stopAllSpeech();
@@ -1194,7 +1205,7 @@ const handleNarrateClick = async (dayId, button) => {
       button.classList.remove("loading");
       button.querySelector("span").textContent = "Narrar Lección";
       console.warn(`[Narrador] Error con ElevenLabs: ${err.message}. Usando fallback.`);
-      alert(`Error con ElevenLabs: ${err.message}. Usando el narrador gratuito por defecto...`);
+      console.warn(`Error con ElevenLabs: ${err.message}. Usando el narrador gratuito por defecto...`);
       speakBrowser(textToRead, button);
     }
   } else {
@@ -1614,3 +1625,60 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAcademicMenu();
   renderGlossary();
 });
+
+// Global Function to navigate to the next lesson and trigger audio narration automatically
+window.goToNextLesson = (autoPlayAudio) => {
+  const currentDayNum = parseInt(activeDayId.replace("day", ""));
+  const nextDayId = `day${currentDayNum + 1}`;
+
+  if (!courseData[nextDayId]) {
+    alert("Has completado todo el curso. ¡Felicidades, Trader Soberano!");
+    return;
+  }
+
+  // Save current challenge response automatically if they wrote something
+  const responseField = document.getElementById("challenge-response");
+  const responseText = responseField ? responseField.value.trim() : "";
+
+  if (responseText) {
+    localStorage.setItem(`vision_challenge_${activeDayId}`, responseText);
+    const dayNum = parseInt(activeDayId.replace("day", ""));
+    const isExamDay = [7, 15, 22, 30].includes(dayNum);
+
+    if (!isExamDay) {
+      courseData[activeDayId].completed = true;
+      courseData[nextDayId].unlocked = true;
+      saveProgress();
+      updateUIProgress();
+      renderAcademicMenu();
+    } else {
+      const pilarId = courseData[activeDayId].pilar;
+      if (pilarPassedStates[pilarId]) {
+        courseData[activeDayId].completed = true;
+        courseData[nextDayId].unlocked = true;
+        saveProgress();
+        updateUIProgress();
+        renderAcademicMenu();
+      } else {
+        alert("Desafío guardado. Recuerda que para avanzar de pilar debes aprobar la evaluación semanal de abajo.");
+        return;
+      }
+    }
+  } else if (!courseData[nextDayId].unlocked) {
+    alert("Debes escribir y registrar tu respuesta al desafío de hoy antes de avanzar.");
+    return;
+  }
+
+  // Load next day
+  window.loadDay(nextDayId);
+
+  // Auto-play audio if requested
+  if (autoPlayAudio) {
+    setTimeout(() => {
+      const btnNarrate = document.getElementById("btn-narrate-day");
+      if (btnNarrate) {
+        handleNarrateClick(nextDayId, btnNarrate);
+      }
+    }, 450);
+  }
+};
