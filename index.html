@@ -289,8 +289,11 @@
               <button id="btn-save-challenge" class="btn" style="background-color: var(--color-warning); color: var(--bg-primary); padding: 10px 20px; font-size: 0.85rem;">
                 <i data-lucide="save" style="width: 16px; height: 16px; display: inline; vertical-align: middle; margin-right: 4px;"></i> Guardar Desafío en Bitácora
               </button>
-              <button id="btn-next-lesson-audio" class="btn btn-secondary" onclick="window.goToNextLesson(true)" style="padding: 10px 20px; font-size: 0.85rem; display: none; align-items: center; gap: 8px;">
-                Siguiente Lección (Con Audio) <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
+              <button id="btn-prev-lesson" class="btn btn-secondary" onclick="window.goToPrevLesson()" style="padding: 10px 20px; font-size: 0.85rem; display: none; align-items: center; gap: 8px;">
+                <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Anterior
+              </button>
+              <button id="btn-next-lesson-audio" class="btn btn-success" onclick="window.goToNextLesson(true)" style="padding: 10px 20px; font-size: 0.85rem; display: none; align-items: center; gap: 8px;">
+                Siguiente Lección <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
               </button>
             </div>
           </div>

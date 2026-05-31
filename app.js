@@ -2703,6 +2703,17 @@ window.loadDay = (dayId) => {
     }
   }
 
+  // Toggle Previous Lesson button
+  const prevBtn = document.getElementById("btn-prev-lesson");
+  if (prevBtn) {
+    const prevDayId = `day${dayNum - 1}`;
+    if (courseData[prevDayId] && courseData[prevDayId].unlocked) {
+      prevBtn.style.display = "inline-flex";
+    } else {
+      prevBtn.style.display = "none";
+    }
+  }
+
   activePilarAccordion = day.pilar;
   renderAcademicMenu();
   stopAllSpeech();
@@ -3445,6 +3456,15 @@ document.addEventListener("DOMContentLoaded", () => {
   renderAcademicMenu();
   renderGlossary();
 });
+
+// Global Function to navigate to the previous lesson
+window.goToPrevLesson = () => {
+  const currentDayNum = parseInt(activeDayId.replace("day", ""));
+  const prevDayId = `day${currentDayNum - 1}`;
+  if (courseData[prevDayId] && courseData[prevDayId].unlocked) {
+    window.loadDay(prevDayId);
+  }
+};
 
 // Global Function to navigate to the next lesson and trigger audio narration automatically
 window.goToNextLesson = (autoPlayAudio) => {
