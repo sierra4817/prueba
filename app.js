@@ -1399,6 +1399,33 @@ const courseData = {
     challenge: "Identifica en el simulador o en un gráfico real un patrón de Doble Techo o Doble Suelo. Dibuja la línea de cuello (neckline) y calcula el objetivo teórico basado en la altura del patrón. Registra los precios en tu bitácora.",
     content: `
       <p>Bienvenidos al <strong>Módulo 5: Doble Techo y Doble Suelo (Patrones de Reversión Clásicos)</strong>. Como trader principiante, debes entender que la estructura del precio no se mueve en línea recta. Los giros de mercado ocurren tras batallas prolongadas entre las fuerzas de compra y venta. Dos de las formaciones de cambio de tendencia más confiables y operadas en todo el mundo son el Doble Techo (Double Top) y el Doble Suelo (Double Bottom).</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Resistance Level -->
+        <line x1="50" y1="60" x2="450" y2="60" stroke="#ef4444" stroke-width="2" stroke-dasharray="4,4" />
+        <text x="60" y="50" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold">Resistencia</text>
+
+        <!-- Neckline -->
+        <line x1="50" y1="150" x2="450" y2="150" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,3" />
+        <text x="60" y="142" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold">Línea de Cuello</text>
+
+        <!-- Price path (M-shape Double Top) -->
+        <path d="M 60 200 L 150 60 L 250 150 L 330 60 L 380 180 L 410 150 L 450 220" fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+        <!-- Circles at peaks and retest -->
+        <circle cx="150" cy="60" r="5" fill="#ef4444" />
+        <circle cx="330" cy="60" r="5" fill="#ef4444" />
+        <circle cx="410" cy="150" r="5" fill="#10b981" />
+
+        <!-- Labels -->
+        <text x="150" y="45" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">Primer Techo</text>
+        <text x="330" y="45" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">Segundo Techo</text>
+        <text x="410" y="135" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Retest (Polaridad)</text>
+        <text x="385" y="195" fill="#ef4444" font-size="8" font-family="sans-serif" font-weight="bold">Ruptura</text>
+
+        <!-- Caption -->
+        <text x="250" y="240" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 5.1: Formación de Doble Techo (M) y confirmación de reversión bajista.</text>
+      </svg>
+
       <h3>1. La Psicología detrás de la Formación</h3>
       <p>El Doble Techo es un patrón bajista de reversión que se forma tras una tendencia alcista prolongada. El precio sube hasta encontrar un nivel de resistencia fuerte (primer máximo) donde el flujo institucional de ventas detiene el avance. Desde allí, el precio retrocede hasta un soporte intermedio que llamamos la "línea de cuello" (neckline). Los compradores, creyendo que la tendencia alcista continuará, vuelven a entrar al mercado impulsando el precio al alza por segunda vez. Sin embargo, no logran superar el primer máximo (segundo máximo). El agotamiento comprador es evidente. Cuando el precio cae de nuevo y rompe la línea de cuello, se confirma que el control ha pasado a los vendedores y la estructura alcista se ha roto de forma definitiva.</p>
       <p>Por otro lado, el Doble Suelo es la imagen reflejada del Doble Techo. Ocurre al final de una tendencia bajista. El precio cae hasta un nivel clave de soporte (primer mínimo), rebota hacia una resistencia intermedia (línea de cuello), y cae de nuevo para testear el soporte previo. Al fallar en hacer un nuevo mínimo (segundo mínimo), los vendedores capitulan. La posterior ruptura al alza de la línea de cuello confirma el cambio a una estructura alcista.</p>
@@ -1424,6 +1451,34 @@ const courseData = {
     challenge: "Encuentra un patrón Hombro-Cabeza-Hombro (o su versión invertida) en tu gráfico. Identifica la línea de cuello inclinada u horizontal y mide la distancia desde la cabeza hasta el cuello para proyectar el objetivo. Registra la zona de entrada.",
     content: `
       <p>Bienvenidos al <strong>Módulo 6: Hombro-Cabeza-Hombro (HCH) y HCH Invertido</strong>. Hoy analizaremos el rey de los patrones de reversión estructural: el Hombro-Cabeza-Hombro. Este patrón representa una transición gradual y completa del control de una tendencia alcista a una bajista, revelando el debilitamiento sistemático de las compras institucionales.</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Neckline -->
+        <line x1="50" y1="160" x2="450" y2="160" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,4" />
+        <text x="60" y="150" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold">Línea de Cuello</text>
+
+        <!-- HCH Path -->
+        <path d="M 60 200 L 120 100 L 180 160 L 250 50 L 320 160 L 380 100 L 420 210" fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+        <!-- Circles at extreme swing points -->
+        <circle cx="120" cy="100" r="4" fill="#ef4444" />
+        <circle cx="250" cy="50" r="5" fill="#ef4444" />
+        <circle cx="380" cy="100" r="4" fill="#ef4444" />
+
+        <!-- Labels -->
+        <text x="120" y="85" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">Hombro Izq</text>
+        <text x="250" y="35" fill="#ffffff" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Cabeza</text>
+        <text x="380" y="85" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">Hombro Der</text>
+        <text x="425" y="190" fill="#ef4444" font-size="8" font-family="sans-serif" font-weight="bold">Breakout</text>
+
+        <!-- Projection Target -->
+        <line x1="250" y1="50" x2="250" y2="160" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2,2" />
+        <path d="M 420 160 L 420 210" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2,2" />
+        <text x="430" y="175" fill="#f59e0b" font-size="8" font-family="sans-serif">Proyección H = Target</text>
+
+        <!-- Caption -->
+        <text x="250" y="240" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 6.1: Formación Hombro-Cabeza-Hombro y proyección de precio bajista.</text>
+      </svg>
+
       <h3>1. Estructura y Anatomía del Hombro-Cabeza-Hombro</h3>
       <p>El HCH tradicional es un patrón bajista que consta de tres picos sucesivos sobre una línea de soporte común denominada "línea de cuello" o directriz del cuello (neckline):</p>
       <ul>
@@ -1455,6 +1510,25 @@ const courseData = {
     challenge: "Dibuja un triángulo ascendente en una tendencia alcista y un triángulo descendente en una bajista. Identifica las líneas de tendencia de soporte y resistencia y define las condiciones de volumen necesarias para validar el rompimiento.",
     content: `
       <p>Bienvenidos al <strong>Módulo 7: Triángulos en el Gráfico (Consolidación y Ruptura)</strong>. Los triángulos son patrones de consolidación de precios que representan periodos de equilibrio temporal entre la oferta y la demanda. A medida que el precio se comprime dentro de estas figuras geométricas, la volatilidad disminuye y las órdenes se acumulan, preparando el escenario para una ruptura explosiva.</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Converging trendlines (Triángulo Simétrico) -->
+        <line x1="80" y1="50" x2="380" y2="125" stroke="#3b82f6" stroke-width="2" />
+        <line x1="80" y1="200" x2="380" y2="125" stroke="#3b82f6" stroke-width="2" />
+        
+        <!-- Price path compressing -->
+        <path d="M 90 60 L 130 180 L 170 80 L 210 160 L 250 95 L 290 140 L 330 110 L 410 60" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <!-- Breakout label -->
+        <path d="M 330 110 L 360 120" fill="none" stroke="#10b981" stroke-width="2" />
+        <circle cx="410" cy="60" r="4.5" fill="#10b981" />
+        <text x="410" y="48" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ruptura Alcista</text>
+
+        <!-- Labels -->
+        <text x="250" y="215" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Compresión de Volatilidad en Rango</text>
+        <!-- Caption -->
+        <text x="250" y="240" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 7.1: Triángulo Simétrico: compresión del precio y ruptura con volumen.</text>
+      </svg>
+
       <h3>1. Clasificación de Triángulos y su Significado Psicológico</h3>
       <p>Existen tres tipos principales de triángulos, cada uno con características y comportamientos específicos:</p>
       <ul>
@@ -1484,6 +1558,26 @@ const courseData = {
     challenge: "Encuentra un canal alcista y dibuja la bandera de consolidación (flag) posterior a un impulso fuerte. Establece cómo colocarías una orden de compra en el quiebre de la bandera y dónde se ubicaría el stop loss.",
     content: `
       <p>Bienvenidos al <strong>Módulo 8: Canales de Tendencia y Banderas</strong>. En este módulo estudiaremos los patrones de continuidad de tendencia por excelencia. Para un trader pragmático, operar a favor de la tendencia dominante es la forma más segura de generar ganancias consistentes. Los canales y las banderas nos muestran dónde se detiene temporalmente la tendencia para acumular energía antes de reanudar su camino.</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Mast (Flagpole) -->
+        <line x1="80" y1="210" x2="180" y2="70" stroke="#3b82f6" stroke-width="4" />
+        <text x="110" y="160" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold" transform="rotate(-54 110 160)">MÁSTIL (Impulso)</text>
+
+        <!-- Channel/Flag lines -->
+        <line x1="180" y1="70" x2="330" y2="120" stroke="#f59e0b" stroke-width="2" />
+        <line x1="205" y1="45" x2="355" y2="95" stroke="#f59e0b" stroke-width="2" />
+
+        <!-- Price path within flag and breakout -->
+        <path d="M 180 70 L 220 50 L 250 95 L 280 70 L 310 115 L 390 35" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <circle cx="390" cy="35" r="4.5" fill="#10b981" />
+        <text x="390" y="20" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ruptura (BOS)</text>
+        <text x="260" y="125" fill="#f59e0b" font-size="9" font-family="sans-serif" text-anchor="middle">Bandera de Consolidación</text>
+
+        <!-- Caption -->
+        <text x="250" y="240" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 8.1: Patrón de Bandera Alcista (Bull Flag) y continuación de tendencia.</text>
+      </svg>
+
       <h3>1. Canales de Tendencia: Líneas de Carretera del Precio</h3>
       <p>Un canal de tendencia se forma dibujando dos líneas paralelas: la línea de tendencia principal (que une los mínimos en una tendencia alcista o los máximos en una bajista) y la línea de canal (paralela a la anterior que une los extremos opuestos de la oscilación). Los canales definen el rango de fluctuación saludable de un activo:</p>
       <ul>
@@ -1519,6 +1613,23 @@ const courseData = {
     challenge: "Localiza una cuña ascendente en un gráfico alcista (que actúa como patrón de reversión bajista). Explica por qué este patrón denota el agotamiento de los compradores y registra el punto de confirmación de entrada en corto.",
     content: `
       <p>Bienvenidos al <strong>Módulo 9: Cuñas de Ensanchamiento y de Implicación Tendencial</strong>. Las cuñas son patrones gráficos de compresión del precio que se asemejan a los triángulos, pero con una diferencia fundamental: ambas líneas de tendencia (soporte y resistencia) apuntan en la misma dirección, ya sea de forma ascendente o descendente. Esto las convierte en patrones de alto valor debido a su doble naturaleza como figuras de reversión o de continuación según el contexto.</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Converging Wedge Lines (Ascending Wedge) -->
+        <line x1="80" y1="120" x2="380" y2="50" stroke="#ef4444" stroke-width="2" />
+        <line x1="80" y1="180" x2="380" y2="70" stroke="#ef4444" stroke-width="2" />
+
+        <!-- Price path inside wedge -->
+        <path d="M 90 170 L 140 110 L 190 140 L 240 90 L 290 110 L 340 70 L 380 140" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <circle cx="360" cy="78" r="4" fill="#ef4444" />
+        <circle cx="380" cy="140" r="4.5" fill="#ef4444" />
+        <text x="390" y="155" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ruptura Bajista</text>
+        <text x="230" y="175" fill="#ef4444" font-size="9" font-family="sans-serif" text-anchor="middle">Cuña Ascendente (Agotamiento Alcista)</text>
+
+        <!-- Caption -->
+        <text x="250" y="240" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 9.1: Cuña Ascendente de agotamiento con ruptura bajista con intención.</text>
+      </svg>
+
       <h3>1. Tipos de Cuñas y Dinámica del Flujo de Órdenes</h3>
       <p>Analizaremos las dos cuñas estructurales principales y su implicación en el mercado:</p>
       <ul>
@@ -1547,6 +1658,33 @@ const courseData = {
     challenge: "Analiza el gráfico diario de un futuro (por ejemplo, ES) e identifica un Gap de Escape (Breakaway Gap) o un Gap de Continuación (Runaway Gap). Describe cómo afectó el volumen de apertura a este movimiento.",
     content: `
       <p>Bienvenidos al <strong>Módulo 10: Brechas de Volumen y Gaps de Apertura</strong>. En el trading de futuros de índices (como ES y NQ), los gaps representan desequilibrios significativos entre la oferta y la demanda que ocurren fuera del horario regular de mercado (RTH) o debido a noticias macroeconómicas de alto impacto. Entender cómo interpretar y operar los gaps proporciona una ventaja estadística tremenda al trader minorista.</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Prev Day Close Line -->
+        <line x1="50" y1="150" x2="450" y2="150" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3,3" />
+        <text x="60" y="142" fill="#64748b" font-size="8" font-family="sans-serif">Cierre Día Anterior</text>
+
+        <!-- Candlesticks showing gap -->
+        <!-- Candle 1: Bullish prior day (120, 180 -> 150) -->
+        <rect x="120" y="150" width="20" height="30" fill="#10b981" />
+        <line x1="130" y1="140" x2="130" y2="190" stroke="#10b981" stroke-width="1.5" />
+
+        <!-- GAP ZONE Bracket -->
+        <path d="M 230 90 L 250 90 L 250 150 L 230 150" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+        <text x="260" y="125" fill="#f59e0b" font-size="9" font-family="sans-serif" font-weight="bold">BRECHA / GAP</text>
+
+        <!-- Candle 2: Bullish open higher (170, 90 -> 70) -->
+        <rect x="170" y="70" width="20" height="20" fill="#10b981" />
+        <line x1="180" y1="60" x2="180" y2="100" stroke="#10b981" stroke-width="1.5" />
+
+        <!-- Candle 3: Bearish gap fill (220, 90 -> 160) -->
+        <rect x="220" y="90" width="20" height="70" fill="#ef4444" />
+        <line x1="230" y1="80" x2="230" y2="170" stroke="#ef4444" stroke-width="1.5" />
+        <text x="210" y="185" fill="#ef4444" font-size="8" font-family="sans-serif" text-anchor="middle">Llenado del Gap</text>
+
+        <!-- Caption -->
+        <text x="250" y="235" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 10.1: Simulación de Gap de Apertura y posterior llenado (Gap Fill).</text>
+      </svg>
+
       <h3>1. ¿Qué es un Gap y por qué ocurre?</h3>
       <p>Un Gap (brecha) es un espacio vacío en el gráfico donde no se realizaron transacciones debido a que el precio de apertura de una vela es significativamente diferente al precio de cierre de la vela anterior. En los futuros sobre índices, distinguimos principalmente entre:</p>
       <ul>
@@ -1575,6 +1713,34 @@ const courseData = {
     challenge: "Documenta un escenario de falso rompimiento de un nivel clave de soporte. Describe la formación de la vela (tipo pinbar o martillo) que confirmó la absorción y cómo podrías haber operado la reversión a favor de las manos fuertes.",
     content: `
       <p>Bienvenidos al <strong>Módulo 11: Patrones de Ruptura y Falsos Rompimientos (Trampas de Liquidez)</strong>. El falso rompimiento (fakeout o caza de stops) es el fenómeno más común y frustrante para el trader novato. Sin embargo, para el operador profesional, representa la mejor oportunidad de entrada debido a que proporciona liquidez inmediata y ratios de riesgo/beneficio excepcionales.</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Resistance Line -->
+        <line x1="50" y1="100" x2="450" y2="100" stroke="#ef4444" stroke-width="2" />
+        <text x="70" y="90" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold">Resistencia Clave</text>
+
+        <!-- Price path showing breakout then collapse -->
+        <path d="M 60 180 L 150 100 L 200 130 L 270 70 L 340 160 L 410 180" fill="none" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        
+        <!-- Rejection wick on breakout -->
+        <line x1="270" y1="70" x2="270" y2="50" stroke="#ef4444" stroke-width="2" />
+        <circle cx="270" cy="50" r="4" fill="#ef4444" />
+        
+        <!-- Highlight box -->
+        <rect x="240" y="40" width="60" height="70" fill="rgba(239, 68, 68, 0.08)" stroke="rgba(239, 68, 68, 0.4)" stroke-dasharray="2,2" stroke-width="1" />
+        <text x="270" y="32" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">FAKEOUT (Trampa de Toros)</text>
+
+        <!-- Downward arrow -->
+        <path d="M 310 90 L 330 130" fill="none" stroke="#ef4444" stroke-width="2" marker-end="url(#arrow-fake)" />
+        
+        <defs>
+          <marker id="arrow-fake" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#ef4444" />
+          </marker>
+        </defs>
+        <!-- Caption -->
+        <text x="250" y="235" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 11.1: Falso rompimiento de resistencia (Bull Trap) y colapso.</text>
+      </svg>
+
       <h3>1. La Mecánica de las Trampas de Liquidez (Bull Trap y Bear Trap)</h3>
       <p>El mercado se mueve buscando liquidez (órdenes de compra y venta pendientes). Las zonas más obvias donde se acumula esta liquidez son justo por encima de las resistencias clave (donde están los Stop Losses de los vendedores y las órdenes de compra stop de los traders de ruptura) y por debajo de los soportes clave (donde están los Stop Losses de los compradores y órdenes de venta stop):</p>
       <ul>
@@ -1605,6 +1771,34 @@ const courseData = {
     challenge: "Analiza tu última operación en el simulador. Evalúa si el volumen en la barra de entrada fue superior o inferior al promedio de las últimas 20 barras y argumenta si la entrada tenía alta probabilidad de éxito según este filtro.",
     content: `
       <p>Bienvenidos al <strong>Módulo 12: Reglas de Confirmación con Volumen en Patrones (La Huella Profesional)</strong>. En este último módulo del programa avanzado de transformación, aprenderás a validar todo lo aprendido utilizando la única variable que los grandes participantes del mercado no pueden ocultar: el volumen de transacciones. El volumen es el combustible del precio y la huella real del dinero institucional.</p>
+<svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Split screen line -->
+        <line x1="40" y1="160" x2="460" y2="160" stroke="#1e293b" stroke-width="1.5" />
+
+        <!-- Price Chart (Top) -->
+        <line x1="50" y1="100" x2="450" y2="100" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,3" />
+        <text x="60" y="90" fill="#3b82f6" font-size="8" font-family="sans-serif">Resistencia Rota</text>
+        <path d="M 60 140 L 140 120 L 220 100 L 300 50 L 380 70 L 440 40" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <circle cx="300" cy="50" r="4.5" fill="#10b981" />
+        <text x="300" y="38" fill="#10b981" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ruptura Genuina</text>
+
+        <!-- Volume Bars (Bottom) -->
+        <rect x="95" y="210" width="10" height="30" fill="rgba(148, 163, 184, 0.3)" />
+        <rect x="135" y="200" width="10" height="40" fill="rgba(148, 163, 184, 0.3)" />
+        <rect x="175" y="205" width="10" height="35" fill="rgba(148, 163, 184, 0.3)" />
+        <rect x="215" y="195" width="10" height="45" fill="rgba(148, 163, 184, 0.3)" />
+        
+        <!-- Breakout Volume Spike (Green) -->
+        <rect x="295" y="170" width="10" height="70" fill="rgba(16, 185, 129, 0.7)" stroke="#10b981" stroke-width="1" />
+        <text x="300" y="165" fill="#10b981" font-size="8" font-family="sans-serif" font-weight="bold" text-anchor="middle">PICO VOLUMEN</text>
+
+        <rect x="375" y="210" width="10" height="30" fill="rgba(148, 163, 184, 0.3)" />
+        <rect x="435" y="190" width="10" height="50" fill="rgba(148, 163, 184, 0.3)" />
+
+        <!-- Caption -->
+        <text x="250" y="242" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 12.1: Confirmación de ruptura genuina mediante pico de volumen de transacciones.</text>
+      </svg>
+
       <h3>1. La Relación Esencial entre Precio y Volumen</h3>
       <p>Operar patrones gráficos basándose únicamente en la forma de las velas es incompleto. El volumen nos proporciona la confirmación objetiva de si un movimiento tiene respaldo profesional o si es una trampa minorista. Basamos nuestro análisis en la metodología del flujo de órdenes:</p>
       <ul>
