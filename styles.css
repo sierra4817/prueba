@@ -668,6 +668,44 @@ main {
   }
 }
 
+@media (min-width: 1101px) {
+  #simulator.content-section.active {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--header-height) - 48px);
+  }
+  .simulator-layout {
+    height: 100%;
+    align-items: stretch;
+  }
+  .chart-section {
+    height: 100%;
+  }
+  .canvas-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+  }
+  .main-chart-canvas {
+    flex: 1;
+    height: auto;
+  }
+  .tradingview-container {
+    flex: 1;
+    height: auto !important;
+    min-height: 350px;
+  }
+  .control-panel {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .control-panel::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 .chart-section {
   display: flex;
   flex-direction: column;

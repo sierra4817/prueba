@@ -121,11 +121,24 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Resize handler
   const resizeCanvases = () => {
-    // Set internal resolution based on CSS size
-    chartCanvas.width = chartCanvas.parentElement.clientWidth;
-    chartCanvas.height = 380;
-    rsiCanvas.width = rsiCanvas.parentElement.clientWidth;
-    rsiCanvas.height = 120;
+    const parent = chartCanvas.parentElement;
+    chartCanvas.width = parent.clientWidth;
+    rsiCanvas.width = parent.clientWidth;
+    
+    // Read parent height dynamically from CSS layout
+    const parentHeight = parent.clientHeight || 500;
+    
+    if (showRsi) {
+      const rsiHeight = 120;
+      const mainHeight = Math.max(150, parentHeight - rsiHeight);
+      
+      chartCanvas.height = mainHeight;
+      rsiCanvas.height = rsiHeight;
+    } else {
+      chartCanvas.height = parentHeight;
+      rsiCanvas.height = 0;
+    }
+    
     drawChart();
   };
 
