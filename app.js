@@ -10,17 +10,34 @@ const courseData = {
     completed: false,
     challenge: "Identifica y documenta un sesgo de falsas expectativas que hayas tenido en tu operativa reciente o en tu fase de aprendizaje.",
     content: `
-      <p>Comenzamos el <strong>Módulo 1: Mentalidad Ganadora</strong>. Como trader estoico, debes grabarte esta regla de oro: <strong>el precio es lo único que importa</strong>. El mercado no sabe quién eres, cuánto dinero necesitas, ni qué opinas sobre la economía mundial.</p>
-      <h3>Desmitificando Sesgos y Expectativas</h3>
-      <p>El principal enemigo del operador novato es su propia mente. Las falsas expectativas de dinero fácil y rápido deforman la realidad. Creer que el mercado se mueve de forma injusta o que el precio \"debe\" rebotar en un soporte es un error cognitivo destructivo.</p>
-      <ul>
-        <li><strong>Aceptación del Precio:</strong> El precio actual es la verdad objetiva del mercado. Si el precio sube contra tu posición corta, tu opinión es errónea, no el precio.</li>
-        <li><strong>Desapego de Opiniones:</strong> No intentes tener la razón; busca ser rentable operando lo que ves, no lo que crees.</li>
-      </ul>
+<p>Comenzamos el <strong>Módulo 1: Mentalidad Ganadora</strong>. Como trader estoico y pragmático, debes grabar en tu mente esta regla de oro inquebrantable: <strong>el precio es lo único que importa en el mercado financiero</strong>. El mercado es un mecanismo implacable y continuo de subasta, diseñado para facilitar transacciones entre compradores y vendedores de todo el mundo. Al mercado no le importa quién eres, cuánto dinero necesitas para pagar tus deudas, cuáles son tus opiniones sobre el futuro de la economía mundial, ni qué tan perfecto consideras que es tu análisis. La cotización en tiempo real es la única verdad objetiva disponible.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <line x1="50" y1="30" x2="50" y2="200" stroke="#1e293b" stroke-width="1.5" />
+        <line x1="50" y1="200" x2="470" y2="200" stroke="#1e293b" stroke-width="1.5" />
+        <text x="35" y="35" fill="#64748b" font-size="10" font-family="sans-serif">Precio</text>
+        <text x="450" y="218" fill="#64748b" font-size="10" font-family="sans-serif">Tiempo</text>
+        <!-- Expectation Path (Red) -->
+        <path d="M 50 140 L 150 90 L 300 50 L 450 30" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,5" />
+        <text x="210" y="70" fill="#ef4444" font-size="10" font-family="sans-serif">Expectativa del Novato (Línea Recta)</text>
+        <!-- Reality Path (Blue) -->
+        <path d="M 50 140 Q 100 190 150 120 T 250 160 T 350 70 T 450 130" fill="none" stroke="#3b82f6" stroke-width="3" />
+        <text x="260" y="110" fill="#3b82f6" font-size="11" font-family="sans-serif" font-weight="bold">Realidad del Flujo de Capital</text>
+        <circle cx="50" cy="140" r="4.5" fill="#f59e0b" />
+        <text x="250" y="235" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 1.1: Expectativa lineal frente a la fluctuación real del precio.</text>
+      </svg>
+
+      <h3>Desmitificando Sesgos y la Ilusión del Control</h3>
+      <p>El principal enemigo del operador novato es su propia mente. Las falsas expectativas de dinero fácil y rápido deforman la realidad e inducen a cometer errores graves. Creer que el mercado se mueve de forma injusta o que el precio "debe" rebotar en un soporte simplemente porque está muy barato es un error cognitivo destructivo que nace del deseo de tener el control sobre lo incontrolable. Un trader estoico comprende la dicotomía del control descrita por Epicteto: no podemos controlar la dirección del precio, pero sí tenemos control absoluto sobre nuestras reacciones internas, la colocación de nuestras órdenes y la gestión del riesgo.</p>
+      <p>Cuando pretendes que el mercado se comporte de acuerdo con tus opiniones o necesidades personales, estás operando desde el ego. Las manos fuertes y las instituciones financieras operan basándose en flujos de capital masivos y en la necesidad de liquidez, no en tu análisis. Si el precio sube contra tu posición corta, la cotización actual es la única reality física del mercado. Tu opinión sobre lo que debería estar sucediendo carece por completo de relevancia y debes aceptar el veredicto del precio de forma inmediata, sin albergar esperanzas de retrocesos ni justificaciones emocionales.</p>
+      <h3>La Verdad de la Subasta en el Trading de Futuros</h3>
+      <p>Para tener éxito consistente operando futuros de índices como el E-mini S&P 500 (ES) o el E-mini Nasdaq 100 (NQ), es fundamental comprender que el precio se mueve únicamente debido a la interacción agresiva entre la oferta y la demanda. Si hay más participantes dispuestos a comprar agresivamente al precio de Ask actual que participantes dispuestos a vender en el Bid, el precio subirá. Los indicadores técnicos promedio, las noticias y los informes macroeconómicos son interpretados de distintas maneras por los grandes algoritmos; por tanto, intentar operar basándote en lo que "debería significar" una noticia es especular sobre opiniones secundarias. Opera lo que ves en la estructura de precios en tiempo real, no lo que crees que debería ocurrir.</p>
+      <h3>Aplicación Práctica del Enfoque Estoico</h3>
+      <p>Para aplicar este principio a tu reto diario, debes sentarte frente a tu plataforma de trading y observar los gráficos históricos. Busca al menos tres ejemplos donde tu opinión subjetiva o tu análisis técnico te indicaban una dirección, pero el precio rompió en sentido contrario de forma violenta. Documenta con total honestidad cómo te sentiste en ese momento: ¿intentaste justificar la posición diciendo que era un error temporal o aceptaste de inmediato la pérdida? El objetivo de este ejercicio es adiestrar a tu mente para que asocie la salud de tu cuenta con la aceptación inmediata del precio, erradicando la falsa expectativa de que el mercado te debe un resultado positivo.</p>
       <div class="alert-box">
-        <strong>📈 Regla Estoica:</strong> Controla tus reacciones internas. El mercado es un reflejo de flujos de capital, no una entidad que conspira contra ti.
+        <strong>📈 Regla Estoica del Día:</strong> La aceptación radical del precio elimina la frustración. El mercado es un reflejo neutro de las decisiones colectivas de compra y venta. No conspira contra ti; simplemente busca liquidez de manera eficiente.
       </div>
-    `
+`
   },
   day2: {
     id: "day2",
@@ -30,14 +47,49 @@ const courseData = {
     completed: false,
     challenge: "Identifica y documenta un sesgo cognitivo propio (como el sesgo de confirmación o de aversión a la pérdida) durante tu análisis de mercado.",
     content: `
-      <p>Hoy analizaremos los <strong>sesgos cognitivos</strong>. Son atajos mentales que nuestro cerebro utiliza de forma automática, pero que en el trading resultan fatales para el capital operativo.</p>
-      <h3>Sesgos Principales</h3>
+<p>Hoy analizaremos los <strong>sesgos cognitivos</strong>. Los sesgos cognitivos son atajos mentales de adaptación evolutiva que nuestro cerebro utiliza de forma automática para ahorrar energía en la toma de decisiones diarias. Aunque son útiles para la supervivencia del ser humano, resultan fatales cuando se aplican a la operativa de los mercados financieros, donde las decisiones racionales y probabilísticas son la única vía para conservar el capital.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Brain Shape outline (simplified icon) -->
+        <path d="M 180 120 C 180 80, 220 50, 250 50 C 280 50, 320 80, 320 120 C 320 150, 280 180, 250 180 C 220 180, 180 150, 180 120 Z" fill="none" stroke="#64748b" stroke-width="2" />
+        <path d="M 210 120 Q 250 90 290 120" fill="none" stroke="#64748b" stroke-width="1.5" />
+        <!-- Filters (Vertical Red and Green filters) -->
+        <line x1="200" y1="70" x2="200" y2="170" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="4,4" />
+        <line x1="300" y1="70" x2="300" y2="170" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4,4" />
+        <!-- Data inputs -->
+        <path d="M 80 120 L 170 120" fill="none" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrow)" />
+        <text x="75" y="105" fill="#3b82f6" font-size="10" font-family="sans-serif">Información</text>
+        <text x="75" y="117" fill="#3b82f6" font-size="10" font-family="sans-serif">Objetiva</text>
+        <!-- Filter labels -->
+        <text x="200" y="60" fill="#ef4444" font-size="9" font-family="sans-serif" text-anchor="middle">Aversión Pérdida</text>
+        <text x="300" y="60" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle">Confirmación</text>
+        <!-- Distorted output -->
+        <path d="M 330 120 L 420 120" fill="none" stroke="#ef4444" stroke-width="3" marker-end="url(#arrow)" />
+        <text x="425" y="105" fill="#ef4444" font-size="10" font-family="sans-serif">Decisión</text>
+        <text x="425" y="117" fill="#ef4444" font-size="10" font-family="sans-serif">Distorsionada</text>
+
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+          </marker>
+        </defs>
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 1.2: Filtrado cognitivo subjetivo frente a la toma de datos objetiva.</text>
+      </svg>
+
+      <h3>Sesgos Principales que Amenazan al Especulador</h3>
+      <p>Existen decenas de sesgos identificados por la psicología del comportamiento, pero en la práctica de la especulación de futuros de índices, tres de ellos sobresalen por su capacidad de destruir cuentas de trading en cuestión de minutos:</p>
       <ul>
-        <li><strong>Sesgo de Aversión a la Pérdida:</strong> Dolor desproporcionado ante una pérdida que te lleva a mover tu Stop Loss esperando un milagro.</li>
-        <li><strong>Sesgo de Reciente:</strong> Darle más importancia a los resultados de las últimas operaciones, modificando tu estrategia tras solo 2 fallos consecutivos.</li>
+        <li><strong>1. Sesgo de Aversión a la Pérdida:</strong> Teorizado por Daniel Kahneman, demuestra que el ser humano experimenta un dolor psicológico dos veces más intenso ante una pérdida que el placer que siente ante una ganancia equivalente. En el trading, esto se traduce en la incapacidad de aceptar pérdidas pequeñas, lo que lleva al operador novato a mover su Stop Loss en contra, promediar posiciones perdedoras o negarse a cerrar una operación fallida con la esperanza irracional de que el mercado regrese a su precio de entrada.</li>
+        <li><strong>2. Sesgo de Confirmación:</strong> Es la tendencia de la mente a buscar, interpretar y valorar la información de manera que confirme las creencias preexistentes, ignorando de forma activa cualquier dato que las contradiga. Si un trader ha decidido que el Nasdaq 100 debe subir hoy, buscará cualquier señal de compra en su gráfico (como un indicador menor) e ignorará por completo la ruptura de un soporte clave y el volumen bajista que gritan que el mercado está colapsando.</li>
+        <li><strong>3. Sesgo de Reciente (Recency Bias):</strong> Consiste en dar mayor peso a los eventos más recientes en detrimento de los datos históricos. Si sufres dos o tres operaciones perdedoras seguidas (un suceso estadístico normal en cualquier sistema), el sesgo de reciente te hará creer que tu estrategia ya no funciona, induciéndote a cambiar las reglas de tu sistema o a dejar de ejecutar los siguientes setups válidos, perdiendo así las operaciones ganadoras que habrían recuperado el saldo.</li>
       </ul>
-      <p>Un trader pragmático neutraliza los sesgos utilizando reglas escritas y una bitácora objetiva.</p>
-    `
+      <p>Un trader estoico y profesional no intenta eliminar estos sesgos de forma voluntaria, ya que están grabados en la biología humana. En su lugar, diseña un sistema de reglas operativas escritas y rigurosas que actúan como un marco externo de toma de decisiones, neutralizando la intervención emocional de la mente consciente.</p>
+      <h3>Aplicación Práctica para el Desafío del Día</h3>
+      <p>Para superar el reto de hoy, debes analizar de forma reflexiva tus sesiones de trading recientes o tu proceso de estudio. Identifica cuál de los tres sesgos anteriores ha tenido una mayor influencia en tus errores operativos. Describe detalladamente una situación específica donde este sesgo haya tomado el control de tu comportamiento y qué regla objetiva habrías necesitado tener escrita en tu estación de trabajo para evitar cometer ese error.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La bitácora objetiva es el antídoto contra el sesgo cognitivo. Lo que está escrito y medido de antemano escapa al control de la emoción y de la impaciencia irracional del momento.
+      </div>
+`
   },
   day3: {
     id: "day3",
@@ -47,10 +99,33 @@ const courseData = {
     completed: false,
     challenge: "Escribe en tu bitácora por qué una operación individual con setup perfecto puede ser perdedora y cómo afecta esto a tu mentalidad.",
     content: `
-      <p>El mercado es un <strong>entorno de probabilidades, no de certezas</strong>. Cada operación individual tiene un resultado aleatorio e independiente de las anteriores.</p>
-      <h3>La Distribución de Resultados</h3>
-      <p>Incluso con un sistema de trading que tenga un 60% de acierto estadístico a largo plazo, es matemáticamente posible (y normal) experimentar rachas de 4 o 5 operaciones perdedoras consecutivas sin que el sistema esté roto.</p>
-    `
+<p>El mercado financiero es un <strong>entorno puramente probabilístico, no de certezas</strong>. Uno de los mayores obstáculos para los traders novatos es comprender que una operación individual con un setup de alta probabilidad perfectamente ejecutado puede resultar perdedora. Esto no significa que el sistema esté roto o que el análisis haya sido incorrecto; simplemente es una demostración física de que los resultados individuales en el trading tienen una distribución aleatoria e independiente.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Distribution Curve -->
+        <path d="M 50 180 C 150 180, 200 60, 250 60 C 300 60, 350 180, 450 180" fill="none" stroke="#64748b" stroke-width="2" />
+        <line x1="50" y1="180" x2="450" y2="180" stroke="#1e293b" stroke-width="1.5" />
+        <!-- Win and Loss Regions -->
+        <path d="M 120 180 C 170 180, 200 90, 250 90 L 250 180 Z" fill="#ef4444" fill-opacity="0.15" />
+        <path d="M 250 90 C 300 90, 330 180, 380 180 L 250 180 Z" fill="#10b981" fill-opacity="0.15" />
+        <line x1="250" y1="60" x2="250" y2="180" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="3,3" />
+        <text x="250" y="45" fill="#3b82f6" font-size="10" font-family="sans-serif" text-anchor="middle">Expectativa Media (Ventaja del 60%)</text>
+        <text x="180" y="150" fill="#ef4444" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Pérdida (40%)</text>
+        <text x="320" y="150" fill="#10b981" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ganancia (60%)</text>
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 1.3: Distribución normal de resultados y distribución de probabilidad.</text>
+      </svg>
+
+      <h3>La Distribución de Resultados y la Muestra Estadística</h3>
+      <p>Imagina que tienes una moneda trucada que cae en cara el 60% de las veces. Tienes una clara ventaja matemática a tu favor. Sin embargo, si lanzas la moneda únicamente 10 veces, es perfectamente posible que caiga en cruz 7 veces seguidas. Este suceso de corto plazo no invalida la ventaja del 60%; solo demuestra que el tamaño de la muestra es demasiado pequeño para que la probabilidad matemática se estabilice. En el trading ocurre exactamente lo mismo. Tu estrategia es la moneda trucada y cada trade es un lanzamiento individual.</p>
+      <p>Un trader profesional evalúa su desempeño y su rentabilidad basándose en muestras grandes de operaciones (por ejemplo, bloques de 20, 50 o 100 operaciones consecutivas). Si tu sistema tiene un ratio de acierto estadístico demostrado del 55%, debes aceptar con total naturalidad que de vez en cuando experimentarás rachas de 5 o 6 pérdidas seguidas. El trader novato, cegado por la ilusión de la certeza, interpreta esta racha normal como un fracaso personal o un defecto del sistema, lo que le lleva a cometer errores emocionales graves. El trader estoico acepta la incertidumbre de la operación actual y se enfoca únicamente en ejecutar de forma perfecta y constante las reglas de su plan.</p>
+      <h3>La Redención de las Falsas Expectativas</h3>
+      <p>Aceptar el carácter probabilístico del mercado te libera de la ansiedad en la ejecución. Si no sabes ni necesitas saber qué hará el precio en el siguiente trade para ganar dinero a largo plazo, ya no sientes la necesidad de tener la razón. Eliminas la frustración y dejas de ver cada pérdida como un ataque del mercado a tu autoestima. La pérdida se convierte en un simple costo operativo de hacer negocios, similar al alquiler que paga el dueño de una tienda física.</p>
+      <h3>Aplicación Práctica para el Reto Semanal</h3>
+      <p>Tu desafío de hoy consiste en realizar un análisis probabilístico por escrito en tu bitácora. Explica detalladamente cómo una operación con un setup que cumple al 100% tus reglas puede terminar en pérdida debido a la aleatoriedad de los participantes del mercado. Define las acciones mentales específicas que realizarás la próxima vez que sufras una pérdida para recordarte que el resultado de un solo trade carece de valor frente a la ventaja estadística de tu sistema a lo largo del tiempo.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> No busques la certeza en un entorno aleatorio. Busca la consistencia en tu comportamiento y deja que las matemáticas de la probabilidad trabajen a favor de tu cuenta a largo plazo.
+      </div>
+`
   },
   day4: {
     id: "day4",
@@ -60,10 +135,40 @@ const courseData = {
     completed: false,
     challenge: "Busca en tu gráfico un caso de rompimiento falso (caza de stops) y documenta cómo reaccionó el precio tras atrapar a los operadores ansiosos.",
     content: `
-      <p>Para no ser la presa, debes entender cómo opera el cazador. La manipulación de mercado no es una conspiración, sino la necesidad de <strong>liquidez institucional</strong>.</p>
-      <h3>Trampas Técnicas y Caza de Liquidez</h3>
-      <p>Los grandes participantes (bancos, fondos de cobertura) necesitan contrapartida para llenar sus órdenes masivas. Para comprar barato, inducen a los traders minoristas a vender rompiendo soportes de manera temporal para activar sus stops (que son órdenes de venta de mercado), absorbiendo toda esa liquidez para iniciar el movimiento alcista real.</p>
-    `
+<p>Para no convertirte en la presa de la volatilidad diaria de los futuros de índices, es indispensable que comprendas la anatomía de la manipulación de mercado. En el trading minorista suele difundirse el mito de que los mercados están manipulados de forma malintencionada por entidades ocultas que operan específicamente en tu contra. La realidad es mucho más sencilla y racional: el mercado es un entorno de búsqueda de <strong>liquidez institucional</strong> donde los grandes participantes actúan bajo reglas de oferta y demanda.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Support Level Line -->
+        <line x1="50" y1="150" x2="450" y2="150" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4,4" />
+        <text x="60" y="142" fill="#ef4444" font-size="9" font-family="sans-serif">Soporte Obvio Minorista</text>
+        <!-- Price Path -->
+        <path d="M 60 90 L 120 150 L 180 110 L 240 150 L 260 180 L 320 80 L 390 120 L 440 60" fill="none" stroke="#3b82f6" stroke-width="2.5" />
+        <!-- Liquidity Sweep Circle -->
+        <circle cx="260" cy="180" r="10" fill="none" stroke="#ef4444" stroke-width="1.5" />
+        <text x="260" y="200" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Caza de Stops (Pool de Liquidez)</text>
+        <circle cx="260" cy="180" r="3.5" fill="#f59e0b" />
+        <!-- Reversal Arrow -->
+        <path d="M 270 170 L 310 90" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#arrow-up)" />
+        <text x="320" y="100" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold">Inyección Institucional</text>
+
+        <defs>
+          <marker id="arrow-up" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+          </marker>
+        </defs>
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 1.4: Barrido de liquidez institucional en un nivel de soporte clave.</text>
+      </svg>
+
+      <h3>Mecánica de la Liquidez y Caza de Stops</h3>
+      <p>Los grandes participantes (como bancos comerciales, creadores de mercado y fondos cuantitativos) operan con tamaños de posición gigantescos. Si un fondo institucional desea comprar 10,000 contratos de futuros de E-mini S&P 500 (ES) al precio de mercado actual, no puede hacerlo directamente porque provocaría un deslizamiento de precios brutal que encarecería su entrada. Para comprar de forma eficiente, necesitan una contrapartida masiva: participantes dispuestos a vender en el mismo nivel de precios. En el libro de órdenes, esto se visualiza en la profundidad de mercado (DOM), donde las órdenes límite de venta se emparejan con las compras a mercado.</p>
+      <p>El lugar idóneo donde se concentra la mayor cantidad de órdenes de venta pendientes de ejecución es justo por debajo de los soportes obvios marcados por el análisis minorista. Los stop losses de los traders que compraron previamente son, en esencia, órdenes de venta al mercado que se activan si el precio cae por debajo del soporte. Al empujar el precio temporalmente por debajo de este nivel clave, las instituciones activan miles de órdenes de venta minoristas de forma simultánea. Las manos fuertes absorben todas esas ventas comprando a precios baratos, lo que detiene la caída y provoca un fuerte rebote alcista que deja a los minoristas fuera del mercado con pérdidas. Esta dinámica explica la aparición de las mechas largas en los extremos de los rangos operativos.</p>
+      <p>Entender esta mecánica te permite cambiar tu perspectiva. En lugar de asustarte y vender en pérdidas cuando el precio rompe un soporte de forma temporal, aprendes a esperar pacientemente la absorción y la posterior confirmación estructural para operar en la misma dirección que las instituciones. Al filtrar tus entradas y buscar confluencias adicionales, aumentas drásticamente tu ventaja estadística frente a los operadores impulsivos.</p>
+      <h3>Aplicación Práctica del Filtro de Caza de Stops</h3>
+      <p>Para tu reto diario, abre tu plataforma de trading y busca ejemplos históricos en gráficos de 5 o 15 minutos. Encuentra al menos dos casos claros donde el precio haya perforado un soporte o resistencia obvio por una distancia muy corta para revertirse con fuerza de forma inmediata en la dirección opuesta. Documenta detalladamente cómo reaccionó el volumen de operaciones en la vela de ruptura y anota las conclusiones de este comportamiento técnico en tu bitácora.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> El mercado no busca arruinarte a ti en particular. Simplemente busca la liquidez necesaria para facilitar las transacciones institucionales de forma eficiente. Opera junto al flujo del dinero profesional, no contra él.
+      </div>
+`
   },
   day5: {
     id: "day5",
@@ -73,10 +178,35 @@ const courseData = {
     completed: false,
     challenge: "Explica en tus palabras la mecánica de un Short Squeeze y por qué está prohibido intentar adivinar el techo de un movimiento parabólico.",
     content: `
-      <p>El <strong>Short Squeeze</strong> es un ejemplo clásico de manipulación y pánico técnico. Ocurre cuando un gran número de vendedores en corto se ven obligados a cerrar sus posiciones de manera simultánea.</p>
-      <h3>La Cascada de Compras Forzadas</h3>
-      <p>Dado que cerrar una posición en corto requiere una orden de compra, el pánico de los vendedores y la ejecución de sus Stop Losses empujan el precio exponencialmente al alza, barriendo a cualquiera que intente buscar techos sin confluencias estructurales.</p>
-    `
+<p>El <strong>Short Squeeze</strong> (estrangulamiento de cortos) es una de las dinámicas de mercado más rápidas, violentas y temidas por los operadores inexpertos en el trading de futuros. Representa una capitulación emocional masiva por parte de los vendedores en corto y proporciona una demostración física de la asimetría de riesgos entre las posiciones largas y cortas en los mercados de futuros altamente apalancados. Entender esta mecánica te protegerá de pérdidas catastróficas y te enseñará a respetar la inercia del precio.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Parabolic Move Path -->
+        <path d="M 50 180 L 150 170 L 250 150 L 320 120 L 350 40" fill="none" stroke="#10b981" stroke-width="3" />
+        <line x1="50" y1="190" x2="450" y2="190" stroke="#1e293b" stroke-width="1.5" />
+        <!-- Stops exploding -->
+        <circle cx="320" cy="120" r="6" fill="#ef4444" />
+        <text x="310" y="110" fill="#ef4444" font-size="8" font-family="sans-serif" text-anchor="end">Stops de Cortos Activados</text>
+        <circle cx="350" cy="40" r="6" fill="#ef4444" />
+        <text x="340" y="30" fill="#ef4444" font-size="8" font-family="sans-serif" text-anchor="end">Pánico / Compra Forzada</text>
+        <!-- Horizontal Resistance Broken -->
+        <line x1="100" y1="150" x2="400" y2="150" stroke="#64748b" stroke-width="1.2" stroke-dasharray="3,3" />
+        <text x="405" y="145" fill="#64748b" font-size="8" font-family="sans-serif">Resistencia Clave</text>
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 1.5: Mecánica de ascenso acelerado en un Short Squeeze.</text>
+      </svg>
+
+      <h3>La Mecánica Detrás de la Cascada de Compras Forzadas</h3>
+      <p>Para entender un Short Squeeze, primero debes comprender la naturaleza técnica de una posición en corto. Vender en corto implica tomar prestado un activo para venderlo a precios altos con la expectativa de recomprarlo más barato en el futuro, devolviendo el activo prestado y quedándote con la diferencia. Sin embargo, para cerrar una posición en corto (ya sea para tomar ganancias o para limitar pérdidas), debes colocar obligatoriamente una orden de compra en el mercado. En futuros, esto se liquida mediante la cámara de compensación de forma inmediata.</p>
+      <p>Cuando el precio de un activo sube de forma agresiva rompiendo niveles clave de resistencia, muchos vendedores en corto comienzan a incurrir en pérdidas insostenibles. Para detener la hemorragia de sus cuentas, colocan órdenes de compra para cerrar sus cortos. Al mismo tiempo, se activan los Stop Losses de otros vendedores (que también son órdenes de compra). Esta acumulación masiva de órdenes de compra al mercado, sumada a la entrada de traders alcistas que compran la ruptura, provoca un incremento violento de la fuerza compradora que empuja el precio al alza de forma casi vertical. Los liquidadores automáticos de los brokers y los algoritmos automáticos aceleran el movimiento sin importar el valor real del activo.</p>
+      <p>En el trading de futuros de índices (como NQ o ES), la volatilidad intrínseca puede alimentar este círculo vicioso en cuestión de segundos. Intentar adivinar el "techo" de un movimiento parabólico vendiendo en corto sin confluencias estructurales es una irresponsabilidad. El precio puede subir mucho más de lo que tu cuenta puede soportar antes de mostrar cualquier señal de agotamiento. Debes centrarte en operar con micro contratos para mitigar el impacto de deslizamientos bruscos de precio durante estos eventos de alta volatilidad. La lección estoica aquí es aceptar que no controlas la altura de un movimiento irracional y que tu único deber es proteger tu capital manteniéndote al margen de peleas innecesarias contra tendencias aceleradas.</p>
+      <p>Es importante notar que los short squeezes ocurren con mayor frecuencia en activos con un alto interés en corto (short interest) y baja liquidez relativa, pero en futuros sobre índices como el Nasdaq (NQ), los reajustes de cobertura de opciones por parte de los creadores de mercado (market makers) en niveles de strike clave pueden generar impulsos alcistas parabólicos muy similares. Nunca operes en contra de esta inercia alcista sin confirmación técnica de volumen decreciente y rechazo estructural sólido.</p>
+      <h3>Aplicación Práctica del Short Squeeze</h3>
+      <p>Tu reto para el día de hoy consiste en explicar con tus propias palabras e incluir en tu bitácora de trading la mecánica de flujo de órdenes de un Short Squeeze. Analiza por qué la pérdida teórica en una posición corta es ilimitada y define por qué está estrictamente prohibido por tu plan de trading intentar operar en corto contra un movimiento vertical alcista que no muestre una clara estructura de reversión y absorción institucional previa.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Nunca pelees contra la inercia del mercado. El pánico comprador no responde a la lógica del precio barato o caro; responde a la urgencia matemática de la liquidación forzada de posiciones.
+      </div>
+`
   },
   day6: {
     id: "day6",
@@ -86,10 +216,36 @@ const courseData = {
     completed: false,
     challenge: "Describe la diferencia visual en un gráfico entre una vela de ruptura institucional limpia y una vela que solo cazó liquidez (fakeout).",
     content: `
-      <p>Los <strong>Fakeouts</strong> (falsos rompimientos) ocurren constantemente en zonas obvias de soporte y resistencia. Aprender a identificarlos evita entrar tarde al mercado.</p>
-      <h3>Mecánica de la Trampa</h3>
-      <p>Si el precio perfora un nivel clave pero cierra rápidamente dentro del rango previo dejando una mecha larga, estamos ante un rechazo por absorción institucional. Los operadores profesionales esperan la vela de confirmación en lugar de comprar o vender impulsivamente la ruptura de la línea.</p>
-    `
+<p>Los <strong>Fakeouts</strong> o falsos rompimientos representan uno de los mayores desafíos y, a la vez, una de las mejores oportunidades operativas dentro del trading de futuros. Ocurren de forma sistemática en zonas obvias de soporte y resistencia. Aprender a identificarlos de manera objetiva te impedirá caer en las trampas de las instituciones y te enseñará a operar con las probabilidades de tu lado.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Resistance line -->
+        <line x1="50" y1="100" x2="450" y2="100" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,3" />
+        <text x="60" y="92" fill="#ef4444" font-size="9" font-family="sans-serif">Zona de Resistencia</text>
+        <!-- Price bar 1: Breakout Attempt -->
+        <line x1="200" y1="50" x2="200" y2="150" stroke="#3b82f6" stroke-width="2" />
+        <rect x="192" y="70" width="16" height="60" fill="#3b82f6" rx="2" />
+        <text x="200" y="165" fill="#3b82f6" font-size="8" font-family="sans-serif" text-anchor="middle">Vela de Ruptura</text>
+        <!-- Price bar 2: Fakeout Pinbar (Rejection) -->
+        <line x1="320" y1="40" x2="320" y2="160" stroke="#ef4444" stroke-width="2" />
+        <rect x="312" y="100" width="16" height="50" fill="#ef4444" rx="2" />
+        <text x="320" y="175" fill="#ef4444" font-size="8" font-family="sans-serif" text-anchor="middle">Vela de Rechazo (Pinbar)</text>
+        <circle cx="320" cy="40" r="4" fill="#f59e0b" />
+        <text x="330" y="44" fill="#f59e0b" font-size="8" font-family="sans-serif" font-weight="bold">Trampa</text>
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 1.6: Comparación visual de ruptura frente a trampa de liquidez.</text>
+      </svg>
+
+      <h3>La Diferencia Visual y de Volumen en las Velas</h3>
+      <p>Una ruptura genuina de un nivel de soporte o resistencia se caracteriza por una vela de rango amplio que rompe la zona clave y cierra de manera contundente fuera de ella. Este movimiento debe estar respaldado por un incremento notable en el volumen de transacciones, confirmando la participación del capital institucional. Los cuerpos de las velas deben ser grandes, mostrando una intención clara y sostenida del precio. El cierre de la vela por encima o por debajo del nivel estructural es el factor clave para confirmar que los compradores o vendedores controlan la nueva zona.</p>
+      <p>Por el contrario, un falso rompimiento (fakeout) se identifica por velas con mechas muy largas que sobresalen de las zonas clave, pero cuyos cuerpos cierran de vuelta dentro del rango previo. La formación clásica es la vela Pinbar o de rechazo (también llamada estrella fugaz para resistencias o martillo para soportes). Estas mechas representan el espacio donde las órdenes de stop losses minoristas fueron devoradas y absorbidas por las órdenes límite institucionales en sentido contrario. Para mitigar los falsos rompimientos, es recomendable utilizar múltiples temporalidades, analizando la estructura mayor (por ejemplo, en gráficos de 15 minutos o 1 hora) para definir las zonas y la temporalidad menor (1 o 2 minutos) para buscar la confirmación de velas limpias de rechazo y absorción.</p>
+      <p>Al esperar pacientemente a que la vela de ruptura cierre por completo antes de ingresar, evitas caer en la trampa física de la toma de liquidez. La disciplina estoica consiste en aceptar que es preferible perderse un movimiento rápido a ingresar precipitadamente en una trampa de absorción institucional. Recuerda que las manos fuertes utilizan la impaciencia de los operadores minoristas como contrapartida para llenar sus propias órdenes comerciales. Tu ventaja reside en la paciencia y en la confirmación estadística.</p>
+      <h3>Aplicación Práctica del Análisis de Cierre</h3>
+      <p>Tu desafío para el día de hoy consiste en abrir tus gráficos históricos y documentar con capturas o anotaciones detalladas en tu bitácora de trading la diferencia visual entre tres rupturas limpias confirmadas en vela cerrada y tres falsos rompimientos con velas de mecha larga en el mismo activo. Describe qué ocurrió con el precio en las siguientes velas tras formarse cada uno de los escenarios y anota tus conclusiones.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Esperar al cierre de la vela es el filtro definitivo de consistencia. El precio de cierre refleja la decisión consensuada del dinero profesional, mientras que el máximo o mínimo intradía suele ser solo ruido y manipulación de liquidez.
+      </div>
+`
   },
   day7: {
     id: "day7",
@@ -99,11 +255,32 @@ const courseData = {
     completed: false,
     challenge: "Escribe tu compromiso mental: declara que aceptas el resultado probabilístico del mercado y define qué sesgo vas a monitorizar esta semana.",
     content: `
-      <p>Felicidades por completar el Módulo 1. Has aprendido que el precio es lo único real y has analizado los mecanismos de manipulación y sesgos que destruyen al trader aficionado.</p>
+<p>Felicidades por haber completado las primeras siete lecciones del <strong>Módulo 1: Mentalidad Ganadora</strong>. A lo largo de esta semana inicial de formación intensiva, has sentado las bases psicológicas indispensables para convertirte en un operador consistente de futuros. Has aprendido de manera profunda que el precio es la única realidad física del mercado, desmitificando la falsa ilusión de tener el control sobre la cotización de los activos. Analizaste detenidamente los sesgos cognitivos más dañinos que conducen de forma sistemática a la ruina de las cuentas de trading, comprendiste el carácter meramente probabilístico de la operativa y aprendiste a identificar las complejas trampas de liquidez y short squeezes institucionales que atrapan a los novatos.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Laurel Wreath Backdrop -->
+        <path d="M 180 120 C 180 180, 320 180, 320 120" fill="none" stroke="#334155" stroke-width="3" />
+        <!-- Badge Body -->
+        <polygon points="250,40 300,90 280,160 220,160 200,90" fill="#1e293b" stroke="#3b82f6" stroke-width="3" />
+        <!-- Star Symbol -->
+        <polygon points="250,75 254,87 267,87 257,95 261,108 250,100 239,108 243,95 233,87 246,87" fill="#f59e0b" />
+        <!-- Badge Text -->
+        <text x="250" y="130" fill="#10b981" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">PILAR 1 OK</text>
+        <text x="250" y="145" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">MENTALIDAD</text>
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 1.7: Insignia de certificación del bloque de mentalidad estoica.</text>
+      </svg>
+
+      <h3>La Construcción de tu Manifiesto Personal</h3>
+      <p>El trading profesional de futuros exige que actúes de manera alineada con tus reglas predefinidas, y no bajo los impulsos del momento, los deseos egoístas de ganancias rápidas o la necesidad de recuperar pérdidas acumuladas. Para lograr esto, hoy redactarás tu propio manifiesto personal de trading. Este manifiesto debe ser una declaración solemne redactada por escrito donde asumas la responsabilidad absoluta de tus resultados operativos, aceptes la naturaleza puramente probabilística de los mercados financieros y te comprometas firmemente a respetar tus límites de stop loss y drawdown diario sin excusas ni excepciones de ningún tipo. Debe ser una guía clara y estricta de conducta que no dependa en absoluto de tus emociones momentáneas o de la euforia pasajera de una racha ganadora.</p>
+      <p>Un manifiesto no es una simple lista de buenos deseos; es la constitución inquebrantable que rige tu negocio de trading. Escríbelo de forma manuscrita o digital, colócalo en un lugar visible de tu escritorio y léelo en voz alta al inicio de cada jornada antes de la apertura del mercado regular. Al consolidar esta mentalidad estoica, dejas de operar con la actitud impulsiva del apostador y te conviertes en un operador profesional regido por la consistencia del proceso. Además, realiza auditorías psicológicas semanales puntuando tu calidad operativa (grados A, B, C) para identificar tus principales desencadenantes emocionales. Si descubres que tiendes a operar por venganza tras una pérdida, tu manifiesto debe obligarte a apagar la terminal de inmediato y a bloquear el software de operativa mediante herramientas externas.</p>
+      <p>Recuerda que la mentalidad ganadora no es la ausencia de miedo o codicia, sino la capacidad de actuar con disciplina por encima de esas emociones naturales. Al finalizar este bloque inicial de mentalidad, estás listo para asumir el control total de las matemáticas de tu operativa. Asegúrate de comprender que el capital es tu inventario de negocio y que la consistencia es un hábito de comportamiento continuo que se construye paso a paso, operación tras operación, a lo largo de una muestra representativa de operaciones. No te dejes llevar por la euforia ni por el pánico; tu objetivo final es la ejecución inmaculada de un plan de negocio sostenible a largo plazo en un entorno probabilístico.</p>
+      <h3>Instrucciones para la Evaluación Semanal</h3>
+      <p>Tu reto de hoy consiste en resolver correctamente el cuestionario de mentalidad estoica detallado a continuación. Deberás responder a las 5 preguntas basándote en los principios de aceptación radical del precio y gestión estadística de riesgos que hemos estudiado durante las pasadas lecciones. Aprobar este examen con un 100% de aciertos es el requisito obligatorio para desbloquear el Módulo 2, donde entraremos de lleno en las matemáticas de la ruina, el cálculo dinámico del tamaño de posición y la construcción de un sistema de gestión de capital sumamente robusto.</p>
       <div class="alert-box" style="border-left-color: var(--color-accent); background: rgba(59, 130, 246, 0.03);">
         <strong>📝 Evaluación del Módulo 1:</strong> Responde correctamente el cuestionario de abajo para certificar tu comprensión y desbloquear el Módulo de Gestión y Disciplina.
       </div>
-    `
+`
   },
   day8: {
     id: "day8",
@@ -113,10 +290,36 @@ const courseData = {
     completed: false,
     challenge: "Calcula la ruina matemática de una cuenta de $10,000 arriesgando el 10% por operación frente al 1% en una racha de 10 operaciones fallidas.",
     content: `
-      <p>Iniciamos el <strong>Módulo 2: Gestión y Disciplina</strong>. El trading no es un arte; es un negocio de <strong>estadística y matemáticas aplicadas</strong>.</p>
-      <h3>La Preservación del Capital</h3>
-      <p>Tu capital es tu inventario de trabajo. Si arriesgas el 1% por operación, necesitas 100 operaciones perdedoras consecutivas para quebrar. Si arriesgas el 10%, con solo 10 operaciones perdedoras (un suceso estadísticamente probable en cualquier sistema) estarás fuera del negocio de forma permanente.</p>
-    `
+<p>Iniciamos el <strong>Módulo 2: Gestión y Disciplina</strong>. El trading profesional no consiste en predecir la dirección futura del precio mediante la intuición o la clarividencia; consiste en operar un negocio riguroso basado en la <strong>estadística y las matemáticas aplicadas</strong>. El capital operativo es tu inventario de trabajo, y protegerlo es tu primera y más importante responsabilidad de cada día de negociación regular.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Axes -->
+        <line x1="50" y1="30" x2="50" y2="200" stroke="#1e293b" stroke-width="1.5" />
+        <line x1="50" y1="200" x2="470" y2="200" stroke="#1e293b" stroke-width="1.5" />
+        <text x="35" y="35" fill="#64748b" font-size="10" font-family="sans-serif">Capital</text>
+        <text x="440" y="218" fill="#64748b" font-size="10" font-family="sans-serif">Operaciones</text>
+        
+        <!-- Risk 1% Line (Green, stable) -->
+        <path d="M 50 60 L 90 62 L 130 61 L 170 65 L 210 63 L 250 66 L 290 64 L 330 68 L 370 67 L 410 70 L 450 69" fill="none" stroke="#10b981" stroke-width="2.5" />
+        <text x="360" y="85" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold">Riesgo 1% (Seguro)</text>
+        
+        <!-- Risk 10% Line (Red, exponential decay) -->
+        <path d="M 50 60 L 90 74 L 130 87 L 170 102 L 210 119 L 250 136 L 290 152 L 330 167 L 370 181 L 410 191 L 450 197" fill="none" stroke="#ef4444" stroke-width="2.5" />
+        <text x="280" y="140" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold">Riesgo 10% (Ruina)</text>
+        
+        <text x="250" y="235" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.1: Curva de ruina matemática según el porcentaje de riesgo por operación.</text>
+      </svg>
+
+      <h3>La Preservación del Capital y la Asimetría del Drawdown</h3>
+      <p>La diferencia principal entre un trader minorista perdedor y un gestor de fondos consistente reside en la comprensión y aplicación de las matemáticas de la ruina. Si arriesgas el 1% de tu capital por operación, necesitarías sufrir 100 operaciones perdedoras consecutivas para perder toda tu cuenta, lo cual es estadísticamente improbable en un sistema con una ventaja mínima. Sin embargo, si arriesgas el 10% por operación, una racha normal de tan solo 10 pérdidas consecutivas (un suceso bastante probable dentro de una muestra estadística representativa) destruirá por completo tu cuenta de trading de forma irreversible.</p>
+      <p>Además, debes entender la matemática asimétrica de la recuperación de capital. Si sufres una pérdida del 10% de tu cuenta, necesitas generar un rendimiento del 11.1% sobre el saldo restante para volver al punto de partida (breakeven). Pero si dejas que tu cuenta sufra un drawdown (reducción) del 50%, necesitarás realizar un retorno del 100% solo para recuperar el capital original. Generar un 100% de rentabilidad en el mercado exige una precisión técnica y una tranquilidad mental excepcionales, las cuales suelen perderse por completo tras sufrir un drawdown tan agresivo. Cuanto más profundo sea tu pozo de pérdidas, más difícil será salir de él.</p>
+      <p>El trader estoico comprende que el control del riesgo es la única variable que domina de forma absoluta. Al establecer una regla inquebrantable de no arriesgar jamás más del 1% de la cuenta en una sola operación, eliminas la posibilidad física de que una racha perdedora temporal destruya tu salud financiera. Esta disciplina reduce significativamente el estrés operativo y te permite enfocar tu atención en el proceso y no en el resultado monetario de cada trade. No busques ganancias astronómicas inmediatas; busca la consistencia a largo plazo mediante la preservación estricta de tu balance.</p>
+      <h3>Aplicación Práctica de las Matemáticas de Gestión</h3>
+      <p>Tu reto para el día de hoy consiste en calcular por escrito en tu bitácora de trading la tabla de degradación de una cuenta de $10,000 ante una racha de 10 operaciones fallidas seguidas, comparando el impacto de arriesgar el 1% ($100) contra arriesgar el 10% ($1,000) por trade. Calcula el saldo restante en cada paso y el porcentaje de ganancia necesario sobre ese saldo remanente para regresar a los $10,000 iniciales. Este ejercicio te demostrará la necesidad imperiosa de limitar tu riesgo de forma estricta.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> El trading es un juego de supervivencia. Quien conserva su capital operativo tiene siempre la oportunidad de aprovechar la siguiente gran ventaja del mercado, mientras que el arruinado queda fuera del negocio permanentemente.
+      </div>
+`
   },
   day9: {
     id: "day9",
@@ -126,10 +329,46 @@ const courseData = {
     completed: false,
     challenge: "Si realizas 20 operaciones arriesgando $100 por trade con un R:R 1:2, y ganas 8 operaciones (40% acierto) y pierdes 12, calcula tu beneficio neto.",
     content: `
-      <p>No necesitas acertar el 90% de tus operaciones para ser rentable. La clave está en la <strong>asimetría de los ratios de Riesgo/Beneficio (R:R)</strong>.</p>
-      <h3>La ventaja de un R:R 1:2</h3>
-      <p>Con un ratio de 1:2, cada acierto paga el doble de lo que cuesta cada pérdida. Esto te permite tener un balance positivo a largo plazo incluso ganando menos de la mitad de tus operaciones.</p>
-    `
+<p>Hoy analizaremos la **asimetría matemática** y la relación esencial entre la tasa de acierto (Win Rate) y la relación de Riesgo/Beneficio (Ratio R:R). Uno de los mayores errores de concepto del trader novato es la creencia errónea de que necesita adivinar la dirección correcta del precio en el 80% o 90% de sus operaciones para ser rentable a largo plazo. Esta falsa expectativa induce a cometer errores de sobreoperativa y genera una frustración severa cuando los trades fallan.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Matrix Table Headers -->
+        <rect x="50" y="40" width="400" height="30" fill="#1e293b" rx="4" />
+        <text x="100" y="58" fill="#94a3b8" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ratio R:R</text>
+        <text x="220" y="58" fill="#94a3b8" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Win Rate Mínimo</text>
+        <text x="360" y="58" fill="#94a3b8" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Expectativa</text>
+        
+        <!-- Row 1 -->
+        <line x1="50" y1="100" x2="450" y2="100" stroke="#1e293b" stroke-width="1" />
+        <text x="100" y="93" fill="#ffffff" font-size="10" font-family="sans-serif" text-anchor="middle">1 : 1</text>
+        <text x="220" y="93" fill="#ffffff" font-size="10" font-family="sans-serif" text-anchor="middle">> 50%</text>
+        <text x="360" y="93" fill="#64748b" font-size="9" font-family="sans-serif" text-anchor="middle">Neutral / Difícil</text>
+        
+        <!-- Row 2 -->
+        <line x1="50" y1="140" x2="450" y2="140" stroke="#1e293b" stroke-width="1" />
+        <text x="100" y="133" fill="#ffffff" font-size="10" font-family="sans-serif" text-anchor="middle">1 : 2</text>
+        <text x="220" y="133" fill="#10b981" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">> 34%</text>
+        <text x="360" y="133" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle">Rentable (Recomendado)</text>
+        
+        <!-- Row 3 -->
+        <line x1="50" y1="180" x2="450" y2="180" stroke="#1e293b" stroke-width="1" />
+        <text x="100" y="173" fill="#ffffff" font-size="10" font-family="sans-serif" text-anchor="middle">1 : 3</text>
+        <text x="220" y="173" fill="#10b981" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">> 26%</text>
+        <text x="360" y="173" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle">Alta Asimetría</text>
+        
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.2: Matriz de viabilidad de la asimetría matemática del trading.</text>
+      </svg>
+
+      <h3>La Ventaja del Ratio R:R y la Esperanza Matemática</h3>
+      <p>El ratio R:R es la relación entre la cantidad de capital que estás dispuesto a perder (riesgo) y la cantidad que buscas ganar (recompensa) en una operación. Por ejemplo, en un ratio R:R de 1:2, si arriesgas $100 en un stop loss, tu objetivo de take profit debe situarse obligatoriamente a una distancia que te devuelva $200 de beneficio neto. La esperanza matemática del sistema es el resultado de la interacción entre tu tasa de acierto y este ratio, calculándose como: (Probabilidad de ganar x Ganancia) - (Probabilidad de perder x Pérdida).</p>
+      <p>Si operas sistemáticamente con un ratio R:R de 1:2, solo necesitas acertar el 34% de tus operaciones para mantenerte en breakeven. Si logras acertar el 40% o el 45% (una tasa bastante conservadora y asequible), tu cuenta generará beneficios consistentes a lo largo de una muestra representativa de operaciones. Esto se debe a que cada ganancia o acierto individual compensa dos pérdidas completas. Al comprender esta asimetría, te liberas de la necesidad psicológica de tener la razón en cada trade, permitiéndote tomar las pérdidas lógicas del sistema con total serenidad estoica.</p>
+      <p>Muchos traders principiantes se centran en buscar el "Santo Grial" de los indicadores para aumentar su tasa de acierto, sin darse cuenta de que la clave de la rentabilidad es puramente matemática. Al redefinir tus objetivos y exigir un ratio mínimo de 1:2 en cada setup, reduces la presión sobre tus análisis y te conviertes en un gestor de riesgos enfocado en la rentabilidad neta.</p>
+      <h3>Aplicación Práctica del Cálculo Neto</h3>
+      <p>Para resolver tu reto de hoy, calcula manualmente en tu bitácora de trading los resultados económicos de la siguiente simulación: realizas una serie de 20 operaciones arriesgando exactamente $100 por operación. Consigues ganar únicamente 8 operaciones (40% de tasa de acierto) a un ratio R:R de 1:2 ($200 por acierto) y sufres 12 pérdidas ($100 por pérdida). Detalla la suma total de las ganancias brutas, la suma total de las pérdidas brutas y calcula el beneficio neto final. Este ejercicio te enseñará la potencia de la asimetría matemática.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> No busques la infalibilidad en tus análisis. Busca la asimetría matemática en tus setups: arriesga poco para buscar ganancias razonablemente grandes y deja que los números hagan el resto.
+      </div>
+`
   },
   day10: {
     id: "day10",
@@ -139,10 +378,36 @@ const courseData = {
     completed: false,
     challenge: "Establece tu regla inquebrantable de Drawdown diario: define en dinero cuánto es tu límite diario y escribe tu protocolo de apagado inmediato.",
     content: `
-      <p>El <strong>Daily Drawdown</strong> o Límite de Pérdida Diaria es el sistema de seguridad de tu cuenta. Evita que un día de frustración o falta de sincronización destruya tu capital de meses.</p>
-      <h3>La Regla de las Dos Pérdidas</h3>
-      <p>Si ejecutas dos operaciones fallidas en la misma sesión, la regla estoica dicta que debes cerrar la plataforma inmediatamente. El mercado estará ahí mañana; tu capital, si continúas operando con sesgos emocionales, probablemente no.</p>
-    `
+<p>El <strong>Daily Drawdown</strong> o Límite de Pérdida Diaria es la válvula de seguridad y el escudo definitivo que protege a tu cuenta de trading de la ruina financiera y el desgaste psicológico. Consiste en definir un límite de dinero fijo y no negociable que estás dispuesto a perder en una sola sesión de mercado. Una vez superado este límite, tu única regla obligatoria es cerrar inmediatamente tu plataforma de trading y apartarte de los gráficos hasta el día de mañana.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Speedometer Outline -->
+        <path d="M 150 170 A 110 110 0 0 1 350 170" fill="none" stroke="#1e293b" stroke-width="15" stroke-linecap="round" />
+        <!-- Safe Zone (Green) -->
+        <path d="M 150 170 A 110 110 0 0 1 230 80" fill="none" stroke="#10b981" stroke-width="15" stroke-linecap="round" />
+        <!-- Danger Zone (Red) -->
+        <path d="M 280 80 A 110 110 0 0 1 350 170" fill="none" stroke="#ef4444" stroke-width="15" stroke-linecap="round" />
+        
+        <!-- Needle (Points to Red/Danger) -->
+        <line x1="250" y1="170" x2="310" y2="100" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" />
+        <circle cx="250" cy="170" r="8" fill="#3b82f6" />
+        <text x="250" y="195" fill="#ef4444" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">¡LÍMITE EXCEDIDO!</text>
+        <text x="250" y="215" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">Protocolo de Cierre Activado</text>
+        
+        <!-- Caption -->
+        <text x="250" y="235" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.3: Indicador de control de Drawdown diario.</text>
+      </svg>
+
+      <h3>La Psicología del Tilt y la Necesidad de un Límite Estricto</h3>
+      <p>Cuando un trader sufre varias pérdidas consecutivas en la misma sesión, se activa de forma automática una respuesta de estrés agudo en su amígdala cerebral, lo que reduce drásticamente la capacidad de razonamiento lógico de la corteza prefrontal. Este estado emocional, conocido en psicología como tilt, induce al operador a intentar recuperar el dinero de forma desesperada, aumentando el tamaño de su posición de forma desproporcionada y abriendo operaciones aleatorias fuera de su plan de trading. El tilt es el causante del 90% de las cuentas de futuros quemadas en una sola sesión de pánico.</p>
+      <p>Para evitar esta autodestrucción, debes comportarte de manera pragmática y aplicar la <strong>regla de las dos pérdidas</strong>. Si sufres dos operaciones consecutivas perdedoras en el mismo día, debes aceptar que no estás sincronizado con el flujo de órdenes del mercado actual o que tu estado mental está alterado por la frustración. La única acción racional es apagar la terminal de trading y alejarte de la computadora de inmediato. Esta autodisciplina estoica te permite limitar el daño financiero a un porcentaje menor de tu cuenta (por ejemplo, el 2% diario), asegurando tu supervivencia en el negocio de la especulación para la sesión del día siguiente. No dejes que una sola sesión de indisciplina tire a la basura el esfuerzo de meses de trabajo constante.</p>
+      <p>Las principales empresas de fondeo (prop firms) vigilan este parámetro con total rigor, cancelando de inmediato las cuentas que excedan su drawdown diario. Si deseas operar con capital institucional en el futuro, debes habituarte desde hoy a tratar este límite diario como una frontera física impenetrable. Además, al diseñar un checklist de pre-mercado y puntuar tu tranquilidad emocional antes de cada entrada, creas una barrera protectora adicional contra los impulsos irracionales que provocan grandes pérdidas y dañan tu autodisciplina.</p>
+      <h3>Aplicación Práctica del Protocolo de Cierre</h3>
+      <p>Para superar el reto de hoy, redacta por escrito tu directriz obligatoria de Drawdown Diario en tu bitácora de trading. Define en términos monetarios exactos cuál es tu límite de pérdida máximo permitido por día (por ejemplo, $100 o $200 para una cuenta simulada) y los pasos del protocolo de apagado inmediato que ejecutarás sin excepción si este límite es alcanzado. Tómate el compromiso solemne de cumplir esta regla a rajatabla.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La disciplina suprema consiste en saber detenerse. Aceptar que hoy no es tu día y apagar la plataforma de trading protege tu capital operativo y tu estabilidad mental frente al caos del mercado.
+      </div>
+`
   },
   day11: {
     id: "day11",
@@ -150,12 +415,61 @@ const courseData = {
     title: "La Bitácora de Trading",
     unlocked: false,
     completed: false,
-    challenge: "Documenta en tu bitácora una operación simulada (o real) reciente siguiendo estrictamente tus reglas de gestión: capital, riesgo exacto y R:R.",
+    challenge: "Documenta en tu bitácora una operation simulada (or real) reciente siguiendo estrictamente tus reglas de gestión: capital, riesgo exacto y R:R.",
     content: `
-      <p>Lo que no se mide no se puede mejorar. La <strong>Bitácora de Trading</strong> es el registro histórico de tu comportamiento frente al mercado.</p>
-      <h3>El Espejo del Trader</h3>
-      <p>Un sistema repetible se construye documentando cada entrada, salida, emociones sentidas y el cumplimiento o violación de las reglas. Esto transforma un pasatiempo en una profesión auditable.</p>
-    `
+<p>Hoy analizaremos en profundidad la <strong>Bitácora de Trading</strong>, la herramienta técnica, cuantitativa e histórica más valiosa de la que dispone un operador profesional para auditar su toma de decisiones y perfeccionar su sistema probabilístico. Lo que no se mide no se puede mejorar, y en la especulación de futuros de índices, la memoria humana es selectiva y propensa a olvidar los errores cometidos para proteger el ego de la frustración o justificar comportamientos indisciplinados.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Ledger layout -->
+        <rect x="30" y="40" width="440" height="150" fill="#1e293b" rx="6" stroke="#334155" stroke-width="1.5" />
+        <!-- Table header lines -->
+        <line x1="30" y1="70" x2="470" y2="70" stroke="#334155" stroke-width="1.5" />
+        <!-- Vertical Column Lines -->
+        <line x1="80" y1="40" x2="80" y2="190" stroke="#334155" stroke-width="1" />
+        <line x1="150" y1="40" x2="150" y2="190" stroke="#334155" stroke-width="1" />
+        <line x1="220" y1="40" x2="220" y2="190" stroke="#334155" stroke-width="1" />
+        <line x1="300" y1="40" x2="300" y2="190" stroke="#334155" stroke-width="1" />
+        <line x1="380" y1="40" x2="380" y2="190" stroke="#334155" stroke-width="1" />
+        
+        <!-- Table text headers -->
+        <text x="55" y="58" fill="#94a3b8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Fecha</text>
+        <text x="115" y="58" fill="#94a3b8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Activo</text>
+        <text x="185" y="58" fill="#94a3b8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Dirección</text>
+        <text x="260" y="58" fill="#94a3b8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Riesgo %</text>
+        <text x="340" y="58" fill="#94a3b8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Stop Loss</text>
+        <text x="425" y="58" fill="#94a3b8" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Resultado</text>
+        
+        <!-- Row 1 data -->
+        <text x="55" y="95" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">31/05</text>
+        <text x="115" y="95" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">MES</text>
+        <text x="185" y="95" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">LARGO</text>
+        <text x="260" y="95" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">1%</text>
+        <text x="340" y="95" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">12 pts</text>
+        <text x="425" y="95" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle">+$240</text>
+        
+        <!-- Row 2 data -->
+        <line x1="30" y1="115" x2="470" y2="115" stroke="#334155" stroke-width="1" />
+        <text x="55" y="135" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">31/05</text>
+        <text x="115" y="135" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">MNQ</text>
+        <text x="185" y="135" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">CORTO</text>
+        <text x="260" y="135" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">1%</text>
+        <text x="340" y="135" fill="#ffffff" font-size="9" font-family="sans-serif" text-anchor="middle">45 pts</text>
+        <text x="425" y="135" fill="#ef4444" font-size="9" font-family="sans-serif" text-anchor="middle">-$100</text>
+        
+        <!-- Caption -->
+        <text x="250" y="220" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.4: Estructura y formato de la bitácora operativa científica.</text>
+      </svg>
+
+      <h3>La Bitácora como el Espejo Racional del Operador</h3>
+      <p>La bitácora de trading no es un simple diario contable donde anotas cuánto dinero ganaste o perdiste al final de la sesión; es un registro riguroso de procesos técnicos donde dejas constancia científica de las condiciones del mercado y del cumplimiento estricto de las reglas del plan en cada operación individual. La estructura de un registro profesional debe abarcar parámetros objetivos claros: el activo operado (ES, NQ, MES o MNQ), la dirección del trade (largo o corto), el precio exacto de entrada y salida, la distancia del Stop Loss en puntos, el porcentaje de capital arriesgado, y los desencadenantes técnicos del setup (por ejemplo, el cruce del RSI y el rebote en la EMA 200).</p>
+      <p>El verdadero valor de la bitácora radica en su posterior análisis estadístico semanal y mensual. Al revisar de forma retrospectiva y honesta los datos de tus operaciones, podrás identificar patrones de comportamiento recurrente, determinar la tasa de acierto real del sistema (Win Rate) y calcular tu ratio R:R promedio realizado. Esto te permite separar la influencia aleatoria del mercado en el corto plazo de la ventaja estadística real de tu estrategia a lo largo del tiempo, consolidando una confianza profunda y racional en tu proceso operativo. Documentar detalladamente aspectos como la duración de la operación, el deslizamiento (slippage) del precio y los enlaces a las capturas de tus gráficos aumentará significativamente la calidad de tus procesos analíticos futuros.</p>
+      <p>Al auditar tu bitácora de forma periódica, te obligas a ti mismo a ser consciente de tus desviaciones, lo que te permite diseñar medidas correctivas concretas en tu rutina operativa semanal para erradicar las conductas perjudiciales de forma definitiva y científica. A largo plazo, esta disciplina te ahorrará miles de dólares en pérdidas innecesarias y te consolidará como un operador profesional e independiente del ruido diario del mercado. La bitácora científica es, en definitiva, el único documento objetivo que te protegerá del autoengaño y validará tu consistencia a largo plazo frente a las fluctuaciones aleatorias del mercado financiero.</p>
+      <h3>Aplicación Práctica del Registro Semanal</h3>
+      <p>Para resolver con éxito el reto del día de hoy, crea y personaliza tu propio formato digital o manuscrito de bitácora de trading utilizando los campos descritos anteriormente. Registra de forma detallada una operación reciente realizada en tu entorno de simulación o cuenta real, asegurándote de rellenar cada columna de forma honesta. Escribir los detalles te enseñará a analizar tus decisiones bajo un marco frío, científico y desprovisto de juicios emocionales destructivos.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> El registro riguroso de tus operaciones es la única verdad objetiva de tu desempeño. Al documentar tus datos sin juzgarte de forma emocional, dejas de depender de la suerte y asumes el control absoluto de tu consistencia.
+      </div>
+`
   },
   day12: {
     id: "day12",
@@ -165,14 +479,52 @@ const courseData = {
     completed: false,
     challenge: "Registra en tu diario de trading los costos de comisiones y el deslizamiento (slippage) estimado de tu última operación simulada.",
     content: `
-      <p>Una bitácora técnica no solo registra si ganaste o perdiste dinero; registra la calidad de tu <strong>proceso de toma de decisiones</strong>.</p>
-      <h3>Parámetros de Auditoría</h3>
-      <ul>
-        <li><strong>Desviación del Plan:</strong> ¿Operaste por impulso o por setup?</li>
-        <li><strong>Ejecución del Stop:</strong> ¿Respetaste el Stop Loss original o lo moviste en contra?</li>
-        <li><strong>Comisiones y Slippage:</strong> El costo de comisiones es el costo de hacer negocios; debes medirlo para evaluar tu rentabilidad neta real.</li>
-      </ul>
-    `
+<p>Hoy profundizaremos en el proceso de <strong>documentar procesos operativos</strong>. Llevar una bitácora científica no se limita únicamente a rellenar columnas con números al finalizar la sesión de trading. Un trader consistente documenta la calidad de su ejecución técnica y analiza de forma minuciosa los costes asociados a su negocio, como las comisiones de la plataforma y el deslizamiento (slippage) del precio.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Flow diagram for Documenting -->
+        <!-- Step 1: Capture -->
+        <rect x="50" y="40" width="100" height="40" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+        <text x="100" y="65" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">1. Capturar Gráfico</text>
+        
+        <!-- Arrow 1 -->
+        <path d="M 150 60 L 190 60" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-flow)" />
+        
+        <!-- Step 2: Slippage -->
+        <rect x="200" y="40" width="100" height="40" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+        <text x="250" y="65" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">2. Medir Slippage</text>
+        
+        <!-- Arrow 2 -->
+        <path d="M 300 60 L 340 60" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-flow)" />
+        
+        <!-- Step 3: Psychology -->
+        <rect x="350" y="40" width="100" height="40" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+        <text x="400" y="65" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">3. Puntuación Mental</text>
+        
+        <!-- Bottom: Analysis Box -->
+        <rect x="50" y="110" width="400" height="70" rx="6" fill="#0b0f19" stroke="#ef4444" stroke-dasharray="3,3" stroke-width="1.5" />
+        <text x="250" y="135" fill="#ef4444" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">AUDITORÍA DE DESVIACIÓN OPERATIVA</text>
+        <text x="250" y="155" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">Compara el Stop Loss teórico del plan contra el Stop Loss real ejecutado.</text>
+
+        <defs>
+          <marker id="arrow-flow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+          </marker>
+        </defs>
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.5: Ciclo de auditoría operativa de costes y desviaciones.</text>
+      </svg>
+
+      <h3>Slippage, Comisiones y la Desviación del Plan de Trading</h3>
+      <p>En el trading de futuros, cada transacción real tiene asociados unos costes de ejecución ineludibles que reducen de forma directa tu rentabilidad neta. Las comisiones son las tarifas fijas que te cobra el broker por cada contrato comprado o vendido. El deslizamiento (slippage) es la diferencia entre el precio exacto al que solicitaste ingresar a mercado y el precio al que tu orden fue realmente completada en el libro de órdenes debido a la velocidad del mercado y la falta de contrapartida inmediata. Ignorar estos costes puede hacer que un sistema teóricamente rentable sea perdedor en la práctica real.</p>
+      <p>Documentar estos costes te ayuda a evaluar la viabilidad de tu operativa. Si realizas demasiadas operaciones rápidas buscando pequeños movimientos de precio (scalping agresivo), el impacto de las comisiones y del slippage consumirá la mayor parte de tus ganancias brutas. Además, debes calificar en cada operación tu nivel de cumplimiento del plan con una puntuación del 1 al 10. Si ejecutas una operación ganadora pero que violó tus reglas, debes registrarla como un error operativo de indisciplina. A largo plazo, las operaciones ganadoras fuera de tu plan son más perjudiciales que las operaciones perdedoras ejecutadas con total rigor, ya que premian de forma errónea conductas indisciplinadas y azarosas que destruirán tu cuenta cuando el mercado cambie de ciclo.</p>
+      <p>Mantener un desglose preciso de tus gastos de transacción te convertirá en un verdadero gestor empresarial de tu capital. Analizar la relación entre el volumen operativo y las comisiones pagadas te ayudará a evitar la sobreoperativa y a seleccionar únicamente los setups que ofrezcan una ventaja estadística robusta y un margen de beneficio adecuado. Adicionalmente, medir el deslizamiento de tus órdenes te permitirá optimizar tus entradas limitadas y tu velocidad de conexión a los servidores del broker. Esta auditoría sistemática es lo que distingue a los operadores consistentes de los apostadores que buscan dinero fácil. Recuerda que cada dólar ahorrado en comisiones o deslizamientos es un dólar que se suma directamente a tu rentabilidad final.</p>
+      <h3>Aplicación Práctica del Análisis de Desviación</h3>
+      <p>Tu reto de hoy es examinar tu última operación (simulada o real) e identificar la presencia de slippage comparando el precio al que hiciste clic contra el precio de entrada real registrado en tu plataforma. Calcula además los costes de comisiones correspondientes a la compra y venta de los contratos operados y anota en tu bitácora de trading tu beneficio neto real tras deducir estos valores.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La disciplina neta es la única métrica empresarial válida en el trading. Al medir de forma precisa cada uno de los costes asociados a tu operativa, evitas las sorpresas financieras y actúas como un gestor de capital serio.
+      </div>
+`
   },
   day13: {
     id: "day13",
@@ -182,10 +534,60 @@ const courseData = {
     completed: false,
     challenge: "Describe por qué operar de forma aleatoria (cambiando reglas cada día) impide obtener una ventaja estadística válida.",
     content: `
-      <p>La consistencia no proviene de predecir el futuro; proviene de <strong>ejecutar un proceso repetible</strong> con disciplina de máquina.</p>
-      <h3>La Consistencia Operativa</h3>
-      <p>Un sistema repetible requiere que las condiciones de entrada y de salida sean idénticas en cada trade. Si cambias de indicadores o de reglas de riesgo cada vez que pierdes, nunca sabrás si tu ventaja estadística realmente funciona a lo largo de una muestra representativa de operaciones.</p>
-    `
+<p>La consistencia en el trading de futuros de índices no es el resultado de tener la razón constantemente o de encontrar una fórmula secreta que anticipe con precisión cada movimiento de los gráficos. Proviene del diseño y la <strong>ejecución sistemática de un proceso repetible</strong> llevado a cabo con la disciplina férrea de una máquina. Un sistema repetible elimina la necesidad de tomar decisiones basadas en intuiciones o corazonadas sesgadas por el estado de ánimo.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Flowchart of Repeatable System -->
+        <!-- Inputs (Strict) -->
+        <rect x="40" y="60" width="100" height="40" rx="4" fill="#10b981" fill-opacity="0.1" stroke="#10b981" stroke-width="1.5" />
+        <text x="90" y="85" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Reglas Fijas</text>
+        
+        <!-- Arrow 1 -->
+        <path d="M 140 80 L 190 80" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-system)" />
+        
+        <!-- Process (Execution) -->
+        <rect x="200" y="60" width="100" height="40" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+        <text x="250" y="85" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">Muestra 50 Trades</text>
+        
+        <!-- Arrow 2 -->
+        <path d="M 300 80 L 350 80" fill="none" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-system)" />
+        
+        <!-- Output (Positive expectancy) -->
+        <rect x="360" y="60" width="100" height="40" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="1.5" />
+        <text x="410" y="85" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ventaja Realizada</text>
+        
+        <!-- Line dividing alternative (Random inputs) -->
+        <line x1="50" y1="130" x2="450" y2="130" stroke="#1e293b" stroke-width="1" stroke-dasharray="3,3" />
+        
+        <!-- Random system -->
+        <rect x="40" y="150" width="100" height="40" rx="4" fill="#ef4444" fill-opacity="0.1" stroke="#ef4444" stroke-width="1.5" />
+        <text x="90" y="175" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Reglas Variables</text>
+        <path d="M 140 170 L 190 170" fill="none" stroke="#64748b" stroke-width="1.5" />
+        <rect x="200" y="150" width="100" height="40" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+        <text x="250" y="175" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">Muestra 50 Trades</text>
+        <path d="M 300 170 L 350 170" fill="none" stroke="#64748b" stroke-width="1.5" />
+        <rect x="360" y="150" width="100" height="40" rx="4" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="1.5" />
+        <text x="410" y="175" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Ruina / Ruido</text>
+
+        <defs>
+          <marker id="arrow-system" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
+          </marker>
+        </defs>
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.6: Contraste de entrada repetible frente a entradas variables aleatorias.</text>
+      </svg>
+
+      <h3>La Trampa del Strategy Hopping</h3>
+      <p>Uno de los errores más comunes y destructivos de los operadores principiantes es el hábito de cambiar de estrategia o modificar sus indicadores de entrada cada vez que experimentan una o dos pérdidas consecutivas (práctica conocida en inglés como strategy hopping). Si cambias tus parámetros de entrada, la colocación de tu Stop Loss o las condiciones técnicas de tus operaciones en cada trade, estás introduciendo un ruido constante en tu operativa. Esto destruye por completo la representatividad de tu muestra estadística e impide evaluar si la estrategia básica realmente tiene una ventaja esperable positiva.</p>
+      <p>Para verificar de forma científica si tu sistema de trading posee una ventaja de probabilidad a tu favor en el mercado, debes ejecutar las mismas reglas de forma invariable durante una muestra significativa (de al menos 50 o 100 operaciones consecutivas). Si respetas tus directrices de entrada (por ejemplo, cruce de RSI y alineación con la EMA 200) y dejas que la distribución de probabilidad actúe sin intervención emocional, los números estabilizarán los resultados de tu cuenta demostrando la consistencia de tu proceso operativo. Esta disciplina te protegerá del sobreoperar y te dará una base estadística sólida sobre la cual realizar ajustes reales basados en datos cuantitativos y no en frustraciones pasajeras.</p>
+      <p>Operar con un sistema repetible reduce además el desgaste mental y la toma de decisiones precipitadas durante el horario operativo del mercado. Cuando sabes de antemano bajo qué condiciones exactas vas a operar y cómo vas a gestionar tu riesgo de forma inflexible, la sesión se convierte en una simple tarea de ejecución objetiva, alejándote del estrés y del ruido informativo que domina los mercados financieros de futuros. Esto te permite mantener la calma bajo presión y actuar como un profesional de las probabilidades, liberando tu cerebro del peso de decidir bajo incertidumbre extrema en cada vela que se dibuja en tu pantalla de trading. La consistencia conductual es el único camino real para lograr el éxito sostenible en este negocio altamente competitivo.</p>
+      <h3>Aplicación Práctica de la Consistencia</h3>
+      <p>Tu reto de hoy consiste en redactar de forma manuscrita o digital una pequeña declaración donde argumentes de forma lógica por qué operar de manera aleatoria, modificando tus condiciones analíticas diariamente, destruye tu esperanza matemática. Comprométete formalmente a mantener las condiciones de tu sistema de simulación invariables durante las próximas 20 operaciones y documenta este compromiso en tu bitácora técnica.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Un trader rentable ejecuta las mismas reglas todos los días con la frialdad de un proceso automatizado. No busques la emoción en la aleatoriedad; busca la paz mental en la consistencia matemática del método.
+      </div>
+`
   },
   day14: {
     id: "day14",
@@ -195,13 +597,42 @@ const courseData = {
     completed: false,
     challenge: "Si tu cuenta tiene $5,000, arriesgas el 1% ($50) y tu Stop Loss en MES está a 10 puntos ($5 por punto por contrato), ¿cuántos contratos debes operar?",
     content: `
-      <p>El tamaño de tu posición nunca debe ser al azar o basarse en el sentimiento. Se calcula matemáticamente antes de cada trade.</p>
-      <h3>Fórmula de Posición</h3>
-      <div class="highlight-box">
-        <strong>Contratos = Riesgo en Dólares / (Distancia de Stop Loss en Puntos x Valor del Punto del Contrato)</strong>
+<p>El tamaño de tu posición operativa nunca debe establecerse al azar o en base al sentimiento de confianza que tengas antes de hacer clic. En el trading profesional de futuros, el tamaño de tu posición en contratos (o microcontratos) se <strong>calcula de forma matemática y dinámica antes de cada trade</strong>, basándote en la distancia exacta de tu Stop Loss técnico.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Scale Body -->
+        <line x1="250" y1="50" x2="250" y2="180" stroke="#475569" stroke-width="4" />
+        <line x1="150" y1="90" x2="350" y2="90" stroke="#64748b" stroke-width="3" />
+        <circle cx="250" cy="90" r="6" fill="#3b82f6" />
+        
+        <!-- Left Pan (Contract Size - Low) -->
+        <line x1="150" y1="90" x2="120" y2="150" stroke="#3b82f6" stroke-width="1.5" />
+        <line x1="150" y1="90" x2="180" y2="150" stroke="#3b82f6" stroke-width="1.5" />
+        <rect x="110" y="150" width="80" height="10" rx="3" fill="#10b981" />
+        <text x="150" y="175" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Contratos (Menor Size)</text>
+        <circle cx="150" cy="142" r="6" fill="#10b981" />
+        
+        <!-- Right Pan (Stop Distance - High) -->
+        <line x1="350" y1="90" x2="320" y2="150" stroke="#ef4444" stroke-width="1.5" />
+        <line x1="350" y1="90" x2="380" y2="150" stroke="#ef4444" stroke-width="1.5" />
+        <rect x="310" y="150" width="80" height="10" rx="3" fill="#ef4444" />
+        <text x="350" y="175" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Stop Loss (Mayor Distancia)</text>
+        <circle cx="350" cy="140" r="10" fill="#ef4444" />
+        
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.7: Balanza dinámica entre la distancia del Stop y el tamaño de posición.</text>
+      </svg>
+
+      <h3>La Regla Inalterable del Riesgo Financiero Constante</h3>
+      <p>El E-mini S&P 500 (ES) tiene un valor de $50 por punto por contrato, mientras que su versión micro, el Micro E-mini S&P 500 (MES), tiene un valor de $5 por punto por contrato. Si tu plan de trading establece que el riesgo financiero máximo por operación es del 1% de tu cuenta de $5,000, estás autorizado a arriesgar un total de $50 por trade. Si tu stop loss técnico (el nivel de precio donde la estructura del mercado invalida tu hipótesis de compra o venta) se encuentra a una distancia de 10 puntos en el gráfico, tu cálculo dinámico de posición arroja que debes operar exactamente 1 contrato del micro (MES): 10 puntos x $5/punto x 1 contrato = $50.</p>
+      <p>Si en la siguiente operación el stop loss técnico debe colocarse a una distancia mayor (por ejemplo, a 20 puntos debido a un aumento de la volatilidad intradía), debes reducir tu tamaño de contratos obligatoriamente a la mitad (operando solo 0.5 contratos del micro, o buscando otro setup), asegurando que tu riesgo financiero siga siendo exactamente de $50. Bajo ninguna circunstancia debes operar un tamaño fijo de contratos sin calcular previamente la distancia del stop, ya que esto provocaría que tu riesgo financiero oscilara de forma descontrolada, destruyendo la asimetría del drawdown y la consistencia matemática de tu bitácora.</p>
+      <p>Este principio dinámico se aplica a todos los futuros, ya sean índices (ES, NQ, RTY, YM) o materias primas (Petróleo CL, Oro GC). Calcula siempre el valor nominal por punto de tu contrato antes de ingresar órdenes reales y utiliza márgenes adecuados para evitar deslizamientos de ejecución y liquidaciones indeseadas por parte del broker.</p>
+      <h3>Aplicación Práctica de la Fórmula de Posición</h3>
+      <p>Para resolver tu reto de hoy, calcula manualmente el tamaño en contratos que debes operar en el siguiente escenario real: tu cuenta de trading dispone de $5,000 de capital y decides aplicar un riesgo del 1% ($50). Tu Stop Loss técnico en futuros del Micro Nasdaq (MNQ), cuyo valor es de $2 por punto por contrato, se encuentra a una distancia de 25 puntos en tu gráfico. Calcula el número de contratos exactos que debes abrir a mercado de forma que tu riesgo sea de $50. Anota el desglose de la fórmula y los pasos en tu bitácora.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> El tamaño de posición se adapta a la volatilidad de la estructura, no a tus ganas de ganar más rápido. Mantén el riesgo financiero constante para mantener tu balance y tu paz mental estables.
       </div>
-      <p>Si la distancia de tu Stop Loss técnico es mayor, debes reducir el número de contratos para que el riesgo financiero siga siendo exactamente el mismo.</p>
-    `
+`
   },
   day15: {
     id: "day15",
@@ -211,11 +642,34 @@ const courseData = {
     completed: false,
     challenge: "Firma tu manifiesto de riesgo y define tu riesgo máximo por operación (%) y tu límite de pérdida diario en dólares.",
     content: `
-      <p>Has finalizado el Módulo 2. Ahora comprendes la naturaleza matemática del trading, el cálculo de posición, la asimetría R:R y la bitácora técnica de procesos.</p>
+<p>Felicidades por completar las lecciones teóricas y prácticas del <strong>Módulo 2: Gestión y Disciplina</strong>. A lo largo de esta segunda semana de entrenamiento estoico, has adquirido los conocimientos de control de capital e indisciplina más valiosos que separan a los traders aficionados de los especuladores profesionales consistentes. Aprendiste las leyes matemáticas de la preservación de capital y del drawdown, la ventaja de la asimetría y del ratio R:R, la necesidad empresarial de la bitácora técnica de procesos y el cálculo dinámico del tamaño de posición.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Laurel Wreath Backdrop -->
+        <path d="M 180 120 C 180 180, 320 180, 320 120" fill="none" stroke="#334155" stroke-width="3" />
+        <!-- Badge Body (Shield) -->
+        <polygon points="250,40 295,70 295,130 250,170 205,130 205,70" fill="#1e293b" stroke="#3b82f6" stroke-width="3" />
+        <!-- Key Symbol in Center -->
+        <circle cx="250" cy="85" r="10" fill="none" stroke="#f59e0b" stroke-width="2.5" />
+        <line x1="250" y1="95" x2="250" y2="135" stroke="#f59e0b" stroke-width="2.5" />
+        <line x1="250" y1="115" x2="265" y2="115" stroke="#f59e0b" stroke-width="2.5" />
+        <line x1="250" y1="128" x2="265" y2="128" stroke="#f59e0b" stroke-width="2.5" />
+        <!-- Badge Text -->
+        <text x="250" y="190" fill="#10b981" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">PILAR 2 OK</text>
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 2.8: Insignia de superación del bloque de gestión y riesgo matemático.</text>
+      </svg>
+
+      <h3>La Firma de tu Compromiso Inalterable de Riesgo</h3>
+      <p>Hoy darás el paso definitivo de este módulo redactando y firmando tu manifiesto oficial de riesgo y gestión de capital. Este manifiesto no es una recomendación flexible o una sugerencia opcional; es la ley suprema que rige la supervivencia de tu cuenta. Define de forma explícita qué porcentaje máximo de tu capital estás autorizado a arriesgar por operación en tu plataforma simulada o real, y cuál será tu límite de drawdown diario expresado en dólares. Debe ser una guía innegociable de comportamiento operativo que debas acatar sin excusas ni retrasos de ningún tipo, protegiéndote a ti mismo del descontrol mental provocado por rachas perdedoras.</p>
+      <p>Una vez redactado y firmado, colócalo de forma muy destacada en tu escritorio de trabajo. Al comprometerte ante ti mismo a acatar estas directrices de forma inquebrantable, dejas de especular bajo la influencia de impulsos emocionales y asumes la responsabilidad absoluta de la salud financiera de tu cuenta de trading. En el siguiente módulo (Módulo 3), iniciaremos el bloque de **Estrategia Técnica de Alta Probabilidad**, donde aprenderás a leer la estructura de subasta de mercado pura y limpia, libre de indicadores con retraso, complementada con los filtros de confluencia técnica. Debes comprender que un trader sin gestión es solo un jugador de casino con prisa por perder su dinero.</p>
+      <p>Asegúrate de repasar las fórmulas de cálculo de posición y las reglas de drawdown antes de realizar la evaluación. La disciplina demostrada en este módulo será la base sobre la cual implementaremos tus estrategias en gráficos reales. Conservar tu capital es lo único que garantiza tu supervivencia a largo plazo en este exigente negocio competitivo. Ningún sistema técnico de alta probabilidad funcionará a tu favor si eres incapaz de controlar tus riesgos y proteger tu cuenta con reglas sólidas e inamovibles. El trading es un maratón de consistencia matemática, no una carrera de velocidad temeraria.</p>
+      <h3>Instrucciones para la Evaluación Semanal</h3>
+      <p>Para desbloquear el Módulo 3, debes enfrentarte al cuestionario teórico práctico de gestión de riesgo detallado a continuación. Deberás responder a las 5 preguntas basándote en la matemática del drawdown, el ratio R:R y la asimetría. Aprobar este examen con un 100% de aciertos es el requisito ineludible para avanzar en tu programa de entrenamiento de Visión Trading Pro.</p>
       <div class="alert-box" style="border-left-color: var(--color-accent); background: rgba(59, 130, 246, 0.03);">
         <strong>📝 Evaluación del Módulo 2:</strong> Aprueba el cuestionario de gestión de riesgo abajo para desbloquear el Módulo de Estrategia Técnica.
       </div>
-    `
+`
   },
   day16: {
     id: "day16",
@@ -225,10 +679,45 @@ const courseData = {
     completed: false,
     challenge: "Dibuja o identifica en tu simulador una serie de Máximos más Altos (HH) y Mínimos más Altos (HL) en una tendencia alcista.",
     content: `
-      <p>Comenzamos el <strong>Módulo 3: Estrategia de Alta Probabilidad</strong>. Aprenderemos a leer el mercado de forma limpia, directa y <strong>sin indicadores de ruido</strong>.</p>
-      <h3>La Subasta Continua</h3>
-      <p>El mercado es una subasta. La estructura nos muestra quién tiene el control: si la tendencia hace máximos y mínimos ascendentes, los compradores dominan la subasta; si hace máximos y mínimos descendentes, los vendedores tienen el control.</p>
-    `
+<p>Bienvenido al <strong>Módulo 3: Lectura Técnica Avanzada</strong>. En esta sección nos enfocaremos en interpretar los movimientos del precio de manera limpia y sin la distorsión de indicadores desfasados. La base de cualquier análisis técnico serio es comprender la estructura de mercado real, la cual representa la huella física y el flujo de órdenes del dinero institucional. La cotización de futuros no se mueve de forma aleatoria ni lineal; fluctúa en una serie de impulsos y retrocesos que reflejan el desequilibrio entre compradores y vendedores.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Grid Lines -->
+        <line x1="50" y1="200" x2="450" y2="200" stroke="#1e293b" stroke-width="1" />
+        <line x1="50" y1="50" x2="50" y2="200" stroke="#1e293b" stroke-width="1" />
+        <!-- Trend line representing HH/HL -->
+        <path d="M 50 180 L 100 160 L 160 90 L 220 130 L 290 70 L 350 110 L 420 50" fill="none" stroke="#3b82f6" stroke-width="3" />
+        <!-- Circles at vertices -->
+        <circle cx="100" cy="160" r="4" fill="#10b981" />
+        <circle cx="160" cy="90" r="4" fill="#3b82f6" />
+        <circle cx="220" cy="130" r="4" fill="#10b981" />
+        <circle cx="290" cy="70" r="4" fill="#3b82f6" />
+        <circle cx="350" cy="110" r="4" fill="#10b981" />
+        <circle cx="420" cy="50" r="4" fill="#3b82f6" />
+        <!-- Labels -->
+        <text x="100" y="180" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle">HL (Mínimo Alto)</text>
+        <text x="160" y="75" fill="#3b82f6" font-size="9" font-family="sans-serif" text-anchor="middle">HH (Máximo Alto)</text>
+        <text x="220" y="150" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle">HL</text>
+        <text x="290" y="55" fill="#3b82f6" font-size="9" font-family="sans-serif" text-anchor="middle">HH</text>
+        <text x="350" y="130" fill="#10b981" font-size="9" font-family="sans-serif" text-anchor="middle">HL</text>
+        <text x="420" y="35" fill="#3b82f6" font-size="9" font-family="sans-serif" text-anchor="middle">HH</text>
+        <!-- Trend Direction Arrow -->
+        <path d="M 50 190 L 420 65" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4,4" />
+        <text x="230" y="220" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Estructura Alcista Sostenible (HH / HL)</text>
+        <!-- Caption -->
+        <text x="250" y="240" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 3.1: Secuencia de máximos y mínimos crecientes en tendencia.</text>
+      </svg>
+
+      <h3>La Anatomía de las Tendencias y los Swings</h3>
+      <p>Según los principios fundamentales de la Teoría de Dow, una tendencia alcista se define estrictamente como una sucesión ordenada de Máximos más Altos (HH - Higher Highs) y Mínimos más Altos (HL - Higher Lows). En contraste, una tendencia bajista consiste en una serie de Máximos más Bajos (LH - Lower Highs) y Mínimos más Bajos (LL - Lower Lows). Estos puntos de giro, conocidos técnicamente como "swings", representan las zonas donde la presión compradora o vendedora del mercado ha revertido la dirección del precio de forma temporal para capturar liquidez de los minoristas.</p>
+      <p>El mercado es intrínsecamente fractal. Esto significa que la estructura alcista visible en un gráfico diario se compone de múltiples sub-estructuras alcistas y bajistas en gráficos de menor temporalidad, como el de 5 o 15 minutos. Un error muy común de los traders novatos es confundir un retroceso en una temporalidad mayor con un cambio de tendencia completo en su gráfico de operativa diaria. Para evitar esto, el operador profesional debe realizar un análisis macro que defina la dirección del flujo de órdenes principal antes de buscar entradas en temporalidades menores. Al alinear tu operativa con la estructura de mayor escala, aumentas de forma drástica la probabilidad de éxito de tus setups de trading.</p>
+      <p>Los algoritmos institucionales se valen de la estructura para acumular y distribuir posiciones. Cuando el precio hace un retroceso hacia un mínimo previo más alto (HL), los creadores de mercado inyectan liquidez de compra aprovechando la acumulación de órdenes de stop loss de los operadores posicionados en largo. Comprender esta dinámica te permite esperar pacientemente el retroceso técnico de valor antes de ejecutar tu orden de entrada, evitando así comprar en máximos por efecto FOMO (miedo a quedarse fuera). La disciplina estoica consiste en saber esperar la confirmación de la estructura en la zona de valor adecuada.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Para completar el reto del día de hoy, abre tu simulador en un gráfico limpio de futuros del Nasdaq (NQ) o del S&P 500 (ES). Identifica visualmente e ilustra con una herramienta de dibujo de tu plataforma una serie de al menos tres máximos más altos (HH) y tres mínimos más altos (HL) consecutivos. Documenta las cotizaciones de estos puntos en tu bitácora técnica de operativa.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> No intentes adivinar hacia dónde irá el precio. La estructura de mercado te indica con absoluta claridad el camino que sigue el dinero institucional. Sigue su tendencia y reduce tu riesgo.
+      </div>
+`
   },
   day17: {
     id: "day17",
@@ -238,10 +727,41 @@ const courseData = {
     completed: false,
     challenge: "Busca en el gráfico en vivo un cambio de tendencia marcado por un quiebre de estructura (BOS) y documenta los precios de los niveles rotos.",
     content: `
-      <p>El <strong>BOS (Break of Structure)</strong> es el primer indicio de un cambio en la dirección de la subasta de precios.</p>
-      <h3>Mecánica del BOS</h3>
-      <p>En una tendencia alcista, el último Mínimo Ascendente (HL) es el nivel de defensa de los compradores. Si el precio rompe y cierra por debajo de este nivel, la estructura alcista se invalida, dando paso a una probable estructura bajista (BOS bajista).</p>
-    `
+<p>Hoy analizaremos la <strong>Ruptura de Estructura</strong> o <strong>BOS (Break of Structure)</strong>, que constituye el evento técnico confirmatorio más importante para validar la continuación de una tendencia de mercado. En una tendencia alcista en curso, el precio realiza constantemente impulsos que sobrepasan la altura del máximo anterior (HH). Cuando este máximo es quebrado con claridad y el precio cierra con el cuerpo de la vela por encima del nivel del swing high previo, declaramos de forma científica la presencia de un BOS.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Axis Grid -->
+        <line x1="50" y1="200" x2="450" y2="200" stroke="#1e293b" stroke-width="1" />
+        <!-- Price line showing HL -> HH -> HL -> BOS breakout -->
+        <path d="M 50 170 L 120 120 L 180 150 L 300 80 L 330 100 L 420 40" fill="none" stroke="#94a3b8" stroke-width="2" />
+        <!-- Horizontal resistance line at HH (300, 80) -->
+        <line x1="280" y1="80" x2="400" y2="80" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3,3" />
+        <!-- BOS circle and label -->
+        <circle cx="360" cy="80" r="5" fill="#ef4444" />
+        <text x="360" y="70" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">BOS (Ruptura)</text>
+        <!-- Highlights for swings -->
+        <circle cx="120" cy="120" r="3" fill="#3b82f6" />
+        <circle cx="300" cy="80" r="3" fill="#3b82f6" />
+        <text x="120" y="110" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Swing H</text>
+        <text x="300" y="68" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Último Máximo</text>
+        <!-- Retest arrow -->
+        <path d="M 400 53 L 400 80" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2,2" />
+        <text x="400" y="93" fill="#10b981" font-size="8" font-family="sans-serif" text-anchor="middle">Retest Zona</text>
+        <!-- Caption -->
+        <text x="250" y="230" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 3.2: Confirmación técnica de Ruptura de Estructura (BOS).</text>
+      </svg>
+
+      <h3>Mecánica de la Ruptura y Validación del Cierre</h3>
+      <p>Es vital aprender a distinguir una ruptura genuina (BOS) de una simple toma de liquidez o barrido (sweep). Para que una ruptura sea clasificada como un BOS válido por un operador cuantitativo, la vela debe cerrar por fuera de la frontera física marcada por el máximo anterior. Si el precio atraviesa el máximo pero se retrae rápidamente dejando únicamente una mecha larga por encima de la resistencia, no ha ocurrido un BOS. En cambio, ha tenido lugar un "falso rompimiento" o caza de stop losses de vendedores minoristas llevado a cabo por el dinero institucional para revertir la cotización del activo.</p>
+      <p>El concepto complementario al BOS es el **CHoCH (Change of Character)** o Cambio de Carácter. Mientras que el BOS valida la continuación de la tendencia alcista o bajista actual, el CHoCH representa la primera señal estructural de una reversión de la tendencia. El CHoCH ocurre cuando el precio rompe el último mínimo más alto (HL) en una tendencia alcista, indicando que los compradores han perdido el control del mercado y que el flujo de órdenes institucional ha cambiado a favor de las ventas. Saber mapear estos eventos estructurales te evitará entrar a contra-tendencia en el mercado.</p>
+      <p>Además, comprender el BOS te ayuda a identificar piscinas de liquidez (liquidity pools). Los máximos y mínimos previos actúan como zonas donde se concentran grandes cantidades de órdenes de compra pendientes (buy stops) y venta pendientes (sell stops). Cuando el precio rompe este nivel con volumen, se produce una inyección masiva de capital que acelera el movimiento. Por tanto, el trader inteligente no entra en corto inmediatamente después de un BOS bajista, sino que espera pacientemente a que el precio regrese a testear la zona del bloque de órdenes que originó el quiebre, optimizando su rentabilidad.</p>
+      <p>En el trading de futuros, operar la continuación mediante BOS te permite unirte al movimiento direccional más fuerte. En lugar de buscar adivinar el final de la tendencia comprando en soportes desvalidos, el trader consistente espera que la estructura declare la intención del dinero institucional y luego busca entradas de bajo riesgo en el retroceso del precio hacia el nivel de soporte originador. Esto requiere paciencia emocional para no perseguir el precio en medio del breakout violento de la cotización.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Tu reto del día de hoy consiste en abrir tu plataforma operativa e identificar un ejemplo claro de ruptura de estructura (BOS) de tendencia en un gráfico de 5 o 15 minutos. Mide la cotización exacta del máximo roto y el precio de cierre de la vela de ruptura. Documenta detalladamente estas observaciones en tu bitácora técnica.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La paciencia técnica rinde frutos matemáticos. Esperar la confirmación del cierre de la vela en un BOS te protege de las trampas de los creadores de mercado que buscan cazar tu stop loss.
+      </div>
+`
   },
   day18: {
     id: "day18",
@@ -251,10 +771,42 @@ const courseData = {
     completed: false,
     challenge: "Identifica en el gráfico de futuros una zona donde el precio haya rebotado al menos dos veces con fuerte volumen y márcala como zona de valor.",
     content: `
-      <p>Los soportes y resistencias no son líneas delgadas en el gráfico; son <strong>zonas de acumulación de órdenes</strong> institucionales pendientes por ejecutar.</p>
-      <h3>Zonas de Oferta y Demanda</h3>
-      <p>Un soporte de valor se localiza en el origen de un fuerte movimiento alcista previo. Buscamos operar en estas zonas porque la probabilidad de que los grandes participantes defiendan sus posiciones es altamente favorable.</p>
-    `
+<p>Hoy estudiaremos los <strong>Soportes y Resistencias de Valor</strong>. En los manuales clásicos de trading, se enseña erróneamente al estudiante que un soporte o resistencia es una línea horizontal exacta en el gráfico. Sin embargo, en el mercado real de futuros de índices, los niveles estáticos no existen. El mercado se rige por la subasta en zonas dinámicas de acumulación y distribución de órdenes institucionales llamadas áreas de oferta y demanda.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Resistance Zone Box -->
+        <rect x="50" y="45" width="400" height="25" fill="rgba(239, 68, 68, 0.08)" stroke="rgba(239, 68, 68, 0.4)" stroke-width="1" />
+        <text x="250" y="60" fill="#ef4444" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">ZONA DE RESISTENCIA / OFERTA INSTITUCIONAL</text>
+        
+        <!-- Support Zone Box -->
+        <rect x="50" y="160" width="400" height="25" fill="rgba(16, 185, 129, 0.08)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" />
+        <text x="250" y="177" fill="#10b981" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">ZONA DE SOPORTE / DEMANDA INSTITUCIONAL</text>
+        
+        <!-- Price path bouncing between zones -->
+        <path d="M 60 170 L 120 58 L 180 168 L 260 55 L 320 165 L 380 58 L 440 170" fill="none" stroke="#94a3b8" stroke-width="2" />
+        
+        <!-- Rejection circles -->
+        <circle cx="120" cy="58" r="4" fill="#ef4444" />
+        <circle cx="260" cy="55" r="4" fill="#ef4444" />
+        <circle cx="380" cy="58" r="4" fill="#ef4444" />
+        <circle cx="180" cy="168" r="4" fill="#10b981" />
+        <circle cx="320" cy="165" r="4" fill="#10b981" />
+        
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 3.3: Interacción del precio en zonas de oferta y demanda con múltiples rebotes.</text>
+      </svg>
+
+      <h3>La Física de la Oferta, Demanda e Imbalance</h3>
+      <p>Un soporte de valor es un rango de cotización donde la demanda latente excede con creces la oferta disponible, lo que obliga a que el precio detenga su descenso e inicie un rebote alcista. Por el contrario, una resistencia de valor representa una franja de precios donde la oferta bloquea de manera contundente la demanda de compra minorista. Estas zonas no se definen por azar; coinciden con áreas donde los grandes fondos e instituciones financieras tienen millones de dólares en órdenes pendientes de ejecución en el libro de órdenes (order book).</p>
+      <p>Las zonas más potentes y valiosas para buscar operaciones se originan cuando el precio sufre un desequilibrio drástico (imbalance), saliendo despedido del área con mucha intención y alto volumen. Esto nos indica que las instituciones entraron con mucha fuerza y dejaron órdenes de compra o venta incompletas en esa zona, las cuales actuarán como un imán para el precio en el futuro. Al esperar a que la cotización regrese a estas áreas mitigadas, nos unimos a la inyección masiva de liquidez institucional, logrando ratios de riesgo y recompensa excepcionales para nuestra cuenta.</p>
+      <p>Un aspecto crítico es el concepto de mitigación o frescura de la zona. Una zona de soporte o demanda es sumamente fuerte en su primer testeo (testeo fresco), ya que contiene el mayor número de órdenes institucionales pendientes de ejecución. Sin embargo, cada vez que el precio regresa y rebota en la misma zona, consume la liquidez remanente. Un soporte testeado tres, cuatro o cinco veces no se vuelve más fuerte, sino que se debilita progresivamente hasta que finalmente se rompe con violencia cuando las órdenes de compra se agotan por completo.</p>
+      <p>El trader novato comete el error de marcar docenas de líneas horizontales débiles en su pantalla, lo que genera confusión, parálisis por análisis y entradas tardías. El trader consistente simplifica su análisis delimitando únicamente las 2 o 3 zonas principales de mayor temporalidad, esperando con paciencia que el precio reaccione en ellas y valide sus setups con rechazos claros. Esto requiere no anticiparse a la reacción del precio y respetar de forma inflexible los límites lógicos de tu stop loss.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Abre el gráfico del simulador de futuros y localiza las zonas de soporte y resistencia institucionales más representativas del día anterior. Dibuja rectángulos semi-transparentes alrededor de estos puntos extremos de cotización. Anota los límites superior e inferior de cada zona en tu diario de operaciones y espera a que el mercado vuelva a testear estas áreas.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Deja que las zonas trabajen para ti. No busques operaciones en el medio del rango estructural del precio. Ejecuta de forma exclusiva en los extremos y protege la salud matemática de tu cuenta.
+      </div>
+`
   },
   day19: {
     id: "day19",
@@ -264,10 +816,52 @@ const courseData = {
     completed: false,
     challenge: "Realiza un análisis completo del activo actual en el simulador basándote únicamente en la estructura y la acción del precio actual sin indicadores.",
     content: `
-      <p>Llenar tu pantalla de indicadores como Bandas de Bollinger, MACD o Estocásticos solo añade retraso y parálisis por análisis. El precio es el único indicador líder en tiempo real.</p>
-      <h3>La Lectura Limpia</h3>
-      <p>Operar con el precio puro consiste en observar la interacción entre impulsos, retrocesos, velocidad de las velas y zonas de liquidez para tomar decisiones rápidas y precisas.</p>
-    `
+<p>En el entrenamiento de hoy estudiaremos la **Acción del Precio Pura** (Price Action). El precio es la única variable física directa del mercado de futuros que no tiene ningún retardo de cálculo. Mientras que los indicadores populares como el MACD o el oscilador estocástico promedian datos matemáticos del pasado de la cotización, la acción del precio en los gráficos revela la lucha entre la oferta y la demanda institucional en tiempo real.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Support line -->
+        <line x1="50" y1="160" x2="450" y2="160" stroke="#3b82f6" stroke-width="2" />
+        <text x="70" y="180" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold">Soporte Clave</text>
+
+        <!-- Bearish Candle 1 -->
+        <line x1="150" y1="60" x2="150" y2="140" stroke="#ef4444" stroke-width="2" />
+        <rect x="140" y="70" width="20" height="60" fill="#ef4444" />
+        
+        <!-- Bearish Candle 2 -->
+        <line x1="200" y1="90" x2="200" y2="160" stroke="#ef4444" stroke-width="2" />
+        <rect x="190" y="100" width="20" height="50" fill="#ef4444" />
+        
+        <!-- Rejection Hammer/Pinbar Candle at support -->
+        <line x1="250" y1="140" x2="250" y2="195" stroke="#10b981" stroke-width="2" />
+        <rect x="240" y="140" width="20" height="15" fill="#10b981" />
+        <text x="280" y="150" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold">Pinbar Alcista (Rechazo)</text>
+        <path d="M 275 185 L 255 185" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow-wick)" />
+        <text x="280" y="190" fill="#f59e0b" font-size="8" font-family="sans-serif">Rechazo de Liquidez por debajo del soporte</text>
+        
+        <!-- Bullish Candle 4 (Confirmation) -->
+        <line x1="310" y1="110" x2="310" y2="150" stroke="#10b981" stroke-width="2" />
+        <rect x="300" y="115" width="20" height="30" fill="#10b981" />
+
+        <defs>
+          <marker id="arrow-wick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" />
+          </marker>
+        </defs>
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 3.4: Patrón de vela Pinbar de rechazo en nivel de soporte.</text>
+      </svg>
+
+      <h3>Velas de Intención y la Psicología del Rechazo</h3>
+      <p>Operar con gráficos limpios te obliga a prestar atención al comportamiento individual y colectivo de las velas japonesas. Una sola vela puede contar la historia del flujo de órdenes en un período determinado. Por ejemplo, una vela tipo martillo o pinbar con una mecha inferior extremadamente larga y un cuerpo pequeño alcista indica que, aunque los vendedores empujaron la cotización inicialmente con fuerza, los compradores institucionales reaccionaron masivamente en esa zona absorbiendo toda la oferta disponible y revirtiendo la dirección de la subasta antes del cierre.</p>
+      <p>El análisis de la acción del precio se apoya en tres principios inseparables: la ubicación del precio, la forma de la vela y el volumen de transacciones de la sesión. Un patrón de vela Pinbar alcista no tiene ningún valor si se forma a mitad de un canal alcista sin confluencia técnica relevante. Sin embargo, si esa misma vela se forma testeando un soporte de valor institucional de una temporalidad mayor, se convierte en un disparador de altísima probabilidad matemática para estructurar un trade en largo con un stop loss ajustado y protegido por debajo de la mecha de rechazo.</p>
+      <p>Además, al leer las velas, debemos evaluar el tamaño del cuerpo frente a las mechas. Los cuerpos grandes representan el dominio absoluto y la convicción de un grupo de participantes (compradores o vendedores), mientras que las mechas largas reflejan rechazo de zonas de precios inaceptables por falta de volumen e interés de negociación a esos niveles. Integrar esta lectura contextual te permitirá evitar entrar en mercados sin volumen o en consolidaciones estrechas, previniendo pérdidas por ruido y deslizamiento innecesarios.</p>
+      <p>Aprender a confiar en los gráficos limpios requiere liberarse del sesgo cognitivo de necesitar indicadores complejos para validar las decisiones operativas. El precio te da la señal de forma inmediata, permitiéndote entrar en el mercado con una velocidad óptima y sin el retardo de cálculo típico de los osciladores. Al refinar tu capacidad de interpretar el comportamiento del precio de esta manera, actúas como un profesional con años de experiencia en la lectura del mercado de futuros de índices.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Desactiva temporalmente todos los indicadores técnicos de tu gráfico de futuros. Analiza la estructura del mercado apoyándose de manera exclusiva en las formas de las velas y la ubicación de las zonas de soporte y resistencia. Documenta en tu bitácora de trading los niveles donde el precio muestre mechas de rechazo notables y los resultados correspondientes a las reacciones posteriores.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La sencillez es la máxima sofisticación analítica. Al eliminar el ruido de los indicadores complejos de tu pantalla, logras enfocar tu atención en el único dato real y directo: la acción del precio.
+      </div>
+`
   },
   day20: {
     id: "day20",
@@ -277,10 +871,44 @@ const courseData = {
     completed: false,
     challenge: "Encuentra en el simulador un ejemplo de resistencia que, tras ser rota con intención, haya actuado como soporte. Anota los precios del testeo.",
     content: `
-      <p>La <strong>Ley de Polaridad</strong> demuestra la memoria del mercado y el comportamiento del flujo de órdenes.</p>
-      <h3>Soporte convertido en Resistencia</h3>
-      <p>Cuando un soporte fuerte es perforado, los compradores atrapados esperan a que el precio regrese a su nivel de entrada para cerrar sus posiciones con pérdidas nulas (breakeven). Ese cierre de posiciones vendedoras, sumado a nuevos vendedores, transforma el antiguo soporte en resistencia.</p>
-    `
+<p>Hoy nos enfocaremos en una de las leyes estructurales más consistentes y operables en el análisis técnico: <strong>La Ley de Polaridad</strong>. Este principio establece que cuando una zona de soporte técnico relevante es fracturada de manera clara por la cotización del precio con intención alcista o bajista, dicho nivel invierte su rol físico y psicológico en el mercado de futuros de índices.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Polar Level line -->
+        <line x1="50" y1="120" x2="450" y2="120" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" />
+        <text x="70" y="110" fill="#f59e0b" font-size="9" font-family="sans-serif" font-weight="bold">Línea de Polaridad</text>
+
+        <!-- Price line showing bounce, break, retest, and bounce -->
+        <path d="M 60 180 L 120 120 L 170 155 L 230 120 L 260 135 L 340 75 L 380 120 L 440 60" fill="none" stroke="#94a3b8" stroke-width="2" />
+        
+        <!-- Labels and circles -->
+        <circle cx="120" cy="120" r="4" fill="#ef4444" />
+        <text x="120" y="105" fill="#ef4444" font-size="9" font-family="sans-serif" text-anchor="middle">Resistencia</text>
+        
+        <circle cx="230" cy="120" r="4" fill="#ef4444" />
+        
+        <!-- Breakout label -->
+        <text x="310" y="70" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold">Ruptura</text>
+        
+        <!-- Retest as Support -->
+        <circle cx="380" cy="120" r="4" fill="#10b981" />
+        <text x="380" y="140" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Soporte (Testeo)</text>
+        
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 3.5: Resistencia convertida en soporte tras ruptura e intención.</text>
+      </svg>
+
+      <h3>La Psicología de las Órdenes en Niveles Rotos</h3>
+      <p>Para comprender la Ley de Polaridad, es indispensable conocer la psicología colectiva de los participantes del mercado. Cuando el precio choca con una resistencia importante, muchos operadores minoristas deciden abrir posiciones cortas (ventas). Si el precio rompe con violencia esa zona alcista impulsado por órdenes institucionales, todos esos vendedores quedan atrapados en pérdidas severas. El mercado no tardará en retroceder hacia la zona rota debido a la toma de beneficios y la falta de liquidez compradora temporal.</p>
+      <p>Cuando el precio desciende de nuevo hacia la antigua zona de resistencia, los vendedores que estaban atrapados en pérdidas tienen la oportunidad de cerrar sus posiciones con una pérdida cercana a cero o "breakeven" (cero ganancias/pérdidas), lo que requiere introducir órdenes de compra de contrapartida. Al mismo tiempo, los traders de tendencias que no habían entrado inicialmente en largo identifican la zona rota como un retroceso de gran descuento y colocan órdenes de compra limitadas. Esta confluencia natural de órdenes de compra genera un rebote alcista inmediato en la antigua zona rota, convirtiéndola en un soporte activo.</p>
+      <p>Para aumentar la efectividad de esta ley, podemos combinarla con los retrocesos de Fibonacci. Los niveles horizontales rotos de polaridad suelen coincidir con niveles del 50% o 61.8% del retroceso del impulso de ruptura, lo que añade una capa de confluencia matemática crucial. Operar este setup de retesteo sistemático te dotará de la paciencia necesaria para evitar perseguir breakouts ruidosos en la apertura, limitando tus entradas únicamente a zonas de alta precisión probabilística.</p>
+      <p>Operar testeos de polaridad es una de las estrategias con mayor ratio riesgo:recompensa (R:R) de las que dispone el trader. Al entrar exactamente en la antigua zona de resistencia que ahora actúa como soporte, el stop loss puede colocarse cómodamente y a muy pocos puntos por debajo del nivel de polaridad, buscando como objetivo el último máximo de la tendencia. Esperar pacientemente el retroceso hacia la polaridad rota te evitará perseguir el precio de manera impulsiva en pleno breakout alcista.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Busca en tu plataforma operativa un activo de futuros e identifica un nivel horizontal de soporte o resistencia relevante que haya sido roto con cuerpo de vela. Espera y dibuja la posterior fase de retesteo del precio en dicho nivel. Registra en tu bitácora de trading las cotizaciones y las características de las velas de confirmación que validaron el cambio de polaridad.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La polaridad del mercado te enseña a adaptarte. Un nivel que antes era una barrera insuperable de ventas ahora es la base que sostiene tu entrada compradora. Fluye con la estructura del precio.
+      </div>
+`
   },
   day21: {
     id: "day21",
@@ -290,12 +918,50 @@ const courseData = {
     completed: false,
     challenge: "Utilizando la EMA 200 y el RSI 14, identifica si el precio cotiza en zona de compras o ventas y anota la señal del oscilador de momentum.",
     content: `
-      <p>Aunque operamos basados en acción de precio, el Setup de confluencia Visión Pro utiliza dos filtros complementarios para validar el momentum.</p>
-      <ul>
-        <li><strong>Filtro de Tendencia (EMA 200):</strong> Si el precio está sobre la EMA 200, la subasta es alcista (solo buscamos compras). Si está bajo ella, es bajista (solo cortos).</li>
-        <li><strong>Filtro de Momentum (RSI 14):</strong> Confirmamos el impulso cuando el RSI cruza la línea central de 50 a favor de la tendencia.</li>
-      </ul>
-    `
+<p>Hoy estudiaremos los <strong>Filtros Técnicos de Confluencia</strong>. El concepto de confluencia técnica consiste en la alineación de múltiples herramientas independientes en la misma zona del gráfico. Operar con un único factor técnico (por ejemplo, buscar una compra únicamente porque el precio está sobrevendido) tiene una esperanza matemática muy baja en el dinámico mercado de futuros de índices.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Division line -->
+        <line x1="40" y1="150" x2="460" y2="150" stroke="#1e293b" stroke-width="1.5" />
+        
+        <!-- Price Chart (Top) -->
+        <!-- EMA 200 (Blue Curve) -->
+        <path d="M 50 120 Q 150 110 250 115 T 450 90" fill="none" stroke="#3b82f6" stroke-width="2" />
+        <text x="410" y="85" fill="#3b82f6" font-size="8" font-family="sans-serif" font-weight="bold">EMA 200</text>
+        
+        <!-- Price line bouncing on EMA -->
+        <path d="M 60 80 L 120 100 L 180 60 L 250 115 L 320 80 L 380 95 L 440 50" fill="none" stroke="#94a3b8" stroke-width="1.5" />
+        <!-- Bouncing circle -->
+        <circle cx="250" cy="115" r="4" fill="#10b981" />
+        <text x="250" y="130" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Rebote en EMA</text>
+
+        <!-- RSI Chart (Bottom) -->
+        <rect x="60" y="165" width="380" height="50" fill="#0b0f19" stroke="#1e293b" stroke-width="1" />
+        <line x1="60" y1="180" x2="440" y2="180" stroke="rgba(239, 68, 68, 0.3)" stroke-width="1" stroke-dasharray="2,2" /> <!-- Overbought 70 -->
+        <line x1="60" y1="200" x2="440" y2="200" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1" stroke-dasharray="2,2" /> <!-- Oversold 30 -->
+        <text x="45" y="183" fill="#ef4444" font-size="7" font-family="sans-serif">70</text>
+        <text x="45" y="203" fill="#10b981" font-size="7" font-family="sans-serif">30</text>
+        
+        <!-- RSI line -->
+        <path d="M 60 175 L 120 185 L 180 170 L 250 202 L 320 180 L 380 190 L 440 172" fill="none" stroke="#f59e0b" stroke-width="1.5" />
+        <circle cx="250" cy="202" r="3.5" fill="#10b981" />
+        <text x="295" y="212" fill="#10b981" font-size="8" font-family="sans-serif" font-weight="bold">RSI Sobrevendido</text>
+
+        <!-- Caption -->
+        <text x="250" y="238" fill="#94a3b8" font-size="10" font-family="sans-serif" text-anchor="middle">Ilustración 3.6: Confluencia técnica (EMA 200 y RSI en sobreventa).</text>
+      </svg>
+
+      <h3>EMA 200, Momentum y Puntos de Apoyo Estructural</h3>
+      <p>Para construir una estrategia robusta de confluencia, utilizaremos tres filtros principales independientes: la tendencia direccional macro, la zona de valor estructural (Soporte o Resistencia) y el impulso del oscilador. En primer lugar, empleamos la media móvil exponencial de 200 períodos (EMA 200) como nuestro filtro de dirección principal. Si el precio cotiza con consistencia por encima de la EMA 200, nuestra única regla es buscar compras (largos). Si cotiza por debajo, buscaremos exclusivamente ventas (cortos).</p>
+      <p>Una vez definida la tendencia mediante la EMA 200, esperamos a que el precio haga un retroceso hacia una zona de soporte o resistencia de valor. En este punto de contacto estructural, introducimos el oscilador de momentum RSI (Índice de Fuerza Relativa) de 14 períodos. Si el precio testea un soporte en una tendencia alcista y simultáneamente el RSI cotiza en zona de sobreventa (por debajo de 30), tenemos una confluencia de tres factores a nuestro favor. La EMA 200 actúa como filtro tendencial, el soporte actúa como punto de apoyo y el RSI valida el agotamiento del impulso bajista.</p>
+      <p>Para llevar esta confluencia un paso más allá, podemos incorporar referencias de volumen macro. Si la zona de polaridad estructural coincide plenamente con el Punto de Control (POC) de volumen de la sesión previa, la probabilidad del rebote se eleva exponencialmente. De esta forma, cada uno de los filtros técnicos que empleamos añade una justificación objetiva a tu trade, eliminando por completo las entradas precipitadas por aburrimiento o ansiedad y permitiéndote actuar bajo un marco rigurosamente cuantitativo y consistente.</p>
+      <p>El trader profesional no opera únicamente porque un indicador cruce una línea; busca la confluencia de argumentos para justificar cada entrada en su bitácora técnica de procesos. Operar de esta manera reduce considerablemente las señales falsas y te enseña a ignorar las operaciones de baja probabilidad que desgastan tu capital. La disciplina consiste en sentarte a esperar que se alineen todos tus filtros de confluencia antes de ejecutar tus contratos.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Agrega a tu plataforma la EMA 200 y el oscilador RSI de 14 períodos. Localiza una zona de confluencia en el gráfico donde el precio rebote sobre la EMA y el oscilador RSI confirme sobreventa o sobrecompra en los límites correspondientes. Toma una captura de pantalla del evento y documenta los valores exactos en tu bitácora de trading.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La confluencia técnica es tu mayor aliada estadística. Nunca entres al mercado por la señal de una sola herramienta; espera que los filtros de confluencia validen tu trade y ejecútalo con total calma.
+      </div>
+`
   },
   day22: {
     id: "day22",
@@ -305,11 +971,35 @@ const courseData = {
     completed: false,
     challenge: "Explica detalladamente en tu bitácora por qué un gráfico sin indicadores de ruido mejora la toma de decisiones bajo presión.",
     content: `
-      <p>Has finalizado el Módulo 3. Conoces las estructuras de mercado, los quiebres (BOS), la polaridad y los filtros de confluencia técnica para una lectura limpia de precios.</p>
+<p>Felicidades por haber completado las lecciones teóricas y prácticas del <strong>Módulo 3: Lectura Técnica Avanzada</strong>. A lo largo de esta semana, has dado un salto técnico de nivel profesional en tu comprensión de la subasta de mercado de futuros. Has aprendido a mapear la estructura de tendencia a través de máximos y mínimos crecientes (HH/HL), a confirmar la continuación de los movimientos mediante rupturas estructurales (BOS) y a identificar zonas institucionales de soporte y resistencia basadas en oferta y demanda latentes.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Laurel Wreath Backdrop -->
+        <path d="M 180 120 C 180 180, 320 180, 320 120" fill="none" stroke="#334155" stroke-width="3" />
+        <!-- Badge Body (Diamond shape) -->
+        <polygon points="250,35 305,90 250,155 195,90" fill="#1e293b" stroke="#3b82f6" stroke-width="3" />
+        <!-- Graduation cap icon inside -->
+        <polygon points="250,60 275,70 250,80 225,70" fill="#f59e0b" />
+        <line x1="250" y1="80" x2="250" y2="92" stroke="#f59e0b" stroke-width="2" />
+        <rect x="242" y="92" width="16" height="8" fill="#f59e0b" />
+        <!-- Badge Text -->
+        <text x="250" y="125" fill="#10b981" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">PILAR 3 OK</text>
+        <text x="250" y="140" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">ESTRUCTURA</text>
+        <!-- Caption -->
+        <text x="250" y="215" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 3.7: Insignia de finalización del módulo de lectura de mercado.</text>
+      </svg>
+
+      <h3>La Integración del Análisis Estructural Limpio</h3>
+      <p>Comprender las leyes físicas del mercado te ha permitido prescindir de indicadores complejos que solo entorpecen la toma de decisiones rápidas bajo presión. Al analizar gráficos limpios basándote en la acción del precio pura y la ley de polaridad, dejas de ser un espectador pasivo y te conviertes en un analista objetivo del flujo de órdenes real. En el próximo módulo (Módulo 4: Psicología de Ejecución y Rutinas), nos adentraremos en el diseño de un protocolo diario de alto rendimiento pre-market y post-market, auditorías de bitácora y diarios de errores operativos. Esta consistencia en tu comportamiento diario consolidará tu avance.</p>
+      <p>Antes de enfrentarte a la evaluación teórica de este módulo, asegúrate de repasar cada concepto estudiado. Recuerda que no existen atajos en el camino del trader; la consistencia exige el dominio riguroso del análisis técnico y la disciplina para esperar tus setups de alta probabilidad en las zonas predefinidas. Ningún sistema de trading será rentable si no respetas las directrices de tu plan y te dejas llevar por las emociones del momento. En el examen final deberás certificar tus aciertos para poder avanzar en la academia.</p>
+      <p>Asimismo, te aconsejamos encarecidamente practicar este método de análisis limpio en un entorno simulado de pruebas antes de comprometer capital real en tu cuenta. La repetición de este proceso operativo te brindará una solidez mental inigualable y te ayudará a disociar las ganancias inmediatas del éxito real del sistema en una muestra grande de trades. El dominio técnico no consiste en adivinar el futuro, sino en dominar el propio comportamiento frente al mercado.</p>
+      <p>Tu preparación técnica está casi consolidada. A partir de aquí, las operaciones simuladas o reales que documentes deben reflejar este marco de lectura estructural limpio. Con la correcta confluencia técnica, el control dinámico de contratos y la paciencia estoica, has desarrollado las herramientas indispensables de un operador consistente. No te apresures; el éxito técnico se consolida trade a trade, respetando siempre el proceso del método.</p>
+      <h3>Instrucciones para la Evaluación Semanal</h3>
+      <p>Tu reto final de hoy consiste en resolver con éxito el examen del Módulo 3 detallado a continuación. Deberás responder correctamente a las 5 preguntas basándote en el análisis estructural limpio de mercado, quiebres de estructura, zonas de oferta y demanda y filtros de confluencia. Aprobar con un 100% de aciertos es el requisito para desbloquear el Módulo 4 de rutinas y psicología del trader.</p>
       <div class="alert-box" style="border-left-color: var(--color-accent); background: rgba(59, 130, 246, 0.03);">
-        <strong>📝 Evaluación del Módulo 3:</strong> Completa y aprueba el cuestionario técnico de abajo para desbloquear el Módulo de Ejecución y Autocontrol Mental.
+        <strong>📝 Evaluación del Módulo 3:</strong> Responde correctamente el cuestionario de abajo para certificar tu comprensión y desbloquear el Módulo 4 de Rutinas y Psicología de Ejecución.
       </div>
-    `
+`
   },
   day23: {
     id: "day23",
@@ -319,10 +1009,53 @@ const courseData = {
     completed: false,
     challenge: "Diseña por escrito tu rutina diaria antes de la sesión de trading: horas de sueño, preparación física, revisión de noticias y análisis técnico previo.",
     content: `
-      <p>Comenzamos el <strong>Módulo 4: Ejecución y Evaluación</strong>. Un trader profesional se comporta como un atleta de alto rendimiento: tiene una rutina rígida antes, durante y después de operar.</p>
-      <h3>La Disciplina del Protocolo</h3>
-      <p>Operar de manera profesional requiere estar en un estado mental calmado y descansado. Improvisar la sesión o abrir gráficos minutos antes de la apertura del mercado invita al desastre operativo.</p>
-    `
+<p>Bienvenido al <strong>Módulo 4: Rutina y Psicología de Ejecución</strong>. A lo largo de esta semana, aprenderás a estructurar tu negocio de especulación de futuros con el rigor operativo y el profesionalismo que exige el mercado real. Un trader consistente no opera de manera improvisada al levantarse de la cama; se prepara con el rigor de un atleta olímpico o un cirujano. La calidad de tus decisiones depende de tu preparación mental y física previa.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Timeline central line -->
+        <line x1="50" y1="120" x2="450" y2="120" stroke="#334155" stroke-width="3" />
+        
+        <!-- Steps/Points -->
+        <!-- Step 1: Prep -->
+        <circle cx="90" cy="120" r="8" fill="#3b82f6" />
+        <text x="90" y="100" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">1. Descanso/Físico</text>
+        <text x="90" y="145" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Sueño & Enfoque</text>
+        
+        <!-- Step 2: News -->
+        <circle cx="180" cy="120" r="8" fill="#3b82f6" />
+        <text x="180" y="100" fill="#3b82f6" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">2. Noticias/Macro</text>
+        <text x="180" y="145" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Calendario Económico</text>
+        
+        <!-- Step 3: Analysis -->
+        <circle cx="270" cy="120" r="8" fill="#f59e0b" />
+        <text x="270" y="100" fill="#f59e0b" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">3. Niveles/Sesgo</text>
+        <text x="270" y="145" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Gráfico Limpio</text>
+        
+        <!-- Step 4: Execution -->
+        <circle cx="360" cy="120" r="8" fill="#10b981" />
+        <text x="360" y="100" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">4. Ejecución</text>
+        <text x="360" y="145" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Cumplir Plan</text>
+        
+        <!-- Step 5: Audit -->
+        <circle cx="430" cy="120" r="8" fill="#10b981" />
+        <text x="430" y="100" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">5. Bitácora</text>
+        <text x="430" y="145" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Auditar & Cerrar</text>
+
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.1: Cronograma secuencial de la rutina diaria de alto rendimiento.</text>
+      </svg>
+
+      <h3>La Preparación Física, Mental y Técnica de Alto Rendimiento</h3>
+      <p>El trading profesional es una actividad intelectualmente demandante que genera una gran acumulación de estrés fisiológico en el organismo. La toma de decisiones financieras complejas consume una inmensa cantidad de energía de nuestra corteza prefrontal. Si te sientas a operar habiendo dormido pocas horas, con una mala alimentación o con problemas personales activos que distraen tu atención, tu capacidad de autocontrol y paciencia se verá gravemente reducida. Esto facilitará que actúes de manera impulsiva e indisciplinada, rompiendo los límites estrictos de gestión de capital que definiste en tu manifiesto personal.</p>
+      <p>La rutina diaria de un trader consistente debe estructurarse en tres bloques secuenciales obligatorios. El primer bloque consiste en el cuidado físico: asegurar un descanso óptimo de al menos 7 u 8 horas, realizar respiraciones para centrar tu atención y desayunar de forma ligera para evitar la fatiga digestiva. El segundo bloque comprende el análisis macro: abrir el calendario económico del día para identificar noticias de alto impacto (como reportes de inflación IPC o declaraciones de la Fed) que generen picos insostenibles de volatilidad, y delimitar tus 2 o 3 zonas de soporte y resistencia institucionales clave del día previo en gráficos limpios. El tercer bloque es el protocolo de pre-mercado y checklist que veremos a continuación.</p>
+      <p>A esta rutina debes añadir un componente de entrenamiento de concentración y atención plena. Realizar ejercicios de meditación de solo cinco minutos antes de la apertura te ayudará a reducir el ritmo cardíaco y a mantener un estado mental enfocado y calmado. Asimismo, realizar estiramientos ligeros de las articulaciones y del cuello te evitará tensiones físicas durante las horas sentados frente a las pantallas analizando los gráficos de futuros. La salud de tu cuerpo y de tu cerebro están íntimamente vinculadas con tu rentabilidad operativa a largo plazo.</p>
+      <p>Establecer esta rutina estoica te permitirá afrontar la sesión de futuros con una total claridad mental, reduciendo considerablemente la influencia de la ansiedad en tu operativa diaria. Al tratar la especulación bursátil como un negocio estructurado con horarios fijos y protocolos ineludibles, dejas de operar bajo impulsos emocionales erráticos y te conviertes en un operador frío y consistente que domina su proceso. Tu rutina es tu mayor escudo protector frente a la aleatoriedad del mercado.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Tu reto del día de hoy consiste en diseñar por escrito tu propia rutina operativa diaria para los próximos días, detallando los horarios de preparación física, el bloque técnico de análisis y las actividades de desconexión. Registra esta rutina en tu bitácora de trading y comprométete formalmente a acatarla sin excepciones.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La consistencia operativa nace de la consistencia conductual diaria. Si dominas tus hábitos antes de que abra el mercado, dominarás tus decisiones en pleno flujo de órdenes.
+      </div>
+`
   },
   day24: {
     id: "day24",
@@ -332,15 +1065,52 @@ const courseData = {
     completed: false,
     challenge: "Escribe una lista de comprobación (checklist) de 5 puntos obligatorios que debes marcar de manera positiva antes de abrir cualquier operación en real.",
     content: `
-      <p>Antes de que un piloto despegue, revisa una checklist exhaustiva. En el trading de futuros, debes hacer exactamente lo mismo.</p>
-      <h3>Checklist de Confluencias</h3>
-      <ul>
-        <li>¿El precio está alineado con la EMA 200?</li>
-        <li>¿El RSI cruzó la línea central de 50 en vela cerrada?</li>
-        <li>¿El Stop Loss está colocado en un nivel estructural válido?</li>
-        <li>¿El tamaño de posición respeta el 1% de riesgo máximo?</li>
-      </ul>
-    `
+<p>Hoy analizaremos el <strong>Protocolo Pre-market y Checklist</strong>. En profesiones donde un solo error operativo puede resultar catastrófico, como la aviación o la medicina de emergencias, el uso de listas de comprobación (checklists) es obligatorio. En la especulación de futuros de índices, tu capital está expuesto en cada operación. Diseñar y completar una checklist técnica antes de cada entrada es tu última barrera de defensa contra las decisiones irracionales causadas por el aburrimiento o el FOMO.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Clipboard Body -->
+        <rect x="180" y="40" width="140" height="160" fill="#1e293b" rx="8" stroke="#334155" stroke-width="2" />
+        <!-- Clipboard Header (Clip) -->
+        <rect x="230" y="28" width="40" height="18" fill="#475569" rx="4" stroke="#64748b" stroke-width="1.5" />
+        <circle cx="250" cy="37" r="3" fill="#0b0f19" />
+
+        <!-- Checklist lines and checkmarks -->
+        <!-- Item 1 -->
+        <rect x="200" y="70" width="10" height="10" fill="none" stroke="#10b981" stroke-width="2" />
+        <path d="M 200 75 L 204 78 L 209 71" fill="none" stroke="#10b981" stroke-width="2" />
+        <line x1="220" y1="75" x2="300" y2="75" stroke="#94a3b8" stroke-width="2" />
+        
+        <!-- Item 2 -->
+        <rect x="200" y="95" width="10" height="10" fill="none" stroke="#10b981" stroke-width="2" />
+        <path d="M 200 100 L 204 103 L 209 96" fill="none" stroke="#10b981" stroke-width="2" />
+        <line x1="220" y1="100" x2="300" y2="100" stroke="#94a3b8" stroke-width="2" />
+        
+        <!-- Item 3 -->
+        <rect x="200" y="120" width="10" height="10" fill="none" stroke="#10b981" stroke-width="2" />
+        <path d="M 200 125 L 204 128 L 209 121" fill="none" stroke="#10b981" stroke-width="2" />
+        <line x1="220" y1="125" x2="300" y2="125" stroke="#94a3b8" stroke-width="2" />
+
+        <!-- Item 4 -->
+        <rect x="200" y="145" width="10" height="10" fill="none" stroke="#f59e0b" stroke-width="2" />
+        <line x1="220" y1="150" x2="300" y2="150" stroke="#64748b" stroke-width="1.5" />
+
+        <text x="250" y="180" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">CHECKLIST LISTO</text>
+
+        <!-- Caption -->
+        <text x="250" y="230" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.2: Representación del protocolo pre-market y lista de verificación.</text>
+      </svg>
+
+      <h3>La Eliminación del Sesgo Subjetivo mediante Reglas Fijas</h3>
+      <p>Una lista de verificación obligatoria nos obliga a someter cada idea de inversión a un filtro objetivo y riguroso. Tu checklist de entrada debe contar con al menos 5 puntos clave técnicos y psicológicos: 1) ¿El precio está reaccionando dentro de una zona de soporte o resistencia de valor previamente marcada? 2) ¿Existe confirmación por acción del precio (vela de rechazo con volumen)? 3) ¿El ratio riesgo-recompensa (R:R) proyectado para la operación es de al menos 1:2? 4) ¿He calculado de forma correcta mi número de contratos de acuerdo a la distancia exacta de mi stop loss? y 5) ¿Me encuentro en un estado emocional de calma absoluta y libre de deseos de venganza?</p>
+      <p>Implementar esta checklist de manera física (marcando de forma manuscrita las casillas en un papel o pizarra sobre tu escritorio) crea un límite psicológico y táctil tangible. Esto interrumpe la conducta apresurada de comprar o vender por impulso. La checklist te protege del sesgo de reciprocidad o de tendencia reciente (recency bias), que es la tendencia inconsciente de creer que el mercado repetirá de inmediato lo que hizo en la operación anterior. Cumplir con cada filtro innegociable te garantizará operar únicamente los setups institucionales de mayor calidad probabilística.</p>
+      <p>Si la respuesta a cualquiera de estas preguntas es negativa, tu única acción permitida por tu plan de trading es mantener las manos fuera del teclado y abortar la operación de inmediato. En el trading consistente, evitar un trade de baja calidad es tan valioso como ejecutar un trade ganador, ya que preserva tu inventario de capital operativo y protege tu disciplina mental frente al descontrol operacional. Tratar tu operativa de futuros bajo este marco cuantitativo riguroso te distanciará definitivamente de los apostadores minoristas que entran de forma impulsiva al mercado.</p>
+      <p>Al convertir tu checklist en un ritual diario obligatorio que documentas en tu bitácora técnica de procesos, eliminas de raíz las decisiones improvisadas y disminuyes radicalmente tu fatiga cognitiva durante la sesión regular de futuros de Nasdaq o S&P 500. Tu mente descansará sabiendo que solo actuarás cuando el mercado cumpla con tus estrictos parámetros objetivos de selección.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Escribe tu checklist oficial de 5 puntos técnicos y mentales obligatorios utilizando los criterios indicados anteriormente. Colócala en un formato visible en tu estación de trading o dentro de tu diario de operaciones digital. Realiza el ejercicio de verificar punto por punto esta lista antes de realizar tu próximo trade de simulación.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> El checklist es tu seguro de vida financiero. Si el setup no cumple con cada una de las 5 condiciones del plan, la operación no existe. Respeta las reglas del método de forma incondicional.
+      </div>
+`
   },
   day25: {
     id: "day25",
@@ -350,10 +1120,42 @@ const courseData = {
     completed: false,
     challenge: "Realiza 5 operaciones en el simulador y documenta tu nivel de calma del 1 al 10 antes de hacer clic en los botones de COMPRAR o VENDER.",
     content: `
-      <p>Cuando el precio oscila rápido, tu cerebro entra en modo de alerta. El control emocional bajo presión consiste en <strong>confiar en el proceso matemático</strong> y no en el resultado del trade actual.</p>
-      <h3>Aceptación del Riesgo</h3>
-      <p>Si has calculado tu tamaño de posición correctamente y has colocado tu stop loss técnico, ya sabes exactamente cuánto vas a perder si falla. Una vez que aceptas esa pérdida como el costo de tu negocio, la ansiedad de la ejecución desaparece.</p>
-    `
+<p>Hoy abordaremos el reto de la <strong>Ejecución bajo Presión</strong>. Saber identificar una zona de soporte y resistencia en un gráfico estático es una tarea analítica relativamente sencilla. Sin embargo, presionar el botón de ejecutar en tu plataforma de futuros con dinero real en una sesión de alta volatilidad es un desafío psicológico inmenso. El miedo a perder capital y la prisa por ganar activan de forma automática hormonas como el cortisol y la adrenaline.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Balance Stand -->
+        <line x1="250" y1="70" x2="250" y2="180" stroke="#475569" stroke-width="5" />
+        <polygon points="230,180 270,180 280,195 220,195" fill="#334155" />
+        
+        <!-- Balance Beam (Tilted to represent discipline winning over emotion) -->
+        <line x1="130" y1="120" x2="370" y2="80" stroke="#475569" stroke-width="4" />
+        <circle cx="250" cy="95" r="6" fill="#64748b" />
+
+        <!-- Left Scale (Discipline - Down/Heavier) -->
+        <line x1="130" y1="120" x2="130" y2="150" stroke="#64748b" stroke-width="1.5" />
+        <polygon points="100,150 160,150 145,170 115,170" fill="#1e293b" stroke="#10b981" stroke-width="2" />
+        <text x="130" y="145" fill="#10b981" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">DISCIPLINA</text>
+
+        <!-- Right Scale (Emotion - Up/Lighter) -->
+        <line x1="370" y1="80" x2="370" y2="110" stroke="#64748b" stroke-width="1.5" />
+        <polygon points="340,110 400,110 385,130 355,130" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" />
+        <text x="370" y="105" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">EMOCIÓN</text>
+
+        <!-- Caption -->
+        <text x="250" y="225" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.3: Balanza de control operacional: proceso técnico sobre sesgo emocional.</text>
+      </svg>
+
+      <h3>Manejo del Click-Fear y la Calma Fisiológica</h3>
+      <p>Cuando un trader se enfrenta al mercado, suele sufrir dos problemas extremos de ejecución: el miedo a hacer clic (click-fear) debido a la aversión al fracaso y a pérdidas recientes, o la sobreoperativa impulsiva provocada por el deseo codicioso de ganar dinero rápido. Para erradicar el miedo al clic, debes adoptar una mentalidad probabilística estoica. Acepta de forma radical que cada operación individual tiene un resultado incierto y aleatorio, pero que tu conjunto de 50 o 100 operaciones posee una esperanza matemática positiva a tu favor si eres capaz de ejecutar siempre con la disciplina de una máquina.</p>
+      <p>Para calmar tu respuesta fisiológica antes de hacer clic en tu terminal, implementa la **respiración cuadrada (box breathing)**: inhala durante 4 segundos, mantén el aire 4 segundos, exhala durante 4 segundos y permanece vacío otros 4 segundos. Adicionalmente, utiliza la técnica del **suspiro fisiológico**: toma dos inhalaciones rápidas y profundas por la nariz seguidas de una exhalación lenta y completa por la boca. Este ejercicio estimula tu nervio vago y reduce el ritmo cardíaco de manera inmediata, restaurando el control lógico de tu corteza prefrontal sobre los impulsos emocionales primitivos de tu amígdala. Operar calmado te permite seguir las reglas de Stop Loss con total entereza.</p>
+      <p>El trader consistente mide su nivel de paz interior antes de cada entrada. Si detectas que tus manos tiemblan o que tu mente está obsesionada con el resultado monetario en lugar de con la calidad del proceso técnico, aléjate del monitor de inmediato. La ejecución bajo presión se domina aceptando el riesgo de forma honesta desde el momento en que colocas tu orden límite en el mercado de futuros de índices. Al repetir este protocolo en simulación, entrenas a tu sistema nervioso a tolerar la incertidumbre del mercado de forma adaptativa y saludable.</p>
+      <p>Asimismo, el operador debe comprender que la toma de decisiones financieras en vivo es un ejercicio cognitivo continuo. Si estás lidiando con pérdidas de capital previas o si sientes la imperiosa necesidad de "demostrar que tienes razón" frente al mercado, estarás operando con un sesgo cognitivo severo que nublará tu juicio y te conducirá a errores operacionales devastadores. Desarrollar un estado mental frío, escéptico y desapegado del dinero individual es la única vía real para alcanzar la rentabilidad sostenible y proteger la integridad de tu cuenta de futuros. Esta práctica constante de autocontrol te capacitará para convertirte en un operador profesional sumamente frío frente al comportamiento aleatorio de las cotizaciones de futuros.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Ejecuta hoy 5 operaciones de simulación en tu plataforma. Antes de presionar el botón de comprar o vender en cada una de ellas, puntúa con total honestidad en tu diario tu grado de calma del 1 (pánico absoluto) al 10 (calma zen). Tu meta hoy no es ganar dinero, sino lograr que las 5 puntuaciones de calma estén por encima del valor 7.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> La ejecución impecable requiere desapego emocional. En el momento en que entras a mercado, asume la pérdida teórica de tu stop loss y enfócate únicamente en vigilar la disciplina de tu proceso.
+      </div>
+`
   },
   day26: {
     id: "day26",
@@ -363,10 +1165,41 @@ const courseData = {
     completed: false,
     challenge: "Describe tu protocolo de cierre: ¿qué haces inmediatamente después de terminar tu sesión de trading para desconectar mentalmente?",
     content: `
-      <p>El día de trading no termina cuando cierras tu última posición. Termina con tu protocolo de cierre estoico.</p>
-      <h3>Desconexión Mental</h3>
-      <p>Guarda tus resultados, documenta la sesión en tu bitácora, cierra la plataforma y aléjate de los gráficos. Analizar pantallas constantemente fuera de tu horario operativo fomenta la obsesión y el sobreoperar.</p>
-    `
+<p>En el entrenamiento del día de hoy analizaremos el <strong>Protocolo de Cierre Post-Sesión</strong>. Muchos operadores prestan una gran atención a su preparación previa pero ignoran por completo cómo finalizar su sesión diaria de trading de futuros. No cerrar de manera adecuada conduce a la sobreoperativa tardía, a operar por venganza tras las horas de alta liquidez y a acumular fatiga cognitiva destructiva para los días siguientes.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Monitor border -->
+        <rect x="130" y="40" width="240" height="140" rx="8" fill="#1e293b" stroke="#334155" stroke-width="3" />
+        <!-- Monitor Stand -->
+        <rect x="230" y="180" width="40" height="20" fill="#334155" />
+        <ellipse cx="250" cy="200" rx="40" ry="8" fill="#1e293b" />
+        
+        <!-- Monitor screen contents (Locked) -->
+        <rect x="145" y="52" width="210" height="116" fill="#0b0f19" rx="4" />
+        
+        <!-- Padlock -->
+        <rect x="238" y="90" width="24" height="20" rx="3" fill="#ef4444" />
+        <path d="M 243 90 L 243 78 C 243 73, 257 73, 257 78 L 257 90" fill="none" stroke="#ef4444" stroke-width="2" />
+        <circle cx="250" cy="100" r="2.5" fill="#0b0f19" />
+        
+        <text x="250" y="132" fill="#ef4444" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">SESIÓN TERMINADA</text>
+        <text x="250" y="145" fill="#94a3b8" font-size="7" font-family="sans-serif" text-anchor="middle">Plataforma bloqueada de forma segura</text>
+
+        <!-- Caption -->
+        <text x="250" y="230" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.4: Visualización del protocolo de cierre y desconexión tecnológica.</text>
+      </svg>
+
+      <h3>Evitando la Sobreoperativa y Cerrando el Negocio Diario</h3>
+      <p>El protocolo de cierre post-sesión es el límite físico y mental que protege tu capital financiero de la impulsividad. Una vez que has alcanzado tu objetivo de beneficio diario (Profit Target), tu límite de pérdida máximo (Daily Drawdown) o has completado las operaciones permitidas por tu plan técnico, debes iniciar el cierre sistemático. Este proceso abarca tres pasos ineludibles: 1) Exportar tu registro exacto de ejecuciones a tu bitácora cuantitativa de trading. 2) Guardar capturas de pantalla de los gráficos con tus entradas y salidas señaladas y 3) Apagar por completo tu plataforma de negociación de futuros y bloquear tu acceso a la terminal.</p>
+      <p>Muchos traders cometen el grave error de dejar su plataforma encendida mientras realizan otras tareas en su computadora. Ver la cotización del precio moverse genera una tentación irracional constante de "abrir un trade rápido" sin confluencia técnica, arruinando así las ganancias del día por pura indisciplina. Debes aprender a tratar la terminal de trading de la misma forma que un comerciante trata su tienda física: una vez cerrada la persiana del negocio, no se permite ninguna otra transacción hasta el inicio del día de mañana.</p>
+      <p>Establece además un anclaje físico y ritual de cierre. Levantarte del escritorio de inmediato, apagar los monitores de tu computadora de trading y realizar una pequeña caminata o estiramientos fuera de tu espacio de trabajo enviará una señal neurológica clara a tu cerebro de que el "modo cazador/trader" ha finalizado. Esto facilitará tu transición mental a la vida diaria y te ayudará a disipar la adrenalina y el estrés acumulados durante la jornada. Recuerda que la especulación es tu negocio, no tu identidad personal estoica.</p>
+      <p>Además de la desconexión física de la plataforma, el protocolo post-sesión exige una desconexión mental activa. Realizar alguna actividad física, dar un paseo al aire libre o meditar te ayudará a disipar el estrés fisiológico acumulado durante la jornada de subasta. Evita que las ganancias o pérdidas de tu sesión diaria influyan en tu estado de ánimo familiar o personal; recuerda que el trading es solo un juego probabilístico que requiere constancia en el proceso y serenidad estoica.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Diseña detalladamente tu propio protocolo de cierre post-sesión de 3 pasos, especificando las actividades de exportación de datos de tu plataforma y tu método de desconexión física y mental. Documenta este protocolo por escrito en tu bitácora técnica de operativa diaria y aplícalo estrictamente al finalizar tu sesión de simulación.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Saber apagar la plataforma de trading es la mayor demostración de autodisciplina. Al desconectar a tiempo, proteges el beneficio acumulado en tu cuenta y preservas tu salud mental estoica.
+      </div>
+`
   },
   day27: {
     id: "day27",
@@ -376,13 +1209,55 @@ const courseData = {
     completed: false,
     challenge: "Revisa tu bitácora de la semana pasada, analiza tu tasa de acierto y tu ratio R:R real. Anota cualquier desviación de tu plan de trading.",
     content: `
-      <p>La auditoría es el análisis racional y frío de tus estadísticas operativas. Nos permite identificar si nuestra rentabilidad está alineada con la ventaja estadística del sistema.</p>
-      <h3>Estadísticas de Valor</h3>
-      <ul>
-        <li><strong>Profit Factor:</strong> Suma de ganancias dividida por la suma de pérdidas.</li>
-        <li><strong>R:R Promedio:</strong> Determina si de verdad estás dejando correr las operaciones ganadoras a 1:2.</li>
-      </ul>
-    `
+<p>Hoy profundizaremos en el proceso de la <strong>Auditoría Crítica de Operaciones</strong>. Un trader profesional es, en esencia, un auditor científico de su propia conducta y de sus datos estadísticos. No podemos depender de la suerte o de la intuición selectiva de nuestro cerebro; debemos apoyarnos en los números fríos que arroja nuestra bitácora técnica para corregir errores operativos recurrentes.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Chart Axes -->
+        <line x1="60" y1="180" x2="440" y2="180" stroke="#334155" stroke-width="1.5" />
+        <line x1="60" y1="40" x2="60" y2="180" stroke="#334155" stroke-width="1.5" />
+        
+        <!-- Bar 1 (Win Rate) -->
+        <!-- Target (Blue) -->
+        <rect x="90" y="80" width="30" height="100" fill="rgba(59, 130, 246, 0.4)" stroke="#3b82f6" stroke-width="1.5" />
+        <!-- Actual (Green) -->
+        <rect x="130" y="90" width="30" height="90" fill="rgba(16, 185, 129, 0.4)" stroke="#10b981" stroke-width="1.5" />
+        <text x="125" y="195" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Tasa de Acierto</text>
+        
+        <!-- Bar 2 (Profit Factor) -->
+        <!-- Target (Blue) -->
+        <rect x="220" y="70" width="30" height="110" fill="rgba(59, 130, 246, 0.4)" stroke="#3b82f6" stroke-width="1.5" />
+        <!-- Actual (Green) -->
+        <rect x="260" y="60" width="30" height="120" fill="rgba(16, 185, 129, 0.4)" stroke="#10b981" stroke-width="1.5" />
+        <text x="255" y="195" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Factor de Beneficio</text>
+        
+        <!-- Bar 3 (Drawdown) -->
+        <!-- Target (Blue) -->
+        <rect x="340" y="120" width="30" height="60" fill="rgba(59, 130, 246, 0.4)" stroke="#3b82f6" stroke-width="1.5" />
+        <!-- Actual (Red - Bad Deviation) -->
+        <rect x="380" y="100" width="30" height="80" fill="rgba(239, 68, 68, 0.4)" stroke="#ef4444" stroke-width="1.5" />
+        <text x="375" y="195" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">Drawdown Máx</text>
+
+        <!-- Legend -->
+        <rect x="320" y="30" width="10" height="10" fill="#3b82f6" />
+        <text x="335" y="38" fill="#94a3b8" font-size="8" font-family="sans-serif">Teórico / Plan</text>
+        <rect x="320" y="45" width="10" height="10" fill="#10b981" />
+        <text x="335" y="53" fill="#94a3b8" font-size="8" font-family="sans-serif">Ejecutado Real</text>
+
+        <!-- Caption -->
+        <text x="250" y="230" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.5: Análisis comparativo de métricas planificadas vs realizadas.</text>
+      </svg>
+
+      <h3>Métricas Críticas y el Cálculo del Profit Factor</h3>
+      <p>La auditoría crítica de tus datos semanales exige el cálculo de tres métricas operativas clave. La primera es tu tasa de acierto (Win Rate), que es el porcentaje de operaciones ganadoras sobre el total de trades realizados. La segunda es tu ratio de riesgo:recompensa (R:R) promedio real ejecutado, que se calcula dividiendo la ganancia promedio de tus trades ganadores entre la pérdida promedio de tus trades perdedores. La tercera métrica indispensable es tu **Profit Factor (Factor de Beneficio)**, que representa la suma total de tus ganancias dividida por la suma total de tus pérdidas en dólares.</p>
+      <p>Un Profit Factor superior a 1.5 indica que tu sistema de trading tiene una ventaja probabilística robusta y saludable en el mercado de futuros de índices. Si tu Profit Factor es menor que 1.0, estás en un sistema perdedor y debes detener tu operativa para analizar las desviaciones. Al auditar tus operaciones de forma científica, debes buscar "operaciones fantasma": aquellas que abriste fuera de tu checklist y de tus reglas de setup predefinidas. Identificar cuántos dólares has perdido por indisciplina te motivará a respetar tu plan técnico de forma inquebrantable.</p>
+      <p>Para complementar tu auditoría, calcula también tu **Índice de Calidad de Ejecución (EQI)**. Este índice mide el porcentaje de operaciones en las que seguiste tus reglas técnicas de forma perfecta, independientemente del resultado monetario final. Si tu tasa de acierto es del 60% pero tu EQI es del 40%, significa que la mayoría de tus ganancias ocurrieron por suerte en trades indisciplinados, lo que representa un peligro extremo para tu cuenta a largo plazo. Mantener un EQI superior al 90% debe ser tu meta diaria prioritaria.</p>
+      <p>Realizar una auditoría honesta de tus números te brindará una gran solidez mental. Dejarás de sentirte frustrado por pérdidas individuales al comprender que forman parte de la distribución normal de probabilidades de un sistema estadísticamente rentable a largo plazo en tu cuenta. La auditoría crítica de tus datos de trading es la única vía real para lograr la consistencia matemática de tu negocio especulativo.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Revisa detalladamente la totalidad de tus operaciones registradas en tu bitácora durante la última semana de simulación o cuenta real. Calcula tu tasa de acierto promedio, tu ratio R:R real ejecutado y tu Profit Factor de la semana. Registra estos números por escrito en tu diario e identifica si existieron operaciones tomadas fuera de tu plan técnico.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Los números no mienten ni tienen ego. Auditar tus datos de forma crítica y honesta te muestra la realidad objetiva de tu desempeño operacional y te guía hacia la consistencia real del método.
+      </div>
+`
   },
   day28: {
     id: "day28",
@@ -392,10 +1267,42 @@ const courseData = {
     completed: false,
     challenge: "Clasifica los últimos 5 errores cometidos en tu simulador como \"técnico\" (romper reglas del setup) o \"emocional\" (entrar por impaciencia o venganza).",
     content: `
-      <p>Errar es humano, pero repetir el mismo error operativo por falta de autoanálisis es inaceptable en un trader profesional.</p>
-      <h3>El Registro de Desviaciones</h3>
-      <p>Mantén un diario específico de errores. Al clasificarlos de manera honesta y objetiva, sabrás con precisión si tu problema actual es la lectura del mercado (error técnico) o la falta de autodisciplina (error emocional).</p>
-    `
+<p>Hoy analizaremos la creación y mantenimiento de un <strong>Diario de Errores Operativos</strong>. En el trading de futuros de índices, aprender a evitar errores y a proteger el capital es una tarea significativamente más valiosa que buscar el setup perfecto. Cada error operativo que cometes consume tu inventario de dinero y daña tu autodisciplina. Llevar un registro sistemático de tus fallos te permite identificar tus principales debilidades técnicas y de comportamiento.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Left circle (Technical) -->
+        <circle cx="200" cy="110" r="70" fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" stroke-width="2" />
+        <text x="170" y="110" fill="#3b82f6" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Errores</text>
+        <text x="170" y="125" fill="#3b82f6" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Técnicos</text>
+        
+        <!-- Right circle (Emotional) -->
+        <circle cx="300" cy="110" r="70" fill="rgba(239, 68, 68, 0.15)" stroke="#ef4444" stroke-width="2" />
+        <text x="330" y="110" fill="#ef4444" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Errores</text>
+        <text x="330" y="125" fill="#ef4444" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">Emocionales</text>
+        
+        <!-- Intersection Text -->
+        <text x="250" y="100" fill="#f59e0b" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">FOMO &</text>
+        <text x="250" y="115" fill="#f59e0b" font-size="9" font-family="sans-serif" font-weight="bold" text-anchor="middle">Sobreoperar</text>
+        
+        <!-- Description labels on sides -->
+        <text x="100" y="60" fill="#94a3b8" font-size="8" font-family="sans-serif">Mala entrada, Stop mal puesto</text>
+        <text x="400" y="60" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="end">Operar por venganza, frustración</text>
+
+        <!-- Caption -->
+        <text x="250" y="220" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.6: Diagrama de Venn de clasificación de desviaciones operacionales.</text>
+      </svg>
+
+      <h3>Clasificación de Desviaciones: Errores Técnicos vs Emocionales</h3>
+      <p>Un error operativo debe clasificarse estrictamente en una de dos categorías. La primera categoría son los **errores técnicos**: fallos en la lectura del mercado o en la ejecución del setup (por ejemplo, colocar el stop loss en el nivel incorrecto, ingresar tarde por falta de velocidad en la orden o no identificar un BOS real). La segunda categoría son los **errores emocionales o cognitivos**: romper deliberadamente las reglas de tu plan debido a impulsos irracionales (por ejemplo, sobreoperar por aburrimiento, operar por venganza tras una pérdida para intentar recuperar el capital o aumentar el tamaño de la posición por avaricia).</p>
+      <p>El diario de errores debe registrar tres campos de datos obligatorios en cada entrada: 1) Descripción detallada del error cometido y la pérdida monetaria asociada. 2) Desencadenante (trigger): ¿qué evento técnico o mental provocó tu fallo? y 3) Medida correctiva: ¿qué regla estricta implementarás para evitar que este error vuelva a suceder? Al documentar y clasificar tus desviaciones de esta forma, obligas a tu cerebro a tomar conciencia racional de sus impulsos emocionales destructivos, lo que debilita tus conductas dañinas a largo plazo.</p>
+      <p>Al auditar tu diario de errores, descubrirás el fenómeno de la **disonancia cognitiva**. Este es un mecanismo psicológico de defensa por el cual intentas justificar una mala operación (como operar por venganza) inventando explicaciones técnicas "a posteriori" para proteger tu ego de la frustración de haber fallado. Ser radicalmente honesto contigo mismo en tu diario romperá este patrón defensivo y te forzará a madurar como operador consistente de futuros.</p>
+      <p>Aprender a gestionar los errores de forma fría e inteligente te evitará dañar la consistencia de tu cuenta. Todo especulador profesional experimenta fallos técnicos y psicológicos; la diferencia radica en que los operadores consistentes los registran científicamente y aplican medidas correctivas inmediatas, mientras que los aficionados ocultuamente sus errores para proteger su ego y siguen repitiéndolos hasta quemar su capital.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Examina con absoluta honestidad tus últimas operaciones registradas e identifica 5 errores cometidos durante tus sesiones de simulación o cuenta real. Clasifica cada uno de ellos de forma clara como técnico o emocional en tu diario de errores y calcula el impacto total de pérdidas financieras ocasionadas por estas indisciplinas.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Reconocer un error de forma objetiva es el primer paso hacia la consistencia real. Al registrar tus fallos sin castigarte emocionalmente, asumes el control absoluto del perfeccionamiento de tu proceso.
+      </div>
+`
   },
   day29: {
     id: "day29",
@@ -405,10 +1312,47 @@ const courseData = {
     completed: false,
     challenge: "Define una medida correctiva específica y procesable para el error más frecuente (técnico o emocional) que hayas detectado en tu diario de errores.",
     content: `
-      <p>El estoicismo es pragmatismo puro. No nos lamentamos por los errores pasados; los analizamos científicamente para diseñar <strong>acciones correctivas concretas</strong>.</p>
-      <h3>El Plan de Mejora</h3>
-      <p>Si tu error más común es entrar por FOMO antes del cierre de vela, tu regla correctiva debe ser: \"Sólo puedo abrir una posición si pongo una alarma al cierre de la vela actual y mis manos están fuera del ratón hasta entonces\".</p>
-    `
+<p>Hoy analizaremos la filosofía estoica de la <strong>Mejora Continua</strong> aplicada al trading de futuros de índices (Kaizen). El perfeccionamiento operacional no se logra mediante cambios drásticos e improvisados de tu sistema técnico; se construye mediante la corrección diaria de pequeños fallos y la optimización continua de tu proceso conductual de forma científica y estructurada.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Circular Arrow Path (Loop) -->
+        <circle cx="250" cy="110" r="60" fill="none" stroke="#334155" stroke-width="4" />
+        
+        <!-- Curved sector highlights -->
+        <!-- Plan (Top-Right) -->
+        <path d="M 250 50 A 60 60 0 0 1 310 110" fill="none" stroke="#3b82f6" stroke-width="6" />
+        <!-- Execute (Bottom-Right) -->
+        <path d="M 310 110 A 60 60 0 0 1 250 170" fill="none" stroke="#10b981" stroke-width="6" />
+        <!-- Audit (Bottom-Left) -->
+        <path d="M 250 170 A 60 60 0 0 1 190 110" fill="none" stroke="#f59e0b" stroke-width="6" />
+        <!-- Improve (Top-Left) -->
+        <path d="M 190 110 A 60 60 0 0 1 250 50" fill="none" stroke="#ef4444" stroke-width="6" />
+
+        <!-- Labels -->
+        <text x="250" y="35" fill="#3b82f6" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">1. PLANIFICAR</text>
+        <text x="380" y="115" fill="#10b981" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="start">2. EJECUTAR</text>
+        <text x="250" y="195" fill="#f59e0b" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="middle">3. AUDITAR (DATOS)</text>
+        <text x="120" y="115" fill="#ef4444" font-size="10" font-family="sans-serif" font-weight="bold" text-anchor="end">4. CORREGIR</text>
+
+        <!-- Center Text -->
+        <text x="250" y="115" fill="#ffffff" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">MEJORA</text>
+        <text x="250" y="130" fill="#94a3b8" font-size="9" font-family="sans-serif" text-anchor="middle">CONTINUA</text>
+
+        <!-- Caption -->
+        <text x="250" y="230" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.7: Bucle estoico de mejora continua y control operativo.</text>
+      </svg>
+
+      <h3>El Bucle de Retroalimentación y Medidas Correctivas</h3>
+      <p>La mejora continua estoica se apoya en el concepto del control dicotómico de Epícteto: debes centrar el 100% de tu energía intelectual y atención en aquellas variables que se encuentran bajo tu control absoluto (tus reglas de entrada, el tamaño de tu stop loss y tu conducta frente a la terminal de futuros), mientras aceptas de forma radical e imperturbable aquellos factores externos que no puedes controlar (el resultado aleatorio de un trade individual o la dirección de la vela). Enfocarte en el proceso operativo y desapegarte de las ganancias inmediatas te dotará de una gran paz mental.</p>
+      <p>Para aplicar esta filosofía estoica a tu trading, debes establecer un bucle semanal de retroalimentación constructiva. Cada fin de semana, analiza tu bitácora cuantitativa y tu diario de errores para determinar cuál ha sido tu desviación más costosa en dólares. Diseña de inmediato una medida correctiva específica y procesable para erradicar ese error. Por ejemplo, si tu fallo más recurrente es operar por venganza tras sufrir una pérdida, tu medida correctiva debe ser: "Si experimento dos pérdidas consecutivas en la misma sesión, apagaré la terminal de trading y bloquearé el acceso a la cuenta durante el resto del día de forma automatizada".</p>
+      <p>En este sentido, debemos diferenciar entre las **métricas de retraso (lagging measures)**, como tu balance de cuenta diario o tus ganancias semanales, y las **métricas de anticipación (leading measures)**, como tu tasa de adherencia al protocolo pre-market o tu puntuación en el diario de errores. Centrar tu esfuerzo mental en perfeccionar las métricas de anticipación (sobre las cuales posees un control absoluto) garantizará que las métricas de retraso mejoren por simple inercia matemática a lo largo de una muestra grande de operaciones.</p>
+      <p>Al implementar barreras estructurales externas para contener tus impulsos emocionales, dejas de depender de la fuerza de voluntad momentánea de tu cerebro y asumes el control científico de tu comportamiento. Esta autodisciplina estoica sostenida a lo largo de una muestra representativa de operaciones es el único camino real para lograr la consistencia matemática a largo plazo en tu negocio de trading.</p>
+      <h3>Instrucciones para el Ejercicio Técnico</h3>
+      <p>Identifica en tu diario cuál fue tu error operacional más recurrente y costoso de la última semana. Diseña y redacta por escrito una medida correctiva específica, accionable e innegociable para erradicar por completo este fallo de tu operativa de futuros. Documenta este compromiso formal de comportamiento en tu bitácora técnica.</p>
+      <div class="alert-box">
+        <strong>📝 Regla Estoica del Día:</strong> Centra tu atención y energía en perfeccionar tu comportamiento y tu disciplina operativa. Si controlas tu proceso con rigor, los resultados matemáticos favorables llegarán por añadidura.
+      </div>
+`
   },
   day30: {
     id: "day30",
@@ -418,11 +1362,33 @@ const courseData = {
     completed: false,
     challenge: "Completa y aprueba la evaluación del Módulo 4 con 100% de aciertos para desbloquear el bloque avanzado de Patrones de Gráficos.",
     content: `
-      <p>Has alcanzado el final del Módulo 4: Ejecución y Evaluación. Has progresado desde desmitificar tus sesgos mentales hasta consolidar una rutina operativa inquebrantable de gestión de riesgo y lectura técnica limpia.</p>
+<p>Felicidades por haber completado las lecciones teóricas y prácticas del <strong>Módulo 4: Rutinas y Psicología de Ejecución</strong>. A lo largo de esta cuarta semana de entrenamiento estoico intensivo de Visión Trading Pro, has adquirido las herramientas y los hábitos de comportamiento indispensables que rigen el negocio de la especulación profesional de futuros de índices. Has aprendido a estructurar rutinas de alto rendimiento pre-market y post-market, a rellenar listas de verificación objetivas antes de operar, a calmar tu fisiología bajo presión, a auditar tus estadísticas clave como el Profit Factor y a registrar de forma científica tus desviaciones en tu diario de errores operativos.</p>
+
+      <svg viewBox="0 0 500 250" style="background:#0b0f19; border: 1px solid #1e293b; border-radius: 8px; margin: 15px auto; display: block; max-width: 100%;">
+        <!-- Laurel Wreath Backdrop -->
+        <path d="M 180 120 C 180 180, 320 180, 320 120" fill="none" stroke="#334155" stroke-width="3" />
+        <!-- Badge Body (Hexagon shape) -->
+        <polygon points="250,35 295,65 295,125 250,155 205,125 205,65" fill="#1e293b" stroke="#3b82f6" stroke-width="3" />
+        <!-- Checkmark shield icon inside -->
+        <path d="M 235 90 L 245 100 L 265 80" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Badge Text -->
+        <text x="250" y="125" fill="#10b981" font-size="11" font-family="sans-serif" font-weight="bold" text-anchor="middle">PILAR 4 OK</text>
+        <text x="250" y="140" fill="#94a3b8" font-size="8" font-family="sans-serif" text-anchor="middle">EJECUCIÓN</text>
+        <!-- Caption -->
+        <text x="250" y="215" fill="#94a3b8" font-size="11" font-family="sans-serif" text-anchor="middle">Ilustración 4.8: Insignia de certificación del bloque de psicología de ejecución y rutinas.</text>
+      </svg>
+
+      <h3>La Consolidación del Bucle de Alto Rendimiento</h3>
+      <p>El dominio mental y la autodisciplina estoica son el pegamento indispensable que une la teoría técnica y la gestión de riesgo. Ningún sistema de lectura estructural o de patrones gráficos avanzados será rentable en tu cuenta si eres incapaz de controlar tus emociones de FOMO, venganza y codicia durante el horario regular de subasta. Al implementar de forma inflexible tu protocolo de pre-mercado y post-mercado, proteges tu cuenta y sientas las bases de la consistencia operativa a largo plazo en un entorno probabilístico.</p>
+      <p>En el próximo módulo (Módulo 5 al 12), iniciaremos el bloque avanzado de **Patrones de Gráficos e Ilustraciones Avanzadas**, donde entraremos de lleno en la lectura técnica de patrones de reversión y continuación como el Doble Techo/Suelo, Hombro-Cabeza-Hombro, Triángulos, Banderas, Cuñas, Gaps y Rupturas de liquidez institucional con confirmación por volumen de transacciones en tus pantallas de operativa. Asegúrate de comprender cada uno de estos conceptos antes de realizar la evaluación final de este bloque. Aprobar el cuestionario teórico-práctico de psicología de ejecución abajo con un 100% de aciertos es el requisito obligatorio para avanzar en tu formación de Visión Trading Pro.</p>
+      <p>Esta progresión académica hacia los patrones gráficos te exigirá aplicar todo el control de riesgo y la paciencia operativa aprendidos en las primeras cuatro semanas. El análisis de figuras complejas no consiste en buscar ganancias rápidas o atajos fáciles, sino en aplicar la misma disciplina de ejecución mecánica sobre formaciones chartistas con confluencia estructural y volumen validado. La consistencia se forja a través de la repetición sistemática de un proceso sólido.</p>
+      <p>Tu preparación operacional está casi lista. Continúa registrando tus datos, auditando tus métricas estadísticas y aplicando tus medidas correctivas estoicas de comportamiento con total constancia y honestidad. La disciplina que has desarrollado será la base firme sobre la cual estructuraremos tus setups técnicos avanzados. Mantén la calma fisiológica y respeta tu proceso.</p>
+      <h3>Instrucciones para la Evaluación Semanal</h3>
+      <p>Tu reto de hoy consiste en resolver con éxito el cuestionario del Módulo 4 detallado de forma interactiva abajo. Deberás responder correctamente a las 5 preguntas basándote en la gestión operativa del drawdown, el cálculo de métricas en tu bitácora y la autodisciplina pre-market y post-market. Aprobar con un 100% de aciertos es indispensable para avanzar.</p>
       <div class="alert-box" style="border-left-color: var(--color-accent); background: rgba(59, 130, 246, 0.03);">
-        <strong>📝 Evaluación del Módulo 4:</strong> Aprueba el examen técnico-práctico de 5 preguntas de abajo para certificar tu comprensión y desbloquear el Módulo 5 (Patrones de Gráficos).
+        <strong>📝 Evaluación del Módulo 4:</strong> Aprueba la evaluación del Módulo 4 abajo para certificar tu comprensión y desbloquear el bloque avanzado de Patrones de Gráficos.
       </div>
-    `
+`
   },
   day31: {
     id: "day31",
