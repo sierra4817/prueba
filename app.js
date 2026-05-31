@@ -1427,6 +1427,9 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("vision_elevenlabs_api_key", defaultKey);
   }
 
+  // Force voice ID to c6rAmJGsdzNWAIVkws45
+  localStorage.setItem("vision_elevenlabs_voice_id", "c6rAmJGsdzNWAIVkws45");
+
   // Navigation Menu Event Listeners
   document.querySelectorAll(".menu-item").forEach(item => {
     item.addEventListener("click", () => {
