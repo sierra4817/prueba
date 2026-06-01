@@ -2980,6 +2980,14 @@ const handleNarrateClick = async (dayId, button) => {
       
       console.log(`[Narrador] Enviando petición a ElevenLabs. Voice ID: ${voiceId}`);
       
+      // Preprocess text to insert asymmetric cinematic pauses after punctuation (not decimals)
+      let processedText = textToRead;
+      processedText = processedText.replace(/(?<!\d)[\.!\?](?!\d)/g, (match) => {
+        const pauseTimes = ["1.2s", "1.7s", "1.4s", "2.0s", "1.1s"];
+        const randomPause = pauseTimes[Math.floor(Math.random() * pauseTimes.length)];
+        return `${match} <break time="${randomPause}"/>`;
+      });
+      
       const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
         method: "POST",
         headers: {
@@ -2987,12 +2995,12 @@ const handleNarrateClick = async (dayId, button) => {
           "xi-api-key": apiKey
         },
         body: JSON.stringify({
-          text: textToRead.substring(0, 4800), // Safety cap limit
+          text: processedText.substring(0, 4800), // Safety cap limit
           model_id: "eleven_multilingual_v2",
           voice_settings: {
-            stability: 0.75,
+            stability: 0.85,      // Higher stability for a cold, calm, and monotone voice
             similarity_boost: 0.85,
-            style: 0.05,
+            style: 0.0,            // Completely eliminates emotional variance and commercial tone
             use_speaker_boost: true
           }
         })
